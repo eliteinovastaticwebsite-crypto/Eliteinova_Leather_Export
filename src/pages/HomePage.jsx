@@ -25,40 +25,40 @@ const HomePage = () => {
 
   const collections = [
     {
-      name: "All Bag",
+      name: "Shoes",
       products: 44,
-      image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=300&h=300&fit=crop",
+      image: "/images/collection_shoe.png",
       color: "#8b4513"
     },
     {
-      name: "All Jacket",
+      name: "Bags",
       products: 191,
-      image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop",
-      color: "#2c3e50"
+      image: "/images/collection_image.png",
+      color: "#8b4513"
     },
     {
-      name: "Women's Handbags",
+      name: "Handbags",
       products: 67,
       image: "/images/red_handbag.png",
-      color: "#d35400"
+      color: "#8b4513"
     },
-    {
+    /*{
       name: "All Shoes",
       products: 38,
       image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=300&h=300&fit=crop",
       color: "#16a085"
-    },
+    },*/
     {
       name: "Wallet",
       products: 12,
-      image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=300&h=300&fit=crop",
-      color: "#c0392b"
+      image: "/images/collection_wallet.png",
+      color: "#8b4513"
     },
     {
-      name: "Men's Belt",
+      name: "Belt",
       products: 85,
-      image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=300&h=300&fit=crop",
-      color: "#7d3c98"
+      image: "/images/collection_belt.png",
+      color: "#8b4513"
     }
   ];
 

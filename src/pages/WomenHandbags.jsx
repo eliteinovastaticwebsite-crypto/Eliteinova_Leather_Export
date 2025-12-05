@@ -79,7 +79,7 @@ const WomenHandbagsPage = () => {
 
      <div className="hero-section">
   <div className="hero-overlay">
-    <img src="/images/hero-handbag-banner.png" alt="Elegant Handbags" className="hero-background" />
+    <img src="/images/handbag_hero.png" alt="Elegant Handbags" className="hero-background" />
     <div className="hero-text">
       <h1>Women's Handbags</h1>
       <p className="hero-subtitle">Elegant • Stylish • Timeless</p>

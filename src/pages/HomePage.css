@@ -149,13 +149,11 @@
   height: 180px;
   margin: 0 auto 1.5rem;
   border-radius: 50%;
-  border: 4px solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 4px solid #8b4513;
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
+  background: #f5e6d3;
 }
 
 .collection-card:hover .collection-image {
@@ -165,10 +163,12 @@
 .collection-icon-wrapper {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   transition: all 0.3s;
   overflow: hidden;
 }
@@ -178,10 +178,13 @@
 }
 
 .collection-img {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
-  border-radius: 50%;
+  object-position: center center;
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .collection-overlay {
@@ -192,7 +195,7 @@
   height: 100%;
   opacity: 0;
   transition: opacity 0.3s;
-  border-radius: 50%;
+  pointer-events: none;
 }
 
 .collection-card:hover .collection-overlay {
@@ -404,10 +407,13 @@
     gap: 1.5rem;
   }
 
-  .collection-image {
+ .collection-image {
     width: 140px;
     height: 140px;
-  }
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures image covers the circle properly */
+    overflow: hidden; /* Clips any overflow */
+}
 
   .newsletter-form {
     flex-direction: column;
