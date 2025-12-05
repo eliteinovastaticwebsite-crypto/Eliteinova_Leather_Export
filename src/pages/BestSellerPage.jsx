@@ -82,10 +82,16 @@ const BestSellerPage = () => {
         <a href="/">Home</a> / <span>Best Sellers</span>
       </div>
 
-      <div className="bestseller-hero">
-        <h1>Best Sellers</h1>
-        <img src="/images/hero-banner.jpg" alt="All Bags Banner" className="hero-image" />
-      </div>
+      <div className="hero-section">
+  <div className="hero-overlay">
+    <img src="/images/hero-handbag-banner.png" alt="Elegant Handbags" className="hero-background" />
+    <div className="hero-text">
+      <h1>BestSeller</h1>
+      <p className="hero-subtitle">Elegant • Stylish • Timeless</p>
+    </div>
+  </div>
+</div>
+
 
       <div className="bestseller-container">
         <div className="bestseller-filter-bar">

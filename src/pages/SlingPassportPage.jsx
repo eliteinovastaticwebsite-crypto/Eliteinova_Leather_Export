@@ -72,10 +72,16 @@ const SlingPassportPage = () => {
         <a href="/">Home</a> / <span>Sling & Passport Bags</span>
       </div>
 
-      <div className="sling-passport-hero">
-        <h1>Sling & Passport Bags</h1>
-        <img src="/images/hero-banner.jpg" alt="All Bags Banner" className="hero-image" />
-      </div>
+      <div className="hero-section">
+  <div className="hero-overlay">
+    <img src="/images/hero-handbag-banner.png" alt="Elegant Handbags" className="hero-background" />
+    <div className="hero-text">
+      <h1>Sling & Passport Bags</h1>
+      <p className="hero-subtitle">Elegant • Stylish • Timeless</p>
+    </div>
+  </div>
+</div>
+
 
       <div className="sling-passport-container">
         <div className="sling-passport-filter-bar">

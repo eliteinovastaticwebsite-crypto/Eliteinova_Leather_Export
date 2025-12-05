@@ -10,10 +10,10 @@ const HomePage = () => {
       image: "/images/slide1.jpg"
     },
     {
-      image: "/images/slide1.jpg"
+      image: "/images/slide2.jpg"
     },
     {
-      image: "/images/slide1.jpg"
+      image: "/images/slide2.jpg"
     },
     {
       image: "/images/slide1.jpg"

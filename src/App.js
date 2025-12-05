@@ -8,6 +8,7 @@ import BestSellerPage from './pages/BestSellerPage';
 import BackPackPage from './pages/BackPackPage';
 import LaptopOfficePage from './pages/LaptopOfficePage';
 import SlingPassportPage from './pages/SlingPassportPage';
+import WomenHandbagsPage from './pages/WomenHandbags';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/bag/backpack" element={<BackPackPage />} />
           <Route path="/bag/laptop-office" element={<LaptopOfficePage />} />
           <Route path="/bag/sling-passport" element={<SlingPassportPage />} />
-          {/* Add more routes as needed */}
+          <Route path="women-handbags" element={<WomenHandbagsPage />} />
         </Routes>
       </div>
     </Router>

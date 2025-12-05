@@ -146,7 +146,7 @@ const Header = () => {
           {/* Logo Section */}
           <div className="logo-section" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <img 
-               src="/images/logo.png" 
+               src="/images/logo.jpeg" 
                alt="Company Logo" 
                className="company-logo" 
            />

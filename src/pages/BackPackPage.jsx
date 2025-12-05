@@ -77,10 +77,16 @@ const BackpackPage = () => {
         <a href="/">Home</a> / <span>Backpacks</span>
       </div>
 
-      <div className="backpack-hero">
-        <h1>Backpacks</h1>
-        <img src="/images/hero-banner.jpg" alt="All Bags Banner" className="hero-image" />
-      </div>
+     <div className="hero-section">
+  <div className="hero-overlay">
+    <img src="/images/hero-handbag-banner.png" alt="Elegant Handbags" className="hero-background" />
+    <div className="hero-text">
+      <h1>BackPacks</h1>
+      <p className="hero-subtitle">Elegant • Stylish • Timeless</p>
+    </div>
+  </div>
+</div>
+
 
       <div className="backpack-container">
         <div className="backpack-filter-bar">
