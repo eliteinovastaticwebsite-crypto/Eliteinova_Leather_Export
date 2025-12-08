@@ -20,6 +20,9 @@ const HomePage = () => {
     },
     {
       image: "/images/slide5.jpg"
+    },
+    {
+      image: "/images/slide6.jpg"
     }
   ];
 
@@ -31,27 +34,45 @@ const HomePage = () => {
       color: "#8b4513"
     },
     {
-      name: "Bags",
-      products: 191,
-      image: "/images/collection_image.png",
-      color: "#8b4513"
-    },
-    {
       name: "Handbags",
       products: 67,
       image: "/images/red_handbag.png",
       color: "#8b4513"
     },
-    /*{
-      name: "All Shoes",
-      products: 38,
-      image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=300&h=300&fit=crop",
-      color: "#16a085"
-    },*/
+    {
+      name: "Small Bags",
+      products: 67,
+      image: "/images/small_bag.png",
+      color: "#8b4513"
+    },
+    {
+      name: "Laptop Bags",
+      products: 191,
+      image: "/images/collection_image.png",
+      color: "#8b4513"
+    },
+    {
+      name: "Travel Bags",
+      products: 67,
+      image: "/images/travel_bag.png",
+      color: "#8b4513"
+    },
+    {
+      name: "Backpacks",
+      products: 67,
+      image: "/images/backpack_collection.png",
+      color: "#8b4513"
+    },
+    {
+      name: "Briefcases",
+      products: 67,
+      image: "/images/brief.png",
+      color: "#8b4513"
+    },
     {
       name: "Wallet",
       products: 12,
-      image: "/images/collection_wallet.png",
+      image: "/images/wallet.png",
       color: "#8b4513"
     },
     {

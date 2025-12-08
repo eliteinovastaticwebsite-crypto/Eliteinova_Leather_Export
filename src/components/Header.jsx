@@ -21,19 +21,42 @@ const Header = () => {
     {
       name: 'SHOES',
       dropdown: [
-        { name: 'All Shoes', path: '/shoes/all' },
         { name: 'Boots', path: '/shoes/boots' },
-        { name: 'Chelsea Boots', path: '/shoes/chelsea-boots' },
-        { name: 'Suede Leather', path: '/shoes/suede-leather' },
         { name: 'Formal Shoes', path: '/shoes/formal' },
-        { name: 'Belly Shoes', path: '/shoes/belly' },
-        { name: 'Loafer Shoes', path: '/shoes/loafer' }
+        { name: 'Casual Shoes', path: '/shoes/casual' },
       ],
       path: '/shoes'
     },
     { name: 'WOMEN HANDBAGS', dropdown: null, path: '/women-handbags' },
+    { name: 'SMALL BAGS', 
+      dropdown:  [
+        { name: 'Sling Bags', path: '/smallbags/sling-bags' },
+        { name: 'Small Crossbody Bags', path: '/smallbags/small-crossbody-bags' }
+      ], 
+      path: '/smallbags' },
+    { name: 'LAPTOP BAGS', dropdown: null, path: '/laptopbags' },
     {
       name: 'TRAVEL BAGS',
+      dropdown: [
+        { name: 'Trolley Bags', path: '/travelbags/trolley-bags' },
+        { name: 'Duffle Bags', path: '/travelbags/duffle-bags' },
+        { name: 'Leather Travel Bags', path: '/travelbags/leather-travel-bags' }
+      ],
+      path: '/travelbags'
+    },
+    {
+      name: 'BACKPACKS',
+      dropdown: [
+        { name: 'Men\'s Backpacks', path: '/backpacks/men-backpacks' },
+        { name: 'Women\'s Backpacks', path: '/backpacks/women-backpacks' }
+      ],
+      path: '/backpacks'
+    },
+    {
+      name: 'BRIEFCASE',dropdown: null, path: '/bag'
+    },
+   /* {
+      name: 'MEN',
       dropdown: [
         { name: 'All Jackets', path: '/men/all-jackets' },
         { name: 'Best Seller', path: '/men/best-seller' },
@@ -55,8 +78,8 @@ const Header = () => {
         { name: 'Trench & Winter Coats', path: '/men/trench-winter-coats' }
       ],
       path: '/men'
-    },
-    {
+    }, */
+   /* {
       name: 'BACKPACKS',
       dropdown: [
         { name: 'All Women Jacket', path: '/women/all-jackets' },
@@ -74,20 +97,13 @@ const Header = () => {
         { name: 'Trench & Winter Coats', path: '/women/trench-winter-coats' }
       ],
       path: '/women'
-    },
-    {
-      name: 'BRIEFCASE',
-      dropdown: [
-        { name: 'All Bag', path: '/bag/all' },
-        { name: 'Best Seller', path: '/bag/best-seller' },
-        { name: 'Backpack', path: '/bag/backpack' },
-        { name: 'Laptop & Office Bag', path: '/bag/laptop-office' },
-        { name: 'Sling & Passport Bags', path: '/bag/sling-passport' }
+    },*/
+    { name: 'WALLET', 
+      dropdown:  [
+        { name: 'Men\'s Wallet', path: '/wallet/menswallet' },
+        { name: 'Passport Holder', path: '/wallet/passportholder' }
       ],
-      path: '/bag'
-    },
-
-    { name: 'WALLET', dropdown: null, path: '/wallet' },
+      path: '/wallet' },
     { name: 'BELT', dropdown: null, path: '/belt' },
     { name: 'ABOUT US', dropdown: null, path: '/about' },
     { name: 'CONTACT', dropdown: null, path: '/contact' }
