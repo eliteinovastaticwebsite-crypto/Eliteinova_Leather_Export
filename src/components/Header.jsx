@@ -19,15 +19,21 @@ const Header = () => {
   const menuItems = [
     { name: 'HOME', dropdown: null, path: '/' },
     {
-      name: 'SUPER SALE',
+      name: 'SHOES',
       dropdown: [
-        { name: 'Boots', path: '/super-sale/boots' },
-        { name: 'Formals', path: '/super-sale/formals' }
+        { name: 'All Shoes', path: '/shoes/all' },
+        { name: 'Boots', path: '/shoes/boots' },
+        { name: 'Chelsea Boots', path: '/shoes/chelsea-boots' },
+        { name: 'Suede Leather', path: '/shoes/suede-leather' },
+        { name: 'Formal Shoes', path: '/shoes/formal' },
+        { name: 'Belly Shoes', path: '/shoes/belly' },
+        { name: 'Loafer Shoes', path: '/shoes/loafer' }
       ],
-      path: '/super-sale'
+      path: '/shoes'
     },
+    { name: 'WOMEN HANDBAGS', dropdown: null, path: '/women-handbags' },
     {
-      name: 'MEN',
+      name: 'TRAVEL BAGS',
       dropdown: [
         { name: 'All Jackets', path: '/men/all-jackets' },
         { name: 'Best Seller', path: '/men/best-seller' },
@@ -51,7 +57,7 @@ const Header = () => {
       path: '/men'
     },
     {
-      name: 'WOMEN',
+      name: 'BACKPACKS',
       dropdown: [
         { name: 'All Women Jacket', path: '/women/all-jackets' },
         { name: 'Best Seller', path: '/women/best-seller' },
@@ -70,7 +76,7 @@ const Header = () => {
       path: '/women'
     },
     {
-      name: 'BAG',
+      name: 'BRIEFCASE',
       dropdown: [
         { name: 'All Bag', path: '/bag/all' },
         { name: 'Best Seller', path: '/bag/best-seller' },
@@ -80,21 +86,9 @@ const Header = () => {
       ],
       path: '/bag'
     },
-    { name: 'WOMEN HANDBAGS', dropdown: null, path: '/women-handbags' },
-    {
-      name: 'SHOES',
-      dropdown: [
-        { name: 'All Shoes', path: '/shoes/all' },
-        { name: 'Boots', path: '/shoes/boots' },
-        { name: 'Chelsea Boots', path: '/shoes/chelsea-boots' },
-        { name: 'Suede Leather', path: '/shoes/suede-leather' },
-        { name: 'Formal Shoes', path: '/shoes/formal' },
-        { name: 'Belly Shoes', path: '/shoes/belly' },
-        { name: 'Loafer Shoes', path: '/shoes/loafer' }
-      ],
-      path: '/shoes'
-    },
+
     { name: 'WALLET', dropdown: null, path: '/wallet' },
+    { name: 'BELT', dropdown: null, path: '/belt' },
     { name: 'ABOUT US', dropdown: null, path: '/about' },
     { name: 'CONTACT', dropdown: null, path: '/contact' }
   ];
