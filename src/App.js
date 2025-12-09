@@ -5,6 +5,12 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage'; 
 import WomenHandbagsPage from './pages/WomenHandbags';
 import LaptopBagsPage from './pages/LaptopBag';
+import BriefcasesPage from './pages/BriefcasesPage';
+import MensWalletsPage from './pages/MensWalletPage';
+import PassportHoldersPage from './pages/PassportHoldersPage';
+import BeltsPage from './pages/BeltsPage';
+import MensBackpackPage from './pages/MensBackpack';
+import WomensBackpackPage from './pages/WomensBackpack';
 
 function App() {
   return (
@@ -15,6 +21,14 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="women-handbags" element={<WomenHandbagsPage />} />
           <Route path="laptopbags" element={<LaptopBagsPage />} />
+
+          <Route path="backpacks/men-backpacks" element={<MensBackpackPage />} />
+          <Route path="backpacks/women-backpacks" element={<WomensBackpackPage />} />
+          
+          <Route path="brief-cases" element={<BriefcasesPage />} />
+          <Route path="wallet/menswallet" element={<MensWalletsPage />} />
+          <Route path="wallet/passportholder" element={<PassportHoldersPage />} />
+          <Route path="belt" element={<BeltsPage />} />
         </Routes>
       </div>
     </Router>

@@ -159,7 +159,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.15rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -170,8 +170,8 @@
 }
 
 .menu-button {
-  padding: 1rem;
-  font-size: 0.875rem;
+  padding: 0.75rem 0.6rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #78350f;
   background: transparent;
@@ -179,9 +179,10 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   border-radius: 0.5rem 0.5rem 0 0;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .menu-button:hover {
@@ -190,8 +191,8 @@
 }
 
 .chevron-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 /* Dropdown Menu */
@@ -315,3 +316,5 @@
     font-size: 1.5rem;
   }
 }
+
+

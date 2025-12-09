@@ -53,7 +53,7 @@ const Header = () => {
       path: '/backpacks'
     },
     {
-      name: 'BRIEFCASE',dropdown: null, path: '/bag'
+      name: 'BRIEFCASE',dropdown: null, path: '/brief-cases'
     },
    /* {
       name: 'MEN',
