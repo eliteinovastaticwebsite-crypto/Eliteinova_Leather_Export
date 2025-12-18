@@ -1,0 +1,664 @@
+/* ShoesPage.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
+  min-height: 100vh;
+}
+
+.shoes-page {
+  min-height: 100vh;
+}
+
+.shoes-breadcrumb {
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #6d4c41;
+}
+
+.shoes-breadcrumb a {
+  color: #8b4513;
+  text-decoration: none;
+}
+
+.shoes-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.shoes-hero-section {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.shoes-hero-image {
+  width: 100%;
+  height: 700px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Collections Section */
+.shoes-collections-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #fffbeb, #ffedd5);
+}
+
+.shoes-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.shoes-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.shoes-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.shoes-collections-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.shoes-collection-card {
+  text-align: center;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.shoes-collection-card:hover {
+  transform: translateY(-10px);
+}
+
+.shoes-collection-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  border: 4px solid #8b4513;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  background: #ffffff;
+}
+
+.shoes-collection-card:hover .shoes-collection-image {
+  transform: rotate(5deg);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+}
+
+.shoes-collection-icon-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  overflow: hidden;
+  background: rgba(139, 69, 19, 0.05);
+}
+
+.shoes-collection-card:hover .shoes-collection-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.shoes-collection-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  padding: 20px;
+}
+
+.shoes-collection-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.shoes-collection-count {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Featured Products Section */
+.shoes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.shoes-featured-header {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.shoes-featured-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.shoes-featured-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.shoes-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.shoes-filter-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.shoes-filter-label {
+  font-weight: 600;
+  color: #5d4037;
+}
+
+.shoes-filter-btn {
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #d7ccc8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5d4037;
+  transition: all 0.3s;
+}
+
+.shoes-filter-btn:hover {
+  background: #f5f5f5;
+  border-color: #8b4513;
+}
+
+.shoes-filter-dropdown {
+  position: relative;
+}
+
+.shoes-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 15px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.shoes-filter-dropdown:hover .shoes-dropdown-content {
+  display: block;
+}
+
+.shoes-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.shoes-dropdown-header span {
+  font-size: 13px;
+  color: #666;
+}
+
+.shoes-reset-btn {
+  background: none;
+  border: none;
+  color: #8b4513;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.shoes-reset-btn:hover {
+  color: #6d3710;
+}
+
+.shoes-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+.shoes-checkbox-label:hover {
+  background: #f5f5f5;
+  padding-left: 8px;
+  margin-left: -8px;
+  border-radius: 4px;
+}
+
+.shoes-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #8b4513;
+}
+
+.shoes-sort-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.shoes-products-count {
+  font-weight: 600;
+  color: #5d4037;
+}
+
+.shoes-sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.shoes-sort-dropdown label {
+  font-weight: 500;
+  color: #5d4037;
+  white-space: nowrap;
+}
+
+.shoes-sort-dropdown select {
+  padding: 10px 35px 10px 15px;
+  background: #fff;
+  border: 1px solid #d7ccc8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5d4037;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235d4037' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: all 0.3s;
+  min-width: 200px;
+}
+
+.shoes-sort-dropdown select:hover {
+  border-color: #8b4513;
+  background-color: #f9f9f9;
+}
+
+.shoes-sort-dropdown select:focus {
+  outline: none;
+  border-color: #8b4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.shoes-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.shoes-product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.shoes-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.shoes-product-image {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shoes-product-image img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.shoes-product-card:hover .shoes-product-image img {
+  transform: scale(1.05);
+}
+
+.shoes-product-info {
+  padding: 18px;
+}
+
+.shoes-product-name {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.shoes-product-color {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.shoes-out-of-stock {
+  font-size: 13px;
+  color: #d32f2f;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.shoes-whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.shoes-whatsapp-btn svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.shoes-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  background: #20ba5a;
+}
+
+.shoes-whatsapp-btn:active {
+  transform: scale(0.95);
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .shoes-hero-image {
+    height: 500px;
+  }
+
+  .shoes-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .shoes-collection-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .shoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .shoes-hero-image {
+    height: 400px;
+  }
+
+  .shoes-breadcrumb {
+    font-size: 13px;
+    margin: 15px auto;
+  }
+
+  .shoes-section-title,
+  .shoes-featured-title {
+    font-size: 2rem;
+  }
+
+  .shoes-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .shoes-collection-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .shoes-collection-name {
+    font-size: 1.1rem;
+  }
+
+  .shoes-collection-count {
+    font-size: 0.85rem;
+  }
+
+  .shoes-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .shoes-filter-section,
+  .shoes-sort-section {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .shoes-sort-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .shoes-sort-dropdown {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .shoes-sort-dropdown select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .shoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .shoes-product-image {
+    height: 280px;
+  }
+
+  .shoes-whatsapp-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .shoes-whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .shoes-hero-image {
+    height: 300px;
+  }
+
+  .shoes-breadcrumb {
+    font-size: 12px;
+  }
+
+  .shoes-section-title,
+  .shoes-featured-title {
+    font-size: 1.75rem;
+  }
+
+  .shoes-collections-grid {
+    gap: 1.25rem;
+  }
+
+  .shoes-collection-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .shoes-collection-name {
+    font-size: 1rem;
+  }
+
+  .shoes-filter-bar {
+    padding: 12px;
+  }
+
+  .shoes-filter-label,
+  .shoes-products-count {
+    font-size: 13px;
+  }
+
+  .shoes-filter-btn {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+
+  .shoes-sort-dropdown label {
+    font-size: 13px;
+  }
+
+  .shoes-sort-dropdown select {
+    font-size: 13px;
+    padding: 8px 30px 8px 12px;
+  }
+
+  .shoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .shoes-product-image {
+    height: 200px;
+  }
+
+  .shoes-product-info {
+    padding: 12px;
+  }
+
+  .shoes-product-name {
+    font-size: 14px;
+  }
+
+  .shoes-product-color {
+    font-size: 12px;
+  }
+
+  .shoes-out-of-stock {
+    font-size: 11px;
+  }
+
+  .shoes-whatsapp-btn {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .shoes-whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .shoes-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+
+  .shoes-collection-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .shoes-product-image {
+    height: 180px;
+  }
+
+  .shoes-product-name {
+    font-size: 13px;
+  }
+}

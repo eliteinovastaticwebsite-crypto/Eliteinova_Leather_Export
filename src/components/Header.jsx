@@ -126,12 +126,14 @@ const Header = () => {
     }
   };
 
-  const handleMenuClick = (item) => {
-    if (item.path && !item.dropdown) {
-      navigate(item.path);
-      setMobileMenuOpen(false);
-    }
-  };
+ const handleMenuClick = (item) => {
+  if (item.path) {
+    navigate(item.path);
+    setActiveDropdown(null);
+    setMobileMenuOpen(false);
+  }
+};
+
 
   const handleLogoClick = () => {
     navigate('/');

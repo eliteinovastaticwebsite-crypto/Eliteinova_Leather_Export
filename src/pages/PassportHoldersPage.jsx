@@ -10,14 +10,14 @@ const PassportHoldersPage = () => {
 
   // 20 passport holder products
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/red_laptopbag.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/L1.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/L2.png', color: 'Black', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/L3.png', color: 'Tan', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/L4.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/L5.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/L6.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L7.png', color: 'Brown', inStock: true, date: '2024-03-22' },
+    { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', inStock: true, date: '2024-01-15' },
+    { id: 2, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass2.png', color: 'Green', inStock: false, date: '2024-02-20' },
+    { id: 3, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass3.png', color: 'Black', inStock: true, date: '2024-03-10' },
+    { id: 4, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass4.png', color: 'Tan', inStock: true, date: '2024-01-25' },
+    { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/pass5.png', color: 'Black', inStock: true, date: '2024-04-05' },
+    { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', inStock: false, date: '2024-02-14' },
+    { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/pass7.png', color: 'Tan', inStock: true, date: '2024-05-18' },
+    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/pass8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
     { id: 9, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L8.png', color: 'Black', inStock: true, date: '2024-06-30' },
     { id: 10, name: 'Urban Leather Laptop Bag', image: '/images/L9.png', color: 'Black', inStock: true, date: '2024-07-12' },
     { id: 11, name: 'Urban Leather Laptop Bag', image: '/images/L10.png', color: 'Tan', inStock: false, date: '2024-08-05' },

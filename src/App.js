@@ -18,6 +18,9 @@ import DuffleBagPage from './pages/DuffleBagPage';
 import BootsPage from './pages/BootsPage';
 import CasualShoesPage from './pages/CasualShoesPage';
 import FormalShoesPage from './pages/FormalShoesPage';
+import SlingBagsPage from './pages/SlingBags';
+import SmallCrossBodyBagsPage from './pages/SmallCrossBodyBags';
+import ShoesPage from './pages/ShoesPage';
 
 function App() {
   return (
@@ -28,7 +31,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="women-handbags" element={<WomenHandbagsPage />} />
           <Route path="laptopbags" element={<LaptopBagsPage />} />
-
+ 
+          <Route path="shoes" element={<ShoesPage />} />
           <Route path="shoes/boots" element={<BootsPage />} />
           <Route path="shoes/formal" element={<FormalShoesPage />} />
           <Route path="shoes/casual" element={<CasualShoesPage />} />
@@ -39,6 +43,9 @@ function App() {
 
           <Route path="backpacks/men-backpacks" element={<MensBackpackPage />} />
           <Route path="backpacks/women-backpacks" element={<WomensBackpackPage />} />
+
+          <Route path="smallbags/sling-bags" element={<SlingBagsPage />} />
+          <Route path="smallbags/small-crossbody-bags" element={<SmallCrossBodyBagsPage />} />
 
           <Route path="brief-cases" element={<BriefcasesPage />} />
           <Route path="wallet/menswallet" element={<MensWalletsPage />} />
