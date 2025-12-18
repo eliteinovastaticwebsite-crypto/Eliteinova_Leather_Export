@@ -78,7 +78,7 @@ const TravelBagsPage = () => {
       </div>
 
      <div className="hero-section">
-    <img src="/images/laptopba_hero.png" alt="Elegant Laptop Bags" className="hero-image" />
+    <img src="/images/travel bag.png" alt="Elegant Laptop Bags" className="hero-image" />
     </div>
 
 

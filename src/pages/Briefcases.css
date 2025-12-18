@@ -1,4 +1,4 @@
-/* Briefcases.css */
+/* Briefcases.css - Fully Mobile Responsive */
 
 * {
   margin: 0;
@@ -43,6 +43,8 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  max-height: 700px;
+  object-fit: cover;
 }
 
 .briefcases-container {
@@ -74,6 +76,7 @@ body {
 .briefcases-filter-label {
   font-weight: 600;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .briefcases-filter-btn {
@@ -184,6 +187,7 @@ body {
 .briefcases-sort-dropdown label {
   font-weight: 500;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .briefcases-sort-dropdown select {
@@ -313,14 +317,61 @@ body {
   transform: scale(0.95);
 }
 
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 36px;
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   ======================================== */
+
+/* Tablet devices (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-image {
+    max-height: 500px;
+  }
+
+  .briefcases-container {
+    padding: 0 15px 50px;
+  }
+
+  .briefcases-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .briefcases-product-image {
+    height: 280px;
+  }
+
+  .briefcases-filter-bar {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .briefcases-breadcrumb {
+    padding: 0 15px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+  .hero-image {
+    max-height: 400px;
+  }
+
+  .briefcases-breadcrumb {
+    margin: 15px auto;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+
+  .briefcases-container {
+    padding: 0 15px 120px;
   }
 
   .briefcases-filter-bar {
     flex-direction: column;
     align-items: stretch;
+    padding: 15px;
+    gap: 15px;
   }
 
   .briefcases-filter-section,
@@ -329,9 +380,73 @@ body {
     justify-content: space-between;
   }
 
+  .briefcases-filter-section {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .briefcases-filter-section::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .briefcases-filter-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .briefcases-filter-section::-webkit-scrollbar-thumb {
+    background: #8b4513;
+    border-radius: 2px;
+  }
+
+  .briefcases-filter-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .briefcases-products-count {
+    font-size: 14px;
+  }
+
+  .briefcases-sort-section {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .briefcases-sort-dropdown {
+    flex: 1;
+  }
+
+  .briefcases-sort-dropdown select {
+    width: 100%;
+    padding: 8px 30px 8px 12px;
+    font-size: 13px;
+  }
+
   .briefcases-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+  }
+
+  .briefcases-product-image {
+    height: 250px;
+  }
+
+  .briefcases-product-info {
+    padding: 15px;
+  }
+
+  .briefcases-product-name {
+    font-size: 14px;
+  }
+
+  .briefcases-product-color {
+    font-size: 13px;
+  }
+
+  .briefcases-out-of-stock {
+    font-size: 12px;
   }
 
   .briefcases-whatsapp-btn {
@@ -340,34 +455,247 @@ body {
     bottom: 20px;
     right: 20px;
   }
+
+  .briefcases-whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Dropdown adjustments for mobile */
+  .briefcases-dropdown-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
 }
 
+/* Small mobile devices (max-width: 480px) */
 @media (max-width: 480px) {
+  .hero-image {
+    max-height: 300px;
+  }
+
+  .briefcases-breadcrumb {
+    font-size: 11px;
+    margin: 10px auto;
+  }
+
+  .briefcases-container {
+    padding: 0 10px 120px;
+  }
+
+  .briefcases-filter-bar {
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+  }
+
+  .briefcases-filter-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .briefcases-filter-label {
+    font-size: 13px;
+  }
+
+  .briefcases-products-count {
+    font-size: 13px;
+  }
+
+  .briefcases-sort-dropdown label {
+    font-size: 13px;
+  }
+
+  .briefcases-sort-dropdown select {
+    font-size: 12px;
+    padding: 6px 25px 6px 10px;
+  }
+
   .briefcases-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .briefcases-product-card {
+    border-radius: 8px;
+  }
+
+  .briefcases-product-image {
+    height: 180px;
+  }
+
+  .briefcases-product-info {
+    padding: 12px;
   }
 
   .briefcases-product-name {
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 6px;
   }
 
   .briefcases-product-color {
     font-size: 12px;
   }
-  
-  .hero-text h1 {
-    font-size: 28px;
-    padding: 0 10px;
+
+  .briefcases-out-of-stock {
+    font-size: 11px;
+    margin-top: 6px;
   }
-  
-  .briefcases-sort-dropdown {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+
+  .briefcases-whatsapp-btn {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
   }
-  
-  .briefcases-sort-dropdown select {
-    width: 100%;
+
+  .briefcases-whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
   }
+
+  .briefcases-checkbox-label {
+    font-size: 13px;
+  }
+
+  .briefcases-checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Extra small devices (max-width: 360px) */
+@media (max-width: 360px) {
+  .hero-image {
+    max-height: 250px;
+  }
+
+  .briefcases-breadcrumb {
+    font-size: 10px;
+  }
+
+  .briefcases-container {
+    padding: 0 8px 120px;
+  }
+
+  .briefcases-filter-bar {
+    padding: 10px;
+  }
+
+  .briefcases-filter-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .briefcases-products-grid {
+    gap: 10px;
+  }
+
+  .briefcases-product-image {
+    height: 150px;
+  }
+
+  .briefcases-product-info {
+    padding: 10px;
+  }
+
+  .briefcases-product-name {
+    font-size: 12px;
+  }
+
+  .briefcases-product-color {
+    font-size: 11px;
+  }
+
+  .briefcases-whatsapp-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .briefcases-whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Landscape mode for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-image {
+    max-height: 250px;
+  }
+
+  .briefcases-filter-bar {
+    padding: 10px;
+  }
+
+  .briefcases-product-image {
+    height: 200px;
+  }
+
+  .briefcases-container {
+    padding-bottom: 80px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .briefcases-filter-btn,
+  .briefcases-product-card,
+  .briefcases-checkbox-label {
+    -webkit-tap-highlight-color: rgba(139, 69, 19, 0.1);
+  }
+
+  .briefcases-product-card:hover {
+    transform: none;
+  }
+
+  .briefcases-product-card:active {
+    transform: scale(0.98);
+  }
+
+  /* Better touch targets */
+  .briefcases-filter-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .briefcases-whatsapp-btn {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  /* Mobile dropdown behavior */
+  .briefcases-filter-dropdown:hover .briefcases-dropdown-content {
+    display: none;
+  }
+
+  .briefcases-filter-dropdown.active .briefcases-dropdown-content {
+    display: block;
+  }
+}
+
+/* Scrollbar styling for dropdown */
+.briefcases-dropdown-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.briefcases-dropdown-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.briefcases-dropdown-content::-webkit-scrollbar-thumb {
+  background: #8b4513;
+  border-radius: 3px;
+}
+
+.briefcases-dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: #6d3710;
 }

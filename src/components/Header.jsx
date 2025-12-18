@@ -174,11 +174,35 @@ const Header = () => {
           </div>
 
           {/* Right Icons */}
-          <div className="header-icons">
-            <button className="icon-button" aria-label="User Profile">
-              <User className="icon" />
-            </button>
-          </div>
+          {/* Right Icons */}
+<div className="header-icons">
+  <button className="icon-button" aria-label="User Profile">
+    <User className="icon" />
+  </button>
+
+  {/* Hamburger Menu (MOBILE ONLY) */}
+  <button
+    className="mobile-menu-button icon-button"
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    aria-label="Toggle Menu"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className="icon"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
+    </svg>
+  </button>
+</div>
+
         </div>
       </div>
 

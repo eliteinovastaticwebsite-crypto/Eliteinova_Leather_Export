@@ -1,4 +1,4 @@
-/* Belts.css - Fully Mobile Responsive */
+/* FormalShoes.css - Fully Mobile Responsive */
 
 * {
   margin: 0;
@@ -12,11 +12,11 @@ body {
   min-height: 100vh;
 }
 
-.belts-page {
+.formalshoes-page {
   min-height: 100vh;
 }
 
-.belts-breadcrumb {
+.formalshoes-breadcrumb {
   max-width: 1400px;
   margin: 20px auto;
   padding: 0 20px;
@@ -24,12 +24,12 @@ body {
   color: #6d4c41;
 }
 
-.belts-breadcrumb a {
+.formalshoes-breadcrumb a {
   color: #8b4513;
   text-decoration: none;
 }
 
-.belts-breadcrumb a:hover {
+.formalshoes-breadcrumb a:hover {
   text-decoration: underline;
 }
 
@@ -46,13 +46,13 @@ body {
   object-fit: cover;
 }
 
-.belts-container {
+.formalshoes-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px 60px;
 }
 
-.belts-filter-bar {
+.formalshoes-filter-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,20 +65,20 @@ body {
   gap: 20px;
 }
 
-.belts-filter-section {
+.formalshoes-filter-section {
   display: flex;
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
 }
 
-.belts-filter-label {
+.formalshoes-filter-label {
   font-weight: 600;
   color: #5d4037;
   white-space: nowrap;
 }
 
-.belts-filter-btn {
+.formalshoes-filter-btn {
   padding: 10px 20px;
   background: #fff;
   border: 1px solid #d7ccc8;
@@ -89,16 +89,16 @@ body {
   transition: all 0.3s;
 }
 
-.belts-filter-btn:hover {
+.formalshoes-filter-btn:hover {
   background: #f5f5f5;
   border-color: #8b4513;
 }
 
-.belts-filter-dropdown {
+.formalshoes-filter-dropdown {
   position: relative;
 }
 
-.belts-dropdown-content {
+.formalshoes-dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
@@ -112,11 +112,11 @@ body {
   margin-top: 5px;
 }
 
-.belts-filter-dropdown:hover .belts-dropdown-content {
+.formalshoes-filter-dropdown:hover .formalshoes-dropdown-content {
   display: block;
 }
 
-.belts-dropdown-header {
+.formalshoes-dropdown-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,12 +125,12 @@ body {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.belts-dropdown-header span {
+.formalshoes-dropdown-header span {
   font-size: 13px;
   color: #666;
 }
 
-.belts-reset-btn {
+.formalshoes-reset-btn {
   background: none;
   border: none;
   color: #8b4513;
@@ -139,11 +139,11 @@ body {
   text-decoration: underline;
 }
 
-.belts-reset-btn:hover {
+.formalshoes-reset-btn:hover {
   color: #6d3710;
 }
 
-.belts-checkbox-label {
+.formalshoes-checkbox-label {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -152,44 +152,44 @@ body {
   color: #333;
 }
 
-.belts-checkbox-label:hover {
+.formalshoes-checkbox-label:hover {
   background: #f5f5f5;
   padding-left: 8px;
   margin-left: -8px;
   border-radius: 4px;
 }
 
-.belts-checkbox-label input[type="checkbox"] {
+.formalshoes-checkbox-label input[type="checkbox"] {
   width: 18px;
   height: 18px;
   cursor: pointer;
   accent-color: #8b4513;
 }
 
-.belts-sort-section {
+.formalshoes-sort-section {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.belts-products-count {
+.formalshoes-products-count {
   font-weight: 600;
   color: #5d4037;
 }
 
-.belts-sort-dropdown {
+.formalshoes-sort-dropdown {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.belts-sort-dropdown label {
+.formalshoes-sort-dropdown label {
   font-weight: 500;
   color: #5d4037;
   white-space: nowrap;
 }
 
-.belts-sort-dropdown select {
+.formalshoes-sort-dropdown select {
   padding: 10px 35px 10px 15px;
   background: #fff;
   border: 1px solid #d7ccc8;
@@ -204,24 +204,24 @@ body {
   transition: all 0.3s;
 }
 
-.belts-sort-dropdown select:hover {
+.formalshoes-sort-dropdown select:hover {
   border-color: #8b4513;
   background-color: #f9f9f9;
 }
 
-.belts-sort-dropdown select:focus {
+.formalshoes-sort-dropdown select:focus {
   outline: none;
   border-color: #8b4513;
   box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
 }
 
-.belts-products-grid {
+.formalshoes-products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
 }
 
-.belts-product-card {
+.formalshoes-product-card {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -230,12 +230,12 @@ body {
   cursor: pointer;
 }
 
-.belts-product-card:hover {
+.formalshoes-product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.belts-product-image {
+.formalshoes-product-image {
   position: relative;
   width: 100%;
   height: 320px;
@@ -246,7 +246,7 @@ body {
   justify-content: center;
 }
 
-.belts-product-image img {
+.formalshoes-product-image img {
   max-width: 90%;
   max-height: 90%;
   width: auto;
@@ -255,15 +255,15 @@ body {
   transition: transform 0.3s;
 }
 
-.belts-product-card:hover .belts-product-image img {
+.formalshoes-product-card:hover .formalshoes-product-image img {
   transform: scale(1.05);
 }
 
-.belts-product-info {
+.formalshoes-product-info {
   padding: 18px;
 }
 
-.belts-product-name {
+.formalshoes-product-name {
   font-size: 16px;
   color: #333;
   margin-bottom: 8px;
@@ -271,20 +271,20 @@ body {
   line-height: 1.4;
 }
 
-.belts-product-color {
+.formalshoes-product-color {
   font-size: 14px;
   color: #666;
   margin-bottom: 5px;
 }
 
-.belts-out-of-stock {
+.formalshoes-out-of-stock {
   font-size: 13px;
   color: #d32f2f;
   font-weight: 500;
   margin-top: 8px;
 }
 
-.belts-whatsapp-btn {
+.formalshoes-whatsapp-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -302,17 +302,17 @@ body {
   text-decoration: none;
 }
 
-.belts-whatsapp-btn svg {
+.formalshoes-whatsapp-btn svg {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
-.belts-whatsapp-btn:hover {
+.formalshoes-whatsapp-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
   background: #20ba5a;
 }
 
-.belts-whatsapp-btn:active {
+.formalshoes-whatsapp-btn:active {
   transform: scale(0.95);
 }
 
@@ -326,25 +326,25 @@ body {
     height: 500px;
   }
 
-  .belts-container {
+  .formalshoes-container {
     padding: 0 15px 50px;
   }
 
-  .belts-products-grid {
+  .formalshoes-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
   }
 
-  .belts-product-image {
+  .formalshoes-product-image {
     height: 280px;
   }
 
-  .belts-filter-bar {
+  .formalshoes-filter-bar {
     padding: 15px;
     gap: 15px;
   }
 
-  .belts-breadcrumb {
+  .formalshoes-breadcrumb {
     padding: 0 15px;
     font-size: 13px;
   }
@@ -356,112 +356,111 @@ body {
     height: 400px;
   }
 
-  .belts-breadcrumb {
+  .formalshoes-breadcrumb {
     margin: 15px auto;
     padding: 0 15px;
     font-size: 12px;
   }
 
-  .belts-container {
-    padding: 0 15px 80px;
+  .formalshoes-container {
+    padding: 0 15px 120px;
   }
 
-  .belts-filter-bar {
+  .formalshoes-filter-bar {
     flex-direction: column;
     align-items: stretch;
     padding: 15px;
     gap: 15px;
   }
 
-  .belts-filter-section,
-  .belts-sort-section {
+  .formalshoes-filter-section,
+  .formalshoes-sort-section {
     width: 100%;
     justify-content: space-between;
   }
 
-  .belts-filter-section {
+  .formalshoes-filter-section {
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: 5px;
   }
 
-  .belts-filter-section::-webkit-scrollbar {
+  .formalshoes-filter-section::-webkit-scrollbar {
     height: 4px;
   }
 
-  .belts-filter-section::-webkit-scrollbar-track {
+  .formalshoes-filter-section::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
 
-  .belts-filter-section::-webkit-scrollbar-thumb {
+  .formalshoes-filter-section::-webkit-scrollbar-thumb {
     background: #8b4513;
     border-radius: 2px;
   }
 
-  .belts-filter-btn {
+  .formalshoes-filter-btn {
     padding: 8px 15px;
     font-size: 13px;
     white-space: nowrap;
   }
 
-  .belts-products-count {
+  .formalshoes-products-count {
     font-size: 14px;
   }
 
-  .belts-sort-section {
+  .formalshoes-sort-section {
     flex-direction: row;
     gap: 15px;
   }
 
-  .belts-sort-dropdown {
+  .formalshoes-sort-dropdown {
     flex: 1;
   }
 
-  .belts-sort-dropdown select {
+  .formalshoes-sort-dropdown select {
     width: 100%;
     padding: 8px 30px 8px 12px;
     font-size: 13px;
   }
 
-  .belts-products-grid {
+  .formalshoes-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
   }
 
-  .belts-product-image {
+  .formalshoes-product-image {
     height: 250px;
   }
 
-  .belts-product-info {
+  .formalshoes-product-info {
     padding: 15px;
   }
 
-  .belts-product-name {
+  .formalshoes-product-name {
     font-size: 14px;
   }
 
-  .belts-product-color {
+  .formalshoes-product-color {
     font-size: 13px;
   }
 
-  .belts-out-of-stock {
+  .formalshoes-out-of-stock {
     font-size: 12px;
   }
 
-  .belts-whatsapp-btn {
+  .formalshoes-whatsapp-btn {
     width: 50px;
     height: 50px;
     bottom: 20px;
     right: 20px;
   }
 
-  .belts-whatsapp-btn svg {
+  .formalshoes-whatsapp-btn svg {
     width: 28px;
     height: 28px;
   }
 
-  /* Dropdown adjustments for mobile */
-  .belts-dropdown-content {
+  .formalshoes-dropdown-content {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -478,91 +477,91 @@ body {
     height: 300px;
   }
 
-  .belts-breadcrumb {
+  .formalshoes-breadcrumb {
     font-size: 11px;
     margin: 10px auto;
   }
 
-  .belts-container {
-    padding: 0 10px 80px;
+  .formalshoes-container {
+    padding: 0 10px 120px;
   }
 
-  .belts-filter-bar {
+  .formalshoes-filter-bar {
     padding: 12px;
     gap: 12px;
     border-radius: 8px;
   }
 
-  .belts-filter-btn {
+  .formalshoes-filter-btn {
     padding: 6px 12px;
     font-size: 12px;
   }
 
-  .belts-filter-label {
+  .formalshoes-filter-label {
     font-size: 13px;
   }
 
-  .belts-products-count {
+  .formalshoes-products-count {
     font-size: 13px;
   }
 
-  .belts-sort-dropdown label {
+  .formalshoes-sort-dropdown label {
     font-size: 13px;
   }
 
-  .belts-sort-dropdown select {
+  .formalshoes-sort-dropdown select {
     font-size: 12px;
     padding: 6px 25px 6px 10px;
   }
 
-  .belts-products-grid {
+  .formalshoes-products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
-  .belts-product-card {
+  .formalshoes-product-card {
     border-radius: 8px;
   }
 
-  .belts-product-image {
+  .formalshoes-product-image {
     height: 180px;
   }
 
-  .belts-product-info {
+  .formalshoes-product-info {
     padding: 12px;
   }
 
-  .belts-product-name {
+  .formalshoes-product-name {
     font-size: 13px;
     margin-bottom: 6px;
   }
 
-  .belts-product-color {
+  .formalshoes-product-color {
     font-size: 12px;
   }
 
-  .belts-out-of-stock {
+  .formalshoes-out-of-stock {
     font-size: 11px;
     margin-top: 6px;
   }
 
-  .belts-whatsapp-btn {
+  .formalshoes-whatsapp-btn {
     width: 45px;
     height: 45px;
     bottom: 15px;
     right: 15px;
   }
 
-  .belts-whatsapp-btn svg {
+  .formalshoes-whatsapp-btn svg {
     width: 24px;
     height: 24px;
   }
 
-  .belts-checkbox-label {
+  .formalshoes-checkbox-label {
     font-size: 13px;
   }
 
-  .belts-checkbox-label input[type="checkbox"] {
+  .formalshoes-checkbox-label input[type="checkbox"] {
     width: 16px;
     height: 16px;
   }
@@ -574,47 +573,47 @@ body {
     height: 250px;
   }
 
-  .belts-breadcrumb {
+  .formalshoes-breadcrumb {
     font-size: 10px;
   }
 
-  .belts-filter-bar {
+  .formalshoes-filter-bar {
     padding: 10px;
   }
 
-  .belts-filter-btn {
+  .formalshoes-filter-btn {
     padding: 5px 10px;
     font-size: 11px;
   }
 
-  .belts-products-grid {
+  .formalshoes-products-grid {
     gap: 10px;
   }
 
-  .belts-product-image {
+  .formalshoes-product-image {
     height: 150px;
   }
 
-  .belts-product-info {
+  .formalshoes-product-info {
     padding: 10px;
   }
 
-  .belts-product-name {
+  .formalshoes-product-name {
     font-size: 12px;
   }
 
-  .belts-product-color {
+  .formalshoes-product-color {
     font-size: 11px;
   }
 
-  .belts-whatsapp-btn {
+  .formalshoes-whatsapp-btn {
     width: 40px;
     height: 40px;
     bottom: 12px;
     right: 12px;
   }
 
-  .belts-whatsapp-btn svg {
+  .formalshoes-whatsapp-btn svg {
     width: 22px;
     height: 22px;
   }
@@ -626,38 +625,37 @@ body {
     height: 250px;
   }
 
-  .belts-filter-bar {
+  .formalshoes-filter-bar {
     padding: 10px;
   }
 
-  .belts-product-image {
+  .formalshoes-product-image {
     height: 200px;
   }
 }
 
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
-  .belts-filter-btn,
-  .belts-product-card,
-  .belts-checkbox-label {
+  .formalshoes-filter-btn,
+  .formalshoes-product-card,
+  .formalshoes-checkbox-label {
     -webkit-tap-highlight-color: rgba(139, 69, 19, 0.1);
   }
 
-  .belts-product-card:hover {
+  .formalshoes-product-card:hover {
     transform: none;
   }
 
-  .belts-product-card:active {
+  .formalshoes-product-card:active {
     transform: scale(0.98);
   }
 
-  /* Better touch targets */
-  .belts-filter-btn {
+  .formalshoes-filter-btn {
     min-height: 44px;
     min-width: 44px;
   }
 
-  .belts-whatsapp-btn {
+  .formalshoes-whatsapp-btn {
     min-width: 48px;
     min-height: 48px;
   }

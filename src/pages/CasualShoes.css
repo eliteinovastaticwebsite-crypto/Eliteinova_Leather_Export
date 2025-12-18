@@ -1,0 +1,347 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
+  min-height: 100vh;
+}
+
+.casualshoes-page {
+  min-height: 100vh;
+}
+
+.casualshoes-breadcrumb {
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #6d4c41;
+}
+
+.casualshoes-breadcrumb a {
+  color: #8b4513;
+  text-decoration: none;
+}
+
+.casualshoes-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.hero-section {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 700px;
+  display: block;
+  object-fit: cover;
+}
+
+.casualshoes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.casualshoes-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.casualshoes-filter-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.casualshoes-filter-label {
+  font-weight: 600;
+  color: #5d4037;
+  white-space: nowrap;
+}
+
+.casualshoes-filter-btn {
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #d7ccc8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5d4037;
+  transition: all 0.3s;
+}
+
+.casualshoes-filter-btn:hover {
+  background: #f5f5f5;
+  border-color: #8b4513;
+}
+
+.casualshoes-filter-dropdown {
+  position: relative;
+}
+
+.casualshoes-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 15px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.casualshoes-filter-dropdown:hover .casualshoes-dropdown-content {
+  display: block;
+}
+
+.casualshoes-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.casualshoes-dropdown-header span {
+  font-size: 13px;
+  color: #666;
+}
+
+.casualshoes-reset-btn {
+  background: none;
+  border: none;
+  color: #8b4513;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.casualshoes-reset-btn:hover {
+  color: #6d3710;
+}
+
+.casualshoes-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+.casualshoes-checkbox-label:hover {
+  background: #f5f5f5;
+  padding-left: 8px;
+  margin-left: -8px;
+  border-radius: 4px;
+}
+
+.casualshoes-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #8b4513;
+}
+
+.casualshoes-sort-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.casualshoes-products-count {
+  font-weight: 600;
+  color: #5d4037;
+}
+
+.casualshoes-sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.casualshoes-sort-dropdown label {
+  font-weight: 500;
+  color: #5d4037;
+  white-space: nowrap;
+}
+
+.casualshoes-sort-dropdown select {
+  padding: 10px 35px 10px 15px;
+  background: #fff;
+  border: 1px solid #d7ccc8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5d4037;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235d4037' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: all 0.3s;
+}
+
+.casualshoes-sort-dropdown select:hover {
+  border-color: #8b4513;
+  background-color: #f9f9f9;
+}
+
+.casualshoes-sort-dropdown select:focus {
+  outline: none;
+  border-color: #8b4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.casualshoes-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.casualshoes-product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.casualshoes-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.casualshoes-product-image {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.casualshoes-product-image img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.casualshoes-product-card:hover .casualshoes-product-image img {
+  transform: scale(1.05);
+}
+
+.casualshoes-product-info {
+  padding: 18px;
+}
+
+.casualshoes-product-name {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.casualshoes-product-color {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.casualshoes-out-of-stock {
+  font-size: 13px;
+  color: #d32f2f;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.casualshoes-whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.casualshoes-whatsapp-btn svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.casualshoes-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  background: #20ba5a;
+}
+
+.casualshoes-whatsapp-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-image { height: 500px; }
+  .casualshoes-container { padding: 0 15px 50px; }
+  .casualshoes-products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+  .casualshoes-product-image { height: 280px; }
+}
+
+@media (max-width: 767px) {
+  .hero-image { height: 400px; }
+  .casualshoes-breadcrumb { font-size: 12px; }
+  .casualshoes-container { padding: 0 15px 120px; }
+  .casualshoes-filter-bar { flex-direction: column; padding: 15px; }
+  .casualshoes-filter-section { overflow-x: auto; }
+  .casualshoes-products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .casualshoes-whatsapp-btn { width: 50px; height: 50px; }
+}
+
+@media (max-width: 480px) {
+  .hero-image { height: 300px; }
+  .casualshoes-products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .casualshoes-product-image { height: 180px; }
+  .casualshoes-whatsapp-btn { width: 45px; height: 45px; }
+}
+
+@media (max-width: 360px) {
+  .casualshoes-product-image { height: 150px; }
+  .casualshoes-whatsapp-btn { width: 40px; height: 40px; }
+}
+

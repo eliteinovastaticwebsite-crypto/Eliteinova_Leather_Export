@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage'; 
 import WomenHandbagsPage from './pages/WomenHandbags';
 import LaptopBagsPage from './pages/LaptopBag';
@@ -14,6 +15,9 @@ import WomensBackpackPage from './pages/WomensBackpack';
 import TravelBagsPage from './pages/TravelBagPage';
 import TrolleyBagPage from './pages/TrolleyBagPage';
 import DuffleBagPage from './pages/DuffleBagPage';
+import BootsPage from './pages/BootsPage';
+import CasualShoesPage from './pages/CasualShoesPage';
+import FormalShoesPage from './pages/FormalShoesPage';
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="women-handbags" element={<WomenHandbagsPage />} />
           <Route path="laptopbags" element={<LaptopBagsPage />} />
+
+          <Route path="shoes/boots" element={<BootsPage />} />
+          <Route path="shoes/formal" element={<FormalShoesPage />} />
+          <Route path="shoes/casual" element={<CasualShoesPage />} />
 
           <Route path="travelbags/leather-travel-bags" element={<TravelBagsPage />} />
           <Route path="travelbags/trolley-bags" element={<TrolleyBagPage />} />
@@ -37,6 +45,7 @@ function App() {
           <Route path="wallet/passportholder" element={<PassportHoldersPage />} />
           <Route path="belt" element={<BeltsPage />} />
         </Routes>
+        <ScrollToTop />
       </div>
     </Router>
   );
