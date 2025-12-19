@@ -146,8 +146,7 @@
 /* ============================================= */
 /* TABLET RESPONSIVE (1024px and below) */
 /* ============================================= */
-
-/* @media (max-width: 1024px) {
+ @media (max-width: 1024px) {
   .hero-slider {
     height: 500px;
   }
@@ -173,7 +172,7 @@
   .slider-indicators {
     bottom: 25px; 
   }
-} */
+}
 
 /* ============================================= */
 /* MOBILE RESPONSIVE (768px and below) */
@@ -260,7 +259,7 @@
 
 @media (max-width: 480px) {
   .hero-slider {
-    height: 45vh;
+    height: 5vh;
     min-height: 280px;
     max-height: 400px;
   }
