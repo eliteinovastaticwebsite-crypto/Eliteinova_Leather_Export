@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ShoesPage.css';
 
 const ShoesPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
-  const [sortBy, setSortBy] = useState('featured');
   const navigate = useNavigate();
 
   const collections = [
@@ -55,48 +50,9 @@ const ShoesPage = () => {
     { id: 20, name: 'Leather Sandals', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }
   ];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
-    switch (sortBy) {
-      case 'best-selling':
-        return a.id - b.id;
-      case 'alphabetically-az':
-        return a.name.localeCompare(b.name);
-      case 'alphabetically-za':
-        return b.name.localeCompare(a.name);
-      case 'date-old-new':
-        return new Date(a.date) - new Date(b.date);
-      case 'date-new-old':
-        return new Date(b.date) - new Date(a.date);
-      case 'featured':
-      default:
-        return 0;
-    }
-  });
-
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
   const handleCollectionClick = (path) => {
     navigate(path);
   };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
 
   return (
     <div className="shoes-page">
@@ -141,68 +97,23 @@ const ShoesPage = () => {
           <div className="shoes-featured-underline"></div>
         </div>
 
-        <div className="shoes-filter-bar">
-          <div className="shoes-filter-section">
-            <span className="shoes-filter-label">Filter:</span>
-            <div className="shoes-filter-dropdown">
-              <button className="shoes-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="shoes-dropdown-content">
-                <div className="shoes-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="shoes-reset-btn">Reset</button>
-                </div>
-                <label className="shoes-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="shoes-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div className="shoes-sort-section">
-            <span className="shoes-products-count">{filteredProducts.length} Products</span>
-            <div className="shoes-sort-dropdown">
-              <label>Sort By:</label>
-              <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                <option value="featured">Featured</option>
-                <option value="best-selling">Best selling</option>
-                <option value="alphabetically-az">Alphabetically, A-Z</option>
-                <option value="alphabetically-za">Alphabetically, Z-A</option>
-                <option value="date-old-new">Date, old to new</option>
-                <option value="date-new-old">Date, new to old</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
         <div className="shoes-products-grid">
-          {sortedProducts.map(product => (
-            <div key={product.id} className="shoes-product-card">
-              <div className="shoes-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="shoes-product-info">
-                <h3 className="shoes-product-name">{product.name}</h3>
-                <p className="shoes-product-color">{product.color}</p>
-                {!product.inStock && <p className="shoes-out-of-stock">Out of Stock</p>}
-              </div>
-            </div>
-          ))}
-        </div>
+  {products.map(product => (
+    <div key={product.id} className="shoes-product-card">
+      <div className="shoes-product-image">
+        <img src={product.image} alt={product.name} />
+      </div>
+      <div className="shoes-product-info">
+        <h3 className="shoes-product-name">{product.name}</h3>
+        <p className="shoes-product-color">{product.color}</p>
+        {!product.inStock && (
+          <p className="shoes-out-of-stock">Out of Stock</p>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
 
       <a href="https://wa.me/9876543210" className="shoes-whatsapp-btn" target="_blank" rel="noopener noreferrer">

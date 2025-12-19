@@ -17,7 +17,7 @@ const TravelBagsPage = () => {
     { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/travel5.png', color: 'Black', inStock: true, date: '2024-04-05' },
     { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/travel6.png', color: 'Brown', inStock: false, date: '2024-02-14' },
     { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/travel7.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L7.png', color: 'Brown', inStock: true, date: '2024-03-22' },
+     /*{ id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L7.png', color: 'Brown', inStock: true, date: '2024-03-22' },
     { id: 9, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L8.png', color: 'Black', inStock: true, date: '2024-06-30' },
     { id: 10, name: 'Urban Leather Laptop Bag', image: '/images/L9.png', color: 'Black', inStock: true, date: '2024-07-12' },
     { id: 11, name: 'Urban Leather Laptop Bag', image: '/images/L10.png', color: 'Tan', inStock: false, date: '2024-08-05' },
@@ -29,7 +29,7 @@ const TravelBagsPage = () => {
     { id: 17, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
     { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
     { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }
+    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' } */
   ];
 
   const filteredProducts = products.filter(product => {

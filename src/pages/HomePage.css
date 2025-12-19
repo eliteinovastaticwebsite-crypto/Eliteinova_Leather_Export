@@ -4,11 +4,11 @@
   overflow-x: hidden;
 }
 
-/* Hero Slider */
+/* Hero Slider - FIXED FOR MOBILE */
 .hero-slider {
   position: relative;
   width: 100%;
-  height: 650px;
+  height: 650px; /* Default height for desktop */
   overflow: hidden;
 }
 
@@ -37,7 +37,50 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+  display: block;
+}
+
+/* Slider Content Overlay - ADDED FOR MOBILE VISIBILITY */
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 90%;
+  max-width: 800px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.slide-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.slide-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Gradient Overlay for Better Text Readability */
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+  z-index: 1;
 }
 
 /* Slider Navigation */
@@ -385,51 +428,437 @@
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-/* Responsive Design */
+/* =================================================== */
+/* FIXED MOBILE RESPONSIVE STYLES FOR BANNER/SLIDER */
+/* =================================================== */
+
+/* Large Tablet & Small Laptop (1024px and below) */
 @media (max-width: 1024px) {
+  /* Hero Slider Fix */
+  .hero-slider {
+    height: 500px;
+  }
+  
+  .slide-full-image {
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  
+  .slide-title {
+    font-size: 2.8rem;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .slider-arrow {
+    width: 45px;
+    height: 45px;
+  }
+  
   .about-content {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
-
+  
   .about-image-placeholder {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  
+  .collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .collection-image {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .section-title,
+  .about-title,
+  .newsletter-title {
+    font-size: 2.25rem;
   }
 }
 
+/* Tablet (768px and below) */
 @media (max-width: 768px) {
+  /* Hero Slider Fix */
   .hero-slider {
     height: 400px;
   }
-
+  
+  .slide-full-image {
+    object-position: center 25%;
+  }
+  
+  .slide-content {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    width: 95%;
+  }
+  
+  .slide-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .slider-arrow.left {
+    left: 15px;
+  }
+  
+  .slider-arrow.right {
+    right: 15px;
+  }
+  
+  .slider-indicators {
+    bottom: 20px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .indicator.active {
+    width: 30px;
+  }
+  
+  .collections-section,
+  .about-preview,
+  .newsletter-section {
+    padding: 3rem 1.5rem;
+  }
+  
   .collections-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
   }
-
- .collection-image {
+  
+  .collection-image {
     width: 140px;
     height: 140px;
-    border-radius: 50%; /* Makes it circular */
-    object-fit: cover; /* Ensures image covers the circle properly */
-    overflow: hidden; /* Clips any overflow */
-}
-
-  .newsletter-form {
-    flex-direction: column;
   }
-
-  .section-title {
-    font-size: 2rem;
+  
+  .collection-name {
+    font-size: 1.1rem;
   }
-
+  
+  .collection-count {
+    font-size: 0.8rem;
+  }
+  
+  .about-text {
+    padding: 1rem;
+  }
+  
   .about-title {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
+  
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .about-image-placeholder {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .newsletter-title {
+    font-size: 2rem;
+  }
+  
+  .newsletter-description {
+    font-size: 1rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .newsletter-input,
+  .newsletter-button {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+  }
+  
   .whatsapp-btn {
     width: 50px;
     height: 50px;
     bottom: 20px;
     right: 20px;
+  }
+  
+  .whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ============================================= */
+/* MOBILE RESPONSIVE ADDITIONS - DO NOT MODIFY ABOVE */
+/* ============================================= */
+
+/* Remove conflicting mobile styles first */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 50vh !important;
+    min-height: 300px !important;
+    max-height: 450px !important;
+    overflow: hidden !important;
+  }
+  
+  .slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    align-items: normal !important;
+    justify-content: normal !important;
+  }
+  
+  .slide-full-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+  
+  /* Add overlay and text content if missing */
+  .slide:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+  }
+  
+  .slide-content {
+    display: none; /* Hide if no content exists */
+  }
+  
+  /* Adjust arrows for mobile */
+  .slider-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  .slider-arrow.left {
+    left: 10px !important;
+  }
+  
+  .slider-arrow.right {
+    right: 10px !important;
+  }
+  
+  .slider-indicators {
+    bottom: 15px !important;
+  }
+  
+  .indicator {
+    width: 8px !important;
+    height: 8px !important;
+  }
+  
+  .indicator.active {
+    width: 25px !important;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-slider {
+    height: 45vh !important;
+    min-height: 280px !important;
+    max-height: 400px !important;
+  }
+  
+  .slide-full-image {
+    object-position: top 20% center !important;
+  }
+  
+  .slider-arrow {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  /* Collections section mobile fix */
+  .collections-section {
+    padding: 3rem 1rem !important;
+  }
+  
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+  
+  .collection-image {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .collection-name {
+    font-size: 14px !important;
+  }
+  
+  .collection-count {
+    font-size: 12px !important;
+  }
+  
+  /* About section mobile fix */
+  .about-preview {
+    padding: 3rem 1rem !important;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .about-text {
+    padding: 1rem !important;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .about-description {
+    font-size: 1rem !important;
+  }
+  
+  .about-image-placeholder {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 300px !important;
+    margin: 0 auto;
+  }
+  
+  /* Newsletter mobile fix */
+  .newsletter-section {
+    padding: 3rem 1rem !important;
+  }
+  
+  .newsletter-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .newsletter-description {
+    font-size: 1rem !important;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-input,
+  .newsletter-button {
+    width: 100%;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 360px) {
+  .hero-slider {
+    height: 40vh !important;
+    min-height: 250px !important;
+    max-height: 350px !important;
+  }
+  
+  .slide-full-image {
+    object-position: top 25% center !important;
+  }
+  
+  .collections-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .collection-image {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .about-image-placeholder {
+    height: 250px !important;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-slider {
+    height: 70vh !important;
+    min-height: 200px !important;
+  }
+  
+  .slide-full-image {
+    object-position: top 15% center !important;
+  }
+}
+
+/* Touch Device Improvements */
+@media (hover: none) and (pointer: coarse) {
+  .slider-arrow:active {
+    transform: translateY(-50%) scale(0.95) !important;
+  }
+  
+  .collection-card:active {
+    transform: translateY(-5px) !important;
+  }
+  
+  .cta-button:active,
+  .newsletter-button:active {
+    transform: translateY(-1px) !important;
+  }
+}
+
+/* Fix for images not loading or being too large */
+@media (max-width: 768px) {
+  .slide-full-image {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+}
+
+/* Ensure no horizontal scroll */
+@media (max-width: 768px) {
+  .home-page {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  
+  * {
+    max-width: 100%;
   }
 }

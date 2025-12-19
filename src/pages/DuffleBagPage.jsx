@@ -23,13 +23,13 @@ const DuffleBagPage = () => {
     { id: 11, name: 'Urban Leather Laptop Bag', image: '/images/duf11.png', color: 'Tan', inStock: false, date: '2024-08-05' },
     { id: 12, name: 'Classic Leather Laptop Bag', image: '/images/duf5.png', color: 'Dark Brown', inStock: true, date: '2024-01-08' },
     { id: 13, name: 'Classic Leather Laptop Bag', image: '/images/duf13.png', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/duf14.png', color: 'Brown', inStock: true, date: '2024-04-28' },
+   /* { id: 14, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/duf14.png', color: 'Brown', inStock: true, date: '2024-04-28' },
     { id: 15, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/duf15.png', color: 'Black', inStock: false, date: '2024-10-20' },
     { id: 16, name: 'Leather Shoulder Laptop Bag', image: '/images/duf16.png', color: 'Black', inStock: true, date: '2024-05-07' },
     { id: 17, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
     { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
     { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }
+    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' } */
   ];
 
   const filteredProducts = products.filter(product => {

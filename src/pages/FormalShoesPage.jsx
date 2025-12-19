@@ -18,7 +18,7 @@ const FormalShoesPage = () => {
     { id: 6, name: 'Brogue Wingtip Shoes', image: '/images/formal6.png', color: 'Black', inStock: false, date: '2024-02-14' },
     { id: 7, name: 'Monk Strap Shoes', image: '/images/formal7.png', color: 'Brown', inStock: true, date: '2024-05-18' },
     { id: 8, name: 'Monk Strap Shoes', image: '/images/formal8.png', color: 'Black', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Cap-Toe Oxford', image: '/images/formal9.png', color: 'Black', inStock: true, date: '2024-06-30' },
+   /* { id: 9, name: 'Cap-Toe Oxford', image: '/images/formal9.png', color: 'Black', inStock: true, date: '2024-06-30' },
     { id: 10, name: 'Cap-Toe Oxford', image: '/images/formal10.png', color: 'Burgundy', inStock: true, date: '2024-07-12' },
     { id: 11, name: 'Chelsea Formal Boots', image: '/api/placeholder/300/300', color: 'Black', inStock: false, date: '2024-08-05' },
     { id: 12, name: 'Chelsea Formal Boots', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-01-08' },
@@ -29,7 +29,7 @@ const FormalShoesPage = () => {
     { id: 17, name: 'Patent Leather Shoes', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-11-11' },
     { id: 18, name: 'Patent Leather Shoes', image: '/api/placeholder/300/300', color: 'Burgundy', inStock: true, date: '2024-06-17' },
     { id: 19, name: 'Double Monk Strap', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Double Monk Strap', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-07-25' }
+    { id: 20, name: 'Double Monk Strap', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-07-25' } */
   ];
 
   const filteredProducts = products.filter(product => {
