@@ -147,8 +147,7 @@
 /* TABLET RESPONSIVE (1024px and below) */
 /* ============================================= */
 
-@media (max-width: 1024px) {
-  /* Hero Slider Fix */
+/* @media (max-width: 1024px) {
   .hero-slider {
     height: 500px;
   }
@@ -172,9 +171,9 @@
   }
   
   .slider-indicators {
-    bottom: 25px; /* Tablet adjustment */
+    bottom: 25px; 
   }
-}
+} */
 
 /* ============================================= */
 /* MOBILE RESPONSIVE (768px and below) */
