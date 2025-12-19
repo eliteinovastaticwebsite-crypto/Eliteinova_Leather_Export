@@ -4,7 +4,7 @@
   overflow-x: hidden;
 }
 
-/* Hero Slider - FIXED FOR MOBILE */
+/* Hero Slider */
 .hero-slider {
   position: relative;
   width: 100%;
@@ -41,7 +41,7 @@
   display: block;
 }
 
-/* Slider Content Overlay - ADDED FOR MOBILE VISIBILITY */
+/* Slider Content Overlay */
 .slide-content {
   position: absolute;
   top: 50%;
@@ -116,9 +116,10 @@
   right: 20px;
 }
 
+/* SLIDER INDICATORS - DESKTOP DEFAULT */
 .slider-indicators {
   position: absolute;
-  bottom: 30px;
+  bottom: 30px; /* Desktop position */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -142,7 +143,184 @@
   border-radius: 6px;
 }
 
-/* Collections Section */
+/* ============================================= */
+/* TABLET RESPONSIVE (1024px and below) */
+/* ============================================= */
+
+@media (max-width: 1024px) {
+  /* Hero Slider Fix */
+  .hero-slider {
+    height: 500px;
+  }
+  
+  .slide-full-image {
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  
+  .slide-title {
+    font-size: 2.8rem;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .slider-arrow {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .slider-indicators {
+    bottom: 25px; /* Tablet adjustment */
+  }
+}
+
+/* ============================================= */
+/* MOBILE RESPONSIVE (768px and below) */
+/* ============================================= */
+
+@media (max-width: 768px) {
+  /* Hero Slider Mobile Optimization */
+  .hero-slider {
+    height: 50vh;
+    min-height: 300px;
+    max-height: 450px;
+    overflow: hidden;
+    background: #f5e6d3;
+  }
+  
+  .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slide-full-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    object-position: top center;
+    display: block;
+  }
+  
+  /* SLIDER INDICATORS - MOBILE POSITION */
+  .slider-indicators {
+    position: absolute;
+    bottom: 20px; /* Mobile position - adjust this value */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .indicator {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .indicator.active {
+    background: white;
+    width: 24px;
+    border-radius: 4px;
+  }
+  
+  /* Hide text overlay on mobile if text is in image */
+  .slide-content {
+    display: none;
+  }
+  
+  /* Mobile slider arrows */
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+  }
+  
+  .slider-arrow.left {
+    left: 10px;
+  }
+  
+  .slider-arrow.right {
+    right: 10px;
+  }
+  
+  /* Mobile specific touch improvements */
+  .slider-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+/* ============================================= */
+/* SMALL MOBILE (480px and below) */
+/* ============================================= */
+
+@media (max-width: 480px) {
+  .hero-slider {
+    height: 45vh;
+    min-height: 280px;
+    max-height: 400px;
+  }
+  
+  /* MOVE INDICATORS DOWN FURTHER ON SMALL MOBILE */
+  .slider-indicators {
+    bottom: 15px; /* Move down further on small mobile */
+  }
+  
+  .slider-arrow {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* ============================================= */
+/* VERY SMALL MOBILE (360px and below) */
+/* ============================================= */
+
+@media (max-width: 360px) {
+  .hero-slider {
+    height: 40vh;
+    min-height: 250px;
+    max-height: 350px;
+  }
+  
+  /* Adjust indicators position for very small screens */
+  .slider-indicators {
+    bottom: 12px;
+  }
+}
+
+/* ============================================= */
+/* LANDSCAPE MODE */
+/* ============================================= */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero-slider {
+    height: 90vh;
+    min-height: 300px;
+    max-height: 450px;
+  }
+  
+  .slide-full-image {
+    max-height: 450px;
+    object-fit: contain;
+    object-position: top center;
+  }
+  
+  .slider-indicators {
+    bottom: 15px;
+  }
+}
+
+/* ============================================= */
+/* Collections Section (All screen sizes) */
+/* ============================================= */
+
 .collections-section {
   padding: 5rem 2rem;
   background: linear-gradient(to bottom, #fffbeb, #ffedd5);
@@ -257,7 +435,10 @@
   color: #6b7280;
 }
 
+/* ============================================= */
 /* About Preview Section */
+/* ============================================= */
+
 .about-preview {
   padding: 5rem 2rem;
   background: linear-gradient(135deg, #fffbeb 0%, #ffedd5 100%);
@@ -334,7 +515,10 @@
   transform: scale(1.1);
 }
 
+/* ============================================= */
 /* Newsletter Section */
+/* ============================================= */
+
 .newsletter-section {
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #92400e, #78350f);
@@ -404,7 +588,10 @@
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
+/* ============================================= */
 /* WhatsApp Button */
+/* ============================================= */
+
 .whatsapp-btn {
   position: fixed;
   bottom: 30px;
@@ -428,170 +615,76 @@
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-/* =================================================== */
-/* FIXED MOBILE RESPONSIVE STYLES FOR BANNER/SLIDER */
-/* =================================================== */
+/* ============================================= */
+/* MOBILE RESPONSIVE FOR OTHER SECTIONS */
+/* ============================================= */
 
-/* Large Tablet & Small Laptop (1024px and below) */
-@media (max-width: 1024px) {
-  /* Hero Slider Fix */
-  .hero-slider {
-    height: 500px;
+@media (max-width: 768px) {
+  /* Collections Section Mobile */
+  .collections-section {
+    padding: 3rem 1rem;
   }
   
-  .slide-full-image {
-    object-fit: cover;
-    object-position: center 30%;
+  .section-title {
+    font-size: 1.75rem;
   }
   
-  .slide-title {
-    font-size: 2.8rem;
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
   
-  .slide-subtitle {
-    font-size: 1.3rem;
+  .collection-image {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #8b4513;
   }
   
-  .slider-arrow {
-    width: 45px;
-    height: 45px;
+  .collection-name {
+    font-size: 14px;
+  }
+  
+  .collection-count {
+    font-size: 12px;
+  }
+  
+  /* About Section Mobile */
+  .about-preview {
+    padding: 3rem 1rem;
   }
   
   .about-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  .about-image-placeholder {
-    width: 350px;
-    height: 350px;
-    margin: 0 auto;
-  }
-  
-  .collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .collection-image {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .section-title,
-  .about-title,
-  .newsletter-title {
-    font-size: 2.25rem;
-  }
-}
-
-/* Tablet (768px and below) */
-@media (max-width: 768px) {
-  /* Hero Slider Fix */
-  .hero-slider {
-    height: 400px;
-  }
-  
-  .slide-full-image {
-    object-position: center 25%;
-  }
-  
-  .slide-content {
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.4);
-    width: 95%;
-  }
-  
-  .slide-title {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .slide-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .slider-arrow {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .slider-arrow.left {
-    left: 15px;
-  }
-  
-  .slider-arrow.right {
-    right: 15px;
-  }
-  
-  .slider-indicators {
-    bottom: 20px;
-  }
-  
-  .indicator {
-    width: 10px;
-    height: 10px;
-  }
-  
-  .indicator.active {
-    width: 30px;
-  }
-  
-  .collections-section,
-  .about-preview,
-  .newsletter-section {
-    padding: 3rem 1.5rem;
-  }
-  
-  .collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .collection-image {
-    width: 140px;
-    height: 140px;
-  }
-  
-  .collection-name {
-    font-size: 1.1rem;
-  }
-  
-  .collection-count {
-    font-size: 0.8rem;
+    gap: 2rem;
   }
   
   .about-text {
     padding: 1rem;
+    text-align: center;
   }
   
   .about-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
   }
   
   .about-description {
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  .cta-button {
-    padding: 0.875rem 2rem;
-    font-size: 0.9rem;
   }
   
   .about-image-placeholder {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Newsletter Section Mobile */
+  .newsletter-section {
+    padding: 3rem 1rem;
   }
   
   .newsletter-title {
-    font-size: 2rem;
-  }
-  
-  .newsletter-description {
-    font-size: 1rem;
+    font-size: 1.8rem;
   }
   
   .newsletter-form {
@@ -605,260 +698,64 @@
     padding: 0.875rem 1.25rem;
   }
   
+  /* WhatsApp Button Mobile */
   .whatsapp-btn {
     width: 50px;
     height: 50px;
     bottom: 20px;
     right: 20px;
   }
-  
-  .whatsapp-btn svg {
-    width: 24px;
-    height: 24px;
-  }
 }
 
 /* ============================================= */
-/* MOBILE RESPONSIVE ADDITIONS - DO NOT MODIFY ABOVE */
+/* ACCESSIBILITY & TOUCH IMPROVEMENTS */
 /* ============================================= */
 
-/* Remove conflicting mobile styles first */
-@media (max-width: 768px) {
-  .hero-slider {
-    height: 50vh !important;
-    min-height: 300px !important;
-    max-height: 450px !important;
-    overflow: hidden !important;
-  }
-  
-  .slide {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-    align-items: normal !important;
-    justify-content: normal !important;
-  }
-  
-  .slide-full-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-  }
-  
-  /* Add overlay and text content if missing */
-  .slide:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
-    z-index: 1;
-  }
-  
-  .slide-content {
-    display: none; /* Hide if no content exists */
-  }
-  
-  /* Adjust arrows for mobile */
-  .slider-arrow {
-    width: 40px !important;
-    height: 40px !important;
-    background: rgba(255, 255, 255, 0.3) !important;
-    border: 2px solid rgba(255, 255, 255, 0.5) !important;
-  }
-  
-  .slider-arrow.left {
-    left: 10px !important;
-  }
-  
-  .slider-arrow.right {
-    right: 10px !important;
-  }
-  
-  .slider-indicators {
-    bottom: 15px !important;
-  }
-  
-  .indicator {
-    width: 8px !important;
-    height: 8px !important;
-  }
-  
-  .indicator.active {
-    width: 25px !important;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .hero-slider {
-    height: 45vh !important;
-    min-height: 280px !important;
-    max-height: 400px !important;
-  }
-  
-  .slide-full-image {
-    object-position: top 20% center !important;
-  }
-  
-  .slider-arrow {
-    width: 35px !important;
-    height: 35px !important;
-  }
-  
-  /* Collections section mobile fix */
-  .collections-section {
-    padding: 3rem 1rem !important;
-  }
-  
-  .collections-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15px !important;
-  }
-  
-  .collection-image {
-    width: 120px !important;
-    height: 120px !important;
-  }
-  
-  .collection-name {
-    font-size: 14px !important;
-  }
-  
-  .collection-count {
-    font-size: 12px !important;
-  }
-  
-  /* About section mobile fix */
-  .about-preview {
-    padding: 3rem 1rem !important;
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  
-  .about-text {
-    padding: 1rem !important;
-    text-align: center;
-  }
-  
-  .about-title {
-    font-size: 1.8rem !important;
-  }
-  
-  .about-description {
-    font-size: 1rem !important;
-  }
-  
-  .about-image-placeholder {
-    width: 100% !important;
-    max-width: 300px !important;
-    height: 300px !important;
-    margin: 0 auto;
-  }
-  
-  /* Newsletter mobile fix */
-  .newsletter-section {
-    padding: 3rem 1rem !important;
-  }
-  
-  .newsletter-title {
-    font-size: 1.8rem !important;
-  }
-  
-  .newsletter-description {
-    font-size: 1rem !important;
-  }
-  
-  .newsletter-form {
-    flex-direction: column;
-  }
-  
-  .newsletter-input,
-  .newsletter-button {
-    width: 100%;
-  }
-}
-
-/* Very Small Mobile */
-@media (max-width: 360px) {
-  .hero-slider {
-    height: 40vh !important;
-    min-height: 250px !important;
-    max-height: 350px !important;
-  }
-  
-  .slide-full-image {
-    object-position: top 25% center !important;
-  }
-  
-  .collections-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-  
-  .collection-image {
-    width: 150px !important;
-    height: 150px !important;
-  }
-  
-  .about-image-placeholder {
-    height: 250px !important;
-  }
-}
-
-/* Landscape Mode */
-@media (max-height: 500px) and (orientation: landscape) {
-  .hero-slider {
-    height: 70vh !important;
-    min-height: 200px !important;
-  }
-  
-  .slide-full-image {
-    object-position: top 15% center !important;
-  }
-}
-
-/* Touch Device Improvements */
 @media (hover: none) and (pointer: coarse) {
   .slider-arrow:active {
-    transform: translateY(-50%) scale(0.95) !important;
+    transform: translateY(-50%) scale(0.95);
   }
   
   .collection-card:active {
-    transform: translateY(-5px) !important;
+    transform: translateY(-5px);
   }
   
   .cta-button:active,
   .newsletter-button:active {
-    transform: translateY(-1px) !important;
-  }
-}
-
-/* Fix for images not loading or being too large */
-@media (max-width: 768px) {
-  .slide-full-image {
-    max-width: 100% !important;
-    max-height: 100% !important;
-  }
-}
-
-/* Ensure no horizontal scroll */
-@media (max-width: 768px) {
-  .home-page {
-    overflow-x: hidden !important;
-    width: 100% !important;
+    transform: translateY(-1px);
   }
   
-  * {
-    max-width: 100%;
+  .whatsapp-btn:active {
+    transform: scale(0.95);
   }
+}
+
+/* Focus states for keyboard navigation */
+.slider-arrow:focus,
+.indicator:focus,
+.cta-button:focus,
+.newsletter-button:focus {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Prevent text selection on interactive elements */
+.slider-arrow,
+.indicator,
+.collection-card {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
