@@ -10,10 +10,10 @@ const SmallCrossBodyBagsPage = () => {
 
   // 20 small cross body bag products
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/red_crossbodybag.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/C1.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/C2.png', color: 'Black', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/C3.png', color: 'Tan', inStock: true, date: '2024-01-25' },
+    { id: 1, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
+    { id: 2, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross2.png', color: 'Green', inStock: false, date: '2024-02-20' },
+    { id: 3, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross3.png', color: 'Black', inStock: true, date: '2024-03-10' },
+   /* { id: 4, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/C3.png', color: 'Tan', inStock: true, date: '2024-01-25' },
     { id: 5, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C4.png', color: 'Black', inStock: true, date: '2024-04-05' },
     { id: 6, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C5.png', color: 'Brown', inStock: false, date: '2024-02-14' },
     { id: 7, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C6.png', color: 'Tan', inStock: true, date: '2024-05-18' },
@@ -29,7 +29,7 @@ const SmallCrossBodyBagsPage = () => {
     { id: 17, name: 'Leather Shoulder Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
     { id: 18, name: 'Urban Leather Cross Body', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
     { id: 19, name: 'Urban Leather Cross Body', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }
+    { id: 20, name: 'Premium Leather Travel Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' } */
   ];
 
   const filteredProducts = products.filter(product => {
