@@ -9,13 +9,13 @@ const WalletsPage = () => {
     {
       name: "Men's Wallet",
       products: 20,
-      image: "/images/leather_wallets_collection.png",
+      image: "/images/wallet.png",
       path: "/wallet/menswallet"  // FIXED: Changed to correct path
     },
     {
       name: "PassPort Holders",
       products: 15,
-      image: "/images/card_holders_collection.png",
+      image: "/images/passportbanner.png",
       path: "/wallet/passportholder"  // FIXED: Changed to correct path
     },
    /* {
@@ -60,7 +60,7 @@ const WalletsPage = () => {
       </div>
 
       <div className="wallets-hero-section">
-        <img src="/images/wallets_hero.png" alt="Premium Leather Wallets" className="wallets-hero-image" />
+        <img src="/images/walletbanner.png" alt="Premium Leather Wallets" className="wallets-hero-image" />
       </div>
 
       {/* Collections Section */}
