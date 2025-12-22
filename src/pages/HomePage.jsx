@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';  // ADDED: Import useNavigate
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './HomePage.css';
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();  // ADDED: Initialize navigate
 
   const slides = [
     {
@@ -31,55 +33,64 @@ const HomePage = () => {
       name: "Shoes",
       products: 44,
       image: "/images/collection_shoe.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/shoes"  // ADDED: Navigation path
     },
     {
       name: "Handbags",
       products: 67,
       image: "/images/red_handbag.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/women-handbags"  // ADDED: Navigation path
     },
     {
       name: "Small Bags",
       products: 67,
       image: "/images/small_bag.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/smallbags"  // ADDED: Navigation path
     },
     {
       name: "Laptop Bags",
       products: 191,
       image: "/images/collection_image.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/laptopbags"  // ADDED: Navigation path
     },
     {
       name: "Travel Bags",
       products: 67,
       image: "/images/travel_bag.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/travelbags"  // ADDED: Navigation path
     },
     {
       name: "Backpacks",
       products: 67,
       image: "/images/backpack_collection.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/backpacks"  // ADDED: Navigation path
     },
     {
       name: "Briefcases",
       products: 67,
       image: "/images/brief.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/brief-cases"  // ADDED: Navigation path
     },
     {
       name: "Wallet",
       products: 12,
       image: "/images/wallet.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/wallet"  // ADDED: Navigation path
     },
     {
       name: "Belt",
       products: 85,
       image: "/images/collection_belt.png",
-      color: "#8b4513"
+      color: "#8b4513",
+      path: "/belt"  // ADDED: Navigation path
     }
   ];
 
@@ -97,6 +108,11 @@ const HomePage = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  // ADDED: Handle collection click
+  const handleCollectionClick = (path) => {
+    navigate(path);
   };
 
   return (
@@ -143,7 +159,12 @@ const HomePage = () => {
 
         <div className="collections-grid">
           {collections.map((collection, index) => (
-            <div key={index} className="collection-card">
+            <div 
+              key={index} 
+              className="collection-card"
+              onClick={() => handleCollectionClick(collection.path)}  // ADDED: Click handler
+              style={{ cursor: 'pointer' }}  // ADDED: Pointer cursor
+            >
               <div className="collection-image" style={{ borderColor: collection.color }}>
                 <div className="collection-icon-wrapper" style={{ backgroundColor: `${collection.color}15` }}>
                   <img src={collection.image} alt={collection.name} className="collection-img" />

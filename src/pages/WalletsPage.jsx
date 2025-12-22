@@ -7,23 +7,23 @@ const WalletsPage = () => {
 
   const collections = [
     {
-      name: "Leather Wallets",
+      name: "Men's Wallet",
       products: 20,
       image: "/images/leather_wallets_collection.png",
-      path: "/wallets/leather"
+      path: "/wallet/menswallet"  // FIXED: Changed to correct path
     },
     {
-      name: "Card Holders",
+      name: "PassPort Holders",
       products: 15,
       image: "/images/card_holders_collection.png",
-      path: "/wallets/cardholders"
+      path: "/wallet/passportholder"  // FIXED: Changed to correct path
     },
-    {
+   /* {
       name: "Money Clips",
       products: 8,
       image: "/images/money_clips_collection.png",
       path: "/wallets/moneyclips"
-    }
+    } */
   ];
 
   const products = [

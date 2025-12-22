@@ -7,23 +7,23 @@ const BackpacksPage = () => {
 
   const collections = [
     {
-      name: "Laptop Backpacks",
+      name: "Men's Backpacks",
       products: 14,
       image: "/images/laptop_backpacks_collection.png",
-      path: "/backpacks/laptop"
+      path: "/backpacks/men-backpacks"
     },
     {
-      name: "Hiking Backpacks",
+      name: "Women's Backpacks",
       products: 16,
       image: "/images/hiking_collection.png",
-      path: "/backpacks/hiking"
+      path: "/backpacks/women-backpacks"
     },
-    {
+    /*{
       name: "Urban Backpacks",
       products: 12,
       image: "/images/urban_collection.png",
       path: "/backpacks/urban"
-    }
+    } */
   ];
 
   const products = [

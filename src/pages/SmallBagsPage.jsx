@@ -9,14 +9,14 @@ const SmallBagsPage = () => {
     {
       name: "Sling Bags",
       products: 12,
-      image: "/images/clutches_collection.png",
-      path: "/small-bags/clutches"
+      image: "/images/slingbagcollection.png",
+      path: "/smallbags/sling-bags"
     },
     {
       name: "Small Crossbody Bags",
       products: 15,
-      image: "/images/crossbody_collection.png",
-      path: "/small-bags/crossbody"
+      image: "/images/crossbagbanner.png",
+      path: "/smallbags/small-crossbody-bags"
     },
     /*{
       name: "Mini Bags",
@@ -60,7 +60,7 @@ const SmallBagsPage = () => {
       </div>
 
       <div className="small-bags-hero-section">
-        <img src="/images/small_bags_hero.png" alt="Designer Small Bags" className="small-bags-hero-image" />
+        <img src="/images/smallbanner.png" alt="Designer Small Bags" className="small-bags-hero-image" />
       </div>
 
       {/* Collections Section */}

@@ -7,22 +7,22 @@ const TravelPage = () => {
 
   const collections = [
     {
-      name: "Duffel Bags",
+      name: "Trolley Bags",
       products: 8,
-      image: "/images/duffel_collection.png",
-      path: "/travel/duffel"
+      image: "/images/collection_trolley.png",
+      path: "/travelbags/trolley-bags"
     },
     {
-      name: "Carry-On Luggage",
+      name: "Duffle Bags",
       products: 12,
-      image: "/images/carryon_collection.png",
-      path: "/travel/carryon"
+      image: "/images/collection_duffle.png",
+      path: "/travelbags/duffle-bags"
     },
     {
-      name: "Travel Backpacks",
+      name: "Leather Travel Bags",
       products: 10,
-      image: "/images/travel_backpacks_collection.png",
-      path: "/travel/backpacks"
+      image: "/images/collection_travel.png",
+      path: "/travelbags/leather-travel-bags"
     }
   ];
 
@@ -60,7 +60,7 @@ const TravelPage = () => {
       </div>
 
       <div className="travel-hero-section">
-        <img src="/images/travel_hero.png" alt="Travel Luggage Collection" className="travel-hero-image" />
+        <img src="/images/travelbanner.png" alt="Travel Luggage Collection" className="travel-hero-image" />
       </div>
 
       {/* Collections Section */}

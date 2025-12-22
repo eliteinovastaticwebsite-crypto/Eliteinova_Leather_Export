@@ -78,7 +78,7 @@ const SlingBagsPage = () => {
       </div>
 
       <div className="hero-section">
-        <img src="/images/slingbag_hero.png" alt="Elegant Sling Bags" className="hero-image" />
+        <img src="/images/slingbanner.png" alt="Elegant Sling Bags" className="hero-image" />
       </div>
 
       <div className="slingbags-container">

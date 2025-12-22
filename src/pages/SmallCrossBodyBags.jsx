@@ -78,7 +78,7 @@ const SmallCrossBodyBagsPage = () => {
       </div>
 
       <div className="hero-section">
-        <img src="/images/crossbodybag_hero.png" alt="Elegant Small Cross Body Bags" className="hero-image" />
+        <img src="/images/crossbanner.png" alt="Elegant Small Cross Body Bags" className="hero-image" />
       </div>
 
       <div className="crossbodybags-container">
