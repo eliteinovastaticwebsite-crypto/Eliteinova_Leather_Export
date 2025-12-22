@@ -10,6 +10,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .wallets-page {
@@ -22,6 +23,9 @@ body {
   padding: 0 20px;
   font-size: 14px;
   color: #6d4c41;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .wallets-breadcrumb a {
@@ -63,6 +67,7 @@ body {
   color: #92400e;
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .wallets-title-underline {
@@ -140,11 +145,13 @@ body {
   font-weight: 600;
   color: #333;
   margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .wallets-collection-count {
   font-size: 0.95rem;
   color: #666;
+  line-height: 1.4;
 }
 
 /* Featured Products Section */
@@ -165,6 +172,7 @@ body {
   color: #92400e;
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .wallets-featured-underline {
@@ -235,6 +243,7 @@ body {
   font-size: 14px;
   color: #666;
   margin-bottom: 5px;
+  line-height: 1.4;
 }
 
 .wallets-out-of-stock {
@@ -242,6 +251,7 @@ body {
   color: #d32f2f;
   font-weight: 500;
   margin-top: 8px;
+  line-height: 1.4;
 }
 
 .wallets-whatsapp-btn {
@@ -264,6 +274,8 @@ body {
 
 .wallets-whatsapp-btn svg {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  width: 28px;
+  height: 28px;
 }
 
 .wallets-whatsapp-btn:hover {
@@ -276,172 +288,500 @@ body {
   transform: scale(0.95);
 }
 
-/* Tablet Responsive */
+/* Tablet Responsive (1024px and below) */
 @media (max-width: 1024px) {
   .wallets-hero-image {
     height: 500px;
   }
-
+  
+  .wallets-breadcrumb {
+    font-size: 13px;
+    padding: 0 15px;
+  }
+  
+  .wallets-collections-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .wallets-section-title,
+  .wallets-featured-title {
+    font-size: 2.25rem;
+  }
+  
   .wallets-collections-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
   }
-
+  
   .wallets-collection-image {
     width: 180px;
     height: 180px;
   }
-
+  
+  .wallets-collection-name {
+    font-size: 1.3rem;
+  }
+  
+  .wallets-container {
+    padding: 0 15px 50px;
+  }
+  
   .wallets-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
   }
+  
+  .wallets-product-image {
+    height: 300px;
+  }
+  
+  .wallets-whatsapp-btn {
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  .wallets-whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Medium Tablet (900px and below) */
+@media (max-width: 900px) {
   .wallets-hero-image {
-    height: 400px;
+    height: 450px;
   }
-
-  .wallets-breadcrumb {
-    font-size: 13px;
-    margin: 15px auto;
-  }
-
+  
   .wallets-section-title,
   .wallets-featured-title {
     font-size: 2rem;
   }
-
+  
   .wallets-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
   }
-
+  
   .wallets-collection-image {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
   }
-
+  
   .wallets-collection-name {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
-
-  .wallets-collection-count {
-    font-size: 0.85rem;
-  }
-
+  
   .wallets-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
   }
-
+  
   .wallets-product-image {
     height: 280px;
   }
-
+  
   .wallets-whatsapp-btn {
     width: 50px;
     height: 50px;
-    bottom: 20px;
-    right: 20px;
   }
-
-  .wallets-whatsapp-btn svg {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-/* Small Mobile Responsive */
-@media (max-width: 480px) {
-  .wallets-hero-image {
-    height: 300px;
-  }
-
-  .wallets-breadcrumb {
-    font-size: 12px;
-  }
-
-  .wallets-section-title,
-  .wallets-featured-title {
-    font-size: 1.75rem;
-  }
-
-  .wallets-collections-grid {
-    gap: 1.25rem;
-  }
-
-  .wallets-collection-image {
-    width: 120px;
-    height: 120px;
-  }
-
-  .wallets-collection-name {
-    font-size: 1rem;
-  }
-
-  .wallets-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
-  }
-
-  .wallets-product-image {
-    height: 200px;
-  }
-
-  .wallets-product-info {
-    padding: 12px;
-  }
-
-  .wallets-product-name {
-    font-size: 14px;
-  }
-
-  .wallets-product-color {
-    font-size: 12px;
-  }
-
-  .wallets-out-of-stock {
-    font-size: 11px;
-  }
-
-  .wallets-whatsapp-btn {
-    width: 45px;
-    height: 45px;
-    bottom: 15px;
-    right: 15px;
-  }
-
+  
   .wallets-whatsapp-btn svg {
     width: 24px;
     height: 24px;
   }
 }
 
-/* Extra Small Mobile */
-@media (max-width: 360px) {
-  .wallets-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
+/* Mobile Responsive (768px and below) */
+@media (max-width: 768px) {
+  .wallets-hero-image {
+    height: 400px;
   }
+  
+  .wallets-breadcrumb {
+    font-size: 12px;
+    margin: 15px auto;
+    padding: 0 15px;
+    white-space: normal;
+  }
+  
+  .wallets-collections-section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .wallets-section-title,
+  .wallets-featured-title {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+  }
+  
+  .wallets-title-underline,
+  .wallets-featured-underline {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .wallets-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.75rem;
+  }
+  
+  .wallets-collection-image {
+    width: 140px;
+    height: 140px;
+    border-width: 3px;
+    margin-bottom: 1rem;
+  }
+  
+  .wallets-collection-img {
+    padding: 15px;
+  }
+  
+  .wallets-collection-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .wallets-collection-count {
+    font-size: 0.85rem;
+  }
+  
+  .wallets-container {
+    padding: 0 15px 40px;
+  }
+  
+  .wallets-featured-header {
+    margin: 2.5rem 0 1.5rem;
+  }
+  
+  .wallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .wallets-product-image {
+    height: 260px;
+  }
+  
+  .wallets-whatsapp-btn {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+  }
+  
+  .wallets-whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
 
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .wallets-hero-image {
+    height: 300px;
+  }
+  
+  .wallets-breadcrumb {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  
+  .wallets-collections-section {
+    padding: 2rem 0.75rem;
+  }
+  
+  .wallets-section-title,
+  .wallets-featured-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .wallets-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .wallets-collection-image {
+    width: 120px;
+    height: 120px;
+    border-width: 2px;
+  }
+  
+  .wallets-collection-img {
+    padding: 12px;
+  }
+  
+  .wallets-collection-name {
+    font-size: 1rem;
+  }
+  
+  .wallets-collection-count {
+    font-size: 0.8rem;
+  }
+  
+  .wallets-container {
+    padding: 0 10px 30px;
+  }
+  
+  .wallets-featured-header {
+    margin: 2rem 0 1.25rem;
+  }
+  
+  .wallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .wallets-product-image {
+    height: 200px;
+  }
+  
+  .wallets-product-info {
+    padding: 12px;
+  }
+  
+  .wallets-product-name {
+    font-size: 14px;
+  }
+  
+  .wallets-product-color {
+    font-size: 12px;
+  }
+  
+  .wallets-out-of-stock {
+    font-size: 11px;
+  }
+  
+  .wallets-whatsapp-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.4);
+  }
+  
+  .wallets-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .wallets-whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.6);
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .wallets-hero-image {
+    height: 250px;
+  }
+  
+  .wallets-breadcrumb {
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  
+  .wallets-collections-section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .wallets-section-title,
+  .wallets-featured-title {
+    font-size: 1.35rem;
+  }
+  
+  .wallets-title-underline,
+  .wallets-featured-underline {
+    width: 50px;
+    height: 2px;
+  }
+  
+  .wallets-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1.25rem;
+  }
+  
   .wallets-collection-image {
     width: 100px;
     height: 100px;
   }
-
+  
+  .wallets-collection-img {
+    padding: 10px;
+  }
+  
+  .wallets-collection-name {
+    font-size: 0.95rem;
+  }
+  
+  .wallets-collection-count {
+    font-size: 0.75rem;
+  }
+  
   .wallets-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 12px;
   }
-
+  
   .wallets-product-image {
     height: 180px;
   }
-
+  
   .wallets-product-name {
     font-size: 13px;
+  }
+  
+  .wallets-whatsapp-btn {
+    width: 38px;
+    height: 38px;
+    bottom: 12px;
+    right: 12px;
+    box-shadow: 0 1px 5px rgba(37, 211, 102, 0.4);
+  }
+  
+  .wallets-whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .wallets-hero-image {
+    height: 350px;
+  }
+  
+  .wallets-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+  }
+  
+  .wallets-collection-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .wallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .wallets-product-image {
+    height: 220px;
+  }
+  
+  .wallets-whatsapp-btn {
+    width: 42px;
+    height: 42px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .wallets-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Very Small Screens (320px and below) */
+@media (max-width: 320px) {
+  .wallets-collection-name,
+  .wallets-product-name,
+  .wallets-section-title,
+  .wallets-featured-title {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .wallets-breadcrumb {
+    font-size: 9px;
+  }
+  
+  .wallets-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  
+  .wallets-collection-image {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .wallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  
+  .wallets-product-image {
+    height: 160px;
+  }
+  
+  .wallets-product-info {
+    padding: 10px;
+  }
+  
+  .wallets-whatsapp-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .wallets-whatsapp-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .wallets-collection-card:hover {
+    transform: none;
+  }
+  
+  .wallets-collection-card:hover .wallets-collection-image {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .wallets-collection-card:hover .wallets-collection-icon-wrapper {
+    transform: none;
+  }
+  
+  .wallets-product-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wallets-product-card:hover .wallets-product-image img {
+    transform: none;
+  }
+  
+  .wallets-whatsapp-btn:hover {
+    transform: none;
+  }
+  
+  /* Make collection cards easier to tap on mobile */
+  .wallets-collection-card {
+    min-height: 44px; /* Minimum touch target size */
+  }
+}
+
+/* Large Screens Optimization */
+@media (min-width: 1400px) {
+  .wallets-whatsapp-btn {
+    width: 65px;
+    height: 65px;
+    bottom: 35px;
+    right: 35px;
+  }
+  
+  .wallets-whatsapp-btn svg {
+    width: 30px;
+    height: 30px;
   }
 }

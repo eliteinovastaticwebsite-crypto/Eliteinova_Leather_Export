@@ -10,6 +10,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .backpacks-page {
@@ -175,6 +176,196 @@ body {
   border-radius: 2px;
 }
 
+/* Filter Bar Styles - ADDED */
+.backpacks-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 2rem 0 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.backpacks-filter-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.backpacks-filter-label {
+  font-weight: 600;
+  color: #5d4037;
+  white-space: nowrap;
+}
+
+.backpacks-filter-dropdown {
+  position: relative;
+}
+
+.backpacks-filter-btn {
+  background: #fff;
+  border: 1px solid #d7ccc8;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5d4037;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  min-width: 200px;
+  justify-content: space-between;
+}
+
+.backpacks-filter-btn:hover {
+  border-color: #8b4513;
+  background: #f9f9f9;
+}
+
+.backpacks-filter-btn::after {
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #5d4037;
+  transition: transform 0.3s;
+}
+
+.backpacks-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 15px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.backpacks-filter-dropdown:hover .backpacks-dropdown-content {
+  display: block;
+}
+
+.backpacks-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.backpacks-dropdown-header h4 {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+.backpacks-dropdown-header span {
+  font-size: 13px;
+  color: #666;
+}
+
+.backpacks-reset-btn {
+  background: none;
+  border: none;
+  color: #8b4513;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.backpacks-reset-btn:hover {
+  color: #6d3710;
+}
+
+.backpacks-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+}
+
+.backpacks-checkbox-label:hover {
+  background: #f5f5f5;
+  padding-left: 8px;
+  margin-left: -8px;
+  border-radius: 4px;
+}
+
+.backpacks-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #8b4513;
+}
+
+.backpacks-sort-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.backpacks-products-count {
+  font-weight: 600;
+  color: #5d4037;
+  white-space: nowrap;
+}
+
+.backpacks-sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.backpacks-sort-dropdown label {
+  font-weight: 500;
+  color: #5d4037;
+  white-space: nowrap;
+}
+
+.backpacks-sort-dropdown select {
+  padding: 10px 35px 10px 15px;
+  background: #fff;
+  border: 1px solid #d7ccc8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5d4037;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235d4037' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: all 0.3s;
+  min-width: 200px;
+}
+
+.backpacks-sort-dropdown select:hover {
+  border-color: #8b4513;
+  background-color: #f9f9f9;
+}
+
+.backpacks-sort-dropdown select:focus {
+  outline: none;
+  border-color: #8b4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
 .backpacks-products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -282,6 +473,10 @@ body {
     height: 500px;
   }
 
+  .backpacks-collections-section {
+    padding: 3rem 1.5rem;
+  }
+
   .backpacks-collections-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
@@ -292,9 +487,62 @@ body {
     height: 180px;
   }
 
+  .backpacks-section-title,
+  .backpacks-featured-title {
+    font-size: 2.2rem;
+  }
+
+  .backpacks-container {
+    padding: 0 15px 50px;
+  }
+
+  .backpacks-filter-btn,
+  .backpacks-sort-dropdown select {
+    min-width: 180px;
+  }
+
   .backpacks-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
+  }
+
+  .backpacks-product-image {
+    height: 300px;
+  }
+}
+
+/* Medium Tablet */
+@media (max-width: 900px) {
+  .backpacks-hero-image {
+    height: 450px;
+  }
+
+  .backpacks-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .backpacks-collection-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .backpacks-section-title,
+  .backpacks-featured-title {
+    font-size: 2rem;
+  }
+
+  .backpacks-filter-bar {
+    padding: 18px;
+  }
+
+  .backpacks-sort-dropdown select {
+    min-width: 180px;
+  }
+
+  .backpacks-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
   }
 }
 
@@ -307,11 +555,23 @@ body {
   .backpacks-breadcrumb {
     font-size: 13px;
     margin: 15px auto;
+    padding: 0 15px;
+  }
+
+  .backpacks-collections-section {
+    padding: 2.5rem 1rem;
   }
 
   .backpacks-section-title,
   .backpacks-featured-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .backpacks-title-underline,
+  .backpacks-featured-underline {
+    width: 60px;
+    height: 3px;
   }
 
   .backpacks-collections-grid {
@@ -322,6 +582,7 @@ body {
   .backpacks-collection-image {
     width: 140px;
     height: 140px;
+    border-width: 3px;
   }
 
   .backpacks-collection-name {
@@ -330,6 +591,78 @@ body {
 
   .backpacks-collection-count {
     font-size: 0.85rem;
+  }
+
+  .backpacks-container {
+    padding: 0 15px 40px;
+  }
+
+  .backpacks-featured-header {
+    margin: 2rem 0 1.5rem;
+  }
+
+  /* Filter Bar Mobile Styles */
+  .backpacks-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 20px;
+    margin: 1.5rem 0 25px;
+  }
+
+  .backpacks-filter-section {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .backpacks-filter-label {
+    font-size: 15px;
+    min-width: 60px;
+  }
+
+  .backpacks-filter-btn {
+    flex: 1;
+    min-width: 0;
+    justify-content: space-between;
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  .backpacks-sort-section {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .backpacks-products-count {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .backpacks-sort-dropdown {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .backpacks-sort-dropdown label {
+    font-size: 15px;
+    min-width: 70px;
+  }
+
+  .backpacks-sort-dropdown select {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 35px 12px 15px;
+    font-size: 15px;
+  }
+
+  .backpacks-dropdown-content {
+    min-width: 100%;
+    left: 0;
+    right: 0;
   }
 
   .backpacks-products-grid {
@@ -362,15 +695,22 @@ body {
 
   .backpacks-breadcrumb {
     font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .backpacks-collections-section {
+    padding: 2rem 0.75rem;
   }
 
   .backpacks-section-title,
   .backpacks-featured-title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
   }
 
   .backpacks-collections-grid {
     gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .backpacks-collection-image {
@@ -380,6 +720,61 @@ body {
 
   .backpacks-collection-name {
     font-size: 1rem;
+  }
+
+  .backpacks-container {
+    padding: 0 10px 30px;
+  }
+
+  /* Filter Bar Small Mobile */
+  .backpacks-filter-bar {
+    padding: 15px;
+    gap: 15px;
+    margin: 1rem 0 20px;
+  }
+
+  .backpacks-filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .backpacks-filter-label {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .backpacks-filter-btn {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .backpacks-sort-section {
+    gap: 10px;
+  }
+
+  .backpacks-products-count {
+    font-size: 14px;
+  }
+
+  .backpacks-sort-dropdown {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .backpacks-sort-dropdown label {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .backpacks-sort-dropdown select {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    font-size: 14px;
   }
 
   .backpacks-products-grid {
@@ -422,14 +817,58 @@ body {
 
 /* Extra Small Mobile */
 @media (max-width: 360px) {
+  .backpacks-hero-image {
+    height: 250px;
+  }
+
+  .backpacks-breadcrumb {
+    font-size: 11px;
+    margin: 10px auto;
+  }
+
+  .backpacks-section-title,
+  .backpacks-featured-title {
+    font-size: 1.4rem;
+  }
+
   .backpacks-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .backpacks-collection-image {
     width: 100px;
     height: 100px;
+    border-width: 2px;
+  }
+
+  .backpacks-collection-img {
+    padding: 15px;
+  }
+
+  .backpacks-collection-name {
+    font-size: 0.9rem;
+  }
+
+  .backpacks-collection-count {
+    font-size: 0.75rem;
+  }
+
+  /* Filter Bar Extra Small */
+  .backpacks-filter-bar {
+    padding: 12px;
+  }
+
+  .backpacks-filter-label,
+  .backpacks-products-count,
+  .backpacks-sort-dropdown label {
+    font-size: 13px;
+  }
+
+  .backpacks-filter-btn,
+  .backpacks-sort-dropdown select {
+    font-size: 13px;
+    padding: 8px 12px;
   }
 
   .backpacks-products-grid {
@@ -443,5 +882,292 @@ body {
 
   .backpacks-product-name {
     font-size: 13px;
+  }
+
+  .backpacks-whatsapp-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .backpacks-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .backpacks-hero-image {
+    height: 350px;
+  }
+
+  .backpacks-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .backpacks-collection-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .backpacks-filter-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .backpacks-filter-section,
+  .backpacks-sort-section {
+    flex: 1;
+  }
+
+  .backpacks-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .backpacks-product-image {
+    height: 220px;
+  }
+}
+
+/* Prevent text overflow on very small screens */
+@media (max-width: 320px) {
+  .backpacks-collection-name,
+  .backpacks-product-name {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .backpacks-breadcrumb {
+    font-size: 10px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .backpacks-collection-card:hover {
+    transform: none;
+  }
+  
+  .backpacks-collection-card:hover .backpacks-collection-image {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .backpacks-product-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .backpacks-whatsapp-btn:hover {
+    transform: none;
+  }
+  
+  /* Make filter dropdown stay open on tap */
+  .backpacks-filter-dropdown:active .backpacks-dropdown-content,
+  .backpacks-filter-dropdown:focus-within .backpacks-dropdown-content {
+    display: block;
+  }
+  
+  /* Make dropdowns easier to tap on mobile */
+  .backpacks-filter-btn,
+  .backpacks-sort-dropdown select,
+  .backpacks-checkbox-label {
+    min-height: 44px; /* Minimum touch target size */
+  }
+}
+/* BackpacksPage.css - WhatsApp Button Adjustments */
+
+/* ... (keep all previous CSS code above this) ... */
+
+.backpacks-whatsapp-btn {
+  position: fixed;
+  bottom: 25px; /* Reduced from 30px */
+  right: 25px; /* Reduced from 30px */
+  width: 55px; /* Reduced from 60px */
+  height: 55px; /* Reduced from 60px */
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.4); /* Reduced shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.backpacks-whatsapp-btn svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  width: 28px; /* Explicit width */
+  height: 28px; /* Explicit height */
+}
+
+.backpacks-whatsapp-btn:hover {
+  transform: scale(1.08); /* Slightly reduced from 1.1 */
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6); /* Reduced shadow */
+  background: #20ba5a;
+}
+
+.backpacks-whatsapp-btn:active {
+  transform: scale(0.92); /* Slightly reduced from 0.95 */
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  /* ... (keep existing tablet styles) ... */
+  
+  .backpacks-whatsapp-btn {
+    width: 50px; /* Slightly smaller for tablet */
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Medium Tablet */
+@media (max-width: 900px) {
+  /* ... (keep existing medium tablet styles) ... */
+  
+  .backpacks-whatsapp-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* ... (keep existing mobile styles) ... */
+  
+  .backpacks-whatsapp-btn {
+    width: 45px; /* Smaller for mobile */
+    height: 45px;
+    bottom: 18px;
+    right: 18px;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  /* ... (keep existing small mobile styles) ... */
+  
+  .backpacks-whatsapp-btn {
+    width: 40px; /* Even smaller for small mobile */
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.4);
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .backpacks-whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.6);
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  /* ... (keep existing extra small mobile styles) ... */
+  
+  .backpacks-whatsapp-btn {
+    width: 38px; /* Smallest size for very small screens */
+    height: 38px;
+    bottom: 12px;
+    right: 12px;
+    box-shadow: 0 1px 5px rgba(37, 211, 102, 0.4);
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* ... (keep existing landscape styles) ... */
+  
+  .backpacks-whatsapp-btn {
+    width: 42px;
+    height: 42px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Prevent text overflow on very small screens */
+@media (max-width: 320px) {
+  /* ... (keep existing text overflow styles) ... */
+  
+  .backpacks-whatsapp-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* ... (keep existing touch optimizations) ... */
+  
+  .backpacks-whatsapp-btn:hover {
+    transform: none; /* Remove hover effects on touch devices */
+  }
+  
+  /* Make WhatsApp button easier to tap on mobile */
+  .backpacks-whatsapp-btn {
+    min-width: 44px; /* Minimum touch target size */
+    min-height: 44px;
+  }
+}
+
+/* Additional size reduction for very large screens if needed */
+@media (min-width: 1400px) {
+  .backpacks-whatsapp-btn {
+    width: 52px; /* Slightly smaller for very large screens */
+    height: 52px;
+    bottom: 30px;
+    right: 30px;
+  }
+  
+  .backpacks-whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
   }
 }

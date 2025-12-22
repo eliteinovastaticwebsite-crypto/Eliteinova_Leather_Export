@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +8,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .casualshoes-page {
@@ -57,8 +57,8 @@ body {
   align-items: center;
   margin-bottom: 30px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
   gap: 20px;
@@ -86,6 +86,17 @@ body {
   font-size: 14px;
   color: #5d4037;
   transition: all 0.3s;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.casualshoes-filter-btn::after {
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #5d4037;
 }
 
 .casualshoes-filter-btn:hover {
@@ -103,7 +114,7 @@ body {
   top: 100%;
   left: 0;
   background: #fff;
-  min-width: 250px;
+  min-width: 280px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   padding: 15px;
@@ -124,6 +135,13 @@ body {
   border-bottom: 1px solid #e0e0e0;
 }
 
+.casualshoes-dropdown-header h4 {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
 .casualshoes-dropdown-header span {
   font-size: 13px;
   color: #666;
@@ -136,6 +154,7 @@ body {
   cursor: pointer;
   font-size: 13px;
   text-decoration: underline;
+  padding: 0;
 }
 
 .casualshoes-reset-btn:hover {
@@ -149,6 +168,7 @@ body {
   padding: 8px 0;
   cursor: pointer;
   color: #333;
+  font-size: 14px;
 }
 
 .casualshoes-checkbox-label:hover {
@@ -169,17 +189,20 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .casualshoes-products-count {
   font-weight: 600;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .casualshoes-sort-dropdown {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .casualshoes-sort-dropdown label {
@@ -201,6 +224,7 @@ body {
   background-repeat: no-repeat;
   background-position: right 12px center;
   transition: all 0.3s;
+  min-width: 200px;
 }
 
 .casualshoes-sort-dropdown select:hover {
@@ -285,17 +309,17 @@ body {
 
 .casualshoes-whatsapp-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
   background: #25d366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.4);
   transition: transform 0.3s, box-shadow 0.3s;
   z-index: 1000;
   text-decoration: none;
@@ -303,45 +327,460 @@ body {
 
 .casualshoes-whatsapp-btn svg {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  width: 28px;
+  height: 28px;
 }
 
 .casualshoes-whatsapp-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  transform: scale(1.08);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
   background: #20ba5a;
 }
 
 .casualshoes-whatsapp-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 
-/* Responsive Design */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .hero-image { height: 500px; }
-  .casualshoes-container { padding: 0 15px 50px; }
-  .casualshoes-products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
-  .casualshoes-product-image { height: 280px; }
+/* Tablet Responsive (1024px and below) */
+@media (max-width: 1024px) {
+  .hero-image {
+    height: 500px;
+  }
+  
+  .casualshoes-breadcrumb {
+    font-size: 13px;
+    padding: 0 15px;
+  }
+  
+  .casualshoes-container {
+    padding: 0 15px 50px;
+  }
+  
+  .casualshoes-filter-bar {
+    padding: 18px;
+  }
+  
+  .casualshoes-filter-btn,
+  .casualshoes-sort-dropdown select {
+    min-width: 180px;
+  }
+  
+  .casualshoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .casualshoes-product-image {
+    height: 300px;
+  }
+  
+  .casualshoes-whatsapp-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
-@media (max-width: 767px) {
-  .hero-image { height: 400px; }
-  .casualshoes-breadcrumb { font-size: 12px; }
-  .casualshoes-container { padding: 0 15px 120px; }
-  .casualshoes-filter-bar { flex-direction: column; padding: 15px; }
-  .casualshoes-filter-section { overflow-x: auto; }
-  .casualshoes-products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-  .casualshoes-whatsapp-btn { width: 50px; height: 50px; }
+/* Medium Tablet (900px and below) */
+@media (max-width: 900px) {
+  .hero-image {
+    height: 450px;
+  }
+  
+  .casualshoes-filter-btn,
+  .casualshoes-sort-dropdown select {
+    min-width: 160px;
+  }
+  
+  .casualshoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .casualshoes-whatsapp-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
+/* Mobile Responsive (768px and below) */
+@media (max-width: 768px) {
+  .hero-image {
+    height: 400px;
+  }
+  
+  .casualshoes-breadcrumb {
+    font-size: 12px;
+    margin: 15px auto;
+    padding: 0 15px;
+  }
+  
+  .casualshoes-container {
+    padding: 0 15px 40px;
+  }
+  
+  /* Filter Bar Mobile Layout */
+  .casualshoes-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .casualshoes-filter-section {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  
+  .casualshoes-filter-label {
+    font-size: 15px;
+    min-width: 60px;
+  }
+  
+  .casualshoes-filter-btn {
+    flex: 1;
+    min-width: 0;
+    justify-content: space-between;
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .casualshoes-sort-section {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .casualshoes-products-count {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .casualshoes-sort-dropdown {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  
+  .casualshoes-sort-dropdown label {
+    font-size: 15px;
+    min-width: 70px;
+  }
+  
+  .casualshoes-sort-dropdown select {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 35px 12px 15px;
+    font-size: 15px;
+  }
+  
+  .casualshoes-dropdown-content {
+    min-width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .casualshoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .casualshoes-product-image {
+    height: 280px;
+  }
+  
+  .casualshoes-whatsapp-btn {
+    width: 45px;
+    height: 45px;
+    bottom: 18px;
+    right: 18px;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
-  .hero-image { height: 300px; }
-  .casualshoes-products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .casualshoes-product-image { height: 180px; }
-  .casualshoes-whatsapp-btn { width: 45px; height: 45px; }
+  .hero-image {
+    height: 300px;
+  }
+  
+  .casualshoes-breadcrumb {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  
+  .casualshoes-container {
+    padding: 0 10px 30px;
+  }
+  
+  /* Filter Bar Small Mobile */
+  .casualshoes-filter-bar {
+    padding: 15px;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .casualshoes-filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .casualshoes-filter-label {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .casualshoes-filter-btn {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .casualshoes-sort-section {
+    gap: 10px;
+  }
+  
+  .casualshoes-products-count {
+    font-size: 14px;
+  }
+  
+  .casualshoes-sort-dropdown {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .casualshoes-sort-dropdown label {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .casualshoes-sort-dropdown select {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    font-size: 14px;
+  }
+  
+  .casualshoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .casualshoes-product-image {
+    height: 200px;
+  }
+  
+  .casualshoes-product-info {
+    padding: 12px;
+  }
+  
+  .casualshoes-product-name {
+    font-size: 14px;
+  }
+  
+  .casualshoes-product-color {
+    font-size: 12px;
+  }
+  
+  .casualshoes-out-of-stock {
+    font-size: 11px;
+  }
+  
+  .casualshoes-whatsapp-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.4);
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .casualshoes-whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.6);
+  }
 }
 
+/* Extra Small Mobile (360px and below) */
 @media (max-width: 360px) {
-  .casualshoes-product-image { height: 150px; }
-  .casualshoes-whatsapp-btn { width: 40px; height: 40px; }
+  .hero-image {
+    height: 250px;
+  }
+  
+  .casualshoes-breadcrumb {
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  
+  /* Filter Bar Extra Small */
+  .casualshoes-filter-bar {
+    padding: 12px;
+  }
+  
+  .casualshoes-filter-label,
+  .casualshoes-products-count,
+  .casualshoes-sort-dropdown label {
+    font-size: 13px;
+  }
+  
+  .casualshoes-filter-btn,
+  .casualshoes-sort-dropdown select {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  
+  .casualshoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  
+  .casualshoes-product-image {
+    height: 180px;
+  }
+  
+  .casualshoes-product-name {
+    font-size: 13px;
+  }
+  
+  .casualshoes-whatsapp-btn {
+    width: 38px;
+    height: 38px;
+    bottom: 12px;
+    right: 12px;
+    box-shadow: 0 1px 5px rgba(37, 211, 102, 0.4);
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-image {
+    height: 350px;
+  }
+  
+  .casualshoes-filter-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .casualshoes-filter-section,
+  .casualshoes-sort-section {
+    flex: 1;
+  }
+  
+  .casualshoes-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .casualshoes-product-image {
+    height: 220px;
+  }
+  
+  .casualshoes-whatsapp-btn {
+    width: 42px;
+    height: 42px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Very Small Screens (320px and below) */
+@media (max-width: 320px) {
+  .casualshoes-product-name,
+  .casualshoes-filter-label {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .casualshoes-breadcrumb {
+    font-size: 9px;
+  }
+  
+  .casualshoes-whatsapp-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .casualshoes-product-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .casualshoes-whatsapp-btn:hover {
+    transform: none;
+  }
+  
+  /* Make filter dropdown stay open on tap */
+  .casualshoes-filter-dropdown:active .casualshoes-dropdown-content,
+  .casualshoes-filter-dropdown:focus-within .casualshoes-dropdown-content {
+    display: block;
+  }
+  
+  /* Make dropdowns easier to tap on mobile */
+  .casualshoes-filter-btn,
+  .casualshoes-sort-dropdown select,
+  .casualshoes-checkbox-label {
+    min-height: 44px; /* Minimum touch target size */
+  }
+}
+
+/* Large Screens Optimization */
+@media (min-width: 1400px) {
+  .casualshoes-whatsapp-btn {
+    width: 52px;
+    height: 52px;
+    bottom: 30px;
+    right: 30px;
+  }
+  
+  .casualshoes-whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+}

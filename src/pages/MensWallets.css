@@ -10,6 +10,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .menswallets-page {
@@ -43,6 +44,7 @@ body {
   width: 100%;
   height: 700px;
   display: block;
+  object-fit: cover;
 }
 
 .menswallets-container {
@@ -74,6 +76,7 @@ body {
 .menswallets-filter-label {
   font-weight: 600;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .menswallets-filter-btn {
@@ -85,6 +88,17 @@ body {
   font-size: 14px;
   color: #5d4037;
   transition: all 0.3s;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menswallets-filter-btn::after {
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #5d4037;
 }
 
 .menswallets-filter-btn:hover {
@@ -135,6 +149,7 @@ body {
   cursor: pointer;
   font-size: 13px;
   text-decoration: underline;
+  padding: 0;
 }
 
 .menswallets-reset-btn:hover {
@@ -148,6 +163,7 @@ body {
   padding: 8px 0;
   cursor: pointer;
   color: #333;
+  font-size: 14px;
 }
 
 .menswallets-checkbox-label:hover {
@@ -168,22 +184,26 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .menswallets-products-count {
   font-weight: 600;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .menswallets-sort-dropdown {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .menswallets-sort-dropdown label {
   font-weight: 500;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .menswallets-sort-dropdown select {
@@ -199,6 +219,7 @@ body {
   background-repeat: no-repeat;
   background-position: right 12px center;
   transition: all 0.3s;
+  min-width: 200px;
 }
 
 .menswallets-sort-dropdown select:hover {
@@ -301,6 +322,8 @@ body {
 
 .menswallets-whatsapp-btn svg {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  width: 28px;
+  height: 28px;
 }
 
 .menswallets-whatsapp-btn:hover {
@@ -313,52 +336,515 @@ body {
   transform: scale(0.95);
 }
 
+/* Tablet Responsive (1024px and below) */
+@media (max-width: 1024px) {
+  .hero-image {
+    height: 500px;
+  }
+  
+  .menswallets-breadcrumb {
+    font-size: 13px;
+    padding: 0 15px;
+  }
+  
+  .menswallets-container {
+    padding: 0 15px 50px;
+  }
+  
+  .menswallets-filter-bar {
+    padding: 18px;
+  }
+  
+  .menswallets-filter-btn,
+  .menswallets-sort-dropdown select {
+    min-width: 180px;
+  }
+  
+  .menswallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .menswallets-product-image {
+    height: 300px;
+  }
+  
+  .menswallets-whatsapp-btn {
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Medium Tablet (900px and below) */
+@media (max-width: 900px) {
+  .hero-image {
+    height: 450px;
+  }
+  
+  .menswallets-filter-btn,
+  .menswallets-sort-dropdown select {
+    min-width: 160px;
+  }
+  
+  .menswallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .menswallets-whatsapp-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Mobile Responsive (768px and below) */
 @media (max-width: 768px) {
+  .hero-image {
+    height: 400px;
+  }
+  
+  .menswallets-breadcrumb {
+    font-size: 12px;
+    margin: 15px auto;
+    padding: 0 15px;
+  }
+  
+  .menswallets-container {
+    padding: 0 15px 40px;
+  }
+  
+  /* Filter Bar Mobile Layout */
   .menswallets-filter-bar {
     flex-direction: column;
     align-items: stretch;
+    padding: 20px;
+    gap: 15px;
+    margin-bottom: 25px;
   }
-
-  .menswallets-filter-section,
+  
+  /* Row 1: Filter section */
+  .menswallets-filter-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+  }
+  
+  .menswallets-filter-label {
+    font-size: 15px;
+    min-width: 50px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menswallets-filter-btn {
+    flex: 1;
+    min-width: 0;
+    justify-content: space-between;
+    padding: 12px 15px;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /* Row 2: Products count and sort section */
   .menswallets-sort-section {
     width: 100%;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    margin-top: 0;
+    border-top: 1px solid #e0e0e0;
   }
-
+  
+  .menswallets-products-count {
+    font-size: 14px;
+    text-align: left;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin: 0;
+  }
+  
+  .menswallets-sort-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  
+  .menswallets-sort-dropdown label {
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  
+  .menswallets-sort-dropdown select {
+    flex: 0 0 auto;
+    min-width: 150px;
+    padding: 10px 35px 10px 15px;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .menswallets-dropdown-content {
+    min-width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
   .menswallets-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
   }
-
+  
+  .menswallets-product-image {
+    height: 280px;
+  }
+  
   .menswallets-whatsapp-btn {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     bottom: 20px;
     right: 20px;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
   }
 }
 
+/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
+  .hero-image {
+    height: 300px;
+  }
+  
+  .menswallets-breadcrumb {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  
+  .menswallets-container {
+    padding: 0 10px 30px;
+  }
+  
+  /* Filter Bar Small Mobile */
+  .menswallets-filter-bar {
+    padding: 15px;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .menswallets-filter-section {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+  
+  .menswallets-filter-label {
+    width: auto;
+    text-align: left;
+    font-size: 14px;
+    min-width: 45px;
+    margin: 0;
+  }
+  
+  .menswallets-filter-btn {
+    width: auto;
+    padding: 10px 12px;
+    font-size: 13px;
+    flex: 1;
+    margin: 0;
+  }
+  
+  .menswallets-sort-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 12px;
+    margin-top: 0;
+  }
+  
+  .menswallets-products-count {
+    font-size: 13px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  
+  .menswallets-sort-dropdown {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  
+  .menswallets-sort-dropdown label {
+    width: auto;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+    margin: 0;
+  }
+  
+  .menswallets-sort-dropdown select {
+    width: auto;
+    min-width: 140px;
+    padding: 8px 30px 8px 12px;
+    font-size: 13px;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+  
   .menswallets-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 15px;
   }
-
+  
+  .menswallets-product-image {
+    height: 200px;
+  }
+  
+  .menswallets-product-info {
+    padding: 12px;
+  }
+  
   .menswallets-product-name {
     font-size: 14px;
   }
-
+  
   .menswallets-product-color {
     font-size: 12px;
   }
   
-  .menswallets-sort-dropdown {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+  .menswallets-out-of-stock {
+    font-size: 11px;
+  }
+  
+  .menswallets-whatsapp-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.4);
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .menswallets-whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.6);
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .hero-image {
+    height: 250px;
+  }
+  
+  .menswallets-breadcrumb {
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  
+  /* Filter Bar Extra Small */
+  .menswallets-filter-bar {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .menswallets-filter-label,
+  .menswallets-products-count,
+  .menswallets-sort-dropdown label {
+    font-size: 12px;
+  }
+  
+  .menswallets-filter-btn {
+    font-size: 12px;
+    padding: 8px 10px;
   }
   
   .menswallets-sort-dropdown select {
+    font-size: 12px;
+    padding: 7px 25px 7px 10px;
+    min-width: 130px;
+  }
+  
+  /* Adjust for very small screens - Keep elements inline */
+  .menswallets-sort-section {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  
+  .menswallets-products-count {
+    white-space: nowrap;
+  }
+  
+  .menswallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  
+  .menswallets-product-image {
+    height: 180px;
+  }
+  
+  .menswallets-product-name {
+    font-size: 13px;
+  }
+  
+  .menswallets-whatsapp-btn {
+    width: 38px;
+    height: 38px;
+    bottom: 12px;
+    right: 12px;
+    box-shadow: 0 1px 5px rgba(37, 211, 102, 0.4);
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-image {
+    height: 350px;
+  }
+  
+  .menswallets-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .menswallets-filter-section {
     width: 100%;
+  }
+  
+  .menswallets-sort-section {
+    width: 100%;
+  }
+  
+  .menswallets-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .menswallets-product-image {
+    height: 220px;
+  }
+  
+  .menswallets-whatsapp-btn {
+    width: 42px;
+    height: 42px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Very Small Screens (320px and below) */
+@media (max-width: 320px) {
+  .menswallets-product-name,
+  .menswallets-filter-label {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .menswallets-breadcrumb {
+    font-size: 9px;
+  }
+  
+  /* On very small screens, maintain the two-row layout */
+  .menswallets-filter-section {
+    flex-wrap: nowrap;
+  }
+  
+  .menswallets-sort-section {
+    flex-wrap: nowrap;
+  }
+  
+  .menswallets-whatsapp-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .menswallets-product-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menswallets-whatsapp-btn:hover {
+    transform: none;
+  }
+  
+  /* Make filter dropdown stay open on tap */
+  .menswallets-filter-dropdown:active .menswallets-dropdown-content,
+  .menswallets-filter-dropdown:focus-within .menswallets-dropdown-content {
+    display: block;
+  }
+  
+  /* Make dropdowns easier to tap on mobile */
+  .menswallets-filter-btn,
+  .menswallets-sort-dropdown select,
+  .menswallets-checkbox-label {
+    min-height: 44px; /* Minimum touch target size */
+  }
+}
+
+/* Large Screens Optimization */
+@media (min-width: 1400px) {
+  .menswallets-whatsapp-btn {
+    width: 65px;
+    height: 65px;
+    bottom: 35px;
+    right: 35px;
+  }
+  
+  .menswallets-whatsapp-btn svg {
+    width: 30px;
+    height: 30px;
   }
 }

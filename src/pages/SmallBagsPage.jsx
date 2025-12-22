@@ -7,23 +7,23 @@ const SmallBagsPage = () => {
 
   const collections = [
     {
-      name: "Clutches",
+      name: "Sling Bags",
       products: 12,
       image: "/images/clutches_collection.png",
       path: "/small-bags/clutches"
     },
     {
-      name: "Crossbody Bags",
+      name: "Small Crossbody Bags",
       products: 15,
       image: "/images/crossbody_collection.png",
       path: "/small-bags/crossbody"
     },
-    {
+    /*{
       name: "Mini Bags",
       products: 10,
       image: "/images/mini_collection.png",
       path: "/small-bags/mini"
-    }
+    }*/
   ];
 
   const products = [

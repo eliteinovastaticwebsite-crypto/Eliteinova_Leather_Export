@@ -1,4 +1,4 @@
-/* WomensBackpack.css */
+/* WomensBackpack.css - Mobile Responsive */
 
 * {
   margin: 0;
@@ -43,6 +43,7 @@ body {
   width: 100%;
   height: 700px;
   display: block;
+  object-fit: cover;
 }
 
 .womensbackpack-container {
@@ -85,6 +86,10 @@ body {
   font-size: 14px;
   color: #5d4037;
   transition: all 0.3s;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .womensbackpack-filter-btn:hover {
@@ -110,7 +115,8 @@ body {
   margin-top: 5px;
 }
 
-.womensbackpack-filter-dropdown:hover .womensbackpack-dropdown-content {
+.womensbackpack-filter-dropdown:hover .womensbackpack-dropdown-content,
+.womensbackpack-filter-dropdown:focus-within .womensbackpack-dropdown-content {
   display: block;
 }
 
@@ -135,6 +141,7 @@ body {
   cursor: pointer;
   font-size: 13px;
   text-decoration: underline;
+  padding: 5px;
 }
 
 .womensbackpack-reset-btn:hover {
@@ -148,6 +155,7 @@ body {
   padding: 8px 0;
   cursor: pointer;
   color: #333;
+  font-size: 14px;
 }
 
 .womensbackpack-checkbox-label:hover {
@@ -173,6 +181,7 @@ body {
 .womensbackpack-products-count {
   font-weight: 600;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .womensbackpack-sort-dropdown {
@@ -184,6 +193,7 @@ body {
 .womensbackpack-sort-dropdown label {
   font-weight: 500;
   color: #5d4037;
+  white-space: nowrap;
 }
 
 .womensbackpack-sort-dropdown select {
@@ -199,6 +209,7 @@ body {
   background-repeat: no-repeat;
   background-position: right 12px center;
   transition: all 0.3s;
+  min-width: 180px;
 }
 
 .womensbackpack-sort-dropdown select:hover {
@@ -313,23 +324,198 @@ body {
   transform: scale(0.95);
 }
 
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-image {
+    height: 500px;
+  }
+  
+  .womensbackpack-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .womensbackpack-product-image {
+    height: 280px;
+  }
+}
+
+/* Mobile Landscape/Tablet Small (600px - 768px) */
 @media (max-width: 768px) {
+  .hero-image {
+    height: 400px;
+  }
+  
+  .womensbackpack-breadcrumb {
+    margin: 15px auto;
+    padding: 0 15px;
+    font-size: 13px;
+  }
+  
+  .womensbackpack-container {
+    padding: 0 15px 50px;
+  }
+  
   .womensbackpack-filter-bar {
     flex-direction: column;
     align-items: stretch;
+    padding: 15px;
+    gap: 15px;
+    margin-bottom: 25px;
   }
-
+  
   .womensbackpack-filter-section,
   .womensbackpack-sort-section {
     width: 100%;
     justify-content: space-between;
   }
-
+  
+  .womensbackpack-filter-section {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .womensbackpack-filter-section::-webkit-scrollbar {
+    height: 3px;
+  }
+  
+  .womensbackpack-filter-section::-webkit-scrollbar-thumb {
+    background: #d7ccc8;
+    border-radius: 3px;
+  }
+  
+  .womensbackpack-filter-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .womensbackpack-sort-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .womensbackpack-sort-dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .womensbackpack-sort-dropdown select {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .womensbackpack-dropdown-content {
+    min-width: 200px;
+    max-width: 100vw;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+  }
+  
   .womensbackpack-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
   }
+  
+  .womensbackpack-product-image {
+    height: 250px;
+  }
+  
+  .womensbackpack-product-info {
+    padding: 15px;
+  }
+  
+  .womensbackpack-product-name {
+    font-size: 15px;
+  }
+  
+  .womensbackpack-whatsapp-btn {
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
+  }
+}
 
+/* Mobile Portrait (480px - 600px) */
+@media (max-width: 600px) {
+  .hero-image {
+    height: 300px;
+  }
+  
+  .womensbackpack-breadcrumb {
+    margin: 12px auto;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+  
+  .womensbackpack-container {
+    padding: 0 12px 40px;
+  }
+  
+  .womensbackpack-filter-bar {
+    padding: 12px;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .womensbackpack-filter-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+  
+  .womensbackpack-filter-label {
+    font-size: 14px;
+  }
+  
+  .womensbackpack-products-count {
+    font-size: 14px;
+  }
+  
+  .womensbackpack-sort-dropdown label {
+    font-size: 14px;
+  }
+  
+  .womensbackpack-sort-dropdown select {
+    padding: 8px 30px 8px 12px;
+    font-size: 13px;
+  }
+  
+  .womensbackpack-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+  }
+  
+  .womensbackpack-product-image {
+    height: 200px;
+  }
+  
+  .womensbackpack-product-info {
+    padding: 12px;
+  }
+  
+  .womensbackpack-product-name {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  
+  .womensbackpack-product-color {
+    font-size: 12px;
+  }
+  
+  .womensbackpack-out-of-stock {
+    font-size: 12px;
+  }
+  
   .womensbackpack-whatsapp-btn {
     width: 50px;
     height: 50px;
@@ -338,27 +524,163 @@ body {
   }
 }
 
+/* Small Mobile (320px - 480px) */
 @media (max-width: 480px) {
-  .womensbackpack-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
-  }
-
-  .womensbackpack-product-name {
-    font-size: 14px;
-  }
-
-  .womensbackpack-product-color {
-    font-size: 12px;
+  .hero-image {
+    height: 250px;
   }
   
-  .womensbackpack-sort-dropdown {
+  .womensbackpack-breadcrumb {
+    margin: 10px auto;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+  
+  .womensbackpack-container {
+    padding: 0 10px 30px;
+  }
+  
+  .womensbackpack-filter-bar {
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .womensbackpack-filter-section {
+    gap: 8px;
+  }
+  
+  .womensbackpack-filter-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    min-height: 36px;
+  }
+  
+  .womensbackpack-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .womensbackpack-product-image {
+    height: 180px;
+  }
+  
+  .womensbackpack-product-info {
+    padding: 10px;
+  }
+  
+  .womensbackpack-product-name {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .womensbackpack-product-color {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+  
+  .womensbackpack-out-of-stock {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  
+  .womensbackpack-dropdown-content {
+    width: calc(100vw - 20px);
+    padding: 12px;
+  }
+  
+  .womensbackpack-checkbox-label {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+  
+  .womensbackpack-whatsapp-btn {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Extra Small Mobile (up to 320px) */
+@media (max-width: 320px) {
+  .hero-image {
+    height: 200px;
+  }
+  
+  .womensbackpack-products-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .womensbackpack-product-image {
+    height: 220px;
+  }
+  
+  .womensbackpack-filter-section {
     flex-direction: column;
     align-items: flex-start;
+    overflow-x: visible;
+  }
+  
+  .womensbackpack-filter-btn {
     width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .womensbackpack-whatsapp-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .womensbackpack-whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .womensbackpack-filter-dropdown .womensbackpack-dropdown-content {
+    display: none;
+  }
+  
+  .womensbackpack-filter-dropdown.active .womensbackpack-dropdown-content {
+    display: block;
+  }
+  
+  .womensbackpack-product-card:hover {
+    transform: none;
+  }
+  
+  .womensbackpack-product-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .womensbackpack-filter-btn {
+    border-width: 2px;
   }
   
   .womensbackpack-sort-dropdown select {
-    width: 100%;
+    border-width: 2px;
+  }
+  
+  .womensbackpack-product-card {
+    border: 1px solid #000;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .womensbackpack-product-card,
+  .womensbackpack-product-image img,
+  .womensbackpack-whatsapp-btn,
+  .womensbackpack-filter-btn {
+    transition: none;
   }
 }

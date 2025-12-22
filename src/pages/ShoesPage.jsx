@@ -61,7 +61,7 @@ const ShoesPage = () => {
       </div>
 
       <div className="shoes-hero-section">
-        <img src="/images/shoes_hero.png" alt="Premium Leather Shoes" className="shoes-hero-image" />
+        <img src="/images/slide2.jpg" alt="Premium Leather Shoes" className="shoes-hero-image" />
       </div>
 
       {/* Collections Section */}
