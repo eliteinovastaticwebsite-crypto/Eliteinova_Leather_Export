@@ -184,6 +184,7 @@
   border-radius: 0.5rem 0.5rem 0 0;
   transition: all 0.2s;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .menu-button:hover {
@@ -223,6 +224,7 @@
   transition: all 0.2s;
   cursor: pointer;
   text-align: left;
+  text-decoration: none;
 }
 
 .dropdown-item:last-child {
@@ -250,6 +252,56 @@
   border-bottom: none;
 }
 
+/* FIXED: Container for menu items with dropdowns */
+.mobile-menu-item-container {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  outline: none;
+}
+
+/* FIXED: Wrapper for main link + dropdown toggle */
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+  outline: none;
+}
+
+/* FIXED: Main menu link (clickable for navigation) */
+.mobile-menu-main-link {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #78350f;
+  background: transparent;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s;
+  border: none;
+}
+
+/* FIXED: Dropdown toggle button (separate from link) */
+.mobile-dropdown-toggle {
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #78350f;
+  transition: background-color 0.2s;
+  min-width: 44px;
+}
+
+/* FIXED: Mobile menu button as link for direct navigation */
 .mobile-menu-button {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -264,10 +316,46 @@
   align-items: center;
   justify-content: space-between;
   transition: background-color 0.2s;
+  text-decoration: none;
 }
 
-.mobile-menu-button:hover {
+/* ADDED: Mobile menu link for direct page navigation */
+.mobile-menu-link {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #78350f;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  outline: none;
+}
+
+.mobile-menu-button:hover,
+.mobile-menu-link:hover,
+.mobile-menu-main-link:hover {
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mobile-dropdown-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ADDED: Active state for mobile navigation */
+.mobile-menu-button:active,
+.mobile-menu-link:active,
+.mobile-menu-main-link:active {
+  background-color: rgba(255, 237, 213, 0.7);
+  color: #ea580c;
+}
+
+.mobile-dropdown-toggle:active {
+  background-color: rgba(255, 237, 213, 0.5);
 }
 
 .chevron-icon.rotated {
@@ -290,9 +378,16 @@
   cursor: pointer;
   text-align: left;
   transition: color 0.2s;
+  text-decoration: none;
 }
 
 .mobile-dropdown-item:hover {
+  color: #ea580c;
+}
+
+/* ADDED: Active/pressed state for better mobile feedback */
+.mobile-dropdown-item:active {
+  background-color: rgba(255, 237, 213, 0.5);
   color: #ea580c;
 }
 
@@ -325,6 +420,11 @@
 @media (max-width: 767px) {
   /* Show mobile menu button */
   .mobile-menu-button {
+    display: flex;
+  }
+  
+  /* Show mobile menu link */
+  .mobile-menu-link {
     display: block;
   }
 
@@ -411,9 +511,15 @@
     padding: 0.5rem 0;
   }
 
-  .mobile-menu-button {
+  .mobile-menu-button,
+  .mobile-menu-link,
+  .mobile-menu-main-link {
     padding: 0.625rem 0.75rem;
     font-size: 0.8125rem;
+  }
+  
+  .mobile-dropdown-toggle {
+    padding: 0.625rem 0.75rem;
   }
 
   .mobile-dropdown-item {
@@ -460,9 +566,17 @@
     padding: 0 0.5rem;
   }
 
-  .mobile-menu-button {
+  .mobile-menu-button,
+  .mobile-menu-link,
+  .mobile-menu-main-link {
     font-size: 0.75rem;
     padding: 0.5rem 0.5rem;
+  }
+  
+  .mobile-dropdown-toggle {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.5rem;
+    min-width: 40px;
   }
 
   .mobile-dropdown-item {
@@ -499,7 +613,13 @@
     font-size: 0.65rem;
   }
 
-  .mobile-menu-button {
+  .mobile-menu-button,
+  .mobile-menu-link,
+  .mobile-menu-main-link {
+    font-size: 0.7rem;
+  }
+  
+  .mobile-dropdown-toggle {
     font-size: 0.7rem;
   }
 
@@ -539,4 +659,33 @@
 
 .mobile-menu::-webkit-scrollbar-thumb:hover {
   background: #f59e0b;
+}
+
+/* ADDED: Tap highlight removal for better mobile UX */
+.mobile-menu-button,
+.mobile-menu-link,
+.mobile-menu-main-link,
+.mobile-dropdown-toggle,
+.mobile-dropdown-item {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* ADDED: Ensure clickable area is large enough on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-menu-button,
+  .mobile-menu-link,
+  .mobile-menu-main-link {
+    min-height: 44px;
+  }
+  
+  .mobile-dropdown-toggle {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .mobile-dropdown-item {
+    min-height: 40px;
+  }
 }

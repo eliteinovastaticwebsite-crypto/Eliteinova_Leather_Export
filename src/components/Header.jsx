@@ -28,12 +28,14 @@ const Header = () => {
       path: '/shoes'
     },
     { name: 'WOMEN HANDBAGS', dropdown: null, path: '/women-handbags' },
-    { name: 'SMALL BAGS', 
-      dropdown:  [
+    { 
+      name: 'SMALL BAGS', 
+      dropdown: [
         { name: 'Sling Bags', path: '/smallbags/sling-bags' },
         { name: 'Small Crossbody Bags', path: '/smallbags/small-crossbody-bags' }
       ], 
-      path: '/smallbags' },
+      path: '/smallbags' 
+    },
     { name: 'LAPTOP BAGS', dropdown: null, path: '/laptopbags' },
     {
       name: 'TRAVEL BAGS',
@@ -53,57 +55,18 @@ const Header = () => {
       path: '/backpacks'
     },
     {
-      name: 'BRIEFCASE',dropdown: null, path: '/brief-cases'
+      name: 'BRIEFCASE',
+      dropdown: null, 
+      path: '/brief-cases'
     },
-   /* {
-      name: 'MEN',
+    { 
+      name: 'WALLET', 
       dropdown: [
-        { name: 'All Jackets', path: '/men/all-jackets' },
-        { name: 'Best Seller', path: '/men/best-seller' },
-        { name: 'Casual Jackets', path: '/men/casual-jackets' },
-        { name: 'Simple Jackets', path: '/men/simple-jackets' },
-        { name: 'Biker Jackets', path: '/men/biker-jackets' },
-        { name: 'Suede Jackets', path: '/men/suede-jackets' },
-        { name: 'Bomber Jackets', path: '/men/bomber-jackets' },
-        { name: 'Motorcycle Jackets', path: '/men/motorcycle-jackets' },
-        { name: 'Winter Jackets', path: '/men/winter-jackets' },
-        { name: 'Aviator Jackets', path: '/men/aviator-jackets' },
-        { name: 'Hooded Leather Jackets', path: '/men/hooded-leather-jackets' },
-        { name: 'Featured Products', path: '/men/featured-products' },
-        { name: 'Fur and Shearling Coats', path: '/men/fur-shearling-coats' },
-        { name: 'Leather Blazers', path: '/men/leather-blazers' },
-        { name: 'Vintage Leather Jackets', path: '/men/vintage-leather-jackets' },
-        { name: 'Leather Coats', path: '/men/leather-coats' },
-        { name: 'Leather Dusters', path: '/men/leather-dusters' },
-        { name: 'Trench & Winter Coats', path: '/men/trench-winter-coats' }
-      ],
-      path: '/men'
-    }, */
-   /* {
-      name: 'BACKPACKS',
-      dropdown: [
-        { name: 'All Women Jacket', path: '/women/all-jackets' },
-        { name: 'Best Seller', path: '/women/best-seller' },
-        { name: 'Biker Jackets', path: '/women/biker-jackets' },
-        { name: 'Suede Jackets', path: '/women/suede-jackets' },
-        { name: 'Simple Jacket', path: '/women/simple-jacket' },
-        { name: 'Aviator Jackets', path: '/women/aviator-jackets' },
-        { name: 'Bomber Jacket', path: '/women/bomber-jacket' },
-        { name: 'Leather Blazers', path: '/women/leather-blazers' },
-        { name: 'Leather Coats', path: '/women/leather-coats' },
-        { name: 'Winter Jackets', path: '/women/winter-jackets' },
-        { name: 'Motorcycle Jackets', path: '/women/motorcycle-jackets' },
-        { name: 'Shearling Jackets & Coats', path: '/women/shearling-jackets-coats' },
-        { name: 'Trench & Winter Coats', path: '/women/trench-winter-coats' }
-      ],
-      path: '/women'
-    },*/
-    { name: 'WALLET', 
-      dropdown:  [
         { name: 'Men\'s Wallet', path: '/wallet/menswallet' },
         { name: 'Passport Holder', path: '/wallet/passportholder' }
       ],
-      path: '/wallet' },
+      path: '/wallet' 
+    },
     { name: 'BELT', dropdown: null, path: '/belt' },
     { name: 'ABOUT US', dropdown: null, path: '/about' },
     { name: 'CONTACT', dropdown: null, path: '/contact' }
@@ -126,14 +89,28 @@ const Header = () => {
     }
   };
 
- const handleMenuClick = (item) => {
-  if (item.path) {
-    navigate(item.path);
-    setActiveDropdown(null);
-    setMobileMenuOpen(false);
-  }
-};
+  const handleMenuClick = (item) => {
+    if (item.path) {
+      navigate(item.path);
+      setActiveDropdown(null);
+      setMobileMenuOpen(false);
+    }
+  };
 
+  // NEW: Handle mobile main link click (navigate to category page)
+  const handleMobileMainLinkClick = (item) => {
+    if (item.path) {
+      navigate(item.path);
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+    }
+  };
+
+  // NEW: Handle mobile dropdown toggle (just toggle, don't navigate)
+  const handleMobileDropdownToggle = (idx, e) => {
+    e.stopPropagation();
+    setActiveDropdown(activeDropdown === idx ? null : idx);
+  };
 
   const handleLogoClick = () => {
     navigate('/');
@@ -158,10 +135,10 @@ const Header = () => {
           {/* Logo Section */}
           <div className="logo-section" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <img 
-               src="/images/logo.jpeg" 
-               alt="Company Logo" 
-               className="company-logo" 
-           />
+              src="/images/logo.jpeg" 
+              alt="Company Logo" 
+              className="company-logo" 
+            />
             <h1 className="logo-title">
               Eliteinova Leather Products Export
             </h1>
@@ -176,35 +153,33 @@ const Header = () => {
           </div>
 
           {/* Right Icons */}
-          {/* Right Icons */}
-<div className="header-icons">
-  <button className="icon-button" aria-label="User Profile">
-    <User className="icon" />
-  </button>
+          <div className="header-icons">
+            <button className="icon-button" aria-label="User Profile">
+              <User className="icon" />
+            </button>
 
-  {/* Hamburger Menu (MOBILE ONLY) */}
-  <button
-    className="mobile-menu-button icon-button"
-    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-    aria-label="Toggle Menu"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-      className="icon"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 6h16M4 12h16M4 18h16"
-      />
-    </svg>
-  </button>
-</div>
-
+            {/* Hamburger Menu (MOBILE ONLY) */}
+            <button
+              className="mobile-menu-button icon-button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="icon"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -246,40 +221,58 @@ const Header = () => {
             ))}
           </ul>
 
-          {/* Mobile Menu */}
+          {/* UPDATED Mobile Menu */}
           {mobileMenuOpen && (
             <div className="mobile-menu">
               {menuItems.map((item, idx) => (
                 <div key={idx} className="mobile-menu-item">
-                  <button
-                    className="mobile-menu-button"
-                    onClick={() => {
-                      if (item.dropdown) {
-                        setActiveDropdown(activeDropdown === idx ? null : idx);
-                      } else {
-                        handleMenuClick(item);
-                      }
-                    }}
-                  >
-                    {item.name}
-                    {item.dropdown && (
-                      <ChevronDown
-                        className={`chevron-icon ${activeDropdown === idx ? 'rotated' : ''}`}
-                      />
-                    )}
-                  </button>
-                  {item.dropdown && activeDropdown === idx && (
-                    <div className="mobile-dropdown">
-                      {item.dropdown.map((subItem, subIdx) => (
+                  {/* If item has dropdown, use split button layout */}
+                  {item.dropdown ? (
+                    <div className="mobile-menu-item-container">
+                      <div className="mobile-menu-header">
+                        {/* Main category link - navigates to category page */}
                         <button
-                          key={subIdx}
-                          onClick={(e) => handleDropdownClick(e, subItem)}
-                          className="mobile-dropdown-item"
+                          className="mobile-menu-main-link"
+                          onClick={() => handleMobileMainLinkClick(item)}
                         >
-                          {subItem.name}
+                          {item.name}
                         </button>
-                      ))}
+                        
+                        {/* Separate dropdown toggle button */}
+                        <button
+                          className="mobile-dropdown-toggle"
+                          onClick={(e) => handleMobileDropdownToggle(idx, e)}
+                          aria-label="Toggle submenu"
+                        >
+                          <ChevronDown
+                            className={`chevron-icon ${activeDropdown === idx ? 'rotated' : ''}`}
+                          />
+                        </button>
+                      </div>
+                      
+                      {/* Dropdown submenu */}
+                      {activeDropdown === idx && (
+                        <div className="mobile-dropdown">
+                          {item.dropdown.map((subItem, subIdx) => (
+                            <button
+                              key={subIdx}
+                              onClick={(e) => handleDropdownClick(e, subItem)}
+                              className="mobile-dropdown-item"
+                            >
+                              {subItem.name}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
+                  ) : (
+                    /* If no dropdown, simple link */
+                    <button
+                      className="mobile-menu-link"
+                      onClick={() => handleMenuClick(item)}
+                    >
+                      {item.name}
+                    </button>
                   )}
                 </div>
               ))}
