@@ -150,7 +150,7 @@ const WomenHandbagsPage = () => {
         <div className="handbags-benefits-content">
           <div className="handbags-benefits-image">
             <div className="handbags-benefits-image-placeholder">
-              <img src="/images/leather-handbags-craftsmanship.jpg" alt="Premium Leather Handbags" className="handbags-benefits-img" />
+              <img src="/images/handbag_about.jpg" alt="Premium Leather Handbags" className="handbags-benefits-img" />
             </div>
           </div>
           <div className="handbags-benefits-text">

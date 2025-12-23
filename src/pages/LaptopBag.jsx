@@ -8,6 +8,10 @@ const LaptopBagsPage = () => {
   });
   const [sortBy, setSortBy] = useState('featured');
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // 20 laptop bag products
   const products = [
     { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/lap1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
@@ -145,6 +149,33 @@ const LaptopBagsPage = () => {
             </div>
           ))}
         </div>
+
+         {/* Leather Laptop bags Benefits Section */}
+      <section className="lap-benefits-section">
+        <div className="lap-benefits-content">
+          <div className="lap-benefits-image">
+            <div className="lap-benefits-image-placeholder">
+              <img src="/images/lap about.jpg" alt="Premium Leather Shoes" className="lap-benefits-img" />
+            </div>
+          </div>
+          <div className="lap-benefits-text">
+            <h2 className="lap-benefits-title">Refined Protection in Leather Laptop Bags</h2>
+            <p className="lap-benefits-description">
+              At Eliteinova, our leather laptop bags are crafted for professionals who value both functionality and sophisticated design.
+              We work with trusted manufacturing partners and select high-quality leather known for its strength, smooth finish, and ability to age gracefully.
+              Every bag is carefully inspected to ensure durability, structure, and long-term performance.
+            </p>
+            <p className="lap-benefits-description">
+              Designed to protect and organize, our leather laptop bags offer dedicated compartments for devices, documents, and daily essentials. 
+              Padded interiors provide reliable protection, while ergonomic handles and adjustable straps ensure comfort during daily commutes or travel. 
+              As the leather matures, it develops a rich patina that enhances its character, making each laptop bag a distinctive blend of elegance, reliability, and modern practicality.
+            </p>
+            <button className="lap-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
       </div>
 
       <a href="https://wa.me/9876543210" className="laptopbags-whatsapp-btn" target="_blank" rel="noopener noreferrer">

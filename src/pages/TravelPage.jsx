@@ -5,6 +5,10 @@ import './TravelPage.css';
 const TravelPage = () => {
   const navigate = useNavigate();
 
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const collections = [
     {
       name: "Trolley Bags",
@@ -112,6 +116,33 @@ const TravelPage = () => {
             </div>
           ))}
         </div>
+
+        {/* Leather Small bags Benefits Section */}
+      <section className="travel-benefits-section">
+        <div className="travel-benefits-content">
+          <div className="travel-benefits-image">
+            <div className="travel-benefits-image-placeholder">
+              <img src="/images/travel about.jpg" alt="Premium Leather Shoes" className="travel-benefits-img" />
+            </div>
+          </div>
+          <div className="travel-benefits-text">
+            <h2 className="travel-benefits-title">Designed for the Way You Travel</h2>
+            <p className="travel-benefits-description">
+              At Eliteinova, our leather travel bags are designed for those who appreciate durability, elegance, and dependable craftsmanship on every journey. 
+              We collaborate with trusted manufacturing partners and use carefully selected premium leather known for its resilience, rich texture, and ability to age beautifully. 
+              Each travel bag undergoes strict quality checks to ensure strength, balance, and long-lasting performance.
+            </p>
+            <p className="travel-benefits-description">
+              Created for both short trips and extended travel, our leather travel bags offer spacious interiors with smart compartments to keep belongings organized and secure. 
+              Reinforced handles, sturdy zippers, and comfortable straps provide ease of carrying, while the natural leather develops a distinctive patina over time, enhancing its character. 
+              From classic duffel styles to refined travel companions, our collection combines functionality, sophistication, and reliability for journeys near and far.
+            </p>
+            <button className="travel-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
       </div>
 
       <a href="https://wa.me/9876543210" className="travel-whatsapp-btn" target="_blank" rel="noopener noreferrer">

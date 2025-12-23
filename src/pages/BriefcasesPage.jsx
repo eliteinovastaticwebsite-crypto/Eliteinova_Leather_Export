@@ -8,6 +8,11 @@ const BriefcasesPage = () => {
   });
   const [sortBy, setSortBy] = useState('featured');
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+
   // 20 briefcase products
   const products = [
     { id: 1, name: 'Rexo Crunch Leather Handbag', image: '/images/brief1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
@@ -145,6 +150,33 @@ const BriefcasesPage = () => {
             </div>
           ))}
         </div>
+
+        {/* Leather Brief Benefits Section */}
+      <section className="brief-benefits-section">
+        <div className="brief-benefits-content">
+          <div className="brief-benefits-image">
+            <div className="brief-benefits-image-placeholder">
+              <img src="/images/briefcase about.jpg" alt="Premium Leather Shoes" className="brief-benefits-img" />
+            </div>
+          </div>
+          <div className="brief-benefits-text">
+            <h2 className="brief-benefits-title">Executive Presence in Leather</h2>
+            <p className="brief-benefits-description">
+              At Eliteinova, our leather briefcases are crafted for professionals who value confidence, structure, and timeless design. 
+              We work closely with trusted manufacturing partners and select premium-grade leather known for its durability, smooth finish, and ability to age gracefully. 
+              Each briefcase undergoes detailed quality inspections to ensure strength, precision, and long-term reliability.
+            </p>
+            <p className="brief-benefits-description">
+              Designed to support modern workdays, our leather briefcases feature well-organized interiors with dedicated compartments for documents, laptops, and daily essentials. 
+              Reinforced handles, secure closures, and optional shoulder straps provide comfort and ease of use throughout busy schedules.
+              As the leather matures, it develops a rich patina that enhances its character, making every briefcase a lasting symbol of professionalism, craftsmanship, and refined functionality.
+            </p>
+            <button className="brief-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
       </div>
 
       <a href="https://wa.me/9876543210" className="briefcases-whatsapp-btn" target="_blank" rel="noopener noreferrer">

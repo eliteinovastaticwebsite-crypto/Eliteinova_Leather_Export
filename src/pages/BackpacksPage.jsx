@@ -5,6 +5,10 @@ import './BackpacksPage.css';
 const BackpacksPage = () => {
   const navigate = useNavigate();
 
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const collections = [
     {
       name: "Men's Backpacks",
@@ -112,6 +116,33 @@ const BackpacksPage = () => {
             </div>
           ))}
         </div>
+
+         {/* Leather Small bags Benefits Section */}
+      <section className="bp-benefits-section">
+        <div className="bp-benefits-content">
+          <div className="bp-benefits-image">
+            <div className="bp-benefits-image-placeholder">
+              <img src="/images/backpack about.jpg" alt="Premium Leather Shoes" className="bp-benefits-img" />
+            </div>
+          </div>
+          <div className="bp-benefits-text">
+            <h2 className="bp-benefits-title">Elevated Utility in Leather Backpacks</h2>
+            <p className="bp-benefits-description">
+              At Eliteinova, our leather backpacks are designed for those who seek versatility without compromising on sophistication. 
+              Crafted in collaboration with trusted manufacturing partners, we use premium-grade leather selected for its durability, refined texture, and ability to age beautifully over time. 
+              Every backpack is subjected to strict quality checks to ensure lasting strength, comfort, and performance.
+            </p>
+            <p className="bp-benefits-description">
+              Thoughtfully engineered for everyday use, our leather backpacks feature spacious interiors, secure compartments for laptops and essentials, and balanced weight distribution for comfortable carrying. 
+              Adjustable padded straps and reinforced construction provide support during commutes, travel, and daily routines. 
+              As the leather develops a unique patina with use, each backpack becomes a distinctive expression of style, practicality, and enduring craftsmanship.
+            </p>
+            <button className="bp-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
       </div>
 
       <a href="https://wa.me/9876543210" className="backpacks-whatsapp-btn" target="_blank" rel="noopener noreferrer">

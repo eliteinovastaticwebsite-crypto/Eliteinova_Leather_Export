@@ -5,6 +5,10 @@ import './SmallBagsPage.css';
 const SmallBagsPage = () => {
   const navigate = useNavigate();
 
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const collections = [
     {
       name: "Sling Bags",
@@ -112,6 +116,32 @@ const SmallBagsPage = () => {
             </div>
           ))}
         </div>
+        {/* Leather Small bags Benefits Section */}
+      <section className="sb-benefits-section">
+        <div className="sb-benefits-content">
+          <div className="sb-benefits-image">
+            <div className="sb-benefits-image-placeholder">
+              <img src="/images/smallbag_about.jpg" alt="Premium Leather Shoes" className="sb-benefits-img" />
+            </div>
+          </div>
+          <div className="sb-benefits-text">
+            <h2 className="sb-benefits-title">Crafted Compact Luxury in Leather</h2>
+            <p className="sb-benefits-description">
+              At Eliteinova, our sling and small bags are thoughtfully created for those who value refined craftsmanship in a compact form.
+              We partner with trusted manufacturers and work with carefully selected premium leather to ensure every piece reflects durability, elegance, and lasting appeal. 
+              Each bag undergoes detailed quality inspections to maintain consistency, strength, and superior finishing.
+            </p>
+            <p className="sb-benefits-description">
+              Designed for effortless mobility, our leather sling and small bags provide smart organization without compromising on style. 
+              Lightweight yet sturdy, they are ideal for carrying daily essentials while maintaining a sleek silhouette. Over time, the natural leather softens and develops a distinctive character, making every bag uniquely yours. 
+              From contemporary crossbody designs to minimalist small bags, our collection delivers sophistication, comfort, and versatility for modern living.
+            </p>
+            <button className="sb-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
       </div>
 
       <a href="https://wa.me/9876543210" className="small-bags-whatsapp-btn" target="_blank" rel="noopener noreferrer">

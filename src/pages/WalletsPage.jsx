@@ -5,6 +5,10 @@ import './WalletsPage.css';
 const WalletsPage = () => {
   const navigate = useNavigate();
 
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const collections = [
     {
       name: "Men's Wallet",
@@ -112,6 +116,33 @@ const WalletsPage = () => {
             </div>
           ))}
         </div>
+
+        {/* Leather Small bags Benefits Section */}
+      <section className="wal-benefits-section">
+        <div className="wal-benefits-content">
+          <div className="wal-benefits-image">
+            <div className="wal-benefits-image-placeholder">
+              <img src="/images/wallet about.jpg" alt="Premium Leather Shoes" className="wal-benefits-img" />
+            </div>
+          </div>
+          <div className="wal-benefits-text">
+            <h2 className="wal-benefits-title">Refined Essentials in Leather Wallets & Passport Holders</h2>
+            <p className="wal-benefits-description">
+              At Eliteinova, our leather wallets and passport holders are crafted to elevate everyday essentials through thoughtful design and superior craftsmanship. 
+              We partner with trusted manufacturers and use premium-grade leather chosen for its durability, smooth texture, and ability to age gracefully. 
+              Each piece undergoes careful quality checks to ensure precision, strength, and lasting quality.
+            </p>
+            <p className="wal-benefits-description">
+              Designed for convenience and elegance, our leather wallets offer well-organized compartments for cards, cash, and documents, while our passport holders provide secure protection for travel essentials. 
+              Slim profiles ensure easy carrying without added bulk, making them ideal for daily use and travel alike. 
+              Over time, the natural leather develops a distinctive patina, transforming each wallet and passport holder into a unique expression of refined style, functionality, and enduring craftsmanship.
+            </p>
+            <button className="wal-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
       </div>
 
       <a href="https://wa.me/9876543210" className="wallets-whatsapp-btn" target="_blank" rel="noopener noreferrer">

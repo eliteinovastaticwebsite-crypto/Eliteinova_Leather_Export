@@ -848,3 +848,86 @@ body {
     height: 30px;
   }
 }
+/* ============================================= */
+/* LEATHER SMALL BAGS BENEFITS SECTION */
+/* ============================================= */
+
+.lap-benefits-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+  margin-bottom: 0;
+  margin-top: 5rem;
+}
+
+.lap-benefits-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.lap-benefits-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+.lap-benefits-image-placeholder {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.lap-benefits-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.lap-benefits-image-placeholder:hover .shoes-benefits-img {
+  transform: scale(1.1);
+}
+
+.lap-benefits-text {
+  padding: 2rem;
+  order: 2;
+}
+
+.lap-benefits-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.lap-benefits-description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.lap-cta-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.lap-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}

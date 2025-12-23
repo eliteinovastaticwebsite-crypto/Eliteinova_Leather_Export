@@ -1,4 +1,4 @@
-/* SmallBagsPage.css */
+/* SmallBagsPage.css - Fully Responsive Complete */
 
 * {
   margin: 0;
@@ -17,6 +17,10 @@ body {
   min-height: 100vh;
 }
 
+/* ============================================= */
+/* BREADCRUMB */
+/* ============================================= */
+
 .small-bags-breadcrumb {
   max-width: 1400px;
   margin: 20px auto;
@@ -34,6 +38,10 @@ body {
   text-decoration: underline;
 }
 
+/* ============================================= */
+/* HERO SECTION */
+/* ============================================= */
+
 .small-bags-hero-section {
   width: 100%;
   overflow: hidden;
@@ -47,7 +55,10 @@ body {
   object-fit: cover;
 }
 
-/* Collections Section */
+/* ============================================= */
+/* COLLECTIONS SECTION */
+/* ============================================= */
+
 .small-bags-collections-section {
   padding: 4rem 2rem;
   background: linear-gradient(to bottom, #fffbeb, #ffedd5);
@@ -151,7 +162,10 @@ body {
   line-height: 1.4;
 }
 
-/* Featured Products Section */
+/* ============================================= */
+/* FEATURED PRODUCTS SECTION */
+/* ============================================= */
+
 .small-bags-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -251,6 +265,94 @@ body {
   line-height: 1.4;
 }
 
+/* ============================================= */
+/* BENEFITS SECTION */
+/* ============================================= */
+
+.sb-benefits-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+  margin-bottom: 0;
+  margin-top: 5rem;
+}
+
+.sb-benefits-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sb-benefits-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+.sb-benefits-image-placeholder {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.sb-benefits-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.sb-benefits-image-placeholder:hover .sb-benefits-img {
+  transform: scale(1.1);
+}
+
+.sb-benefits-text {
+  padding: 2rem;
+  order: 2;
+}
+
+.sb-benefits-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.sb-benefits-description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.sb-cta-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.sb-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+/* ============================================= */
+/* WHATSAPP BUTTON */
+/* ============================================= */
+
 .small-bags-whatsapp-btn {
   position: fixed;
   bottom: 30px;
@@ -285,7 +387,10 @@ body {
   transform: scale(0.95);
 }
 
-/* Tablet Responsive (1024px and below) */
+/* ============================================= */
+/* TABLET RESPONSIVE (1024px and below) */
+/* ============================================= */
+
 @media (max-width: 1024px) {
   .small-bags-hero-image {
     height: 500px;
@@ -332,6 +437,29 @@ body {
     height: 300px;
   }
   
+  /* Benefits Section Tablet */
+  .sb-benefits-section {
+    padding: 4rem 1.5rem;
+    margin-top: 4rem;
+  }
+  
+  .sb-benefits-content {
+    gap: 3rem;
+  }
+  
+  .sb-benefits-title {
+    font-size: 2.2rem;
+  }
+  
+  .sb-benefits-description {
+    font-size: 1.05rem;
+  }
+  
+  .sb-benefits-image-placeholder {
+    width: 350px;
+    height: 350px;
+  }
+  
   .small-bags-whatsapp-btn {
     width: 55px;
     height: 55px;
@@ -345,7 +473,10 @@ body {
   }
 }
 
-/* Medium Tablet (900px and below) */
+/* ============================================= */
+/* MEDIUM TABLET (900px and below) */
+/* ============================================= */
+
 @media (max-width: 900px) {
   .small-bags-hero-image {
     height: 450px;
@@ -390,16 +521,32 @@ body {
   }
 }
 
-/* Mobile Responsive (768px and below) */
+/* ============================================= */
+/* MOBILE RESPONSIVE (768px and below) */
+/* ============================================= */
+
 @media (max-width: 768px) {
   .small-bags-hero-image {
     height: 400px;
+    object-fit: contain;
+    object-position: top center;
+    background: #f5f5f5;
+  }
+  
+  .small-bags-hero-section {
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
   }
   
   .small-bags-breadcrumb {
     font-size: 12px;
     margin: 15px auto;
     padding: 0 15px;
+    text-align: center;
   }
   
   .small-bags-collections-section {
@@ -419,7 +566,7 @@ body {
   }
   
   .small-bags-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.75rem;
   }
   
@@ -452,7 +599,7 @@ body {
   }
   
   .small-bags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   
@@ -460,12 +607,47 @@ body {
     height: 260px;
   }
   
+  /* Benefits Section Mobile */
+  .sb-benefits-section {
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+  }
+  
+  .sb-benefits-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sb-benefits-image {
+    order: 1;
+  }
+  
+  .sb-benefits-text {
+    padding: 1rem;
+    text-align: center;
+    order: 2;
+  }
+  
+  .sb-benefits-title {
+    font-size: 1.8rem;
+  }
+  
+  .sb-benefits-description {
+    font-size: 1rem;
+  }
+  
+  .sb-benefits-image-placeholder {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  
   .small-bags-whatsapp-btn {
     width: 45px;
     height: 45px;
     bottom: 20px;
     right: 20px;
-    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
   }
   
   .small-bags-whatsapp-btn svg {
@@ -474,10 +656,19 @@ body {
   }
 }
 
-/* Small Mobile (480px and below) */
+/* ============================================= */
+/* SMALL MOBILE (480px and below) */
+/* ============================================= */
+
 @media (max-width: 480px) {
   .small-bags-hero-image {
     height: 300px;
+    max-height: 350px;
+  }
+  
+  .small-bags-hero-section {
+    min-height: 250px;
+    max-height: 350px;
   }
   
   .small-bags-breadcrumb {
@@ -496,7 +687,7 @@ body {
   }
   
   .small-bags-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   
@@ -527,7 +718,7 @@ body {
   }
   
   .small-bags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
   
@@ -551,29 +742,57 @@ body {
     font-size: 11px;
   }
   
+  /* Benefits Section Small Mobile */
+  .sb-benefits-section {
+    padding: 2.5rem 1rem;
+    margin-top: 2.5rem;
+  }
+  
+  .sb-benefits-title {
+    font-size: 1.6rem;
+  }
+  
+  .sb-benefits-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .sb-benefits-image-placeholder {
+    max-width: 280px;
+    height: 280px;
+  }
+  
+  .sb-cta-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+  
   .small-bags-whatsapp-btn {
     width: 40px;
     height: 40px;
     bottom: 15px;
     right: 15px;
-    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.4);
   }
   
   .small-bags-whatsapp-btn svg {
     width: 20px;
     height: 20px;
   }
-  
-  .small-bags-whatsapp-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.6);
-  }
 }
 
-/* Extra Small Mobile (360px and below) */
+/* ============================================= */
+/* EXTRA SMALL MOBILE (360px and below) */
+/* ============================================= */
+
 @media (max-width: 360px) {
   .small-bags-hero-image {
     height: 250px;
+    max-height: 300px;
+  }
+  
+  .small-bags-hero-section {
+    min-height: 200px;
+    max-height: 300px;
   }
   
   .small-bags-breadcrumb {
@@ -597,7 +816,7 @@ body {
   }
   
   .small-bags-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
   
@@ -619,7 +838,7 @@ body {
   }
   
   .small-bags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
   
@@ -631,12 +850,24 @@ body {
     font-size: 13px;
   }
   
+  .sb-benefits-title {
+    font-size: 1.4rem;
+  }
+  
+  .sb-benefits-description {
+    font-size: 0.9rem;
+  }
+  
+  .sb-benefits-image-placeholder {
+    max-width: 250px;
+    height: 250px;
+  }
+  
   .small-bags-whatsapp-btn {
     width: 38px;
     height: 38px;
     bottom: 12px;
     right: 12px;
-    box-shadow: 0 1px 5px rgba(37, 211, 102, 0.4);
   }
   
   .small-bags-whatsapp-btn svg {
@@ -645,14 +876,17 @@ body {
   }
 }
 
-/* Landscape Mode for Mobile */
+/* ============================================= */
+/* LANDSCAPE MODE FOR MOBILE */
+/* ============================================= */
+
 @media (max-width: 768px) and (orientation: landscape) {
   .small-bags-hero-image {
     height: 350px;
   }
   
   .small-bags-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
   
@@ -662,7 +896,7 @@ body {
   }
   
   .small-bags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
   
@@ -683,7 +917,10 @@ body {
   }
 }
 
-/* Very Small Screens (320px and below) */
+/* ============================================= */
+/* VERY SMALL SCREENS (320px and below) */
+/* ============================================= */
+
 @media (max-width: 320px) {
   .small-bags-collection-name,
   .small-bags-product-name,
@@ -697,8 +934,17 @@ body {
     font-size: 9px;
   }
   
+  .small-bags-hero-image {
+    height: 220px;
+  }
+  
+  .small-bags-hero-section {
+    min-height: 180px;
+    max-height: 250px;
+  }
+  
   .small-bags-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
@@ -708,7 +954,7 @@ body {
   }
   
   .small-bags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
   
@@ -733,10 +979,17 @@ body {
   }
 }
 
-/* Touch device optimizations */
+/* ============================================= */
+/* TOUCH DEVICE OPTIMIZATIONS */
+/* ============================================= */
+
 @media (hover: none) and (pointer: coarse) {
   .small-bags-collection-card:hover {
     transform: none;
+  }
+  
+  .small-bags-collection-card:active {
+    transform: translateY(-5px);
   }
   
   .small-bags-collection-card:hover .small-bags-collection-image {
@@ -753,6 +1006,10 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
+  .small-bags-product-card:active {
+    transform: translateY(-3px);
+  }
+  
   .small-bags-product-card:hover .small-bags-product-image img {
     transform: none;
   }
@@ -761,14 +1018,34 @@ body {
     transform: none;
   }
   
+  .sb-cta-button:active {
+    transform: translateY(-1px);
+  }
+  
+  .sb-benefits-image-placeholder:active .sb-benefits-img {
+    transform: scale(1.05);
+  }
+  
   /* Make collection cards easier to tap on mobile */
   .small-bags-collection-card {
-    min-height: 44px; /* Minimum touch target size */
+    min-height: 44px;
   }
 }
 
-/* Large Screens Optimization */
+/* ============================================= */
+/* LARGE SCREENS (1400px and above) */
+/* ============================================= */
+
 @media (min-width: 1400px) {
+  .small-bags-hero-image {
+    height: 750px;
+  }
+  
+  .sb-benefits-image-placeholder {
+    width: 450px;
+    height: 450px;
+  }
+  
   .small-bags-whatsapp-btn {
     width: 65px;
     height: 65px;
@@ -780,4 +1057,18 @@ body {
     width: 30px;
     height: 30px;
   }
+}
+
+/* ============================================= */
+/* SMOOTH SCROLLING */
+/* ============================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
 }

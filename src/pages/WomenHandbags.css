@@ -577,15 +577,25 @@ body {
     text-align: center;
   }
 
-  .hero-image {
-    max-height: 350px;
-    object-position: top center;
-  }
-  
+  @media (max-width: 480px) {
+
   .hero-section {
-    min-height: 200px;
-    max-height: 350px;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    overflow: visible;
   }
+
+  .hero-image {
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center;
+    display: block;
+  }
+}
+
 
   .handbags-filter-bar {
     padding: 10px;

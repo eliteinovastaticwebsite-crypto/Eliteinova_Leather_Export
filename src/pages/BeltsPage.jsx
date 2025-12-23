@@ -8,6 +8,10 @@ const BeltsPage = () => {
   });
   const [sortBy, setSortBy] = useState('featured');
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // 20 belt products
   const products = [
     { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/red_laptopbag.png', color: 'Brown', inStock: true, date: '2024-01-15' },
@@ -145,6 +149,34 @@ const BeltsPage = () => {
             </div>
           ))}
         </div>
+       
+       {/* Leather Belt Benefits Section */}
+      <section className="belt-benefits-section">
+        <div className="belt-benefits-content">
+          <div className="belt-benefits-image">
+            <div className="belt-benefits-image-placeholder">
+              <img src="/images/belt about.jpg" alt="Premium Leather Shoes" className="belt-benefits-img" />
+            </div>
+          </div>
+          <div className="belt-benefits-text">
+            <h2 className="belt-benefits-title">Precision Crafted in Leather Belts</h2>
+            <p className="belt-benefits-description">
+              At Eliteinova, our leather belts are designed to deliver understated elegance and dependable performance. 
+              We work with trusted manufacturing partners and select premium-grade leather known for its strength, rich texture, and ability to age beautifully over time. 
+              Each belt is carefully crafted and quality-checked to ensure durability, consistency, and long-lasting wear.
+            </p>
+            <p className="belt-benefits-description">
+              Designed to complement both formal and casual attire, our leather belts feature clean lines, refined finishes, and sturdy buckles for a secure fit. 
+              The natural leather softens and develops a distinctive patina with use, enhancing character while maintaining structure. 
+              From classic dress belts to versatile everyday styles, our collection reflects timeless design, comfort, and craftsmanship built to last.
+            </p>
+            <button className="belt-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
+        
       </div>
 
       <a href="https://wa.me/9876543210" className="belts-whatsapp-btn" target="_blank" rel="noopener noreferrer">
