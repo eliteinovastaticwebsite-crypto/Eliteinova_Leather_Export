@@ -8,7 +8,7 @@ const WomenHandbagsPage = () => {
   });
   const [sortBy, setSortBy] = useState('featured');
 
-  // 20 handbag products
+  // Handbag products
   const products = [
     { id: 1, name: 'Rexo Crunch Leather Handbag', image: '/images/red_handbag.png', color: 'Brown', inStock: true, date: '2024-01-15' },
     { id: 2, name: 'Rexo Crunch Leather Handbag', image: '/images/H1.png', color: 'Green', inStock: false, date: '2024-02-20' },
@@ -25,11 +25,6 @@ const WomenHandbagsPage = () => {
     { id: 13, name: 'Classic Leather Handbag', image: '/images/H12.png', color: 'Brown', inStock: true, date: '2024-09-14' },
     { id: 14, name: 'Topper Stylish Leather Travel Handbag', image: '/images/H13.png', color: 'Brown', inStock: true, date: '2024-04-28' },
     { id: 15, name: 'Topper Stylish Leather Travel Handbag', image: '/images/H14.png', color: 'Black', inStock: false, date: '2024-10-20' },
-   /* { id: 16, name: 'Leather Shoulder Handbag', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Leather Shoulder Handbag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Handbag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' } */
   ];
 
   const filteredProducts = products.filter(product => {
@@ -69,6 +64,10 @@ const WomenHandbagsPage = () => {
     setAvailabilityFilter({ inStock: false, outOfStock: false });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
 
   return (
@@ -77,10 +76,9 @@ const WomenHandbagsPage = () => {
         <a href="/">Home</a> / <span>Women's Handbags</span>
       </div>
 
-     <div className="hero-section">
-    <img src="/images/handbag_hero.png" alt="Elegant Handbags" className="hero-image" />
-    </div>
-
+      <div className="hero-section">
+        <img src="/images/handbag_hero.png" alt="Elegant Handbags" className="hero-image" />
+      </div>
 
       <div className="handbags-container">
         <div className="handbags-filter-bar">
@@ -146,6 +144,34 @@ const WomenHandbagsPage = () => {
           ))}
         </div>
       </div>
+
+      {/* Leather Handbags Benefits Section */}
+      <section className="handbags-benefits-section">
+        <div className="handbags-benefits-content">
+          <div className="handbags-benefits-image">
+            <div className="handbags-benefits-image-placeholder">
+              <img src="/images/leather-handbags-craftsmanship.jpg" alt="Premium Leather Handbags" className="handbags-benefits-img" />
+            </div>
+          </div>
+          <div className="handbags-benefits-text">
+            <h2 className="handbags-benefits-title">Elegance in Leather Handbags</h2>
+            <p className="handbags-benefits-description">
+              At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturing partnerships. 
+              We use premium-grade leather known for its durability, rich texture, and ability to age beautifully over time. 
+              Our strict quality checks ensure strength, comfort, and long-lasting performance in every product.
+            </p>
+            <p className="handbags-benefits-description">
+              Our leather handbags combine timeless elegance with practical functionality. Each piece is designed to complement 
+              your style while providing ample storage and organization. The natural leather develops a unique patina over time, 
+              making each handbag truly one-of-a-kind. From classic totes to sophisticated clutches, our collection offers 
+              versatile options for every occasion.
+            </p>
+            <button className="handbags-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
 
       <a href="https://wa.me/9876543210" className="handbags-whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 32 32" width="32" height="32">

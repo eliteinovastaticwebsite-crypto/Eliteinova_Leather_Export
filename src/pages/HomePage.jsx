@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';  // ADDED: Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './HomePage.css';
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const navigate = useNavigate();  // ADDED: Initialize navigate
+  const navigate = useNavigate();
 
   const slides = [
     {
@@ -34,63 +34,63 @@ const HomePage = () => {
       products: 44,
       image: "/images/collection_shoe.png",
       color: "#8b4513",
-      path: "/shoes"  // ADDED: Navigation path
+      path: "/shoes"
     },
     {
       name: "Handbags",
       products: 67,
       image: "/images/red_handbag.png",
       color: "#8b4513",
-      path: "/women-handbags"  // ADDED: Navigation path
+      path: "/women-handbags"
     },
     {
       name: "Small Bags",
       products: 67,
       image: "/images/small_bag.png",
       color: "#8b4513",
-      path: "/smallbags"  // ADDED: Navigation path
+      path: "/smallbags"
     },
     {
       name: "Laptop Bags",
       products: 191,
       image: "/images/collection_image.png",
       color: "#8b4513",
-      path: "/laptopbags"  // ADDED: Navigation path
+      path: "/laptopbags"
     },
     {
       name: "Travel Bags",
       products: 67,
       image: "/images/travel_bag.png",
       color: "#8b4513",
-      path: "/travelbags"  // ADDED: Navigation path
+      path: "/travelbags"
     },
     {
       name: "Backpacks",
       products: 67,
       image: "/images/backpack_collection.png",
       color: "#8b4513",
-      path: "/backpacks"  // ADDED: Navigation path
+      path: "/backpacks"
     },
     {
       name: "Briefcases",
       products: 67,
       image: "/images/brief.png",
       color: "#8b4513",
-      path: "/brief-cases"  // ADDED: Navigation path
+      path: "/brief-cases"
     },
     {
       name: "Wallet",
       products: 12,
       image: "/images/wallet.png",
       color: "#8b4513",
-      path: "/wallet"  // ADDED: Navigation path
+      path: "/wallet"
     },
     {
       name: "Belt",
       products: 85,
       image: "/images/collection_belt.png",
       color: "#8b4513",
-      path: "/belt"  // ADDED: Navigation path
+      path: "/belt"
     }
   ];
 
@@ -110,9 +110,21 @@ const HomePage = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // ADDED: Handle collection click
   const handleCollectionClick = (path) => {
     navigate(path);
+  };
+
+  // Navigate to About Us page
+  const handleExploreStory = () => {
+    navigate('/about');
+  };
+
+  // Scroll to collections section on the same page
+  const handleLearnMore = () => {
+    const collectionsSection = document.querySelector('.collections-section');
+    if (collectionsSection) {
+      collectionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
@@ -162,8 +174,8 @@ const HomePage = () => {
             <div 
               key={index} 
               className="collection-card"
-              onClick={() => handleCollectionClick(collection.path)}  // ADDED: Click handler
-              style={{ cursor: 'pointer' }}  // ADDED: Pointer cursor
+              onClick={() => handleCollectionClick(collection.path)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="collection-image" style={{ borderColor: collection.color }}>
                 <div className="collection-icon-wrapper" style={{ backgroundColor: `${collection.color}15` }}>
@@ -184,16 +196,39 @@ const HomePage = () => {
           <div className="about-text">
             <h2 className="about-title">Premium Leather Craftsmanship</h2>
             <p className="about-description">
-              At Eliteinova, we pride ourselves on creating exceptional leather products that combine 
-              traditional craftsmanship with modern design. Each piece is carefully handcrafted using 
-              the finest materials to ensure lasting quality and timeless style.
+              Eliteinova is a leather export company collaborating with experienced manufacturing partners to supply high-quality leather goods worldwide. 
+              We work closely with our partners to ensure superior materials, skilled craftsmanship, and consistent production standards. 
+              Every product undergoes strict quality checks to meet international export requirements. Our strong partnerships enable reliable supply, timely delivery, and scalable production. 
+              Eliteinova is committed to delivering excellence and long-term value to global clients.
+
             </p>
-            <button className="cta-button">Explore Our Story</button>
+            <button className="cta-button" onClick={handleExploreStory}>Explore Our Story</button>
           </div>
           <div className="about-image">
             <div className="about-image-placeholder">
-              <img src="https://images.unsplash.com/photo-1590393294783-4d3f1fe8a1b8?w=500&h=500&fit=crop" alt="Craftsmanship" className="about-img" />
+              <img src="/images/leather_craft.jpg" alt="Craftsmanship" className="about-img" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Feature Section - Image Left, Text Right */}
+      <section className="feature-section">
+        <div className="feature-content">
+          <div className="feature-image">
+            <div className="feature-image-placeholder">
+              <img src="/images/leather_product.jpg" alt="Quality Materials" className="feature-img" />
+            </div>
+          </div>
+          <div className="feature-text">
+            <h2 className="feature-title">Timeless Quality & Design</h2>
+            <p className="feature-description">
+              At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturing partnerships. We use premium-grade leather known for its durability, rich texture, and ability to age beautifully over time. 
+              Our strict quality checks ensure strength, comfort, and long-lasting performance in every product.
+              This focus allows us to deliver refined, export-quality leather goods that meet international standards.
+
+            </p>
+            <button className="cta-button" onClick={handleLearnMore}>Learn More</button>
           </div>
         </div>
       </section>
@@ -209,6 +244,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       {/* WhatsApp Button */}
       <a href="https://wa.me/9876543210" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 32 32" width="28" height="28">

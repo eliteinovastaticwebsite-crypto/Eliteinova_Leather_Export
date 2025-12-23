@@ -26,7 +26,7 @@ const ShoesPage = () => {
     }
   ];
 
-  // 20 featured shoe products
+  // Featured shoe products
   const products = [
     { id: 1, name: 'Classic Leather Boot', image: '/images/shoe1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
     { id: 2, name: 'Classic Leather Boot', image: '/images/shoe2.png', color: 'Black', inStock: false, date: '2024-02-20' },
@@ -40,18 +40,14 @@ const ShoesPage = () => {
     { id: 10, name: 'Casual Loafers', image: '/images/shoe10.png', color: 'Brown', inStock: true, date: '2024-07-12' },
     { id: 11, name: 'Monk Strap Shoes', image: '/images/shoe11.png', color: 'Black', inStock: false, date: '2024-08-05' },
     { id: 12, name: 'Monk Strap Shoes', image: '/images/shoe12.png', color: 'Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Brogue Shoes', image: '/images/shoe13.png', color: 'Tan', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Brogue Shoes', image: '/images/shoe14.png', color: 'Black', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Desert Boot', image: '/images/shoe15.png', color: 'Tan', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Desert Boot', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Casual Sneakers', image: '/api/placeholder/300/300', color: 'White', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Casual Sneakers', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Leather Sandals', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Leather Sandals', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }
   ];
 
   const handleCollectionClick = (path) => {
     navigate(path);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -98,23 +94,50 @@ const ShoesPage = () => {
         </div>
 
         <div className="shoes-products-grid">
-  {products.map(product => (
-    <div key={product.id} className="shoes-product-card">
-      <div className="shoes-product-image">
-        <img src={product.image} alt={product.name} />
+          {products.map(product => (
+            <div key={product.id} className="shoes-product-card">
+              <div className="shoes-product-image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <div className="shoes-product-info">
+                <h3 className="shoes-product-name">{product.name}</h3>
+                <p className="shoes-product-color">{product.color}</p>
+                {!product.inStock && (
+                  <p className="shoes-out-of-stock">Out of Stock</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="shoes-product-info">
-        <h3 className="shoes-product-name">{product.name}</h3>
-        <p className="shoes-product-color">{product.color}</p>
-        {!product.inStock && (
-          <p className="shoes-out-of-stock">Out of Stock</p>
-        )}
-      </div>
-    </div>
-  ))}
-</div>
 
-      </div>
+      {/* Leather Shoes Benefits Section */}
+      <section className="shoes-benefits-section">
+        <div className="shoes-benefits-content">
+          <div className="shoes-benefits-image">
+            <div className="shoes-benefits-image-placeholder">
+              <img src="/images/shoes about.jpg" alt="Premium Leather Shoes" className="shoes-benefits-img" />
+            </div>
+          </div>
+          <div className="shoes-benefits-text">
+            <h2 className="shoes-benefits-title">The Art of Leather Footwear</h2>
+            <p className="shoes-benefits-description">
+              At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturing partnerships. 
+              We use premium-grade leather known for its durability, rich texture, and ability to age beautifully over time. 
+              Our strict quality checks ensure strength, comfort, and long-lasting performance in every product.
+            </p>
+            <p className="shoes-benefits-description">
+              Leather shoes offer unmatched breathability, allowing your feet to stay cool and comfortable throughout the day. 
+              The natural material molds to your foot shape over time, providing a personalized fit that synthetic materials 
+              simply cannot replicate. This focus allows us to deliver refined, export-quality leather goods that meet 
+              international standards.
+            </p>
+            <button className="shoes-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
 
       <a href="https://wa.me/9876543210" className="shoes-whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 32 32" width="32" height="32">

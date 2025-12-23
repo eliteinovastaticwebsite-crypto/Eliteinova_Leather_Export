@@ -1,4 +1,4 @@
-/* Women Handbags Page */
+/* Women Handbags Page - Complete with Benefits Section */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,10 @@ body {
   min-height: 100vh;
 }
 
-/* Breadcrumb */
+/* ============================================= */
+/* BREADCRUMB */
+/* ============================================= */
+
 .handbags-breadcrumb {
   max-width: 1400px;
   margin: 15px auto;
@@ -33,7 +36,10 @@ body {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* ============================================= */
+/* HERO SECTION */
+/* ============================================= */
+
 .hero-section {
   width: 100%;
   overflow: hidden;
@@ -46,14 +52,20 @@ body {
   display: block;
 }
 
-/* Main Container */
+/* ============================================= */
+/* MAIN CONTAINER */
+/* ============================================= */
+
 .handbags-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px 50px;
 }
 
-/* Filter Bar */
+/* ============================================= */
+/* FILTER BAR */
+/* ============================================= */
+
 .handbags-filter-bar {
   display: flex;
   justify-content: space-between;
@@ -171,7 +183,10 @@ body {
   accent-color: #8b4513;
 }
 
-/* Sort Section */
+/* ============================================= */
+/* SORT SECTION */
+/* ============================================= */
+
 .handbags-sort-section {
   display: flex;
   align-items: center;
@@ -225,7 +240,10 @@ body {
   box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
 }
 
-/* Products Grid */
+/* ============================================= */
+/* PRODUCTS GRID */
+/* ============================================= */
+
 .handbags-products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -308,7 +326,93 @@ body {
   border-top: 1px solid #f0f0f0;
 }
 
-/* WhatsApp Button */
+/* ============================================= */
+/* LEATHER HANDBAGS BENEFITS SECTION */
+/* ============================================= */
+
+.handbags-benefits-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+  margin-bottom: 0;
+}
+
+.handbags-benefits-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.handbags-benefits-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+.handbags-benefits-image-placeholder {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.handbags-benefits-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.handbags-benefits-image-placeholder:hover .handbags-benefits-img {
+  transform: scale(1.1);
+}
+
+.handbags-benefits-text {
+  padding: 2rem;
+  order: 2;
+}
+
+.handbags-benefits-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.handbags-benefits-description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.handbags-cta-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.handbags-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+/* ============================================= */
+/* WHATSAPP BUTTON */
+/* ============================================= */
+
 .handbags-whatsapp-btn {
   position: fixed;
   bottom: 20px;
@@ -339,11 +443,10 @@ body {
   background: #20ba5a;
 }
 
-/* =============================================== */
-/* MOBILE RESPONSIVE STYLES */
-/* =============================================== */
+/* ============================================= */
+/* TABLET RESPONSIVE (768px and below) */
+/* ============================================= */
 
-/* Tablet (768px and below) */
 @media (max-width: 768px) {
   .handbags-breadcrumb {
     padding: 0 10px;
@@ -353,6 +456,24 @@ body {
 
   .hero-section {
     margin-bottom: 20px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    object-position: top center;
+  }
+  
+  .hero-section {
+    height: auto;
+    min-height: 250px;
+    max-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
   }
 
   .handbags-container {
@@ -394,13 +515,76 @@ body {
   .handbags-product-image {
     height: 220px;
   }
+
+  /* Benefits Section Tablet */
+  .handbags-benefits-section {
+    padding: 3rem 1rem;
+  }
+  
+  .handbags-benefits-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .handbags-benefits-image {
+    order: 1;
+  }
+  
+  .handbags-benefits-text {
+    padding: 1rem;
+    text-align: center;
+    order: 2;
+  }
+  
+  .handbags-benefits-title {
+    font-size: 1.8rem;
+  }
+  
+  .handbags-benefits-description {
+    font-size: 1rem;
+  }
+  
+  .handbags-benefits-image-placeholder {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .handbags-filter-dropdown {
+    width: 100%;
+  }
+
+  .handbags-dropdown-content {
+    position: fixed;
+    top: auto;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    margin-top: 0;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
 }
 
-/* Large Mobile (480px and below) */
+/* ============================================= */
+/* MOBILE RESPONSIVE (480px and below) */
+/* ============================================= */
+
 @media (max-width: 480px) {
   .handbags-breadcrumb {
     font-size: 12px;
     text-align: center;
+  }
+
+  .hero-image {
+    max-height: 350px;
+    object-position: top center;
+  }
+  
+  .hero-section {
+    min-height: 200px;
+    max-height: 350px;
   }
 
   .handbags-filter-bar {
@@ -468,6 +652,30 @@ body {
     padding-top: 6px;
   }
 
+  /* Benefits Section Mobile */
+  .handbags-benefits-section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .handbags-benefits-title {
+    font-size: 1.6rem;
+  }
+  
+  .handbags-benefits-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .handbags-benefits-image-placeholder {
+    max-width: 280px;
+    height: 280px;
+  }
+  
+  .handbags-cta-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+
   .handbags-whatsapp-btn {
     width: 45px;
     height: 45px;
@@ -481,8 +689,20 @@ body {
   }
 }
 
-/* Small Mobile (360px and below) */
+/* ============================================= */
+/* SMALL MOBILE (360px and below) */
+/* ============================================= */
+
 @media (max-width: 360px) {
+  .hero-image {
+    max-height: 300px;
+  }
+  
+  .hero-section {
+    min-height: 180px;
+    max-height: 300px;
+  }
+
   .handbags-products-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -501,6 +721,19 @@ body {
     padding: 6px 25px 6px 10px;
   }
 
+  .handbags-benefits-title {
+    font-size: 1.4rem;
+  }
+  
+  .handbags-benefits-description {
+    font-size: 0.9rem;
+  }
+  
+  .handbags-benefits-image-placeholder {
+    max-width: 250px;
+    height: 250px;
+  }
+
   .handbags-whatsapp-btn {
     width: 40px;
     height: 40px;
@@ -514,7 +747,37 @@ body {
   }
 }
 
-/* Touch Device Optimizations */
+/* ============================================= */
+/* TABLET BENEFITS SECTION (1024px and below) */
+/* ============================================= */
+
+@media (max-width: 1024px) {
+  .handbags-benefits-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .handbags-benefits-content {
+    gap: 3rem;
+  }
+  
+  .handbags-benefits-title {
+    font-size: 2.2rem;
+  }
+  
+  .handbags-benefits-description {
+    font-size: 1.05rem;
+  }
+  
+  .handbags-benefits-image-placeholder {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* ============================================= */
+/* TOUCH DEVICE OPTIMIZATIONS */
+/* ============================================= */
+
 @media (hover: none) and (pointer: coarse) {
   .handbags-filter-dropdown .handbags-dropdown-content {
     display: none;
@@ -528,12 +791,23 @@ body {
     transform: scale(0.98);
   }
 
+  .handbags-cta-button:active {
+    transform: translateY(-1px);
+  }
+
+  .handbags-benefits-image-placeholder:active .handbags-benefits-img {
+    transform: scale(1.05);
+  }
+
   .handbags-whatsapp-btn:active {
     transform: scale(0.95);
   }
 }
 
-/* Landscape Mode for Mobile */
+/* ============================================= */
+/* LANDSCAPE MODE FOR MOBILE */
+/* ============================================= */
+
 @media (max-height: 500px) and (orientation: landscape) {
   .handbags-product-image {
     height: 150px;
@@ -554,65 +828,7 @@ body {
   }
 }
 
-/* Fix for dropdown on mobile */
-@media (max-width: 768px) {
-  .handbags-filter-dropdown {
-    width: 100%;
-  }
-
-  .handbags-dropdown-content {
-    position: fixed;
-    top: auto;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    margin-top: 0;
-    overflow-y: auto;
-    max-height: 80vh;
-  }
-}
-/* FIX FOR BANNER IMAGE MOBILE RESPONSIVENESS */
-
-/* Override existing styles for mobile */
-@media (max-width: 768px) {
-  .hero-image {
-    width: 100% !important;
-    height: auto !important; /* Let height adjust naturally */
-    max-height: 400px !important; /* Set maximum height */
-    object-fit: contain !important; /* CHANGE FROM COVER TO CONTAIN */
-    object-position: top center !important; /* Show top of image where text is */
-  }
-  
-  .hero-section {
-    height: auto !important;
-    min-height: 250px !important;
-    max-height: 400px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: #f5f5f5 !important; /* Fallback background */
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-image {
-    max-height: 350px !important;
-    object-position: top center !important;
-  }
-  
-  .hero-section {
-    min-height: 200px !important;
-    max-height: 350px !important;
-  }
-}
-
-@media (max-width: 360px) {
-  .hero-image {
-    max-height: 300px !important;
-  }
-  
-  .hero-section {
-    min-height: 180px !important;
-    max-height: 300px !important;
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
