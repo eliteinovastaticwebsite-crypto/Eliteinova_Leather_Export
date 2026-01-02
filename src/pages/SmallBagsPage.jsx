@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SmallBagsPage.css';
 
 const SmallBagsPage = () => {
+  const [sortBy, setSortBy] = useState('featured');
   const navigate = useNavigate();
 
 const scrollToTop = () => {
@@ -31,27 +32,45 @@ const scrollToTop = () => {
   ];
 
   const products = [
-    { id: 1, name: 'Leather Clutch', image: '/images/bag1.png', color: 'Black', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Leather Clutch', image: '/images/bag2.png', color: 'Brown', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Evening Clutch', image: '/images/bag3.png', color: 'Gold', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Evening Clutch', image: '/images/bag4.png', color: 'Silver', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'Crossbody Bag', image: '/images/bag5.png', color: 'Tan', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'Crossbody Bag', image: '/images/bag6.png', color: 'Dark Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'Mini Satchel', image: '/images/bag7.png', color: 'Black', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Mini Satchel', image: '/images/bag8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Chain Bag', image: '/images/bag9.png', color: 'Tan', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Chain Bag', image: '/images/bag10.png', color: 'Brown', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Shoulder Bag', image: '/images/bag11.png', color: 'Black', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Shoulder Bag', image: '/images/bag12.png', color: 'Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Wristlet', image: '/images/bag13.png', color: 'Tan', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Wristlet', image: '/images/bag14.png', color: 'Black', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Top Handle Bag', image: '/images/bag15.png', color: 'Tan', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Top Handle Bag', image: '/images/bag16.png', color: 'Brown', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Bucket Bag', image: '/images/bag17.png', color: 'White', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Bucket Bag', image: '/images/bag18.png', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Convertible Bag', image: '/images/bag19.png', color: 'Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Convertible Bag', image: '/images/bag20.png', color: 'Tan', inStock: true, date: '2024-07-25' }
+    { id: 1, name: 'Leather Clutch', image: '/images/bag1.png', color: 'Black', date: '2024-01-15', description: 'Elegant leather clutch in classic black. Perfect for evening events with compact storage for essentials.' },
+    { id: 2, name: 'Leather Clutch', image: '/images/bag2.png', color: 'Brown', date: '2024-02-20', description: 'Sophisticated brown leather clutch with premium finish. Features secure closure and refined styling.' },
+    { id: 3, name: 'Evening Clutch', image: '/images/bag3.png', color: 'Gold', date: '2024-03-10', description: 'Glittering gold evening clutch for special occasions. Combines elegance with compact functionality.' },
+    { id: 4, name: 'Evening Clutch', image: '/images/bag4.png', color: 'Silver', date: '2024-01-25', description: 'Silver metallic clutch with contemporary design. Perfect for adding sparkle to any formal outfit.' },
+    { id: 5, name: 'Crossbody Bag', image: '/images/bag5.png', color: 'Tan', date: '2024-04-05', description: 'Versatile tan crossbody bag with adjustable strap. Features multiple compartments for organized storage.' },
+    { id: 6, name: 'Crossbody Bag', image: '/images/bag6.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown crossbody bag in premium leather. Combines practicality with sophisticated style.' },
+    { id: 7, name: 'Mini Satchel', image: '/images/bag7.png', color: 'Black', date: '2024-05-18', description: 'Classic black mini satchel with structured design. Perfect for daily essentials with elegant appeal.' },
+    { id: 8, name: 'Mini Satchel', image: '/images/bag8.png', color: 'Brown', date: '2024-03-22', description: 'Brown leather mini satchel with timeless design. Features comfortable strap and secure closure.' },
+    { id: 9, name: 'Chain Bag', image: '/images/bag9.png', color: 'Tan', date: '2024-06-30', description: 'Elegant tan chain bag with metallic accents. Can be worn as shoulder bag or clutch.' },
+    { id: 10, name: 'Chain Bag', image: '/images/bag10.png', color: 'Brown', date: '2024-07-12', description: 'Brown chain bag with premium leather construction. Features detachable chain for versatile styling.' },
+    { id: 11, name: 'Shoulder Bag', image: '/images/bag11.png', color: 'Black', date: '2024-08-05', description: 'Classic black leather shoulder bag. Perfect combination of style and everyday functionality.' },
+    { id: 12, name: 'Shoulder Bag', image: '/images/bag12.png', color: 'Brown', date: '2024-01-08', description: 'Sophisticated brown shoulder bag with refined details. Features comfortable strap and spacious interior.' },
+    { id: 13, name: 'Wristlet', image: '/images/bag13.png', color: 'Tan', date: '2024-09-14', description: 'Compact tan wristlet with wrist strap. Ideal for carrying essentials during quick outings.' },
+    { id: 14, name: 'Wristlet', image: '/images/bag14.png', color: 'Black', date: '2024-04-28', description: 'Black leather wristlet with secure zipper. Perfect for cards, phone, and small essentials.' },
+    { id: 15, name: 'Top Handle Bag', image: '/images/bag15.png', color: 'Tan', date: '2024-10-20', description: 'Elegant tan top handle bag with structured silhouette. Features premium hardware and fine craftsmanship.' },
+    { id: 16, name: 'Top Handle Bag', image: '/images/bag16.png', color: 'Brown', date: '2024-05-07', description: 'Brown leather top handle bag with sophisticated appeal. Perfect for both day and evening use.' },
+    { id: 17, name: 'Bucket Bag', image: '/images/bag17.png', color: 'White', date: '2024-11-11', description: 'Chic white bucket bag with drawstring closure. Combines modern style with practical storage.' },
+    { id: 18, name: 'Bucket Bag', image: '/images/bag18.png', color: 'Black', date: '2024-06-17', description: 'Classic black bucket bag in premium leather. Features adjustable strap and secure interior.' },
+    { id: 19, name: 'Convertible Bag', image: '/images/bag19.png', color: 'Brown', date: '2024-12-01', description: 'Versatile brown convertible bag with multiple carrying options. Can be worn as crossbody or shoulder bag.' },
+    { id: 20, name: 'Convertible Bag', image: '/images/bag20.png', color: 'Tan', date: '2024-07-25', description: 'Tan convertible bag with adjustable straps. Perfect for those who value adaptability and style.' }
   ];
+
+  const sortedProducts = [...products].sort((a, b) => {
+    switch (sortBy) {
+      case 'best-selling':
+        return a.id - b.id;
+      case 'alphabetically-az':
+        return a.name.localeCompare(b.name);
+      case 'alphabetically-za':
+        return b.name.localeCompare(a.name);
+      case 'date-old-new':
+        return new Date(a.date) - new Date(b.date);
+      case 'date-new-old':
+        return new Date(b.date) - new Date(a.date);
+      case 'featured':
+      default:
+        return 0;
+    }
+  });
 
   const handleCollectionClick = (path) => {
     navigate(path);
@@ -93,55 +112,80 @@ const scrollToTop = () => {
         </div>
       </section>
 
-      {/* Featured Products Section */}
-      <div className="small-bags-container">
-        <div className="small-bags-featured-header">
-          <h2 className="small-bags-featured-title">FEATURED PRODUCTS</h2>
-          <div className="small-bags-featured-underline"></div>
-        </div>
-
-        <div className="small-bags-products-grid">
-          {products.map(product => (
-            <div key={product.id} className="small-bags-product-card">
-              <div className="small-bags-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="small-bags-product-info">
-                <h3 className="small-bags-product-name">{product.name}</h3>
-                <p className="small-bags-product-color">{product.color}</p>
-                {!product.inStock && (
-                  <p className="small-bags-out-of-stock">Out of Stock</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-        {/* Leather Small bags Benefits Section */}
-      <section className="sb-benefits-section">
-        <div className="sb-benefits-content">
-          <div className="sb-benefits-image">
-            <div className="sb-benefits-image-placeholder">
-              <img src="/images/smallbag_about.jpg" alt="Premium Leather Shoes" className="sb-benefits-img" />
+      {/* Leather Small bags Benefits Section */}
+      <section className="small-bags-benefits-section">
+        <div className="small-bags-benefits-content">
+          <div className="small-bags-benefits-image">
+            <div className="small-bags-benefits-image-placeholder">
+              <img src="/images/smallbag_about.jpg" alt="Premium Small Bags" className="small-bags-benefits-img" />
             </div>
           </div>
-          <div className="sb-benefits-text">
-            <h2 className="sb-benefits-title">Crafted Compact Luxury in Leather</h2>
-            <p className="sb-benefits-description">
-              At Eliteinova, our sling and small bags are thoughtfully created for those who value refined craftsmanship in a compact form.
-              We partner with trusted manufacturers and work with carefully selected premium leather to ensure every piece reflects durability, elegance, and lasting appeal. 
-              Each bag undergoes detailed quality inspections to maintain consistency, strength, and superior finishing.
-            </p>
-            <p className="sb-benefits-description">
+          <div className="small-bags-benefits-text">
+            <h2 className="small-bags-benefits-title">Crafted Compact Luxury in Leather</h2>
+            <p className="small-bags-benefits-description">
+              At Eliteinova Leather Products Export, our sling and small bags are thoughtfully created for those who value refined craftsmanship in a compact form.
               Designed for effortless mobility, our leather sling and small bags provide smart organization without compromising on style. 
               Lightweight yet sturdy, they are ideal for carrying daily essentials while maintaining a sleek silhouette. Over time, the natural leather softens and develops a distinctive character, making every bag uniquely yours. 
               From contemporary crossbody designs to minimalist small bags, our collection delivers sophistication, comfort, and versatility for modern living.
             </p>
-            <button className="sb-cta-button" onClick={scrollToTop}>
+            <button className="small-bags-cta-button" onClick={scrollToTop}>
               Explore Our Collection
             </button>
           </div>
         </div>
       </section>
+
+      {/* Featured Products Header */}
+      <section className="small-bags-featured-header">
+        <div className="small-bags-section-header">
+          <h2 className="small-bags-section-title">FEATURED PRODUCTS</h2>
+          <div className="small-bags-title-underline"></div>
+        </div>
+      </section>
+
+      <div className="small-bags-container">
+        <div className="small-bags-filter-bar">
+          <div className="small-bags-sort-section">
+            <span className="small-bags-products-count">{sortedProducts.length} Products</span>
+            <div className="small-bags-sort-dropdown">
+              <label>Sort By:</label>
+              <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <option value="featured">Featured</option>
+                <option value="best-selling">Best selling</option>
+                <option value="alphabetically-az">Alphabetically, A-Z</option>
+                <option value="alphabetically-za">Alphabetically, Z-A</option>
+                <option value="date-old-new">Date, old to new</option>
+                <option value="date-new-old">Date, new to old</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div className="small-bags-products-grid">
+          {sortedProducts.map(product => (
+            <div key={product.id} className="small-bags-product-card">
+              <div className="small-bags-card-inner">
+                <div className="small-bags-card-front">
+                  <div className="small-bags-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="small-bags-product-info">
+                    <h3 className="small-bags-product-name">{product.name}</h3>
+                    <p className="small-bags-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="small-bags-card-back">
+                  <div className="small-bags-back-content">
+                    <h3 className="small-bags-back-title">{product.name}</h3>
+                    <div className="small-bags-back-divider"></div>
+                    <p className="small-bags-back-color">Color: {product.color}</p>
+                    <p className="small-bags-back-description">{product.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <a href="https://wa.me/9876543210" className="small-bags-whatsapp-btn" target="_blank" rel="noopener noreferrer">

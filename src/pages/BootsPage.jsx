@@ -2,45 +2,33 @@ import React, { useState } from 'react';
 import './Boots.css';
 
 const BootsPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
   const [sortBy, setSortBy] = useState('featured');
 
-  // 20 boots products
+  // Boots products with descriptions
   const products = [
-    { id: 1, name: 'Classic Leather Boots', image: '/images/boot1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Classic Leather Boots', image: '/images/boot2.png', color: 'Black', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Vintage Ankle Boots', image: '/images/boot3.png', color: 'Tan', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Vintage Ankle Boots', image: '/images/boot4.png', color: 'Dark Brown', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'Chelsea Leather Boots', image: '/images/boot5.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'Chelsea Leather Boots', image: '/images/boot6.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'Combat Boots', image: '/images/boot7.png', color: 'Black', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Combat Boots', image: '/images/boot8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Desert Boots', image: '/images/boot9.png', color: 'Tan', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Desert Boots', image: '/images/boot10.png', color: 'Brown', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Chukka Boots', image: '/api/placeholder/300/300', color: 'Brown', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Chukka Boots', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Work Boots', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Work Boots', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Hiking Boots', image: '/api/placeholder/300/300', color: 'Brown', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Hiking Boots', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Dress Boots', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Dress Boots', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Winter Boots', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Winter Boots', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-07-25' }
+    { id: 1, name: 'Classic Leather Boots', image: '/images/boot1.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather boots with durable construction. Features comfortable cushioning and anti-slip sole for all-day wear.' },
+    { id: 2, name: 'Classic Leather Boots', image: '/images/boot2.png', color: 'Black', date: '2024-02-20', description: 'Sophisticated black leather boots with timeless design. Perfect for both formal occasions and casual outings.' },
+    { id: 3, name: 'Vintage Ankle Boots', image: '/images/boot3.png', color: 'Tan', date: '2024-03-10', description: 'Vintage-inspired ankle boots with classic appeal. Crafted from premium leather with comfortable fit.' },
+    { id: 4, name: 'Vintage Ankle Boots', image: '/images/boot4.png', color: 'Dark Brown', date: '2024-01-25', description: 'Dark brown ankle boots with vintage charm. Features quality construction and stylish design.' },
+    { id: 5, name: 'Chelsea Leather Boots', image: '/images/boot5.png', color: 'Black', date: '2024-04-05', description: 'Classic Chelsea boots in sleek black leather. Features elastic side panels for easy wear and superior comfort.' },
+    { id: 6, name: 'Chelsea Leather Boots', image: '/images/boot6.png', color: 'Brown', date: '2024-02-14', description: 'Brown Chelsea boots with premium leather finish. Versatile design suitable for various occasions.' },
+    { id: 7, name: 'Combat Boots', image: '/images/boot7.png', color: 'Black', date: '2024-05-18', description: 'Rugged combat boots with military-inspired design. Durable leather construction with reinforced stitching.' },
+    { id: 8, name: 'Combat Boots', image: '/images/boot8.png', color: 'Brown', date: '2024-03-22', description: 'Brown combat boots with sturdy construction. Features lace-up design and superior ankle support.' },
+    { id: 9, name: 'Desert Boots', image: '/images/boot9.png', color: 'Tan', date: '2024-06-30', description: 'Comfortable desert boots in tan suede. Lightweight design perfect for casual wear and warm weather.' },
+    { id: 10, name: 'Desert Boots', image: '/images/boot10.png', color: 'Brown', date: '2024-07-12', description: 'Classic brown desert boots with timeless style. Features soft leather and comfortable crepe sole.' },
+    { id: 11, name: 'Chukka Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-08-05', description: 'Elegant chukka boots in rich brown leather. Minimalist design with superior comfort and durability.' },
+    { id: 12, name: 'Chukka Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-01-08', description: 'Sleek black chukka boots with refined appearance. Perfect for smart-casual occasions with premium leather.' },
+    { id: 13, name: 'Work Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-09-14', description: 'Heavy-duty work boots built for durability. Features steel toe protection and slip-resistant sole.' },
+    { id: 14, name: 'Work Boots', image: '/api/placeholder/300/300', color: 'Tan', date: '2024-04-28', description: 'Tan work boots with rugged construction. Designed for comfort during long work hours with safety features.' },
+    { id: 15, name: 'Hiking Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-10-20', description: 'Professional hiking boots with waterproof protection. Features excellent ankle support and grip for trails.' },
+    { id: 16, name: 'Hiking Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-05-07', description: 'Black hiking boots with all-terrain capability. Durable construction with breathable membrane technology.' },
+    { id: 17, name: 'Dress Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-11-11', description: 'Sophisticated dress boots in polished black leather. Perfect for formal occasions with elegant finish.' },
+    { id: 18, name: 'Dress Boots', image: '/api/placeholder/300/300', color: 'Dark Brown', date: '2024-06-17', description: 'Dark brown dress boots with refined appearance. Features premium leather and classic styling.' },
+    { id: 19, name: 'Winter Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-12-01', description: 'Insulated winter boots for cold weather. Features waterproof leather and warm fleece lining.' },
+    { id: 20, name: 'Winter Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-07-25', description: 'Black winter boots with superior insulation. Designed for harsh weather with thermal protection.' }
   ];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'best-selling':
         return a.id - b.id;
@@ -58,64 +46,28 @@ const BootsPage = () => {
     }
   });
 
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
-
   return (
     <div className="boots-page">
       <div className="boots-breadcrumb">
         <a href="/">Home</a> / <a href="/shoes">Shoes</a> / <span>Boots</span>
       </div>
 
-      <div className="hero-section">
-        <img src="/images/boots_hero.png" alt="Premium Leather Boots" className="hero-image" />
+      <div className="boots-hero-section">
+        <img src="/images/boots_hero.png" alt="Premium Leather Boots" className="boots-hero-image" />
       </div>
+
+      {/* Featured Products Header - Added this section */}
+      <section className="boots-featured-header">
+        <div className="boots-section-header">
+          <h2 className="boots-section-title">FEATURED PRODUCTS</h2>
+          <div className="boots-title-underline"></div>
+        </div>
+      </section>
 
       <div className="boots-container">
         <div className="boots-filter-bar">
-          <div className="boots-filter-section">
-            <span className="boots-filter-label">Filter:</span>
-            <div className="boots-filter-dropdown">
-              <button className="boots-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="boots-dropdown-content">
-                <div className="boots-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="boots-reset-btn">Reset</button>
-                </div>
-                <label className="boots-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="boots-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
           <div className="boots-sort-section">
-            <span className="boots-products-count">{filteredProducts.length} Products</span>
+            <span className="boots-products-count">{sortedProducts.length} Products</span>
             <div className="boots-sort-dropdown">
               <label>Sort By:</label>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -133,13 +85,24 @@ const BootsPage = () => {
         <div className="boots-products-grid">
           {sortedProducts.map(product => (
             <div key={product.id} className="boots-product-card">
-              <div className="boots-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="boots-product-info">
-                <h3 className="boots-product-name">{product.name}</h3>
-                <p className="boots-product-color">{product.color}</p>
-                {!product.inStock && <p className="boots-out-of-stock">Out of Stock</p>}
+              <div className="boots-card-inner">
+                <div className="boots-card-front">
+                  <div className="boots-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="boots-product-info">
+                    <h3 className="boots-product-name">{product.name}</h3>
+                    <p className="boots-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="boots-card-back">
+                  <div className="boots-back-content">
+                    <h3 className="boots-back-title">{product.name}</h3>
+                    <div className="boots-back-divider"></div>
+                    <p className="boots-back-color">Color: {product.color}</p>
+                    <p className="boots-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

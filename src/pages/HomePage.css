@@ -452,6 +452,8 @@
 
 .about-text {
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-title {
@@ -460,6 +462,7 @@
   color: #92400e;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  text-align: center;
 }
 
 .about-description {
@@ -467,6 +470,9 @@
   color: #4b5563;
   line-height: 1.8;
   margin-bottom: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .cta-button {
@@ -559,6 +565,11 @@
 .feature-text {
   padding: 2rem;
   order: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .feature-title {
@@ -574,6 +585,9 @@
   color: #4b5563;
   line-height: 1.8;
   margin-bottom: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 /* ============================================= */

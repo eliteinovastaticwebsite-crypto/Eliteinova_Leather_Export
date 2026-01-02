@@ -1,54 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ShoesPage.css';
 
 const ShoesPage = () => {
+  const [sortBy, setSortBy] = useState('featured');
   const navigate = useNavigate();
 
-  const collections = [
-    {
-      name: "Boots",
-      products: 15,
-      image: "/images/boots_collection.png",
-      path: "/shoes/boots"
-    },
-    {
-      name: "Formal Shoes",
-      products: 18,
-      image: "/images/formal_collection.png",
-      path: "/shoes/formal"
-    },
-    {
-      name: "Casual Shoes",
-      products: 11,
-      image: "/images/casual_collection.png",
-      path: "/shoes/casual"
-    }
+  // Shoe products with descriptions
+  const products = [
+    { id: 1, name: 'Classic Leather Boot', image: '/images/shoe1.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather boots with durable construction. Features comfortable cushioning and anti-slip sole for all-day wear.' },
+    { id: 2, name: 'Classic Leather Boot', image: '/images/shoe2.png', color: 'Black', date: '2024-02-20', description: 'Sophisticated black leather boots with timeless design. Perfect for both formal occasions and casual outings.' },
+    { id: 3, name: 'Oxford Formal Shoes', image: '/images/shoe3.png', color: 'Brown', date: '2024-03-10', description: 'Elegant Oxford shoes crafted from premium leather. Features classic brogue detailing and comfortable fit.' },
+    { id: 4, name: 'Oxford Formal Shoes', image: '/images/shoe4.png', color: 'Black', date: '2024-01-25', description: 'Classic black Oxford shoes with polished finish. Perfect for business meetings and formal events.' },
+    { id: 5, name: 'Derby Formal Shoes', image: '/images/shoe5.png', color: 'Tan', date: '2024-04-05', description: 'Versatile Derby shoes in rich tan leather. Features open lacing system for adjustable comfort.' },
+    { id: 6, name: 'Derby Formal Shoes', image: '/images/shoe6.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown Derby shoes with sophisticated appeal. Durable construction with excellent arch support.' },
+    { id: 7, name: 'Chelsea Boot', image: '/images/shoe7.png', color: 'Black', date: '2024-05-18', description: 'Classic Chelsea boots in sleek black leather. Features elastic side panels for easy wear and superior comfort.' },
+    { id: 8, name: 'Chelsea Boot', image: '/images/shoe8.png', color: 'Brown', date: '2024-03-22', description: 'Brown Chelsea boots with premium leather finish. Versatile design suitable for various occasions.' },
+    { id: 9, name: 'Casual Loafers', image: '/images/shoe9.png', color: 'Tan', date: '2024-06-30', description: 'Comfortable tan loafers with slip-on design. Perfect for casual outings and relaxed settings.' },
+    { id: 10, name: 'Casual Loafers', image: '/images/shoe10.png', color: 'Brown', date: '2024-07-12', description: 'Classic brown loafers with sophisticated styling. Features padded footbed for all-day comfort.' },
+    { id: 11, name: 'Monk Strap Shoes', image: '/images/shoe11.png', color: 'Black', date: '2024-08-05', description: 'Elegant monk strap shoes in black leather. Features double buckle closure for secure fit.' },
+    { id: 12, name: 'Monk Strap Shoes', image: '/images/shoe12.png', color: 'Brown', date: '2024-01-08', description: 'Sophisticated brown monk strap shoes. Combines traditional design with modern comfort features.' },
   ];
 
-  // Featured shoe products
-  const products = [
-    { id: 1, name: 'Classic Leather Boot', image: '/images/shoe1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Classic Leather Boot', image: '/images/shoe2.png', color: 'Black', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Oxford Formal Shoes', image: '/images/shoe3.png', color: 'Brown', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Oxford Formal Shoes', image: '/images/shoe4.png', color: 'Black', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'Derby Formal Shoes', image: '/images/shoe5.png', color: 'Tan', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'Derby Formal Shoes', image: '/images/shoe6.png', color: 'Dark Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'Chelsea Boot', image: '/images/shoe7.png', color: 'Black', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Chelsea Boot', image: '/images/shoe8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Casual Loafers', image: '/images/shoe9.png', color: 'Tan', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Casual Loafers', image: '/images/shoe10.png', color: 'Brown', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Monk Strap Shoes', image: '/images/shoe11.png', color: 'Black', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Monk Strap Shoes', image: '/images/shoe12.png', color: 'Brown', inStock: true, date: '2024-01-08' },
-  ];
+  const sortedProducts = [...products].sort((a, b) => {
+    switch (sortBy) {
+      case 'best-selling':
+        return a.id - b.id;
+      case 'alphabetically-az':
+        return a.name.localeCompare(b.name);
+      case 'alphabetically-za':
+        return b.name.localeCompare(a.name);
+      case 'date-old-new':
+        return new Date(a.date) - new Date(b.date);
+      case 'date-new-old':
+        return new Date(b.date) - new Date(a.date);
+      case 'featured':
+      default:
+        return 0;
+    }
+  });
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleCollectionClick = (path) => {
     navigate(path);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const collections = [
+    {
+      name: "Boots",
+      products: 15,
+      image: "/images/boots1.png",
+      path: "/shoes/boots"
+    },
+    {
+      name: "Formal Shoes",
+      products: 18,
+      image: "/images/formal1_collection.png",
+      path: "/shoes/formal"
+    },
+    {
+      name: "Casual Shoes",
+      products: 11,
+      image: "/images/casual2.png",
+      path: "/shoes/casual"
+    }
+  ];
 
   return (
     <div className="shoes-page">
@@ -86,31 +105,6 @@ const ShoesPage = () => {
         </div>
       </section>
 
-      {/* Featured Products Section */}
-      <div className="shoes-container">
-        <div className="shoes-featured-header">
-          <h2 className="shoes-featured-title">FEATURED PRODUCTS</h2>
-          <div className="shoes-featured-underline"></div>
-        </div>
-
-        <div className="shoes-products-grid">
-          {products.map(product => (
-            <div key={product.id} className="shoes-product-card">
-              <div className="shoes-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="shoes-product-info">
-                <h3 className="shoes-product-name">{product.name}</h3>
-                <p className="shoes-product-color">{product.color}</p>
-                {!product.inStock && (
-                  <p className="shoes-out-of-stock">Out of Stock</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Leather Shoes Benefits Section */}
       <section className="shoes-benefits-section">
         <div className="shoes-benefits-content">
@@ -123,10 +117,6 @@ const ShoesPage = () => {
             <h2 className="shoes-benefits-title">The Art of Leather Footwear</h2>
             <p className="shoes-benefits-description">
               At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturing partnerships. 
-              We use premium-grade leather known for its durability, rich texture, and ability to age beautifully over time. 
-              Our strict quality checks ensure strength, comfort, and long-lasting performance in every product.
-            </p>
-            <p className="shoes-benefits-description">
               Leather shoes offer unmatched breathability, allowing your feet to stay cool and comfortable throughout the day. 
               The natural material molds to your foot shape over time, providing a personalized fit that synthetic materials 
               simply cannot replicate. This focus allows us to deliver refined, export-quality leather goods that meet 
@@ -138,6 +128,59 @@ const ShoesPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Featured Products Header - Added this section */}
+      <section className="shoes-featured-header">
+        <div className="shoes-section-header">
+          <h2 className="shoes-section-title">FEATURED PRODUCTS</h2>
+          <div className="shoes-title-underline"></div>
+        </div>
+      </section>
+
+      <div className="shoes-container">
+        <div className="shoes-filter-bar">
+          <div className="shoes-sort-section">
+            <span className="shoes-products-count">{sortedProducts.length} Products</span>
+            <div className="shoes-sort-dropdown">
+              <label>Sort By:</label>
+              <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <option value="featured">Featured</option>
+                <option value="best-selling">Best selling</option>
+                <option value="alphabetically-az">Alphabetically, A-Z</option>
+                <option value="alphabetically-za">Alphabetically, Z-A</option>
+                <option value="date-old-new">Date, old to new</option>
+                <option value="date-new-old">Date, new to old</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div className="shoes-products-grid">
+          {sortedProducts.map(product => (
+            <div key={product.id} className="shoes-product-card">
+              <div className="shoes-card-inner">
+                <div className="shoes-card-front">
+                  <div className="shoes-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="shoes-product-info">
+                    <h3 className="shoes-product-name">{product.name}</h3>
+                    <p className="shoes-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="shoes-card-back">
+                  <div className="shoes-back-content">
+                    <h3 className="shoes-back-title">{product.name}</h3>
+                    <div className="shoes-back-divider"></div>
+                    <p className="shoes-back-color">Color: {product.color}</p>
+                    <p className="shoes-back-description">{product.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <a href="https://wa.me/9876543210" className="shoes-whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 32 32" width="32" height="32">

@@ -135,21 +135,27 @@ const Header = () => {
           {/* Logo Section */}
           <div className="logo-section" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <img 
-              src="/images/logo.jpeg" 
+              src="/images/logo1.png" 
               alt="Company Logo" 
               className="company-logo" 
             />
-            <h1 className="logo-title">
-              Eliteinova Leather Products Export
-            </h1>
-            <div className="location">
-              <img 
-                src="/images/india_flag.png" 
-                alt="India Flag" 
-                className="flag-icon" 
-              />
-              <span className="country">India</span>
-            </div>
+            <div className="logo-text">
+  <h1 className="logo-title">
+    Eliteinova Leather Products Export
+  </h1>
+
+  <div className="logo-sub-row">
+    <h3 className="logo-subtitle">
+      Eliteinova Tech Pvt Ltd
+    </h3>
+
+    <div className="logo-country">
+      <img src="/images/india_flag.png" alt="India" />
+      <span>India</span>
+    </div>
+  </div>
+</div>
+
           </div>
 
           {/* Right Icons */}

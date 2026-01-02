@@ -1,12 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BackpacksPage.css';
 
 const BackpacksPage = () => {
+  const [sortBy, setSortBy] = useState('featured');
   const navigate = useNavigate();
 
-const scrollToTop = () => {
+  // Backpack products with descriptions
+  const products = [
+    { id: 1, name: 'Leather Laptop Backpack', image: '/images/backpack1.png', color: 'Black', date: '2024-01-15', description: 'Premium laptop backpack with multiple compartments for organized storage. Made with durable leather and padded laptop sleeve.' },
+    { id: 2, name: 'Leather Laptop Backpack', image: '/images/backpack2.png', color: 'Brown', date: '2024-02-20', description: 'Classic brown leather backpack with vintage appeal. Features leather accents and comfortable carrying.' },
+    { id: 3, name: 'Waterproof Backpack', image: '/images/backpack3.png', color: 'Gray', date: '2024-03-10', description: 'Completely waterproof backpack perfect for travel and outdoor adventures. Sealed zippers and water-resistant materials.' },
+    { id: 4, name: 'Waterproof Backpack', image: '/images/backpack4.png', color: 'Navy', date: '2024-01-25', description: 'Navy blue waterproof backpack with spacious main compartment and side pockets for water bottles.' },
+    { id: 5, name: 'Minimalist Backpack', image: '/images/backpack5.png', color: 'Tan', date: '2024-04-05', description: 'Clean and minimalist design for everyday use. Lightweight and perfect for urban commuting.' },
+    { id: 6, name: 'Minimalist Backpack', image: '/images/backpack6.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown minimalist backpack with premium leather details and magnetic closures.' },
+    { id: 7, name: 'Travel Backpack', image: '/images/backpack7.png', color: 'Black', date: '2024-05-18', description: 'Large capacity travel backpack with multiple compartments for organized packing.' },
+    { id: 8, name: 'Travel Backpack', image: '/images/backpack8.png', color: 'Brown', date: '2024-03-22', description: 'Premium leather travel backpack with expandable sections for extra storage.' },
+    { id: 9, name: 'Canvas Backpack', image: '/images/backpack9.png', color: 'Tan', date: '2024-06-30', description: 'Durable canvas backpack with leather trims, perfect for casual use and everyday wear.' },
+    { id: 10, name: 'Canvas Backpack', image: '/images/backpack10.png', color: 'Brown', date: '2024-07-12', description: 'Classic canvas backpack with adjustable straps and multiple pockets for organization.' },
+    { id: 11, name: 'Hiking Backpack', image: '/images/backpack11.png', color: 'Black', date: '2024-08-05', description: 'Professional hiking backpack with hydration system compatibility and trekking pole attachments.' },
+    { id: 12, name: 'Hiking Backpack', image: '/images/backpack12.png', color: 'Brown', date: '2024-01-08', description: 'Durable hiking backpack with multiple gear loops and reinforced stitching for outdoor adventures.' },
+    { id: 13, name: 'Leather Rucksack', image: '/images/backpack13.png', color: 'Tan', date: '2024-09-14', description: 'Traditional leather rucksack with drawstring closure and classic design.' },
+    { id: 14, name: 'Leather Rucksack', image: '/images/backpack14.png', color: 'Black', date: '2024-04-28', description: 'Black leather rucksack with modern updates while maintaining classic rucksack design.' },
+    { id: 15, name: 'Roll Top Backpack', image: '/images/backpack15.png', color: 'Gray', date: '2024-10-20', description: 'Urban roll top backpack with water-resistant materials and expandable storage.' },
+    { id: 16, name: 'Roll Top Backpack', image: '/images/backpack16.png', color: 'Charcoal', date: '2024-05-07', description: 'Charcoal roll top backpack with magnetic closures and hidden security pocket.' },
+  ];
+
+  const sortedProducts = [...products].sort((a, b) => {
+    switch (sortBy) {
+      case 'best-selling':
+        return a.id - b.id;
+      case 'alphabetically-az':
+        return a.name.localeCompare(b.name);
+      case 'alphabetically-za':
+        return b.name.localeCompare(a.name);
+      case 'date-old-new':
+        return new Date(a.date) - new Date(b.date);
+      case 'date-new-old':
+        return new Date(b.date) - new Date(a.date);
+      case 'featured':
+      default:
+        return 0;
+    }
+  });
+
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCollectionClick = (path) => {
+    navigate(path);
   };
 
   const collections = [
@@ -22,40 +65,7 @@ const scrollToTop = () => {
       image: "/images/hiking_collection.png",
       path: "/backpacks/women-backpacks"
     },
-    /*{
-      name: "Urban Backpacks",
-      products: 12,
-      image: "/images/urban_collection.png",
-      path: "/backpacks/urban"
-    } */
   ];
-
-  const products = [
-    { id: 1, name: 'Leather Laptop Backpack', image: '/images/backpack1.png', color: 'Black', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Leather Laptop Backpack', image: '/images/backpack2.png', color: 'Brown', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Waterproof Backpack', image: '/images/backpack3.png', color: 'Gray', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Waterproof Backpack', image: '/images/backpack4.png', color: 'Navy', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'Minimalist Backpack', image: '/images/backpack5.png', color: 'Tan', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'Minimalist Backpack', image: '/images/backpack6.png', color: 'Dark Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'Travel Backpack', image: '/images/backpack7.png', color: 'Black', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Travel Backpack', image: '/images/backpack8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Canvas Backpack', image: '/images/backpack9.png', color: 'Tan', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Canvas Backpack', image: '/images/backpack10.png', color: 'Brown', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Hiking Backpack', image: '/images/backpack11.png', color: 'Black', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Hiking Backpack', image: '/images/backpack12.png', color: 'Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Leather Rucksack', image: '/images/backpack13.png', color: 'Tan', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Leather Rucksack', image: '/images/backpack14.png', color: 'Black', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Roll Top Backpack', image: '/images/backpack15.png', color: 'Gray', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Roll Top Backpack', image: '/images/backpack16.png', color: 'Charcoal', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Messenger Backpack', image: '/images/backpack17.png', color: 'Burgundy', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Messenger Backpack', image: '/images/backpack18.png', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Student Backpack', image: '/images/backpack19.png', color: 'Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Student Backpack', image: '/images/backpack20.png', color: 'Tan', inStock: true, date: '2024-07-25' }
-  ];
-
-  const handleCollectionClick = (path) => {
-    navigate(path);
-  };
 
   return (
     <div className="backpacks-page">
@@ -63,8 +73,8 @@ const scrollToTop = () => {
         <a href="/">Home</a> / <span>Backpacks</span>
       </div>
 
-      <div className="backpacks-hero-section">
-        <img src="/images/backpacks_hero.png" alt="Premium Backpacks Collection" className="backpacks-hero-image" />
+      <div className="hero-section">
+        <img src="/images/smallbanner.png" alt="Premium Backpacks" className="hero-image" />
       </div>
 
       {/* Collections Section */}
@@ -93,57 +103,85 @@ const scrollToTop = () => {
         </div>
       </section>
 
-      {/* Featured Products Section */}
+      {/* Featured Products Header - Added this section */}
+      <section className="backpacks-featured-header">
+        <div className="backpacks-section-header">
+          <h2 className="backpacks-section-title">FEATURED PRODUCTS</h2>
+          <div className="backpacks-title-underline"></div>
+        </div>
+      </section>
+
       <div className="backpacks-container">
-        <div className="backpacks-featured-header">
-          <h2 className="backpacks-featured-title">FEATURED PRODUCTS</h2>
-          <div className="backpacks-featured-underline"></div>
+        <div className="backpacks-filter-bar">
+          <div className="backpacks-sort-section">
+            <span className="backpacks-products-count">{sortedProducts.length} Products</span>
+            <div className="backpacks-sort-dropdown">
+              <label>Sort By:</label>
+              <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <option value="featured">Featured</option>
+                <option value="best-selling">Best selling</option>
+                <option value="alphabetically-az">Alphabetically, A-Z</option>
+                <option value="alphabetically-za">Alphabetically, Z-A</option>
+                <option value="date-old-new">Date, old to new</option>
+                <option value="date-new-old">Date, new to old</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         <div className="backpacks-products-grid">
-          {products.map(product => (
+          {sortedProducts.map(product => (
             <div key={product.id} className="backpacks-product-card">
-              <div className="backpacks-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="backpacks-product-info">
-                <h3 className="backpacks-product-name">{product.name}</h3>
-                <p className="backpacks-product-color">{product.color}</p>
-                {!product.inStock && (
-                  <p className="backpacks-out-of-stock">Out of Stock</p>
-                )}
+              <div className="backpacks-card-inner">
+                <div className="backpacks-card-front">
+                  <div className="backpacks-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="backpacks-product-info">
+                    <h3 className="backpacks-product-name">{product.name}</h3>
+                    <p className="backpacks-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="backpacks-card-back">
+                  <div className="backpacks-back-content">
+                    <h3 className="backpacks-back-title">{product.name}</h3>
+                    <div className="backpacks-back-divider"></div>
+                    <p className="backpacks-back-color">Color: {product.color}</p>
+                    <p className="backpacks-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
 
-         {/* Leather Small bags Benefits Section */}
-      <section className="bp-benefits-section">
-        <div className="bp-benefits-content">
-          <div className="bp-benefits-image">
-            <div className="bp-benefits-image-placeholder">
-              <img src="/images/backpack about.jpg" alt="Premium Leather Shoes" className="bp-benefits-img" />
+      {/* Leather Backpacks Benefits Section */}
+      <section className="backpacks-benefits-section">
+        <div className="backpacks-benefits-content">
+          <div className="backpacks-benefits-image">
+            <div className="backpacks-benefits-image-placeholder">
+              <img src="/images/backpack about.jpg" alt="Premium Leather Backpacks" className="backpacks-benefits-img" />
             </div>
           </div>
-          <div className="bp-benefits-text">
-            <h2 className="bp-benefits-title">Elevated Utility in Leather Backpacks</h2>
-            <p className="bp-benefits-description">
+          <div className="backpacks-benefits-text">
+            <h2 className="backpacks-benefits-title">Elevated Utility in Leather Backpacks</h2>
+            <p className="backpacks-benefits-description">
               At Eliteinova, our leather backpacks are designed for those who seek versatility without compromising on sophistication. 
               Crafted in collaboration with trusted manufacturing partners, we use premium-grade leather selected for its durability, refined texture, and ability to age beautifully over time. 
               Every backpack is subjected to strict quality checks to ensure lasting strength, comfort, and performance.
             </p>
-            <p className="bp-benefits-description">
+            <p className="backpacks-benefits-description">
               Thoughtfully engineered for everyday use, our leather backpacks feature spacious interiors, secure compartments for laptops and essentials, and balanced weight distribution for comfortable carrying. 
               Adjustable padded straps and reinforced construction provide support during commutes, travel, and daily routines. 
               As the leather develops a unique patina with use, each backpack becomes a distinctive expression of style, practicality, and enduring craftsmanship.
             </p>
-            <button className="bp-cta-button" onClick={scrollToTop}>
+            <button className="backpacks-cta-button" onClick={scrollToTop}>
               Explore Our Collection
             </button>
           </div>
         </div>
       </section>
-      </div>
 
       <a href="https://wa.me/9876543210" className="backpacks-whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 32 32" width="32" height="32">

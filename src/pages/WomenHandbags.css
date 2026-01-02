@@ -1,4 +1,4 @@
-/* Women Handbags Page - Enhanced Card Design with Image Reference Style */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -55,6 +55,7 @@ body {
   height: auto;
   display: block;
 }
+
 
 /* ============================================= */
 /* MAIN CONTAINER */
@@ -254,6 +255,40 @@ body {
   box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
 }
 
+/* Featured Section */
+.handbags-featured-header {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #fffbeb, #ffedd5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.handbags-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1200px; /* Optional: limits the width for better readability */
+}
+
+.handbags-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.handbags-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
 /* ============================================= */
 /* PREMIUM ENHANCED PRODUCT CARDS */
 /* ============================================= */
@@ -353,7 +388,7 @@ body {
   transition: opacity 0.6s ease;
 }
 
-.handbags-product-card:hover .handbags-card-front::after {
+.handbags-product-card:hover .backpacks-card-front::after {
   opacity: 0.5;
   animation: goldenBorderGlow 2s linear infinite;
 }
@@ -1157,7 +1192,7 @@ body {
 }
 
 /* ============================================= */
-/* LEATHER HANDBAGS BENEFITS SECTION */
+/* LEATHER BACKPACKS BENEFITS SECTION */
 /* ============================================= */
 
 .handbags-benefits-section {
@@ -1195,6 +1230,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  justify-items: center;
   position: relative;
   z-index: 2;
 }
@@ -1238,6 +1274,10 @@ body {
   transform: scale(1.08);
 }
 
+.handbags-benefits-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
 .handbags-benefits-text {
   padding: 3rem;
   background: rgba(255, 255, 255, 0.92);
@@ -1248,6 +1288,15 @@ body {
   border: 2px solid #c9a86a;
   position: relative;
   overflow: hidden;
+}
+
+.handbags-benefits-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .handbags-benefits-text::before {
@@ -1468,74 +1517,10 @@ body {
 }
 
 /* ============================================= */
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN - MOBILE ONLY */
 /* ============================================= */
 
-/* Large Desktop (1440px and above) */
-@media (min-width: 1440px) {
-  .handbags-products-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-  }
-  
-  .handbags-product-card {
-    height: 450px;
-  }
-  
-  .handbags-product-image {
-    height: 250px;
-  }
-}
-
-/* Desktop (1200px to 1439px) */
-@media (max-width: 1439px) {
-  .handbags-products-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-  }
-  
-  .handbags-product-card {
-    height: 440px;
-  }
-  
-  .handbags-product-image {
-    height: 240px;
-  }
-}
-
-/* Tablet Landscape (992px to 1199px) */
-@media (max-width: 1199px) {
-  .handbags-container {
-    max-width: 1200px;
-    padding: 0 20px 40px;
-  }
-  
-  .handbags-products-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-  }
-  
-  .handbags-product-card {
-    height: 440px;
-  }
-  
-  .handbags-product-image {
-    height: 240px;
-  }
-  
-  .handbags-benefits-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  .handbags-benefits-image-placeholder {
-    max-width: 400px;
-    height: 400px;
-    margin: 0 auto;
-  }
-}
-
-/* Tablet Portrait (768px to 991px) */
+/* Tablet and below (991px and below) */
 @media (max-width: 991px) {
   .handbags-container {
     max-width: 100%;
@@ -1599,145 +1584,178 @@ body {
   }
 }
 
-/* ============================================= */
-/* MOBILE VIEW FIXES - 2 PRODUCT CARDS PER ROW */
-/* ============================================= */
-
-/* Mobile Landscape (576px to 767px) */
-@media (max-width: 767px) {
+/* Mobile (768px and below) - FIX OVERLAP AND TEXT SIZE */
+@media (max-width: 768px) {
   .handbags-products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 8px;
+    gap: 12px; /* Reduced gap */
+    padding: 0 5px; /* Added padding to prevent overlap */
   }
   
   .handbags-product-card {
-    height: 380px;
-    min-height: 380px;
-    margin-bottom: 0;
-    border-radius: 16px;
-  }
-  
-  .handbags-card-front,
-  .handbags-card-back {
-    border-radius: 16px;
+    height: 370px; /* Increased height to prevent text cutting */
+    margin: 0;
   }
   
   .handbags-product-image {
-    height: 160px;
-    min-height: 160px;
-    padding: 12px;
-  }
-  
-  .handbags-image-container {
+    height: 140px; /* Reduced image height */
     padding: 10px;
-    border-radius: 12px;
   }
   
   .handbags-product-info {
-    padding: 15px 12px;
-    min-height: 220px;
+    padding: 12px 8px; /* Slightly increased padding */
     display: flex;
     flex-direction: column;
   }
   
+  /* FIX TEXT SIZE FOR MOBILE - REMOVE TEXT CUTTING */
   .handbags-product-name {
-    min-height: 50px;
-    margin-bottom: 8px;
-    gap: 4px;
+    min-height: auto; /* Remove fixed height */
+    max-height: none; /* Remove max height restriction */
+    overflow: visible; /* Allow text to be visible */
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    display: block; /* Change from flex to block */
+    -webkit-line-clamp: none; /* Remove line clamp */
   }
   
   .handbags-brand-name {
-    font-size: 16px;
+    font-size: 15px; /* Slightly increased */
     padding-bottom: 4px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
   }
   
   .handbags-brand-name::after {
-    width: 40px;
+    width: 40px; /* Reduced line width */
     height: 2px;
   }
   
   .handbags-product-type {
-    font-size: 13px;
+    font-size: 12px; /* Slightly increased */
     padding: 4px 10px;
-    border-radius: 8px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
   }
   
+  /* FIX COLOR BUTTON POSITIONING */
   .handbags-product-color {
-    font-size: 12px;
+    font-size: 10px;
     padding: 6px 12px;
-    margin: 8px 0;
-    border-radius: 10px;
+    margin: 8px auto 10px auto; /* Center and add spacing */
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    order: 3; /* Ensure it comes after price */
   }
   
   .handbags-price-section {
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 8px 0;
-  }
-  
-  .handbags-price-section::before,
-  .handbags-price-section::after {
-    width: 60px;
+    order: 2; /* Ensure price comes before color */
   }
   
   .handbags-product-price {
-    font-size: 18px;
+    font-size: 16px;
     padding: 8px 16px;
-    border-radius: 12px;
+    margin: 0 auto;
+    display: inline-block;
   }
   
   .handbags-product-price::before {
-    font-size: 16px;
-  }
-  
-  .handbags-product-features {
-    gap: 8px;
-    padding-top: 12px;
-    margin-top: auto;
+    font-size: 14px;
   }
   
   .handbags-feature-tag {
-    font-size: 10px;
+    font-size: 9px;
     padding: 4px 8px;
-    border-radius: 12px;
+    margin: 3px;
+    order: 4; /* Ensure features come after color */
   }
   
-  .handbags-premium-badge {
-    width: 36px;
-    height: 36px;
-    top: 12px;
-    right: 12px;
+  /* Reorder elements */
+  .handbags-product-name {
+    order: 1;
   }
   
-  .handbags-premium-badge::before {
+  .handbags-price-section {
+    order: 2;
+  }
+  
+  .handbags-product-color {
+    order: 3;
+  }
+  
+  .handbags-product-features {
+    order: 4;
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+  
+  /* FIX FLIP HINT FOR MOBILE */
+  .handbags-flip-hint {
+    width: 35px;
+    height: 35px;
     font-size: 18px;
+    bottom: 10px;
+    right: 10px;
   }
   
-  /* Back side adjustments */
+  
+  .handbags-benefits-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .handbags-whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .handbags-whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* FIX FOR CARD BACK SIDE ON MOBILE - PREVENT TEXT CUTTING */
   .handbags-card-back {
     padding: 15px;
-    border-radius: 16px;
-  }
-  
-  .handbags-back-content {
-    padding: 5px;
   }
   
   .handbags-back-title {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.3;
+    min-height: auto;
+    max-height: none;
+    -webkit-line-clamp: none;
   }
   
   .handbags-back-color {
-    font-size: 13px;
-    padding: 6px 14px;
-    margin-bottom: 12px;
+    font-size: 12px;
+    padding: 6px 15px;
+    margin-bottom: 15px;
   }
   
   .handbags-back-price {
-    font-size: 20px;
-    padding: 8px 16px;
-    margin-bottom: 12px;
+    font-size: 18px;
+    padding: 8px 20px;
+    margin-bottom: 15px;
   }
   
   .handbags-back-price::before {
@@ -1746,19 +1764,19 @@ body {
   
   .handbags-back-description {
     font-size: 12px;
+    padding: 0 10px;
+    margin: 15px 0;
     line-height: 1.5;
-    margin: 12px 0;
-    padding: 0 8px;
+    overflow: visible;
   }
   
   .handbags-back-features {
     gap: 10px;
-    margin: 12px 0;
+    margin: 15px 0;
   }
   
   .handbags-feature {
-    padding: 6px;
-    border-radius: 10px;
+    padding: 8px;
   }
   
   .handbags-feature-icon {
@@ -1771,148 +1789,32 @@ body {
     font-size: 10px;
   }
   
-  .handbags-back-tags {
-    margin-top: 12px;
-    padding-top: 10px;
-  }
-  
   .handbags-tag-badge {
-    font-size: 11px;
-    padding: 5px 10px;
-    margin: 0 4px 6px;
-  }
-  
-  .handbags-flip-hint {
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
-    bottom: 12px;
-    right: 12px;
-  }
-  
-  .handbags-card-corner {
-    width: 12px;
-    height: 12px;
-    border-width: 2px;
-  }
-  
-  .handbags-card-corner.tl,
-  .handbags-card-corner.tr,
-  .handbags-card-corner.bl,
-  .handbags-card-corner.br {
-    top: 10px;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    font-size: 10px;
+    padding: 6px 12px;
+    margin: 0 5px 8px;
   }
 }
 
-/* Mobile Portrait (480px to 575px) */
-@media (max-width: 575px) {
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
   .handbags-products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding: 0 6px;
+    padding: 0 5px;
   }
   
   .handbags-product-card {
-    height: 360px;
-    min-height: 360px;
-    border-radius: 14px;
-  }
-  
-  .handbags-card-front,
-  .handbags-card-back {
-    border-radius: 14px;
+    height: 350px; /* Adjusted for better text spacing */
   }
   
   .handbags-product-image {
-    height: 150px;
-    min-height: 150px;
-    padding: 10px;
-  }
-  
-  .handbags-image-container {
-    border-radius: 10px;
+    height: 120px;
     padding: 8px;
   }
   
   .handbags-product-info {
-    padding: 12px 10px;
-    min-height: 210px;
-  }
-  
-  .handbags-brand-name {
-    font-size: 15px;
-  }
-  
-  .handbags-product-type {
-    font-size: 12px;
-    padding: 3px 8px;
-  }
-  
-  .handbags-product-color {
-    font-size: 11px;
-    padding: 5px 10px;
-    margin: 6px 0;
-  }
-  
-  .handbags-product-price {
-    font-size: 17px;
-    padding: 6px 14px;
-  }
-  
-  .handbags-feature-tag {
-    font-size: 9px;
-    padding: 3px 6px;
-  }
-  
-  .handbags-back-content {
-    padding: 10px;
-  }
-  
-  .handbags-back-title {
-    font-size: 16px;
-  }
-  
-  .handbags-back-price {
-    font-size: 18px;
-    padding: 6px 14px;
-  }
-  
-  .handbags-back-description {
-    font-size: 11px;
-  }
-}
-
-/* Small Mobile (360px to 479px) */
-@media (max-width: 479px) {
-  .handbags-products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    padding: 0 4px;
-  }
-  
-  .handbags-product-card {
-    height: 340px;
-    min-height: 340px;
-    border-radius: 12px;
-  }
-  
-  .handbags-card-front,
-  .handbags-card-back {
-    border-radius: 12px;
-  }
-  
-  .handbags-product-image {
-    height: 140px;
-    min-height: 140px;
-    padding: 8px;
-  }
-  
-  .handbags-product-info {
-    padding: 10px 8px;
-    min-height: 200px;
+    padding: 10px 6px;
   }
   
   .handbags-brand-name {
@@ -1921,416 +1823,145 @@ body {
   
   .handbags-product-type {
     font-size: 11px;
-    padding: 2px 6px;
-  }
-  
-  .handbags-product-color {
-    font-size: 10px;
     padding: 4px 8px;
-    margin: 5px 0;
-  }
-  
-  .handbags-product-price {
-    font-size: 16px;
-    padding: 5px 12px;
-  }
-  
-  .handbags-back-content {
-    padding: 8px;
-  }
-  
-  .handbags-back-title {
-    font-size: 15px;
-  }
-  
-  .handbags-back-price {
-    font-size: 16px;
-    padding: 5px 12px;
-  }
-  
-  .handbags-back-description {
-    font-size: 10px;
-  }
-}
-
-/* Extra Small Mobile (320px to 359px) */
-@media (max-width: 359px) {
-  .handbags-products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    padding: 0 3px;
-  }
-  
-  .handbags-product-card {
-    height: 320px;
-    min-height: 320px;
-    border-radius: 10px;
-  }
-  
-  .handbags-card-front,
-  .handbags-card-back {
-    border-radius: 10px;
-  }
-  
-  .handbags-product-image {
-    height: 130px;
-    min-height: 130px;
-    padding: 6px;
-  }
-  
-  .handbags-image-container {
-    padding: 6px;
-    border-radius: 8px;
-  }
-  
-  .handbags-product-info {
-    padding: 8px 6px;
-    min-height: 190px;
-  }
-  
-  .handbags-brand-name {
-    font-size: 13px;
-  }
-  
-  .handbags-product-type {
-    font-size: 10px;
-    padding: 2px 5px;
   }
   
   .handbags-product-color {
     font-size: 9px;
-    padding: 3px 6px;
-    margin: 4px 0;
+    padding: 5px 10px;
+    margin: 6px auto 8px auto;
   }
   
   .handbags-product-price {
-    font-size: 14px;
-    padding: 4px 10px;
+    font-size: 15px;
+    padding: 7px 14px;
   }
   
   .handbags-feature-tag {
     font-size: 8px;
-    padding: 2px 4px;
+    padding: 3px 6px;
   }
   
-  .handbags-back-content {
-    padding: 6px;
+  .handbags-filter-btn {
+    min-width: 110px;
+    padding: 5px 10px;
+    font-size: 12px;
   }
   
+  .handbags-sort-dropdown select {
+    min-width: 140px;
+    font-size: 12px;
+  }
+  
+  .handbags-benefits-title {
+    font-size: 1.6rem;
+  }
+  
+  .handbags-benefits-description {
+    font-size: 0.95rem;
+  }
+  
+  .handbags-cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .handbags-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .handbags-product-card {
+    height: 340px;
+  }
+  
+  .handbags-product-image {
+    height: 110px;
+  }
+  
+  .handbags-brand-name {
+    font-size: 13px;
+    line-height: 1.1;
+  }
+  
+  .handbags-product-type {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .handbags-product-color {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+  
+  .handbags-product-price {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .handbags-filter-btn {
+    min-width: 90px;
+    font-size: 11px;
+  }
+}
+
+/* FIX TEXT OVERFLOW - REMOVE ALL TEXT CUTTING */
+@media (max-width: 768px) {
+  /* Allow all text to be fully visible */
+  .handbags-product-name,
+  .handbags-brand-name,
+  .handbags-product-type,
   .handbags-back-title {
-    font-size: 14px;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    line-height: 1.3;
+    min-height: auto !important;
+    max-height: none !important;
+    -webkit-line-clamp: none !important;
+    display: block !important;
   }
   
-  .handbags-back-price {
-    font-size: 14px;
-    padding: 4px 10px;
-  }
-}
-
-/* ============================================= */
-/* FIX FOR PRODUCT CARD HEIGHT CONSISTENCY */
-/* ============================================= */
-
-@media (max-width: 767px) {
-  .handbags-product-card {
-    /* Ensure consistent height */
-    height: auto;
-    min-height: 380px;
+  /* Reduce decorative elements on mobile for better performance */
+  .handbags-card-front::before,
+  .handbags-card-front::after,
+  .handbags-card-back::before,
+  .handbags-card-back::after {
+    display: none;
   }
   
-  .handbags-card-inner {
-    height: 100%;
+  .handbags-card-corner {
+    display: none;
   }
   
-  .handbags-card-front,
-  .handbags-card-back {
-    height: 100%;
-  }
-  
-  /* Adjust for content height */
-  .handbags-product-info {
-    flex: 1;
-    min-height: 0;
-  }
-}
-
-/* ============================================= */
-/* FIX FOR OVERFLOW ISSUES */
-/* ============================================= */
-
-@media (max-width: 767px) {
-  .handbags-product-card {
-    overflow: hidden;
-  }
-  
-  .handbags-card-front,
-  .handbags-card-back {
-    overflow: hidden;
-  }
-  
-  .handbags-product-name {
-    overflow: hidden;
-  }
-  
-  .handbags-back-description {
-    max-height: 80px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Ensure images fit properly */
-  .handbags-product-image img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-  }
-}
-
-/* ============================================= */
-/* IMPROVE TOUCH TARGETS FOR MOBILE */
-/* ============================================= */
-
-@media (max-width: 767px) {
-  .handbags-flip-hint {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
-  }
-  
-  .handbags-feature-tag {
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .handbags-product-card {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-/* ============================================= */
-/* REMOVE UNNECESSARY ANIMATIONS ON MOBILE */
-/* ============================================= */
-
-@media (max-width: 767px) {
-  .handbags-product-card:hover {
-    transform: none;
-    filter: none;
-  }
-  
-  .handbags-product-card:hover .handbags-card-inner {
-    transform: none;
-  }
-  
-  /* Only flip when .flipped class is added via JavaScript */
-  .handbags-product-card.flipped .handbags-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .handbags-feature-tag:hover {
-    transform: none;
-  }
-  
-  .handbags-premium-badge:hover {
-    transform: none;
-  }
-}
-
-/* ============================================= */
-/* OPTIMIZE FOR PERFORMANCE */
-/* ============================================= */
-
-@media (max-width: 767px) {
-  /* Reduce complex gradients */
+  /* Simplify gradients for mobile performance */
   .handbags-card-front {
     background: #fffaf5;
   }
   
-  .handbags-card-back {
-    background: #3a261e;
+  .handbags-product-info {
+    background: #fffaf5;
   }
   
-  /* Simplify shadows */
-  .handbags-card-front {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  .handbags-product-price {
+    background: rgba(201, 168, 106, 0.15);
   }
   
-  .handbags-card-back {
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Remove decorative elements */
-  .handbags-card-front::before,
-  .handbags-card-front::after,
-  .handbags-card-back::before,
-  .handbags-card-back::after,
-  .handbags-product-card::before,
-  .handbags-card-corner {
-    display: none;
+  .handbags-feature-tag {
+    background: rgba(201, 168, 106, 0.15);
   }
 }
 
-/* ============================================= */
-/* MOBILE FLIP ENABLED */
-/* ============================================= */
-
-@media (max-width: 767px) {
-  /* Enable flip on mobile */
+/* FIX FOR CONTAINER OVERFLOW */
+@media (max-width: 768px) {
+  .handbags-container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   .handbags-product-card {
-    perspective: 1000px;
-    cursor: pointer;
+    width: 100%;
   }
-  
-  .handbags-card-inner {
-    transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-  }
-  
-  /* Show flip hint on mobile */
-  .handbags-flip-hint {
-    opacity: 0.8;
-    animation: mobileFlipHint 2s infinite;
-    width: 40px;
-    height: 40px;
-    bottom: 15px;
-    right: 15px;
-  }
-  
-  .handbags-flip-hint::before {
-    content: '↻';
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  @keyframes mobileFlipHint {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 0.8;
-    }
-    50% {
-      transform: scale(1.1);
-      opacity: 1;
-    }
-  }
-  
-  /* Touch feedback */
-  .handbags-product-card:active {
-    transform: scale(0.98);
-  }
-  
-  .handbags-flip-hint:active {
-    transform: scale(0.9);
-    background: linear-gradient(135deg, #b89446, #a88438, #8b4513);
-  }
-  
-  /* Simplify for mobile performance */
-  .handbags-card-front::after,
-  .handbags-product-card::before {
-    display: none;
-  }
-  
-  .handbags-card-front {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Optimize hover effects for touch */
-  .handbags-product-card:hover .handbags-card-front .handbags-product-image img {
-    transform: scale(1.05);
-  }
-}
-
-/* ============================================= */
-/* TOUCH-OPTIMIZED FLIP INTERACTION */
-/* ============================================= */
-
-@media (hover: none) and (pointer: coarse) {
-  /* Touch device specific optimizations */
-  .handbags-product-card {
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  /* Make flip icon more touch-friendly */
-  .handbags-flip-hint {
-    width: 44px;
-    height: 44px;
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Allow card tap to flip on mobile */
-  .handbags-product-card {
-    user-select: none;
-  }
-  
-  /* Remove hover effects, use active states */
-  .handbags-product-card:hover {
-    transform: none;
-  }
-  
-  .handbags-feature-tag:active,
-  .handbags-cta-button:active {
-    transform: scale(0.95);
-  }
-}
-
-/* ============================================= */
-/* FLIPPED STATE STYLES FOR MOBILE */
-/* ============================================= */
-
-.handbags-product-card.flipped .handbags-card-inner {
-  transform: rotateY(180deg);
-}
-
-.handbags-product-card.flipped .handbags-flip-hint {
-  background: linear-gradient(135deg, #8b4513, #a88438, #b89446);
-  transform: rotate(180deg);
-}
-
-.handbags-product-card.flipped .handbags-flip-hint::before {
-  content: '↺';
-}
-
-/* ============================================= */
-/* PERFORMANCE OPTIMIZATIONS FOR MOBILE FLIP */
-/* ============================================= */
-
-@media (max-width: 767px) {
-  /* Optimize 3D transforms for mobile */
-  .handbags-card-front,
-  .handbags-card-back {
-    transform-style: preserve-3d;
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  
-  /* Simplify gradients for better performance */
-  .handbags-card-back {
-    background: linear-gradient(135deg, #3a261e, #5d4037);
-  }
-  
-  /* Reduce shadow complexity */
-  .handbags-card-back {
-    box-shadow: 
-      inset 0 0 20px rgba(0, 0, 0, 0.3),
-      0 10px 25px rgba(93, 64, 55, 0.3);
-  }
-}
-
-/* ============================================= */
-/* GOLDEN TEXT EFFECT */
-/* ============================================= */
-
-.golden-text {
-  background: linear-gradient(135deg, 
-    #c9a86a 0%, 
-    #d4b89a 25%, 
-    #e5d4b8 50%, 
-    #d4b89a 75%, 
-    #c9a86a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
