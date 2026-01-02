@@ -1,4 +1,4 @@
-/* Women Backpacks Page - Enhanced Card Design with Image Reference Style */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -110,7 +110,10 @@ body {
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
-  background: #ffffff;
+  background: #f8f3e9; /* Lighter background for better contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .backpacks-collection-card:hover .backpacks-collection-image {
@@ -129,21 +132,44 @@ body {
   justify-content: center;
   transition: all 0.3s;
   overflow: hidden;
-  background: rgba(139, 69, 19, 0.05);
 }
 
 .backpacks-collection-card:hover .backpacks-collection-icon-wrapper {
   transform: scale(1.1);
 }
 
+/* Updated image styling for consistent size */
 .backpacks-collection-img {
-  width: 100%;
-  height: 100%;
+  max-width: 140px; /* Maximum size for the image */
+  max-height: 140px; /* Maximum size for the image */
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center center;
   display: block;
-  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
 }
+
+/* Alternative approach - fixed size with background */
+/* .backpacks-collection-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+} */
 
 .backpacks-collection-name {
   font-size: 1.4rem;
@@ -156,7 +182,6 @@ body {
   font-size: 0.95rem;
   color: #666;
 }
-
 /* ============================================= */
 /* MAIN CONTAINER */
 /* ============================================= */
@@ -1340,6 +1365,10 @@ body {
   transform: scale(1.08);
 }
 
+.backpacks-benefits-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
 .backpacks-benefits-text {
   padding: 3rem;
   background: rgba(255, 255, 255, 0.92);
@@ -1350,8 +1379,15 @@ body {
   border: 2px solid #c9a86a;
   position: relative;
   overflow: hidden;
-  text-align: justify;
-  text-justify: inter-word;
+}
+
+.backpacks-benefits-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .backpacks-benefits-text::before {
@@ -1648,7 +1684,7 @@ body {
   }
   
   .backpacks-product-card {
-    height: 350px; /* Reduced height */
+    height: 370px; /* Increased height to prevent text cutting */
     margin: 0;
   }
   
@@ -1658,13 +1694,33 @@ body {
   }
   
   .backpacks-product-info {
-    padding: 10px 8px; /* Reduced padding */
+    padding: 12px 8px; /* Slightly increased padding */
+    display: flex;
+    flex-direction: column;
   }
   
-  /* FIX TEXT SIZE FOR MOBILE */
+  /* FIX TEXT SIZE FOR MOBILE - REMOVE TEXT CUTTING */
+  .backpacks-product-name {
+    min-height: auto; /* Remove fixed height */
+    max-height: none; /* Remove max height restriction */
+    overflow: visible; /* Allow text to be visible */
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    display: block; /* Change from flex to block */
+    -webkit-line-clamp: none; /* Remove line clamp */
+  }
+  
   .backpacks-brand-name {
-    font-size: 14px; /* Reduced from 18px */
-    padding-bottom: 5px;
+    font-size: 15px; /* Slightly increased */
+    padding-bottom: 4px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
   }
   
   .backpacks-brand-name::after {
@@ -1673,24 +1729,38 @@ body {
   }
   
   .backpacks-product-type {
-    font-size: 11px; /* Reduced from 14px */
-    padding: 3px 8px;
+    font-size: 12px; /* Slightly increased */
+    padding: 4px 10px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
   }
   
+  /* FIX COLOR BUTTON POSITIONING */
   .backpacks-product-color {
-    font-size: 10px; /* Reduced from 13px */
-    padding: 5px 10px;
-    margin: 8px 0;
+    font-size: 10px;
+    padding: 6px 12px;
+    margin: 8px auto 10px auto; /* Center and add spacing */
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    order: 3; /* Ensure it comes after price */
   }
   
   .backpacks-price-section {
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 8px 0;
+    order: 2; /* Ensure price comes before color */
   }
   
   .backpacks-product-price {
-    font-size: 16px; /* Reduced from 22px */
-    padding: 6px 15px;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 0 auto;
+    display: inline-block;
   }
   
   .backpacks-product-price::before {
@@ -1698,8 +1768,29 @@ body {
   }
   
   .backpacks-feature-tag {
-    font-size: 9px; /* Reduced from 11px */
-    padding: 3px 6px;
+    font-size: 9px;
+    padding: 4px 8px;
+    margin: 3px;
+    order: 4; /* Ensure features come after color */
+  }
+  
+  /* Reorder elements */
+  .backpacks-product-name {
+    order: 1;
+  }
+  
+  .backpacks-price-section {
+    order: 2;
+  }
+  
+  .backpacks-product-color {
+    order: 3;
+  }
+  
+  .backpacks-product-features {
+    order: 4;
+    margin-top: 8px;
+    padding-top: 8px;
   }
   
   /* FIX FLIP HINT FOR MOBILE */
@@ -1743,24 +1834,31 @@ body {
     height: 28px;
   }
   
-  /* FIX FOR CARD BACK SIDE ON MOBILE */
+  /* FIX FOR CARD BACK SIDE ON MOBILE - PREVENT TEXT CUTTING */
   .backpacks-card-back {
     padding: 15px;
   }
   
   .backpacks-back-title {
-    font-size: 16px; /* Reduced from 22px */
+    font-size: 16px;
     margin-bottom: 10px;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.3;
+    min-height: auto;
+    max-height: none;
+    -webkit-line-clamp: none;
   }
   
   .backpacks-back-color {
-    font-size: 12px; /* Reduced from 16px */
+    font-size: 12px;
     padding: 6px 15px;
     margin-bottom: 15px;
   }
   
   .backpacks-back-price {
-    font-size: 18px; /* Reduced from 28px */
+    font-size: 18px;
     padding: 8px 20px;
     margin-bottom: 15px;
   }
@@ -1770,10 +1868,11 @@ body {
   }
   
   .backpacks-back-description {
-    font-size: 12px; /* Reduced from 15px */
+    font-size: 12px;
     padding: 0 10px;
     margin: 15px 0;
     line-height: 1.5;
+    overflow: visible;
   }
   
   .backpacks-back-features {
@@ -1811,7 +1910,7 @@ body {
   }
   
   .backpacks-product-card {
-    height: 320px; /* Further reduced height */
+    height: 350px; /* Adjusted for better text spacing */
   }
   
   .backpacks-product-image {
@@ -1820,31 +1919,32 @@ body {
   }
   
   .backpacks-product-info {
-    padding: 8px 6px;
+    padding: 10px 6px;
   }
   
   .backpacks-brand-name {
-    font-size: 13px;
+    font-size: 14px;
   }
   
   .backpacks-product-type {
-    font-size: 10px;
-    padding: 2px 6px;
+    font-size: 11px;
+    padding: 4px 8px;
   }
   
   .backpacks-product-color {
     font-size: 9px;
-    padding: 4px 8px;
+    padding: 5px 10px;
+    margin: 6px auto 8px auto;
   }
   
   .backpacks-product-price {
     font-size: 15px;
-    padding: 5px 12px;
+    padding: 7px 14px;
   }
   
   .backpacks-feature-tag {
     font-size: 8px;
-    padding: 2px 4px;
+    padding: 3px 6px;
   }
   
   /* Collection section adjustments for small screens */
@@ -1894,7 +1994,7 @@ body {
   }
   
   .backpacks-product-card {
-    height: 300px;
+    height: 340px;
   }
   
   .backpacks-product-image {
@@ -1902,11 +2002,23 @@ body {
   }
   
   .backpacks-brand-name {
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.1;
+  }
+  
+  .backpacks-product-type {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .backpacks-product-color {
+    font-size: 8px;
+    padding: 4px 8px;
   }
   
   .backpacks-product-price {
     font-size: 14px;
+    padding: 6px 12px;
   }
   
   /* Collection section for very small screens */
@@ -1929,31 +2041,21 @@ body {
   }
 }
 
-/* ADDITIONAL FIX FOR TEXT OVERFLOW ON MOBILE */
+/* FIX TEXT OVERFLOW - REMOVE ALL TEXT CUTTING */
 @media (max-width: 768px) {
-  /* Prevent text from overflowing */
-  .backpacks-product-name {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    line-height: 1.2;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    min-height: 40px;
-    max-height: 40px;
-  }
-  
+  /* Allow all text to be fully visible */
+  .backpacks-product-name,
+  .backpacks-brand-name,
+  .backpacks-product-type,
   .backpacks-back-title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    line-height: 1.2;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    min-height: 40px;
-    max-height: 40px;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    line-height: 1.3;
+    min-height: auto !important;
+    max-height: none !important;
+    -webkit-line-clamp: none !important;
+    display: block !important;
   }
   
   /* Reduce decorative elements on mobile for better performance */

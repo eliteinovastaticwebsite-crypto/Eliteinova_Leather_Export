@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* Header Container */
+/* Header Container */
 .header {
   width: 100%;
   background-color: white;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;  /* Add this line */
+  top: 0;            /* Add this line */
+  z-index: 100;      /* Add this line - ensures header stays above other content */
 }
 
 /* Announcement Bar */

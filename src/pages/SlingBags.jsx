@@ -2,45 +2,33 @@ import React, { useState } from 'react';
 import './SlingBags.css';
 
 const SlingBagsPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
   const [sortBy, setSortBy] = useState('featured');
 
-  // 20 sling bag products
+  // 20 sling bag products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling2.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling3.png', color: 'Black', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling4.png', color: 'Tan', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'The Philos Leather Sling Bag', image: '/images/sling5.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'The Philos Leather Sling Bag', image: '/images/sling8.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'The Philos Leather Sling Bag', image: '/images/sling9.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Sling Bag', image: '/images/sling10.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Vintage Leather Travel Sling Bag', image: '/images/sling11.png', color: 'Black', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Urban Leather Sling Bag', image: '/images/sling12.png', color: 'Black', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Urban Leather Sling Bag', image: '/images/sling13.png', color: 'Tan', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Classic Leather Sling Bag', image: '/images/S11.png', color: 'Dark Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Classic Leather Sling Bag', image: '/images/S12.png', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Topper Stylish Leather Travel Sling Bag', image: '/images/S13.png', color: 'Brown', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Topper Stylish Leather Travel Sling Bag', image: '/images/S14.png', color: 'Black', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Leather Shoulder Sling Bag', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Leather Shoulder Sling Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Urban Leather Sling', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Urban Leather Sling', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Sling Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }
-  ];
+    { id: 1, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling1.png', color: 'Brown', date: '2024-01-15', description: 'Compact Rexo Crunch sling bag in premium brown leather. Features adjustable strap and multiple compartments for organized carry.' },
+    { id: 2, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling2.png', color: 'Green', date: '2024-02-20', description: 'Eco-friendly green Rexo Crunch sling bag with sustainable leather. Perfect for daily essentials with secure closures.' },
+    { id: 3, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling3.png', color: 'Black', date: '2024-03-10', description: 'Classic black Rexo Crunch sling bag with modern design. Durable leather construction with comfortable shoulder strap.' },
+    { id: 4, name: 'Rexo Crunch Leather Sling Bag', image: '/images/sling4.png', color: 'Tan', date: '2024-01-25', description: 'Versatile tan Rexo Crunch sling bag with casual appeal. Features premium leather that ages beautifully over time.' },
+    { id: 5, name: 'The Philos Leather Sling Bag', image: '/images/sling5.png', color: 'Black', date: '2024-04-05', description: 'Sophisticated Philos sling bag in sleek black leather. Minimalist design with intelligent organization for tech essentials.' },
+    { id: 6, name: 'The Philos Leather Sling Bag', image: '/images/sling8.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown Philos sling bag with refined craftsmanship. Features premium leather and thoughtful pocket placement.' },
+    { id: 7, name: 'The Philos Leather Sling Bag', image: '/images/sling9.png', color: 'Tan', date: '2024-05-18', description: 'Light tan Philos sling bag with elegant simplicity. Perfect blend of style and functionality for urban explorers.' },
+    { id: 8, name: 'Vintage Leather Travel Sling Bag', image: '/images/sling10.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired travel sling bag in classic brown. Features distressed leather and retro styling for timeless appeal.' },
+    { id: 9, name: 'Vintage Leather Travel Sling Bag', image: '/images/sling11.png', color: 'Black', date: '2024-06-30', description: 'Black vintage travel sling with aged leather finish. Combines nostalgic design with modern functionality.' },
+    { id: 10, name: 'Urban Leather Sling Bag', image: '/images/sling12.png', color: 'Black', date: '2024-07-12', description: 'Contemporary urban sling bag in matte black leather. Features clean lines and versatile carrying options.' },
+    { id: 11, name: 'Urban Leather Sling Bag', image: '/images/sling13.png', color: 'Tan', date: '2024-08-05', description: 'Modern tan urban sling with minimalist aesthetic. Designed for city dwellers seeking style and convenience.' },
+   /* { id: 12, name: 'Classic Leather Sling Bag', image: '/images/S11.png', color: 'Dark Brown', date: '2024-01-08', description: 'Timeless dark brown classic sling bag. Premium leather with traditional craftsmanship for everyday use.' },
+    { id: 13, name: 'Classic Leather Sling Bag', image: '/images/S12.png', color: 'Brown', date: '2024-09-14', description: 'Heritage brown classic sling bag with refined details. Features durable construction and comfortable carry.' },
+    { id: 14, name: 'Topper Stylish Leather Travel Sling Bag', image: '/images/S13.png', color: 'Brown', date: '2024-04-28', description: 'Stylish Topper travel sling in rich brown leather. Designed for travelers seeking fashion-forward functionality.' },
+    { id: 15, name: 'Topper Stylish Leather Travel Sling Bag', image: '/images/S14.png', color: 'Black', date: '2024-10-20', description: 'Elegant black Topper travel sling with premium finish. Combines travel convenience with sophisticated style.' },
+    { id: 16, name: 'Leather Shoulder Sling Bag', image: '/api/placeholder/300/300', color: 'Black', date: '2024-05-07', description: 'Versatile leather shoulder sling in classic black. Adjustable strap and multiple compartments for organized carry.' },
+    { id: 17, name: 'Leather Shoulder Sling Bag', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-11-11', description: 'Practical brown leather shoulder sling bag. Features durable construction and comfortable ergonomic design.' },
+    { id: 18, name: 'Urban Leather Sling', image: '/api/placeholder/300/300', color: 'Black', date: '2024-06-17', description: 'Sleek urban leather sling with contemporary styling. Perfect for tech gadgets and daily essentials.' },
+    { id: 19, name: 'Urban Leather Sling', image: '/api/placeholder/300/300', color: 'Dark Brown', date: '2024-12-01', description: 'Dark brown urban sling with modern minimalism. Features premium hardware and quality craftsmanship.' },
+    { id: 20, name: 'Premium Leather Travel Sling Bag', image: '/api/placeholder/300/300', color: 'Tan', date: '2024-07-25', description: 'Premium tan travel sling bag with luxury details. Designed for discerning travelers who value both style and function.' }
+  */];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'best-selling':
         return a.id - b.id;
@@ -58,64 +46,28 @@ const SlingBagsPage = () => {
     }
   });
 
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
-
   return (
     <div className="slingbags-page">
       <div className="slingbags-breadcrumb">
-        <a href="/">Home</a> / <span>Sling Bags</span>
+        <a href="/">Home</a> / <a href="/smallbags">Small Bags</a> / <span>Sling Bags</span>
       </div>
 
-      <div className="hero-section">
-        <img src="/images/slingbanner.png" alt="Elegant Sling Bags" className="hero-image" />
+      <div className="slingbags-hero-section">
+        <img src="/images/slingbanner.png" alt="Elegant Sling Bags" className="slingbags-hero-image" />
       </div>
+
+      {/* Featured Products Header - Added this section */}
+      <section className="slingbags-featured-header">
+        <div className="slingbags-section-header">
+          <h2 className="slingbags-section-title">FEATURED PRODUCTS</h2>
+          <div className="slingbags-title-underline"></div>
+        </div>
+      </section>
 
       <div className="slingbags-container">
         <div className="slingbags-filter-bar">
-          <div className="slingbags-filter-section">
-            <span className="slingbags-filter-label">Filter:</span>
-            <div className="slingbags-filter-dropdown">
-              <button className="slingbags-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="slingbags-dropdown-content">
-                <div className="slingbags-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="slingbags-reset-btn">Reset</button>
-                </div>
-                <label className="slingbags-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="slingbags-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
           <div className="slingbags-sort-section">
-            <span className="slingbags-products-count">{filteredProducts.length} Products</span>
+            <span className="slingbags-products-count">{sortedProducts.length} Products</span>
             <div className="slingbags-sort-dropdown">
               <label>Sort By:</label>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -133,13 +85,24 @@ const SlingBagsPage = () => {
         <div className="slingbags-products-grid">
           {sortedProducts.map(product => (
             <div key={product.id} className="slingbags-product-card">
-              <div className="slingbags-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="slingbags-product-info">
-                <h3 className="slingbags-product-name">{product.name}</h3>
-                <p className="slingbags-product-color">{product.color}</p>
-                {!product.inStock && <p className="slingbags-out-of-stock">Out of Stock</p>}
+              <div className="slingbags-card-inner">
+                <div className="slingbags-card-front">
+                  <div className="slingbags-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="slingbags-product-info">
+                    <h3 className="slingbags-product-name">{product.name}</h3>
+                    <p className="slingbags-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="slingbags-card-back">
+                  <div className="slingbags-back-content">
+                    <h3 className="slingbags-back-title">{product.name}</h3>
+                    <div className="slingbags-back-divider"></div>
+                    <p className="slingbags-back-color">Color: {product.color}</p>
+                    <p className="slingbags-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

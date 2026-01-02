@@ -264,11 +264,12 @@ body {
   align-items: center;
   text-align: center;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .formalshoes-section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   width: 100%;
   max-width: 1200px; /* Optional: limits the width for better readability */
 }

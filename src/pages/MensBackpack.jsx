@@ -75,6 +75,9 @@ const MensBackpackPage = () => {
     <div className="mensbackpack-page">
       <div className="mensbackpack-breadcrumb">
         <a href="/">Home</a> / <span>Men's Backpack</span>
+
+
+        
       </div>
 
      <div className="hero-section">

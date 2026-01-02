@@ -73,8 +73,8 @@ const BackpacksPage = () => {
         <a href="/">Home</a> / <span>Backpacks</span>
       </div>
 
-      <div className="hero-section">
-        <img src="/images/smallbanner.png" alt="Premium Backpacks" className="hero-image" />
+      <div className="backpacks-hero-section">
+        <img src="/images/smallbanner.png" alt="Premium Backpacks" className="backpacks-hero-image" />
       </div>
 
       {/* Collections Section */}
@@ -103,7 +103,30 @@ const BackpacksPage = () => {
         </div>
       </section>
 
-      {/* Featured Products Header - Added this section */}
+      {/* Leather Backpacks Benefits Section */}
+      <section className="backpacks-benefits-section">
+        <div className="backpacks-benefits-content">
+          <div className="backpacks-benefits-image">
+            <div className="backpacks-benefits-image-placeholder">
+              <img src="/images/backpack about.jpg" alt="Premium Leather Backpacks" className="backpacks-benefits-img" />
+            </div>
+          </div>
+          <div className="backpacks-benefits-text">
+            <h2 className="backpacks-benefits-title">Elevated Utility in Leather Backpacks</h2>
+            <p className="backpacks-benefits-description">
+              At Eliteinova Leather Products Export, our leather backpacks are designed for those who seek versatility without compromising on sophistication. 
+              Thoughtfully engineered for everyday use, our leather backpacks feature spacious interiors, secure compartments for laptops and essentials, and balanced weight distribution for comfortable carrying. 
+              Adjustable padded straps and reinforced construction provide support during commutes, travel, and daily routines. 
+              As the leather develops a unique patina with use, each backpack becomes a distinctive expression of style, practicality, and enduring craftsmanship.
+            </p>
+            <button className="backpacks-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products Header */}
       <section className="backpacks-featured-header">
         <div className="backpacks-section-header">
           <h2 className="backpacks-section-title">FEATURED PRODUCTS</h2>
@@ -155,33 +178,6 @@ const BackpacksPage = () => {
           ))}
         </div>
       </div>
-
-      {/* Leather Backpacks Benefits Section */}
-      <section className="backpacks-benefits-section">
-        <div className="backpacks-benefits-content">
-          <div className="backpacks-benefits-image">
-            <div className="backpacks-benefits-image-placeholder">
-              <img src="/images/backpack about.jpg" alt="Premium Leather Backpacks" className="backpacks-benefits-img" />
-            </div>
-          </div>
-          <div className="backpacks-benefits-text">
-            <h2 className="backpacks-benefits-title">Elevated Utility in Leather Backpacks</h2>
-            <p className="backpacks-benefits-description">
-              At Eliteinova, our leather backpacks are designed for those who seek versatility without compromising on sophistication. 
-              Crafted in collaboration with trusted manufacturing partners, we use premium-grade leather selected for its durability, refined texture, and ability to age beautifully over time. 
-              Every backpack is subjected to strict quality checks to ensure lasting strength, comfort, and performance.
-            </p>
-            <p className="backpacks-benefits-description">
-              Thoughtfully engineered for everyday use, our leather backpacks feature spacious interiors, secure compartments for laptops and essentials, and balanced weight distribution for comfortable carrying. 
-              Adjustable padded straps and reinforced construction provide support during commutes, travel, and daily routines. 
-              As the leather develops a unique patina with use, each backpack becomes a distinctive expression of style, practicality, and enduring craftsmanship.
-            </p>
-            <button className="backpacks-cta-button" onClick={scrollToTop}>
-              Explore Our Collection
-            </button>
-          </div>
-        </div>
-      </section>
 
       <a href="https://wa.me/9876543210" className="backpacks-whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 32 32" width="32" height="32">

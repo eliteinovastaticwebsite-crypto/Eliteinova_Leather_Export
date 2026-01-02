@@ -1,4 +1,5 @@
-/* LaptopBags.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -7,98 +8,108 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .laptopbags-page {
   min-height: 100vh;
 }
 
+/* ============================================= */
+/* BREADCRUMB */
+/* ============================================= */
+
 .laptopbags-breadcrumb {
   max-width: 1400px;
-  margin: 20px auto;
-  padding: 0 20px;
+  margin: 15px auto;
+  padding: 0 15px;
   font-size: 14px;
   color: #6d4c41;
+  font-family: 'Poppins', sans-serif;
 }
 
 .laptopbags-breadcrumb a {
   color: #8b4513;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .laptopbags-breadcrumb a:hover {
   text-decoration: underline;
 }
 
+/* ============================================= */
+/* HERO SECTION */
+/* ============================================= */
+
 .hero-section {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .hero-image {
   width: 100%;
-  height: 700px;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
+
+/* ============================================= */
+/* MAIN CONTAINER */
+/* ============================================= */
+
 .laptopbags-container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 20px 60px;
+  padding: 0 15px 50px;
 }
+
+/* ============================================= */
+/* FILTER BAR */
+/* ============================================= */
 
 .laptopbags-filter-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 .laptopbags-filter-section {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .laptopbags-filter-label {
   font-weight: 600;
   color: #5d4037;
-  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .laptopbags-filter-btn {
-  padding: 10px 20px;
+  padding: 8px 15px;
   background: #fff;
   border: 1px solid #d7ccc8;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   color: #5d4037;
   transition: all 0.3s;
-  min-width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.laptopbags-filter-btn::after {
-  content: '';
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #5d4037;
+  min-width: 140px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 
 .laptopbags-filter-btn:hover {
@@ -132,7 +143,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -140,6 +151,7 @@ body {
 .laptopbags-dropdown-header span {
   font-size: 13px;
   color: #666;
+  font-family: 'Poppins', sans-serif;
 }
 
 .laptopbags-reset-btn {
@@ -150,6 +162,8 @@ body {
   font-size: 13px;
   text-decoration: underline;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 
 .laptopbags-reset-btn:hover {
@@ -160,10 +174,11 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 0;
+  padding: 6px 0;
   cursor: pointer;
   color: #333;
   font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .laptopbags-checkbox-label:hover {
@@ -174,52 +189,59 @@ body {
 }
 
 .laptopbags-checkbox-label input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
   accent-color: #8b4513;
 }
 
+/* ============================================= */
+/* SORT SECTION */
+/* ============================================= */
+
 .laptopbags-sort-section {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .laptopbags-products-count {
   font-weight: 600;
   color: #5d4037;
+  font-size: 14px;
   white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
 }
 
 .laptopbags-sort-dropdown {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .laptopbags-sort-dropdown label {
   font-weight: 500;
   color: #5d4037;
-  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .laptopbags-sort-dropdown select {
-  padding: 10px 35px 10px 15px;
+  padding: 8px 30px 8px 12px;
   background: #fff;
   border: 1px solid #d7ccc8;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   color: #5d4037;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235d4037' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
+  background-position: right 10px center;
   transition: all 0.3s;
-  min-width: 200px;
+  min-width: 180px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .laptopbags-sort-dropdown select:hover {
@@ -233,701 +255,1714 @@ body {
   box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
 }
 
+/* Featured Section */
+.laptopbags-featured-header {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #fffbeb, #ffedd5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.laptopbags-section-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 1200px; /* Optional: limits the width for better readability */
+}
+
+.laptopbags-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.laptopbags-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* ============================================= */
+/* PREMIUM ENHANCED PRODUCT CARDS */
+/* ============================================= */
+
 .laptopbags-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 10px 0;
 }
 
 .laptopbags-product-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: transparent;
+  border-radius: 20px;
+  height: 440px;
+  perspective: 1200px;
   cursor: pointer;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .laptopbags-product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px);
+  filter: drop-shadow(0 25px 50px rgba(139, 69, 19, 0.35));
 }
 
+.laptopbags-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+.laptopbags-product-card:hover .laptopbags-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT SIDE - Premium Design with Enhanced Golden Borders */
+.laptopbags-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, 
+    #fffaf5 0%, 
+    #fcf5eb 30%, 
+    #f8f0e1 100%);
+  border: 2px solid #e5d4b8;
+  box-shadow: 
+    0 18px 40px rgba(139, 69, 19, 0.15),
+    0 8px 20px rgba(139, 69, 19, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.6s ease;
+}
+
+.laptopbags-card-front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, 
+      rgba(201, 168, 106, 0.15) 0%, 
+      transparent 40%),
+    radial-gradient(circle at 80% 80%, 
+      rgba(255, 255, 255, 0.12) 0%, 
+      transparent 40%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.laptopbags-card-front::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #c9a86a 0%, 
+    #d4b89a 25%, 
+    #e5d4b8 50%, 
+    #d4b89a 75%, 
+    #c9a86a 100%);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.laptopbags-product-card:hover .backpacks-card-front::after {
+  opacity: 0.5;
+  animation: goldenBorderGlow 2s linear infinite;
+}
+
+@keyframes goldenBorderGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.7; }
+}
+
+/* Product Image Section - Enhanced */
 .laptopbags-product-image {
   position: relative;
   width: 100%;
-  height: 320px;
-  background: #ffffff;
+  height: 240px;
+  background: linear-gradient(135deg, 
+    #ffe4c0 0%, 
+    #f7f0e6 50%, 
+    #fff5e8 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 22px;
+  z-index: 2;
+}
+
+.laptopbags-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, 
+    #fffdfa 0%, 
+    #fffbf5 100%);
+  padding: 18px;
+  box-shadow: 
+    0 5px 25px rgba(139, 69, 19, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(201, 168, 106, 0.12);
+  border: 1px solid rgba(238, 192, 106, 0.2);
+}
+
+.laptopbags-image-container::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid rgba(201, 168, 106, 0.1);
+  border-radius: 10px;
+  pointer-events: none;
 }
 
 .laptopbags-product-image img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  transition: transform 0.3s;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.12));
 }
 
-.laptopbags-product-card:hover .laptopbags-product-image img {
-  transform: scale(1.05);
+.laptopbags-product-card:hover .laptopbags-card-front .laptopbags-product-image img {
+  transform: scale(1.1) translateY(-5px);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
 }
 
+/* Product Info Below Image - Premium Enhanced */
 .laptopbags-product-info {
-  padding: 18px;
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, 
+    #c09f80e7 0%, 
+    #ffffffda 100%);
+  position: relative;
+  z-index: 2;
 }
 
+/* Enhanced Product Name with Golden Accents */
 .laptopbags-product-name {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 8px;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 20px;
+  color: #5d4037;
+  margin-bottom: 10px;
+  font-weight: 800;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-height: 65px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.4px;
+  text-align: center;
 }
 
-.laptopbags-product-color {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 5px;
+.laptopbags-brand-name {
+  font-size: 22px;
+  font-weight: 900;
+  color: #8b4513;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.laptopbags-out-of-stock {
-  font-size: 13px;
-  color: #d32f2f;
-  font-weight: 500;
-  margin-top: 8px;
-}
-
-.laptopbags-whatsapp-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+.laptopbags-brand-name::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
-  height: 60px;
-  background: #25d366;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    #c9a86a, 
+    #b89446, 
+    #c9a86a, 
+    transparent);
+  border-radius: 1.5px;
+}
+
+.laptopbags-product-type {
+  font-size: 17px;
+  font-weight: 700;
+  color: #6d4c41;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.2) 0%, 
+    rgba(184, 148, 70, 0.15) 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(201, 168, 106, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.laptopbags-product-type::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Enhanced Color Display with Golden Border */
+.laptopbags-product-color {
+  font-size: 15px;
+  color: #4d3820;
+  margin: 15px 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.25) 0%, 
+    rgba(184, 148, 70, 0.2) 100%);
+  border-radius: 12px;
+  border: 2px solid rgba(187, 133, 32, 0.644);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(139, 69, 19, 0.1);
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.laptopbags-product-color::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/* Premium Price Section with Golden Border */
+.laptopbags-price-section {
+  margin: 20px 0 25px;
+  padding: 15px 0;
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.1) 0%, 
+    rgba(184, 148, 70, 0.08) 100%);
+  border-radius: 15px;
+  border: 2px solid rgba(201, 168, 106, 0.15);
+}
+
+.laptopbags-price-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #c9a86a 20%, 
+    #b89446 50%, 
+    #c9a86a 80%, 
+    transparent 100%);
+}
+
+.laptopbags-price-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #c9a86a 20%, 
+    #b89446 50%, 
+    #c9a86a 80%, 
+    transparent 100%);
+}
+
+.laptopbags-product-price {
+  font-size: 26px;
+  color: #8b4513;
+  font-weight: 900;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.2) 0%, 
+    rgba(184, 148, 70, 0.15) 100%);
+  border-radius: 15px;
+  margin: 0 auto;
+  border: 2px solid rgba(201, 168, 106, 0.3);
+  box-shadow: 
+    0 6px 25px rgba(139, 69, 19, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -2px 0 rgba(201, 168, 106, 0.2);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.6px;
+}
+
+.laptopbags-product-price::before {
+  content: '₹';
+  font-size: 22px;
+  margin-right: 5px;
+  color: #8b4513;
+  font-weight: 800;
+  vertical-align: text-top;
+}
+
+.laptopbags-product-price::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Enhanced Features with Golden Accents */
+.laptopbags-product-features {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 2px solid rgba(201, 168, 106, 0.25);
+  flex-wrap: wrap;
+}
+
+.laptopbags-feature-tag {
+  font-size: 13px;
+  color: #5d4037;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.25), 
+    rgba(184, 148, 70, 0.18));
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  border: 2px solid rgba(201, 168, 106, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    inset 0 2px 0 rgba(255, 255, 255, 0.7),
+    0 2px 10px rgba(201, 168, 106, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.laptopbags-feature-tag::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 13px;
+  pointer-events: none;
+}
+
+.laptopbags-feature-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 20px rgba(201, 168, 106, 0.35),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(139, 69, 19, 0.1);
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.3), 
+    rgba(184, 148, 70, 0.22));
+}
+
+/* Premium Badge - Enhanced with Golden Shine */
+.laptopbags-premium-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #c9a86a, #b89446, #a88438);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-  z-index: 1000;
-  text-decoration: none;
+  font-size: 14px;
+  font-weight: 900;
+  z-index: 10;
+  box-shadow: 
+    0 8px 25px rgba(201, 168, 106, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(139, 69, 19, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.laptopbags-whatsapp-btn svg {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
-  width: 28px;
-  height: 28px;
+.laptopbags-premium-badge::before {
+  content: '★';
+  font-size: 22px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
-.laptopbags-whatsapp-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-  background: #20ba5a;
+.laptopbags-premium-badge::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.laptopbags-whatsapp-btn:active {
-  transform: scale(0.95);
+.laptopbags-premium-badge:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 
+    0 12px 35px rgba(201, 168, 106, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5);
 }
 
-/* Tablet Responsive (1024px and below) */
-@media (max-width: 1024px) {
-  .hero-image {
-    height: 500px;
-  }
-  
-  .laptopbags-breadcrumb {
-    font-size: 13px;
-    padding: 0 15px;
-  }
-  
-  .laptopbags-container {
-    padding: 0 15px 50px;
-  }
-  
-  .laptopbags-filter-bar {
-    padding: 18px;
-  }
-  
-  .laptopbags-filter-btn,
-  .laptopbags-sort-dropdown select {
-    min-width: 180px;
-  }
-  
-  .laptopbags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
-  }
-  
-  .laptopbags-product-image {
-    height: 300px;
-  }
-  
-  .laptopbags-whatsapp-btn {
-    width: 55px;
-    height: 55px;
-    bottom: 25px;
-    right: 25px;
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 26px;
-    height: 26px;
-  }
+/* Premium Decorative Corner Elements */
+.laptopbags-card-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 3;
+  border: 3px solid rgba(201, 168, 106, 0.8);
+  border-radius: 4px;
 }
 
-/* Medium Tablet (900px and below) */
-@media (max-width: 900px) {
-  .hero-image {
-    height: 450px;
-  }
-  
-  .laptopbags-filter-btn,
-  .laptopbags-sort-dropdown select {
-    min-width: 160px;
-  }
-  
-  .laptopbags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-  }
-  
-  .laptopbags-whatsapp-btn {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 24px;
-    height: 24px;
-  }
+.laptopbags-card-corner.tl {
+  top: 15px;
+  left: 15px;
+  border-top-color: rgba(201, 168, 106, 0.9);
+  border-left-color: rgba(201, 168, 106, 0.9);
+  border-right: none;
+  border-bottom: none;
 }
 
-/* Mobile Responsive (768px and below) */
-@media (max-width: 768px) {
-  .hero-image {
-    height: 400px;
-  }
-  
-  .laptopbags-breadcrumb {
-    font-size: 12px;
-    margin: 15px auto;
-    padding: 0 15px;
-  }
-  
-  .laptopbags-container {
-    padding: 0 15px 40px;
-  }
-  
-  /* Filter Bar Mobile Layout */
-  .laptopbags-filter-bar {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 20px;
-    gap: 15px;
-    margin-bottom: 25px;
-  }
-  
-  /* Row 1: Filter section */
-  .laptopbags-filter-section {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 0;
-  }
-  
-  .laptopbags-filter-label {
-    font-size: 15px;
-    min-width: 50px;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .laptopbags-filter-btn {
-    flex: 1;
-    min-width: 0;
-    justify-content: space-between;
-    padding: 12px 15px;
-    font-size: 14px;
-    margin: 0;
-  }
-  
-  /* Row 2: Products count and sort section */
-  .laptopbags-sort-section {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    padding-top: 15px;
-    margin-top: 0;
-    border-top: 1px solid #e0e0e0;
-  }
-  
-  .laptopbags-products-count {
-    font-size: 14px;
-    text-align: left;
-    flex-shrink: 0;
-    white-space: nowrap;
-    margin: 0;
-  }
-  
-  .laptopbags-sort-dropdown {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-    justify-content: flex-end;
-    margin: 0;
-  }
-  
-  .laptopbags-sort-dropdown label {
-    font-size: 14px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin: 0;
-  }
-  
-  .laptopbags-sort-dropdown select {
-    flex: 0 0 auto;
-    min-width: 150px;
-    padding: 10px 35px 10px 15px;
-    font-size: 14px;
-    margin: 0;
-  }
-  
-  .laptopbags-dropdown-content {
-    min-width: 100%;
-    left: 0;
-    right: 0;
-  }
-  
-  .laptopbags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-  }
-  
-  .laptopbags-product-image {
-    height: 280px;
-  }
-  
-  .laptopbags-whatsapp-btn {
-    width: 45px;
-    height: 45px;
-    bottom: 20px;
-    right: 20px;
-    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 22px;
-    height: 22px;
-  }
+.laptopbags-card-corner.tr {
+  top: 15px;
+  right: 15px;
+  border-top-color: rgba(201, 168, 106, 0.9);
+  border-right-color: rgba(201, 168, 106, 0.9);
+  border-left: none;
+  border-bottom: none;
 }
 
-/* Small Mobile (480px and below) */
-@media (max-width: 480px) {
-  .hero-image {
-    height: 300px;
-  }
-  
-  .laptopbags-breadcrumb {
-    font-size: 11px;
-    padding: 0 10px;
-  }
-  
-  .laptopbags-container {
-    padding: 0 10px 30px;
-  }
-  
-  /* Filter Bar Small Mobile */
-  .laptopbags-filter-bar {
-    padding: 15px;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  
-  .laptopbags-filter-section {
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    margin: 0;
-  }
-  
-  .laptopbags-filter-label {
-    width: auto;
-    text-align: left;
-    font-size: 14px;
-    min-width: 45px;
-    margin: 0;
-  }
-  
-  .laptopbags-filter-btn {
-    width: auto;
-    padding: 10px 12px;
-    font-size: 13px;
-    flex: 1;
-    margin: 0;
-  }
-  
-  .laptopbags-sort-section {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding-top: 12px;
-    margin-top: 0;
-  }
-  
-  .laptopbags-products-count {
-    font-size: 13px;
-    flex-shrink: 0;
-    margin: 0;
-  }
-  
-  .laptopbags-sort-dropdown {
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-    justify-content: flex-end;
-    margin: 0;
-  }
-  
-  .laptopbags-sort-dropdown label {
-    width: auto;
-    text-align: left;
-    font-size: 13px;
-    white-space: nowrap;
-    margin: 0;
-  }
-  
-  .laptopbags-sort-dropdown select {
-    width: auto;
-    min-width: 140px;
-    padding: 8px 30px 8px 12px;
-    font-size: 13px;
-    flex: 0 0 auto;
-    margin: 0;
-  }
-  
-  .laptopbags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
-  }
-  
-  .laptopbags-product-image {
-    height: 200px;
-  }
-  
-  .laptopbags-product-info {
-    padding: 12px;
-  }
-  
-  .laptopbags-product-name {
-    font-size: 14px;
-  }
-  
-  .laptopbags-product-color {
-    font-size: 12px;
-  }
-  
-  .laptopbags-out-of-stock {
-    font-size: 11px;
-  }
-  
-  .laptopbags-whatsapp-btn {
-    width: 40px;
-    height: 40px;
-    bottom: 15px;
-    right: 15px;
-    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.4);
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .laptopbags-whatsapp-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.6);
-  }
+.laptopbags-card-corner.bl {
+  bottom: 15px;
+  left: 15px;
+  border-bottom-color: rgba(201, 168, 106, 0.9);
+  border-left-color: rgba(201, 168, 106, 0.9);
+  border-right: none;
+  border-top: none;
 }
 
-/* Extra Small Mobile (360px and below) */
-@media (max-width: 360px) {
-  .hero-image {
-    height: 250px;
-  }
-  
-  .laptopbags-breadcrumb {
-    font-size: 10px;
-    margin: 10px auto;
-  }
-  
-  /* Filter Bar Extra Small */
-  .laptopbags-filter-bar {
-    padding: 12px;
-    gap: 10px;
-  }
-  
-  .laptopbags-filter-label,
-  .laptopbags-products-count,
-  .laptopbags-sort-dropdown label {
-    font-size: 12px;
-  }
-  
-  .laptopbags-filter-btn {
-    font-size: 12px;
-    padding: 8px 10px;
-  }
-  
-  .laptopbags-sort-dropdown select {
-    font-size: 12px;
-    padding: 7px 25px 7px 10px;
-    min-width: 130px;
-  }
-  
-  /* Adjust for very small screens - Keep elements inline */
-  .laptopbags-sort-section {
-    flex-wrap: nowrap;
-    gap: 8px;
-  }
-  
-  .laptopbags-products-count {
-    white-space: nowrap;
-  }
-  
-  .laptopbags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-  }
-  
-  .laptopbags-product-image {
-    height: 180px;
-  }
-  
-  .laptopbags-product-name {
-    font-size: 13px;
-  }
-  
-  .laptopbags-whatsapp-btn {
-    width: 38px;
-    height: 38px;
-    bottom: 12px;
-    right: 12px;
-    box-shadow: 0 1px 5px rgba(37, 211, 102, 0.4);
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 18px;
-    height: 18px;
-  }
+.laptopbags-card-corner.br {
+  bottom: 15px;
+  right: 15px;
+  border-bottom-color: rgba(201, 168, 106, 0.9);
+  border-right-color: rgba(201, 168, 106, 0.9);
+  border-left: none;
+  border-top: none;
 }
 
-/* Landscape Mode for Mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-  .hero-image {
-    height: 350px;
+/* BACK SIDE - Premium Dark Theme with Golden Borders */
+.laptopbags-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, 
+    #3a261e 0%, 
+    #4a3429 25%, 
+    #5d4037 50%, 
+    #4a3429 75%, 
+    #3a261e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: 3px solid rgba(201, 168, 106, 0.7);
+  box-shadow: 
+    inset 0 0 40px rgba(0, 0, 0, 0.4),
+    0 20px 50px rgba(93, 64, 55, 0.5),
+    0 8px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.laptopbags-card-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 15% 85%, 
+      rgba(201, 168, 106, 0.25) 0%, 
+      transparent 50%),
+    radial-gradient(circle at 85% 15%, 
+      rgba(255, 255, 255, 0.15) 0%, 
+      transparent 50%),
+    linear-gradient(135deg, 
+      rgba(201, 168, 106, 0.1) 0%, 
+      transparent 30%, 
+      rgba(201, 168, 106, 0.05) 100%);
+}
+
+.laptopbags-card-back::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 2px solid rgba(201, 168, 106, 0.5);
+  border-radius: 15px;
+  pointer-events: none;
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(201, 168, 106, 0.2);
+}
+
+.laptopbags-back-content {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.laptopbags-back-header {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid rgba(201, 168, 106, 0.5);
+  position: relative;
+}
+
+.laptopbags-back-header::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    #c9a86a, 
+    #b89446, 
+    #c9a86a, 
+    transparent);
+  border-radius: 2px;
+}
+
+.laptopbags-back-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  font-family: 'Playfair Display', serif;
+  color: #ffd8a6;
+  letter-spacing: 0.6px;
+  line-height: 1.4;
+  text-shadow: 
+    0 3px 10px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(201, 168, 106, 0.25);
+  padding: 0 10px;
+}
+
+.laptopbags-back-color {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffd8a6;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 25px;
+  background: rgba(201, 168, 106, 0.25);
+  border-radius: 25px;
+  border: 2px solid rgba(201, 168, 106, 0.6);
+  backdrop-filter: blur(8px);
+  margin: 0 auto 25px;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.laptopbags-back-color::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 23px;
+  pointer-events: none;
+}
+
+.laptopbags-back-price {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffd8a6;
+  margin-bottom: 25px;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  border: 2px solid rgba(201, 168, 106, 0.4);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -2px 0 rgba(139, 69, 19, 0.2);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.laptopbags-back-price::before {
+  content: 'Price: ₹';
+  font-size: 22px;
+  margin-right: 6px;
+  color: #ffd8a6;
+  font-weight: 700;
+}
+
+.laptopbags-back-price::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.laptopbags-back-description {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 25px 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 0 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.laptopbags-back-features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.laptopbags-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 12px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(201, 168, 106, 0.3);
+}
+
+.laptopbags-feature:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(201, 168, 106, 0.6);
+  box-shadow: 0 8px 25px rgba(201, 168, 106, 0.3);
+}
+
+.laptopbags-feature-icon {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.4), 
+    rgba(201, 168, 106, 0.3));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ffd8a6;
+  border: 2px solid rgba(201, 168, 106, 0.6);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -2px 0 rgba(139, 69, 19, 0.25);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.laptopbags-feature:hover .laptopbags-feature-icon {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.5), 
+    rgba(201, 168, 106, 0.4));
+  box-shadow: 
+    0 8px 25px rgba(201, 168, 106, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+.laptopbags-feature-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.laptopbags-back-tags {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  position: relative;
+}
+
+.laptopbags-back-tags::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(201, 168, 106, 0.6), 
+    transparent);
+}
+
+.laptopbags-tag-badge {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.7px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 216, 166, 0.7);
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.4), 
+    rgba(201, 168, 106, 0.3));
+  color: #ffd8a6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  margin: 0 8px 10px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.laptopbags-tag-badge::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 23px;
+  pointer-events: none;
+}
+
+.laptopbags-tag-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 25px rgba(201, 168, 106, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, 
+    rgba(201, 168, 106, 0.5), 
+    rgba(201, 168, 106, 0.4));
+}
+
+/* Flip Hint - Enhanced */
+.laptopbags-flip-hint {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #c9a86a, #b89446, #a88438);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  animation: premiumFlipPulse 3s infinite;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 6px 20px rgba(201, 168, 106, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 0 rgba(139, 69, 19, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+@keyframes premiumFlipPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 6px 20px rgba(201, 168, 106, 0.5),
+      0 0 0 0 rgba(201, 168, 106, 0.7);
   }
-  
-  .laptopbags-filter-bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .laptopbags-filter-section {
-    width: 100%;
-  }
-  
-  .laptopbags-sort-section {
-    width: 100%;
-  }
-  
-  .laptopbags-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .laptopbags-product-image {
-    height: 220px;
-  }
-  
-  .laptopbags-whatsapp-btn {
-    width: 42px;
-    height: 42px;
-    bottom: 15px;
-    right: 15px;
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 20px;
-    height: 20px;
+  50% {
+    transform: scale(1.15);
+    box-shadow: 
+      0 8px 25px rgba(201, 168, 106, 0.6),
+      0 0 0 12px rgba(201, 168, 106, 0);
   }
 }
 
-/* Very Small Screens (320px and below) */
-@media (max-width: 320px) {
-  .laptopbags-product-name,
-  .laptopbags-filter-label {
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .laptopbags-breadcrumb {
-    font-size: 9px;
-  }
-  
-  /* On very small screens, maintain the two-row layout */
-  .laptopbags-filter-section {
-    flex-wrap: nowrap;
-  }
-  
-  .laptopbags-sort-section {
-    flex-wrap: nowrap;
-  }
-  
-  .laptopbags-whatsapp-btn {
-    width: 36px;
-    height: 36px;
-    bottom: 10px;
-    right: 10px;
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 16px;
-    height: 16px;
-  }
+.laptopbags-product-card:hover .laptopbags-flip-hint {
+  opacity: 1;
+  transform: translateX(-10px) rotate(90deg);
 }
 
-/* Touch device optimizations */
-@media (hover: none) and (pointer: coarse) {
-  .laptopbags-product-card:hover {
-    transform: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .laptopbags-whatsapp-btn:hover {
-    transform: none;
-  }
-  
-  /* Make filter dropdown stay open on tap */
-  .laptopbags-filter-dropdown:active .laptopbags-dropdown-content,
-  .laptopbags-filter-dropdown:focus-within .laptopbags-dropdown-content {
-    display: block;
-  }
-  
-  /* Make dropdowns easier to tap on mobile */
-  .laptopbags-filter-btn,
-  .laptopbags-sort-dropdown select,
-  .laptopbags-checkbox-label {
-    min-height: 44px; /* Minimum touch target size */
-  }
-}
-
-/* Large Screens Optimization */
-@media (min-width: 1400px) {
-  .laptopbags-whatsapp-btn {
-    width: 65px;
-    height: 65px;
-    bottom: 35px;
-    right: 35px;
-  }
-  
-  .laptopbags-whatsapp-btn svg {
-    width: 30px;
-    height: 30px;
-  }
-}
 /* ============================================= */
-/* LEATHER SMALL BAGS BENEFITS SECTION */
+/* LEATHER BACKPACKS BENEFITS SECTION */
 /* ============================================= */
 
-.lap-benefits-section {
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
-  margin-bottom: 0;
-  margin-top: 5rem;
+.laptopbags-benefits-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, 
+    rgba(255, 247, 240, 0.95) 0%, 
+    rgba(255, 242, 232, 0.95) 100%);
+  margin: 4rem 0 0;
+  border-top: 3px solid #c9a86a;
+  position: relative;
+  overflow: hidden;
 }
 
-.lap-benefits-content {
-  max-width: 1280px;
+.laptopbags-benefits-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, 
+      rgba(201, 168, 106, 0.15) 0%, 
+      transparent 50%),
+    radial-gradient(circle at 80% 20%, 
+      rgba(201, 168, 106, 0.1) 0%, 
+      transparent 50%);
+  z-index: 1;
+}
+
+.laptopbags-benefits-content {
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  justify-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-.lap-benefits-image {
+.laptopbags-benefits-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  order: 1;
 }
 
-.lap-benefits-image-placeholder {
-  width: 500px;
+.laptopbags-benefits-image-placeholder {
+  width: 100%;
+  max-width: 500px;
   height: 500px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.18),
+    0 12px 35px rgba(139, 69, 19, 0.15);
+  border: 3px solid #c9a86a;
+  position: relative;
+  transition: all 0.5s ease;
 }
 
-.lap-benefits-img {
+.laptopbags-benefits-image-placeholder:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 35px 80px rgba(0, 0, 0, 0.25),
+    0 18px 45px rgba(139, 69, 19, 0.2);
+  border-color: #d4b89a;
+}
+
+.laptopbags-benefits-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lap-benefits-image-placeholder:hover .shoes-benefits-img {
-  transform: scale(1.1);
+.laptopbags-benefits-image-placeholder:hover .laptopbags-benefits-img {
+  transform: scale(1.08);
 }
 
-.lap-benefits-text {
-  padding: 2rem;
-  order: 2;
+.laptopbags-benefits-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.laptopbags-benefits-text {
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 2px solid #c9a86a;
+  position: relative;
+  overflow: hidden;
 }
 
-.lap-benefits-title {
+.laptopbags-benefits-title {
   font-size: 2.5rem;
   font-weight: 700;
   color: #92400e;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.laptopbags-benefits-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, 
+      rgba(201, 168, 106, 0.05) 0%, 
+      rgba(201, 168, 106, 0.03) 100%);
+  z-index: 1;
+}
+
+.laptopbags-benefits-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #5d4037;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.7px;
+  position: relative;
+  padding-bottom: 15px;
+  z-index: 2;
 }
 
-.lap-benefits-description {
-  font-size: 1.125rem;
-  color: #4b5563;
+.laptopbags-benefits-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #c9a86a, #b89446, #8b4513);
+  border-radius: 4px;
+}
+
+.laptopbags-benefits-description {
+  font-size: 1.1rem;
+  color: #5d4037;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  z-index: 2;
+  position: relative;
 }
 
-.lap-cta-button {
+.laptopbags-cta-button {
   padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  background: linear-gradient(135deg, #c9a86a, #b89446);
   color: white;
   border: none;
   border-radius: 50px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 20px rgba(201, 168, 106, 0.4),
+    0 2px 12px rgba(139, 69, 19, 0.15);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
 }
 
-.lap-cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+.laptopbags-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.25), 
+    transparent);
+  transition: left 0.6s;
+}
+
+.laptopbags-cta-button:hover::before {
+  left: 100%;
+}
+
+.laptopbags-cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 8px 30px rgba(201, 168, 106, 0.5),
+    0 4px 20px rgba(139, 69, 19, 0.2);
+  background: linear-gradient(135deg, #b89446, #a88438);
+}
+
+.laptopbags-cta-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.laptopbags-cta-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.laptopbags-cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================= */
+/* WHATSAPP BUTTON */
+/* ============================================= */
+
+.laptopbags-whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #25d366, #20ba5a, #1a9c4b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 
+    0 6px 25px rgba(37, 211, 102, 0.5),
+    0 3px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  text-decoration: none;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  animation: whatsappFloat 3s ease-in-out infinite;
+}
+
+@keyframes whatsappFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.laptopbags-whatsapp-btn svg {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.laptopbags-whatsapp-btn:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 
+    0 10px 40px rgba(37, 211, 102, 0.7),
+    0 6px 25px rgba(37, 211, 102, 0.4);
+  background: linear-gradient(135deg, #20ba5a, #1a9c4b, #15803d);
+}
+
+.laptopbags-whatsapp-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* ============================================= */
+/* PREMIUM GLOW EFFECT FOR CARDS */
+/* ============================================= */
+
+.laptopbags-product-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #e5d4b8 0%, 
+    #d4b89a 20%, 
+    #c9a86a 40%, 
+    #d4b89a 60%, 
+    #e5d4b8 80%, 
+    #f5e6d3 100%);
+  border-radius: 22px;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  background-size: 300% 300%;
+}
+
+.laptopbags-product-card:hover::before {
+  opacity: 0.5;
+  animation: premiumCardGlow 2.5s linear infinite;
+}
+
+@keyframes premiumCardGlow {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.5;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.7;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.5;
+  }
+}
+
+/* ============================================= */
+/* RESPONSIVE DESIGN - MOBILE ONLY */
+/* ============================================= */
+
+/* Tablet and below (991px and below) */
+@media (max-width: 991px) {
+  .laptopbags-container {
+    max-width: 100%;
+    padding: 0 15px 40px;
+  }
+  
+  .laptopbags-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .laptopbags-product-card {
+    height: 420px;
+  }
+  
+  .laptopbags-product-image {
+    height: 210px;
+  }
+  
+  .laptopbags-brand-name {
+    font-size: 20px;
+  }
+  
+  .laptopbags-product-type {
+    font-size: 16px;
+  }
+  
+  .laptopbags-product-price {
+    font-size: 24px;
+  }
+  
+  .laptopbags-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .laptopbags-filter-section {
+    justify-content: space-between;
+  }
+  
+  .laptopbags-sort-section {
+    justify-content: space-between;
+  }
+  
+  .laptopbags-benefits-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .laptopbags-benefits-title {
+    font-size: 2rem;
+  }
+  
+  .laptopbags-benefits-description {
+    font-size: 1.05rem;
+  }
+  
+  .laptopbags-benefits-image-placeholder {
+    max-width: 350px;
+    height: 350px;
+  }
+}
+
+/* Mobile (768px and below) - FIX OVERLAP AND TEXT SIZE */
+@media (max-width: 768px) {
+  .laptopbags-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px; /* Reduced gap */
+    padding: 0 5px; /* Added padding to prevent overlap */
+  }
+  
+  .laptopbags-product-card {
+    height: 370px; /* Increased height to prevent text cutting */
+    margin: 0;
+  }
+  
+  .laptopbags-product-image {
+    height: 140px; /* Reduced image height */
+    padding: 10px;
+  }
+  
+  .laptopbags-product-info {
+    padding: 12px 8px; /* Slightly increased padding */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* FIX TEXT SIZE FOR MOBILE - REMOVE TEXT CUTTING */
+  .laptopbags-product-name {
+    min-height: auto; /* Remove fixed height */
+    max-height: none; /* Remove max height restriction */
+    overflow: visible; /* Allow text to be visible */
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    display: block; /* Change from flex to block */
+    -webkit-line-clamp: none; /* Remove line clamp */
+  }
+  
+  .laptopbags-brand-name {
+    font-size: 15px; /* Slightly increased */
+    padding-bottom: 4px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
+  }
+  
+  .laptopbags-brand-name::after {
+    width: 40px; /* Reduced line width */
+    height: 2px;
+  }
+  
+  .laptopbags-product-type {
+    font-size: 12px; /* Slightly increased */
+    padding: 4px 10px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+    text-align: center;
+  }
+  
+  /* FIX COLOR BUTTON POSITIONING */
+  .laptopbags-product-color {
+    font-size: 10px;
+    padding: 6px 12px;
+    margin: 8px auto 10px auto; /* Center and add spacing */
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    order: 3; /* Ensure it comes after price */
+  }
+  
+  .laptopbags-price-section {
+    margin: 5px 0;
+    padding: 8px 0;
+    order: 2; /* Ensure price comes before color */
+  }
+  
+  .laptopbags-product-price {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 0 auto;
+    display: inline-block;
+  }
+  
+  .laptopbags-product-price::before {
+    font-size: 14px;
+  }
+  
+  .laptopbags-feature-tag {
+    font-size: 9px;
+    padding: 4px 8px;
+    margin: 3px;
+    order: 4; /* Ensure features come after color */
+  }
+  
+  /* Reorder elements */
+  .laptopbags-product-name {
+    order: 1;
+  }
+  
+  .laptopbags-price-section {
+    order: 2;
+  }
+  
+  .laptopbags-product-color {
+    order: 3;
+  }
+  
+  .laptopbags-product-features {
+    order: 4;
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+  
+  /* FIX FLIP HINT FOR MOBILE */
+  .laptopbags-flip-hint {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  
+  .laptopbags-benefits-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .laptopbags-whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .laptopbags-whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* FIX FOR CARD BACK SIDE ON MOBILE - PREVENT TEXT CUTTING */
+  .laptopbags-card-back {
+    padding: 15px;
+  }
+  
+  .laptopbags-back-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.3;
+    min-height: auto;
+    max-height: none;
+    -webkit-line-clamp: none;
+  }
+  
+  .laptopbags-back-color {
+    font-size: 12px;
+    padding: 6px 15px;
+    margin-bottom: 15px;
+  }
+  
+  .laptopbags-back-price {
+    font-size: 18px;
+    padding: 8px 20px;
+    margin-bottom: 15px;
+  }
+  
+  .laptopbags-back-price::before {
+    font-size: 16px;
+  }
+  
+  .laptopbags-back-description {
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 15px 0;
+    line-height: 1.5;
+    overflow: visible;
+  }
+  
+  .laptopbags-back-features {
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .laptopbags-feature {
+    padding: 8px;
+  }
+  
+  .laptopbags-feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .laptopbags-feature-text {
+    font-size: 10px;
+  }
+  
+  .laptopbags-tag-badge {
+    font-size: 10px;
+    padding: 6px 12px;
+    margin: 0 5px 8px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .laptopbags-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 5px;
+  }
+  
+  .laptopbags-product-card {
+    height: 350px; /* Adjusted for better text spacing */
+  }
+  
+  .laptopbags-product-image {
+    height: 120px;
+    padding: 8px;
+  }
+  
+  .laptopbags-product-info {
+    padding: 10px 6px;
+  }
+  
+  .laptopbags-brand-name {
+    font-size: 14px;
+  }
+  
+  .laptopbags-product-type {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+  
+  .laptopbags-product-color {
+    font-size: 9px;
+    padding: 5px 10px;
+    margin: 6px auto 8px auto;
+  }
+  
+  .laptopbags-product-price {
+    font-size: 15px;
+    padding: 7px 14px;
+  }
+  
+  .laptopbags-feature-tag {
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+  
+  .laptopbags-filter-btn {
+    min-width: 110px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .laptopbags-sort-dropdown select {
+    min-width: 140px;
+    font-size: 12px;
+  }
+  
+  .laptopbags-benefits-title {
+    font-size: 1.6rem;
+  }
+  
+  .laptopbags-benefits-description {
+    font-size: 0.95rem;
+  }
+  
+  .laptopbags-cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .laptopbags-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .laptopbags-product-card {
+    height: 340px;
+  }
+  
+  .laptopbags-product-image {
+    height: 110px;
+  }
+  
+  .laptopbags-brand-name {
+    font-size: 13px;
+    line-height: 1.1;
+  }
+  
+  .laptopbags-product-type {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .laptopbags-product-color {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+  
+  .laptopbags-product-price {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .laptopbags-filter-btn {
+    min-width: 90px;
+    font-size: 11px;
+  }
+}
+
+/* FIX TEXT OVERFLOW - REMOVE ALL TEXT CUTTING */
+@media (max-width: 768px) {
+  /* Allow all text to be fully visible */
+  .laptopbags-product-name,
+  .laptopbags-brand-name,
+  .laptopbags-product-type,
+  .laptopbags-back-title {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    line-height: 1.3;
+    min-height: auto !important;
+    max-height: none !important;
+    -webkit-line-clamp: none !important;
+    display: block !important;
+  }
+  
+  /* Reduce decorative elements on mobile for better performance */
+  .laptopbags-card-front::before,
+  .laptopbags-card-front::after,
+  .laptopbags-card-back::before,
+  .laptopbags-card-back::after {
+    display: none;
+  }
+  
+  .laptopbags-card-corner {
+    display: none;
+  }
+  
+  /* Simplify gradients for mobile performance */
+  .laptopbags-card-front {
+    background: #fffaf5;
+  }
+  
+  .laptopbags-product-info {
+    background: #fffaf5;
+  }
+  
+  .laptopbags-product-price {
+    background: rgba(201, 168, 106, 0.15);
+  }
+  
+  .laptopbags-feature-tag {
+    background: rgba(201, 168, 106, 0.15);
+  }
+}
+
+/* FIX FOR CONTAINER OVERFLOW */
+@media (max-width: 768px) {
+  .laptopbags-container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .laptopbags-product-card {
+    width: 100%;
+  }
 }

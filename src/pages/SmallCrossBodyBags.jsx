@@ -2,45 +2,34 @@ import React, { useState } from 'react';
 import './SmallCrossBodyBags.css';
 
 const SmallCrossBodyBagsPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
   const [sortBy, setSortBy] = useState('featured');
 
-  // 20 small cross body bag products
+  // Small cross body bag products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross2.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross3.png', color: 'Black', inStock: true, date: '2024-03-10' },
-   /* { id: 4, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/C3.png', color: 'Tan', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C4.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C5.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C6.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Small Cross Body Bag', image: '/images/C7.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Vintage Leather Travel Small Cross Body Bag', image: '/images/C8.png', color: 'Black', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Urban Leather Small Cross Body Bag', image: '/images/C9.png', color: 'Black', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Urban Leather Small Cross Body Bag', image: '/images/C10.png', color: 'Tan', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Classic Leather Small Cross Body Bag', image: '/images/C11.png', color: 'Dark Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Classic Leather Small Cross Body Bag', image: '/images/C12.png', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Topper Stylish Leather Travel Small Cross Body Bag', image: '/images/C13.png', color: 'Brown', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Topper Stylish Leather Travel Small Cross Body Bag', image: '/images/C14.png', color: 'Black', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Leather Shoulder Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Leather Shoulder Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Urban Leather Cross Body', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Urban Leather Cross Body', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' } */
+    { id: 1, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross1.png', color: 'Brown', date: '2024-01-15', description: 'Compact Rexo Crunch small cross body bag in premium brown leather. Features adjustable strap and multiple compartments for organized carry.' },
+    { id: 2, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross2.png', color: 'Green', date: '2024-02-20', description: 'Eco-friendly green Rexo Crunch small cross body bag with sustainable leather. Perfect for daily essentials with secure closures.' },
+    { id: 3, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross3.png', color: 'Black', date: '2024-03-10', description: 'Classic black Rexo Crunch small cross body bag with modern design. Durable leather construction with comfortable shoulder strap.' },
+    /* Uncomment and add descriptions for remaining products */
+    /* { id: 4, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/C3.png', color: 'Tan', date: '2024-01-25', description: 'Versatile tan Rexo Crunch small cross body bag with casual appeal.' },
+    { id: 5, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C4.png', color: 'Black', date: '2024-04-05', description: 'Sophisticated Philos small cross body bag in sleek black leather.' },
+    { id: 6, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C5.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown Philos small cross body bag with refined craftsmanship.' },
+    { id: 7, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C6.png', color: 'Tan', date: '2024-05-18', description: 'Light tan Philos small cross body bag with elegant simplicity.' },
+    { id: 8, name: 'Vintage Leather Travel Small Cross Body Bag', image: '/images/C7.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired travel small cross body bag in classic brown.' },
+    { id: 9, name: 'Vintage Leather Travel Small Cross Body Bag', image: '/images/C8.png', color: 'Black', date: '2024-06-30', description: 'Black vintage travel small cross body bag with aged leather finish.' },
+    { id: 10, name: 'Urban Leather Small Cross Body Bag', image: '/images/C9.png', color: 'Black', date: '2024-07-12', description: 'Contemporary urban small cross body bag in matte black leather.' },
+    { id: 11, name: 'Urban Leather Small Cross Body Bag', image: '/images/C10.png', color: 'Tan', date: '2024-08-05', description: 'Modern tan urban small cross body bag with minimalist aesthetic.' },
+    { id: 12, name: 'Classic Leather Small Cross Body Bag', image: '/images/C11.png', color: 'Dark Brown', date: '2024-01-08', description: 'Timeless dark brown classic small cross body bag.' },
+    { id: 13, name: 'Classic Leather Small Cross Body Bag', image: '/images/C12.png', color: 'Brown', date: '2024-09-14', description: 'Heritage brown classic small cross body bag with refined details.' },
+    { id: 14, name: 'Topper Stylish Leather Travel Small Cross Body Bag', image: '/images/C13.png', color: 'Brown', date: '2024-04-28', description: 'Stylish Topper travel small cross body bag in rich brown leather.' },
+    { id: 15, name: 'Topper Stylish Leather Travel Small Cross Body Bag', image: '/images/C14.png', color: 'Black', date: '2024-10-20', description: 'Elegant black Topper travel small cross body bag with premium finish.' },
+    { id: 16, name: 'Leather Shoulder Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Black', date: '2024-05-07', description: 'Versatile leather shoulder small cross body bag in classic black.' },
+    { id: 17, name: 'Leather Shoulder Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-11-11', description: 'Practical brown leather shoulder small cross body bag.' },
+    { id: 18, name: 'Urban Leather Cross Body', image: '/api/placeholder/300/300', color: 'Black', date: '2024-06-17', description: 'Sleek urban leather small cross body bag with contemporary styling.' },
+    { id: 19, name: 'Urban Leather Cross Body', image: '/api/placeholder/300/300', color: 'Dark Brown', date: '2024-12-01', description: 'Dark brown urban small cross body bag with modern minimalism.' },
+    { id: 20, name: 'Premium Leather Travel Small Cross Body Bag', image: '/api/placeholder/300/300', color: 'Tan', date: '2024-07-25', description: 'Premium tan travel small cross body bag with luxury details.' } */
   ];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'best-selling':
         return a.id - b.id;
@@ -58,64 +47,28 @@ const SmallCrossBodyBagsPage = () => {
     }
   });
 
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
-
   return (
     <div className="crossbodybags-page">
       <div className="crossbodybags-breadcrumb">
-        <a href="/">Home</a> / <span>Small Cross Body Bags</span>
+        <a href="/">Home</a> / <a href="/smallbags">Small Bags</a> / <span>Small Cross Body Bags</span>
       </div>
 
-      <div className="hero-section">
-        <img src="/images/crossbanner.png" alt="Elegant Small Cross Body Bags" className="hero-image" />
+      <div className="crossbodybags-hero-section">
+        <img src="/images/crossbanner.png" alt="Elegant Small Cross Body Bags" className="crossbodybags-hero-image" />
       </div>
+
+      {/* Featured Products Header */}
+      <section className="crossbodybags-featured-header">
+        <div className="crossbodybags-section-header">
+          <h2 className="crossbodybags-section-title">FEATURED PRODUCTS</h2>
+          <div className="crossbodybags-title-underline"></div>
+        </div>
+      </section>
 
       <div className="crossbodybags-container">
         <div className="crossbodybags-filter-bar">
-          <div className="crossbodybags-filter-section">
-            <span className="crossbodybags-filter-label">Filter:</span>
-            <div className="crossbodybags-filter-dropdown">
-              <button className="crossbodybags-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="crossbodybags-dropdown-content">
-                <div className="crossbodybags-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="crossbodybags-reset-btn">Reset</button>
-                </div>
-                <label className="crossbodybags-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="crossbodybags-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
           <div className="crossbodybags-sort-section">
-            <span className="crossbodybags-products-count">{filteredProducts.length} Products</span>
+            <span className="crossbodybags-products-count">{sortedProducts.length} Products</span>
             <div className="crossbodybags-sort-dropdown">
               <label>Sort By:</label>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -133,13 +86,24 @@ const SmallCrossBodyBagsPage = () => {
         <div className="crossbodybags-products-grid">
           {sortedProducts.map(product => (
             <div key={product.id} className="crossbodybags-product-card">
-              <div className="crossbodybags-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="crossbodybags-product-info">
-                <h3 className="crossbodybags-product-name">{product.name}</h3>
-                <p className="crossbodybags-product-color">{product.color}</p>
-                {!product.inStock && <p className="crossbodybags-out-of-stock">Out of Stock</p>}
+              <div className="crossbodybags-card-inner">
+                <div className="crossbodybags-card-front">
+                  <div className="crossbodybags-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="crossbodybags-product-info">
+                    <h3 className="crossbodybags-product-name">{product.name}</h3>
+                    <p className="crossbodybags-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="crossbodybags-card-back">
+                  <div className="crossbodybags-back-content">
+                    <h3 className="crossbodybags-back-title">{product.name}</h3>
+                    <div className="crossbodybags-back-divider"></div>
+                    <p className="crossbodybags-back-color">Color: {product.color}</p>
+                    <p className="crossbodybags-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
