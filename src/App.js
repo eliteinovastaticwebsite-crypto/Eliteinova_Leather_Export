@@ -8,9 +8,9 @@ import LaptopBagsPage from './pages/LaptopBag';
 import BriefcasesPage from './pages/BriefcasesPage';
 import MensWalletsPage from './pages/MensWalletPage';
 import PassportHoldersPage from './pages/PassportHoldersPage';
-/*import BeltsPage from './pages/BeltsPage';*/
+import BeltsPage from './pages/BeltsPage';
 import MensBackpackPage from './pages/MensBackpack';
-/*import WomensBackpackPage from './pages/WomensBackpack';*/
+import WomensBackpackPage from './pages/WomensBackpack';
 import TravelBagsPage from './pages/TravelBagPage';
 import TrolleyBagPage from './pages/TrolleyBagPage';
 import DuffleBagPage from './pages/DuffleBagPage';
@@ -53,7 +53,7 @@ function App() {
           {/* Backpacks Routes */}
           <Route path="backpacks" element={<BackpacksPage />} /> {/* NEW */}
           <Route path="backpacks/men-backpacks" element={<MensBackpackPage />} />
-          {/*<Route path="backpacks/women-backpacks" element={<WomensBackpackPage />} />*/}
+          <Route path="backpacks/women-backpacks" element={<WomensBackpackPage />} />
 
           {/* Small Bags Routes */}
           <Route path="smallbags" element={<SmallBagsPage />} /> {/* NEW */}
@@ -67,7 +67,7 @@ function App() {
           
           {/* Other Routes */}
           <Route path="brief-cases" element={<BriefcasesPage />} />
-          {/*<Route path="belt" element={<BeltsPage />} />*/}
+          <Route path="belt" element={<BeltsPage />} />
           <Route path="about" element={<AboutPage />} />
 
         </Routes>

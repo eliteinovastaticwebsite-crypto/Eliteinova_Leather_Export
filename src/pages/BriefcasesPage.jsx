@@ -2,50 +2,29 @@ import React, { useState } from 'react';
 import './Briefcases.css';
 
 const BriefcasesPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
   const [sortBy, setSortBy] = useState('featured');
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
-  // 20 briefcase products
+  // Briefcase products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Handbag', image: '/images/brief1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Handbag', image: '/images/brief2.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Handbag', image: '/images/brief3.png', color: 'Black', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Rexo Crunch Leather Handbag', image: '/images/brief4.png', color: 'Tan', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'The Philos Leather Handbag', image: '/images/brief5.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'The Philos Leather Handbag', image: '/images/brief6.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'The Philos Leather Handbag', image: '/images/brief7.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Handbag', image: '/images/brief8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Vintage Leather Travel Handbag', image: '/images/brief9.png', color: 'Black', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Urban Leather Handbag', image: '/images/brief10.png', color: 'Black', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Urban Leather Handbag', image: '/images/brief11.png', color: 'Tan', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Classic Leather Handbag', image: '/images/brief12.png', color: 'Dark Brown', inStock: true, date: '2024-01-08' },
-  /*{ id: 13, name: 'Classic Leather Handbag', image: '/images/brief1.png', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Topper Stylish Leather Travel Handbag', image: '/images/brief1.png', color: 'Brown', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Topper Stylish Leather Travel Handbag', image: '/images/brief1.png', color: 'Black', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Leather Shoulder Handbag', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Leather Shoulder Handbag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Handbag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' } */
+    { id: 1, name: 'Rexo Crunch Leather Handbag', image: '/images/brief1.png', color: 'Brown', date: '2024-01-15', description: 'Premium crunch leather briefcase with sophisticated texture. Features multiple compartments and secure closures for professional use.' },
+    { id: 2, name: 'Rexo Crunch Leather Handbag', image: '/images/brief2.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather briefcase with durable construction. Perfect for business professionals with organized interior design.' },
+    { id: 3, name: 'Rexo Crunch Leather Handbag', image: '/images/brief3.png', color: 'Black', date: '2024-03-10', description: 'Classic black leather briefcase with timeless professional appeal. Structured design with premium hardware for daily use.' },
+    { id: 4, name: 'Rexo Crunch Leather Handbag', image: '/images/brief4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather briefcase with rich color. Features organized pockets and comfortable carrying handles.' },
+    { id: 5, name: 'The Philos Leather Handbag', image: '/images/brief5.png', color: 'Black', date: '2024-04-05', description: 'Luxurious leather briefcase with modern professional design. Spacious interior with multiple organizational pockets for documents.' },
+    { id: 6, name: 'The Philos Leather Handbag', image: '/images/brief6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown leather briefcase with elegant finish. Versatile style suitable for both office and business travel.' },
+    { id: 7, name: 'The Philos Leather Handbag', image: '/images/brief7.png', color: 'Tan', date: '2024-05-18', description: 'Beautiful tan leather briefcase with premium quality. Comfortable to carry with adjustable straps and secure locks.' },
+    { id: 8, name: 'Vintage Leather Travel Handbag', image: '/images/brief8.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired briefcase with practical functionality. Large capacity perfect for business travel with durable leather.' },
+    { id: 9, name: 'Vintage Leather Travel Handbag', image: '/images/brief9.png', color: 'Black', date: '2024-06-30', description: 'Classic travel briefcase in sleek black. Features reinforced handles and spacious compartments for documents and laptop.' },
+    { id: 10, name: 'Urban Leather Handbag', image: '/images/brief10.png', color: 'Black', date: '2024-07-12', description: 'Modern urban briefcase with practical features. Perfect for city professionals with secure zippers and stylish appearance.' },
+    { id: 11, name: 'Urban Leather Handbag', image: '/images/brief11.png', color: 'Tan', date: '2024-08-05', description: 'Contemporary tan leather briefcase with urban edge. Combines professional functionality with fashion-forward design.' },
+    { id: 12, name: 'Classic Leather Handbag', image: '/images/brief12.png', color: 'Dark Brown', date: '2024-01-08', description: 'Timeless dark brown leather briefcase with refined elegance. Features traditional craftsmanship with modern convenience.' }
   ];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'best-selling':
         return a.id - b.id;
@@ -63,65 +42,51 @@ const BriefcasesPage = () => {
     }
   });
 
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
-
   return (
     <div className="briefcases-page">
       <div className="briefcases-breadcrumb">
         <a href="/">Home</a> / <span>Briefcases</span>
       </div>
 
-     <div className="hero-section">
-    <img src="/images/brief_hero.png" alt="Elegant Handbags" className="hero-image" />
-    </div>
+      <div className="briefcases-hero-section">
+        <img src="/images/brief_hero.png" alt="Elegant Briefcases" className="briefcases-hero-image" />
+      </div>
 
+      {/* Leather Brief Benefits Section */}
+      <section className="briefcases-benefits-section">
+        <div className="briefcases-benefits-content">
+          <div className="briefcases-benefits-image">
+            <div className="briefcases-benefits-image-placeholder">
+              <img src="/images/briefcase about.jpg" alt="Premium Leather Briefcases" className="briefcases-benefits-img" />
+            </div>
+          </div>
+          <div className="briefcases-benefits-text">
+            <h2 className="briefcases-benefits-title">Executive Presence in Leather</h2>
+            <p className="briefcases-benefits-description">
+              At Eliteinova Leather Products Export, our leather briefcases are crafted for professionals who value confidence, structure, and timeless design. 
+              Designed to support modern workdays, our leather briefcases feature well-organized interiors with dedicated compartments for documents, laptops, and daily essentials. 
+              Reinforced handles, secure closures, and optional shoulder straps provide comfort and ease of use throughout busy schedules.
+              As the leather matures, it develops a rich patina that enhances its character, making every briefcase a lasting symbol of professionalism, craftsmanship, and refined functionality.
+            </p>
+            <button className="briefcases-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products Header */}
+      <section className="briefcases-featured-header">
+        <div className="briefcases-section-header">
+          <h2 className="briefcases-section-title">FEATURED PRODUCTS</h2>
+          <div className="briefcases-title-underline"></div>
+        </div>
+      </section>
 
       <div className="briefcases-container">
         <div className="briefcases-filter-bar">
-          <div className="briefcases-filter-section">
-            <span className="briefcases-filter-label">Filter:</span>
-            <div className="briefcases-filter-dropdown">
-              <button className="briefcases-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="briefcases-dropdown-content">
-                <div className="briefcases-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="briefcases-reset-btn">Reset</button>
-                </div>
-                <label className="briefcases-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="briefcases-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
           <div className="briefcases-sort-section">
-            <span className="briefcases-products-count">{filteredProducts.length} Products</span>
+            <span className="briefcases-products-count">{sortedProducts.length} Products</span>
             <div className="briefcases-sort-dropdown">
               <label>Sort By:</label>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -139,44 +104,28 @@ const BriefcasesPage = () => {
         <div className="briefcases-products-grid">
           {sortedProducts.map(product => (
             <div key={product.id} className="briefcases-product-card">
-              <div className="briefcases-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="briefcases-product-info">
-                <h3 className="briefcases-product-name">{product.name}</h3>
-                <p className="briefcases-product-color">{product.color}</p>
-                {!product.inStock && <p className="briefcases-out-of-stock">Out of Stock</p>}
+              <div className="briefcases-card-inner">
+                <div className="briefcases-card-front">
+                  <div className="briefcases-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="briefcases-product-info">
+                    <h3 className="briefcases-product-name">{product.name}</h3>
+                    <p className="briefcases-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="briefcases-card-back">
+                  <div className="briefcases-back-content">
+                    <h3 className="briefcases-back-title">{product.name}</h3>
+                    <div className="briefcases-back-divider"></div>
+                    <p className="briefcases-back-color">Color: {product.color}</p>
+                    <p className="briefcases-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Leather Brief Benefits Section */}
-      <section className="brief-benefits-section">
-        <div className="brief-benefits-content">
-          <div className="brief-benefits-image">
-            <div className="brief-benefits-image-placeholder">
-              <img src="/images/briefcase about.jpg" alt="Premium Leather Shoes" className="brief-benefits-img" />
-            </div>
-          </div>
-          <div className="brief-benefits-text">
-            <h2 className="brief-benefits-title">Executive Presence in Leather</h2>
-            <p className="brief-benefits-description">
-              At Eliteinova, our leather briefcases are crafted for professionals who value confidence, structure, and timeless design. 
-              We work closely with trusted manufacturing partners and select premium-grade leather known for its durability, smooth finish, and ability to age gracefully. 
-              Each briefcase undergoes detailed quality inspections to ensure strength, precision, and long-term reliability.
-            </p>
-            <p className="brief-benefits-description">
-              Designed to support modern workdays, our leather briefcases feature well-organized interiors with dedicated compartments for documents, laptops, and daily essentials. 
-              Reinforced handles, secure closures, and optional shoulder straps provide comfort and ease of use throughout busy schedules.
-              As the leather matures, it develops a rich patina that enhances its character, making every briefcase a lasting symbol of professionalism, craftsmanship, and refined functionality.
-            </p>
-            <button className="brief-cta-button" onClick={scrollToTop}>
-              Explore Our Collection
-            </button>
-          </div>
-        </div>
-      </section>
       </div>
 
       <a href="https://wa.me/9876543210" className="briefcases-whatsapp-btn" target="_blank" rel="noopener noreferrer">
