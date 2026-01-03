@@ -24,7 +24,7 @@
 .banner-image {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074');
+  background-image: url('https://image.com/photo-1423666639041-f56000c27a9a?q=80&w=2074');
   background-size: cover;
   background-position: center;
   mix-blend-mode: overlay;
