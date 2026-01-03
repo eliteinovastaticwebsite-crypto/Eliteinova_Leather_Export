@@ -21,6 +21,7 @@ import SlingBagsPage from './pages/SlingBags';
 import SmallCrossBodyBagsPage from './pages/SmallCrossBodyBags';
 import ShoesPage from './pages/ShoesPage';
 import AboutPage from './pages/AboutPage';
+import ContactUs from './pages/ContactUs';
 
 // Import the 4 new pages
 import SmallBagsPage from './pages/SmallBagsPage';
@@ -69,6 +70,7 @@ function App() {
           <Route path="brief-cases" element={<BriefcasesPage />} />
           <Route path="belt" element={<BeltsPage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="contact" element={<ContactUs />} />
 
         </Routes>
         <ScrollToTop />

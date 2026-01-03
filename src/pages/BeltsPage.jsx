@@ -2,49 +2,37 @@ import React, { useState } from 'react';
 import './Belts.css';
 
 const BeltsPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
   const [sortBy, setSortBy] = useState('featured');
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // 20 belt products
+  // Belt products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/red_laptopbag.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/L1.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/L2.png', color: 'Black', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/L3.png', color: 'Tan', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/L4.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/L5.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/L6.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L7.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L8.png', color: 'Black', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Urban Leather Laptop Bag', image: '/images/L9.png', color: 'Black', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Urban Leather Laptop Bag', image: '/images/L10.png', color: 'Tan', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Classic Leather Laptop Bag', image: '/images/L11.png', color: 'Dark Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Classic Leather Laptop Bag', image: '/images/L12.png', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L13.png', color: 'Brown', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L14.png', color: 'Black', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }
+    { id: 1, name: 'Classic Leather Belt', image: '/images/red_laptopbag.png', color: 'Brown', date: '2024-01-15', description: 'Premium crunch leather with sophisticated texture. Features classic design with durable construction for everyday wear.' },
+    { id: 2, name: 'Classic Leather Belt', image: '/images/L1.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather with premium finish. Perfect for both casual and formal occasions with adjustable sizing.' },
+    { id: 3, name: 'Classic Leather Belt', image: '/images/L2.png', color: 'Black', date: '2024-03-10', description: 'Sleek black leather belt with timeless appeal. Features sturdy buckle and precise stitching for long-lasting quality.' },
+    { id: 4, name: 'Classic Leather Belt', image: '/images/L3.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather with rich color. Combines style with practical functionality for versatile styling.' },
+    { id: 5, name: 'Formal Dress Belt', image: '/images/L4.png', color: 'Black', date: '2024-04-05', description: 'Luxurious black leather with minimalist design. Perfect for formal occasions with elegant buckle finishing.' },
+    { id: 6, name: 'Formal Dress Belt', image: '/images/L5.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown leather with refined elegance. Features premium hardware and comfortable wear throughout the day.' },
+    { id: 7, name: 'Formal Dress Belt', image: '/images/L6.png', color: 'Tan', date: '2024-05-18', description: 'Beautiful tan leather with premium quality. Versatile style suitable for office wear and special occasions.' },
+    { id: 8, name: 'Casual Leather Belt', image: '/images/L7.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired design with practical functionality. Durable construction perfect for everyday casual wear.' },
+    { id: 9, name: 'Casual Leather Belt', image: '/images/L8.png', color: 'Black', date: '2024-06-30', description: 'Classic casual companion in sleek black. Features reinforced stitching and comfortable wear for daily use.' },
+    { id: 10, name: 'Reversible Leather Belt', image: '/images/L9.png', color: 'Black', date: '2024-07-12', description: 'Modern reversible design with practical features. Two colors in one belt for versatile styling options.' },
+    { id: 11, name: 'Reversible Leather Belt', image: '/images/L10.png', color: 'Tan', date: '2024-08-05', description: 'Contemporary tan leather with reversible functionality. Combines fashion with practical design elements.' },
+    { id: 12, name: 'Braided Leather Belt', image: '/images/L11.png', color: 'Dark Brown', date: '2024-01-08', description: 'Timeless dark brown braided leather with refined elegance. Features unique texture and traditional craftsmanship.' },
+    { id: 13, name: 'Braided Leather Belt', image: '/images/L12.png', color: 'Brown', date: '2024-09-14', description: 'Sophisticated brown braided leather with classic appeal. Durable construction with attention to detail throughout.' },
+    { id: 14, name: 'Western Style Belt', image: '/images/L13.png', color: 'Brown', date: '2024-04-28', description: 'Stylish western design with premium leather. Distinctive buckle and traditional western aesthetic.' },
+    { id: 15, name: 'Western Style Belt', image: '/images/L14.png', color: 'Black', date: '2024-10-20', description: 'Sleek black western belt with elegant design. Combines style and western heritage for unique fashion statement.' },
+    { id: 16, name: 'Minimalist Leather Belt', image: '/api/placeholder/300/300', color: 'Black', date: '2024-05-07', description: 'Clean minimalist design with premium leather. Simple yet elegant for modern wardrobe essentials.' },
+    { id: 17, name: 'Minimalist Leather Belt', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-11-11', description: 'Rich brown minimalist belt with elegant finish. Features subtle design for versatile pairing.' },
+    { id: 18, name: 'Wide Leather Belt', image: '/api/placeholder/300/300', color: 'Black', date: '2024-06-17', description: 'Modern wide belt design with practical features. Makes a bold fashion statement with comfortable fit.' },
+    { id: 19, name: 'Wide Leather Belt', image: '/api/placeholder/300/300', color: 'Dark Brown', date: '2024-12-01', description: 'Contemporary wide belt in dark brown. Combines functionality with fashion-forward design elements.' },
+    { id: 20, name: 'Premium Dress Belt', image: '/api/placeholder/300/300', color: 'Tan', date: '2024-07-25', description: 'High-quality dress belt with premium finish. Perfect for formal occasions with sophisticated appearance.' }
   ];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'best-selling':
         return a.id - b.id;
@@ -62,65 +50,51 @@ const scrollToTop = () => {
     }
   });
 
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
-
   return (
     <div className="belts-page">
       <div className="belts-breadcrumb">
         <a href="/">Home</a> / <span>Belts</span>
       </div>
 
-     <div className="hero-section">
-    <img src="/images/belt_hero.png" alt="Elegant Laptop Bags" className="hero-image" />
-    </div>
+      <div className="belts-hero-section">
+        <img src="/images/belt_hero.png" alt="Premium Leather Belts" className="belts-hero-image" />
+      </div>
 
+      {/* Leather Belts Benefits Section */}
+      <section className="belts-benefits-section">
+        <div className="belts-benefits-content">
+          <div className="belts-benefits-image">
+            <div className="belts-benefits-image-placeholder">
+              <img src="/images/belt about.jpg" alt="Premium Leather Belts" className="belts-benefits-img" />
+            </div>
+          </div>
+          <div className="belts-benefits-text">
+            <h2 className="belts-benefits-title">Precision Crafted in Leather Belts</h2>
+            <p className="belts-benefits-description">
+              At Eliteinova, our leather belts are designed to deliver understated elegance and dependable performance. 
+              Designed to complement both formal and casual attire, our leather belts feature clean lines, refined finishes, and sturdy buckles for a secure fit. 
+              The natural leather softens and develops a distinctive patina with use, enhancing character while maintaining structure. 
+              From classic dress belts to versatile everyday styles, our collection reflects timeless design, comfort, and craftsmanship built to last.
+            </p>
+            <button className="belts-cta-button" onClick={scrollToTop}>
+              Explore Our Collection
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products Header */}
+      <section className="belts-featured-header">
+        <div className="belts-section-header">
+          <h2 className="belts-section-title">FEATURED PRODUCTS</h2>
+          <div className="belts-title-underline"></div>
+        </div>
+      </section>
 
       <div className="belts-container">
         <div className="belts-filter-bar">
-          <div className="belts-filter-section">
-            <span className="belts-filter-label">Filter:</span>
-            <div className="belts-filter-dropdown">
-              <button className="belts-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="belts-dropdown-content">
-                <div className="belts-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="belts-reset-btn">Reset</button>
-                </div>
-                <label className="belts-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="belts-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
           <div className="belts-sort-section">
-            <span className="belts-products-count">{filteredProducts.length} Products</span>
+            <span className="belts-products-count">{sortedProducts.length} Products</span>
             <div className="belts-sort-dropdown">
               <label>Sort By:</label>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -138,45 +112,28 @@ const scrollToTop = () => {
         <div className="belts-products-grid">
           {sortedProducts.map(product => (
             <div key={product.id} className="belts-product-card">
-              <div className="belts-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="belts-product-info">
-                <h3 className="belts-product-name">{product.name}</h3>
-                <p className="belts-product-color">{product.color}</p>
-                {!product.inStock && <p className="belts-out-of-stock">Out of Stock</p>}
+              <div className="belts-card-inner">
+                <div className="belts-card-front">
+                  <div className="belts-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="belts-product-info">
+                    <h3 className="belts-product-name">{product.name}</h3>
+                    <p className="belts-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="belts-card-back">
+                  <div className="belts-back-content">
+                    <h3 className="belts-back-title">{product.name}</h3>
+                    <div className="belts-back-divider"></div>
+                    <p className="belts-back-color">Color: {product.color}</p>
+                    <p className="belts-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
-       
-       {/* Leather Belt Benefits Section */}
-      <section className="belt-benefits-section">
-        <div className="belt-benefits-content">
-          <div className="belt-benefits-image">
-            <div className="belt-benefits-image-placeholder">
-              <img src="/images/belt about.jpg" alt="Premium Leather Shoes" className="belt-benefits-img" />
-            </div>
-          </div>
-          <div className="belt-benefits-text">
-            <h2 className="belt-benefits-title">Precision Crafted in Leather Belts</h2>
-            <p className="belt-benefits-description">
-              At Eliteinova, our leather belts are designed to deliver understated elegance and dependable performance. 
-              We work with trusted manufacturing partners and select premium-grade leather known for its strength, rich texture, and ability to age beautifully over time. 
-              Each belt is carefully crafted and quality-checked to ensure durability, consistency, and long-lasting wear.
-            </p>
-            <p className="belt-benefits-description">
-              Designed to complement both formal and casual attire, our leather belts feature clean lines, refined finishes, and sturdy buckles for a secure fit. 
-              The natural leather softens and develops a distinctive patina with use, enhancing character while maintaining structure. 
-              From classic dress belts to versatile everyday styles, our collection reflects timeless design, comfort, and craftsmanship built to last.
-            </p>
-            <button className="belt-cta-button" onClick={scrollToTop}>
-              Explore Our Collection
-            </button>
-          </div>
-        </div>
-      </section>
-        
       </div>
 
       <a href="https://wa.me/9876543210" className="belts-whatsapp-btn" target="_blank" rel="noopener noreferrer">

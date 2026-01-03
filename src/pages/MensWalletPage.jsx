@@ -2,45 +2,21 @@ import React, { useState } from 'react';
 import './MensWallets.css';
 
 const MensWalletsPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
   const [sortBy, setSortBy] = useState('featured');
 
-  // 20 men's wallet products
+  // Men's wallet products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/wal1.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/wal2.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/wal3.png', color: 'Black', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/wal4.png', color: 'Tan', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/wal5.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/wal6.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/wal7.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/wal8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    /* { id: 9, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L8.png', color: 'Black', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Urban Leather Laptop Bag', image: '/images/L9.png', color: 'Black', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Urban Leather Laptop Bag', image: '/images/L10.png', color: 'Tan', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Classic Leather Laptop Bag', image: '/images/L11.png', color: 'Dark Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Classic Leather Laptop Bag', image: '/images/L12.png', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L13.png', color: 'Brown', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L14.png', color: 'Black', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }*/
+    { id: 1, name: 'Classic Bifold Wallet', image: '/images/wal1.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather bifold wallet with multiple card slots and cash compartment. Features classic design with durable construction.' },
+    { id: 2, name: 'Classic Bifold Wallet', image: '/images/wal2.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather bifold wallet with sophisticated texture. Perfect for everyday use with organized storage.' },
+    { id: 3, name: 'Slim Trifold Wallet', image: '/images/wal3.png', color: 'Black', date: '2024-03-10', description: 'Slim black trifold wallet with compact design. Features extra card slots and secure closure for maximum organization.' },
+    { id: 4, name: 'Slim Trifold Wallet', image: '/images/wal4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather trifold wallet with rich color. Combines style with practical functionality.' },
+    { id: 5, name: 'Minimalist Card Holder', image: '/images/wal5.png', color: 'Black', date: '2024-04-05', description: 'Sleek black minimalist card holder for essential cards only. Perfect for front pocket carry with RFID protection.' },
+    { id: 6, name: 'Minimalist Card Holder', image: '/images/wal6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown minimalist card holder with premium leather. Features precise stitching and elegant finishing.' },
+    { id: 7, name: 'Money Clip Wallet', image: '/images/wal7.png', color: 'Tan', date: '2024-05-18', description: 'Combination wallet with integrated money clip in tan leather. Provides secure cash storage with quick access design.' },
+    { id: 8, name: 'Vintage Leather Wallet', image: '/images/wal8.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired brown leather wallet with classic appeal. Features traditional craftsmanship with modern convenience.' }
   ];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'best-selling':
         return a.id - b.id;
@@ -58,65 +34,28 @@ const MensWalletsPage = () => {
     }
   });
 
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
-
   return (
     <div className="menswallets-page">
       <div className="menswallets-breadcrumb">
-        <a href="/">Home</a> / <span>Men's Wallets</span>
+        <a href="/">Home</a> / <a href="/wallet">Wallet</a> / <span>Men's Wallets</span>
       </div>
 
-     <div className="hero-section">
-    <img src="/images/wallet_hero.png" alt="Elegant Laptop Bags" className="hero-image" />
-    </div>
+      <div className="menswallets-hero-section">
+        <img src="/images/wallet_hero.png" alt="Premium Men's Wallets" className="menswallets-hero-image" />
+      </div>
 
+      {/* Featured Products Header */}
+      <section className="menswallets-featured-header">
+        <div className="menswallets-section-header">
+          <h2 className="menswallets-section-title">FEATURED PRODUCTS</h2>
+          <div className="menswallets-title-underline"></div>
+        </div>
+      </section>
 
       <div className="menswallets-container">
         <div className="menswallets-filter-bar">
-          <div className="menswallets-filter-section">
-            <span className="menswallets-filter-label">Filter:</span>
-            <div className="menswallets-filter-dropdown">
-              <button className="menswallets-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="menswallets-dropdown-content">
-                <div className="menswallets-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="menswallets-reset-btn">Reset</button>
-                </div>
-                <label className="menswallets-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="menswallets-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
           <div className="menswallets-sort-section">
-            <span className="menswallets-products-count">{filteredProducts.length} Products</span>
+            <span className="menswallets-products-count">{sortedProducts.length} Products</span>
             <div className="menswallets-sort-dropdown">
               <label>Sort By:</label>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -134,13 +73,24 @@ const MensWalletsPage = () => {
         <div className="menswallets-products-grid">
           {sortedProducts.map(product => (
             <div key={product.id} className="menswallets-product-card">
-              <div className="menswallets-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="menswallets-product-info">
-                <h3 className="menswallets-product-name">{product.name}</h3>
-                <p className="menswallets-product-color">{product.color}</p>
-                {!product.inStock && <p className="menswallets-out-of-stock">Out of Stock</p>}
+              <div className="menswallets-card-inner">
+                <div className="menswallets-card-front">
+                  <div className="menswallets-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="menswallets-product-info">
+                    <h3 className="menswallets-product-name">{product.name}</h3>
+                    <p className="menswallets-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="menswallets-card-back">
+                  <div className="menswallets-back-content">
+                    <h3 className="menswallets-back-title">{product.name}</h3>
+                    <div className="menswallets-back-divider"></div>
+                    <p className="menswallets-back-color">Color: {product.color}</p>
+                    <p className="menswallets-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

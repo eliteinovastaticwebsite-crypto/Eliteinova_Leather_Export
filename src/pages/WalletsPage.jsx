@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './WalletsPage.css';
 
 const WalletsPage = () => {
+  const [sortBy, setSortBy] = useState('featured');
   const navigate = useNavigate();
 
-const scrollToTop = () => {
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -14,44 +15,57 @@ const scrollToTop = () => {
       name: "Men's Wallet",
       products: 20,
       image: "/images/wallet.png",
-      path: "/wallet/menswallet"  // FIXED: Changed to correct path
+      path: "/wallet/menswallet"
     },
     {
       name: "PassPort Holders",
       products: 15,
       image: "/images/passportbanner.png",
-      path: "/wallet/passportholder"  // FIXED: Changed to correct path
-    },
-   /* {
-      name: "Money Clips",
-      products: 8,
-      image: "/images/money_clips_collection.png",
-      path: "/wallets/moneyclips"
-    } */
+      path: "/wallet/passportholder"
+    }
   ];
 
+  // Wallet products with descriptions
   const products = [
-    { id: 1, name: 'Bifold Leather Wallet', image: '/images/wallet1.png', color: 'Black', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Bifold Leather Wallet', image: '/images/wallet2.png', color: 'Brown', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Trifold Wallet', image: '/images/wallet3.png', color: 'Tan', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Trifold Wallet', image: '/images/wallet4.png', color: 'Black', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'Minimalist Card Holder', image: '/images/wallet5.png', color: 'Tan', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'Minimalist Card Holder', image: '/images/wallet6.png', color: 'Dark Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'Money Clip Wallet', image: '/images/wallet7.png', color: 'Black', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Money Clip Wallet', image: '/images/wallet8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    { id: 9, name: 'Passport Wallet', image: '/images/wallet9.png', color: 'Tan', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Passport Wallet', image: '/images/wallet10.png', color: 'Brown', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Zipper Wallet', image: '/images/wallet11.png', color: 'Black', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Zipper Wallet', image: '/images/wallet12.png', color: 'Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'RFID Blocking Wallet', image: '/images/wallet13.png', color: 'Tan', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'RFID Blocking Wallet', image: '/images/wallet14.png', color: 'Black', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Travel Wallet', image: '/images/wallet15.png', color: 'Tan', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Travel Wallet', image: '/images/wallet16.png', color: 'Brown', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Front Pocket Wallet', image: '/images/wallet17.png', color: 'Burgundy', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Front Pocket Wallet', image: '/images/wallet18.png', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Metal Money Clip', image: '/images/wallet19.png', color: 'Silver', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Metal Money Clip', image: '/images/wallet20.png', color: 'Gold', inStock: true, date: '2024-07-25' }
+    { id: 1, name: 'Bifold Leather Wallet', image: '/images/wallet1.png', color: 'Black', date: '2024-01-15', description: 'Classic bifold wallet made from premium leather. Features multiple card slots, cash compartment, and ID window for organized daily use.' },
+    { id: 2, name: 'Bifold Leather Wallet', image: '/images/wallet2.png', color: 'Brown', date: '2024-02-20', description: 'Sophisticated brown bifold wallet with durable construction. Perfect for everyday carry with ample storage for cards and cash.' },
+    { id: 3, name: 'Trifold Wallet', image: '/images/wallet3.png', color: 'Tan', date: '2024-03-10', description: 'Functional trifold wallet in elegant tan leather. Features extra card slots and secure closure for maximum organization.' },
+    { id: 4, name: 'Trifold Wallet', image: '/images/wallet4.png', color: 'Black', date: '2024-01-25', description: 'Sleek black trifold wallet with compact design. Ideal for minimalist carry while maintaining full functionality.' },
+    { id: 5, name: 'Minimalist Card Holder', image: '/images/wallet5.png', color: 'Tan', date: '2024-04-05', description: 'Slim tan card holder for essential cards only. Perfect for front pocket carry with RFID protection technology.' },
+    { id: 6, name: 'Minimalist Card Holder', image: '/images/wallet6.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown minimalist card holder with premium leather. Features precise stitching and elegant finishing.' },
+    { id: 7, name: 'Money Clip Wallet', image: '/images/wallet7.png', color: 'Black', date: '2024-05-18', description: 'Combination wallet with integrated money clip. Provides secure cash storage with quick access design.' },
+    { id: 8, name: 'Money Clip Wallet', image: '/images/wallet8.png', color: 'Brown', date: '2024-03-22', description: 'Brown leather wallet with sturdy money clip. Combines traditional wallet features with modern convenience.' },
+    { id: 9, name: 'Passport Wallet', image: '/images/wallet9.png', color: 'Tan', date: '2024-06-30', description: 'Comprehensive passport wallet for travelers. Features multiple compartments for documents, tickets, and cards.' },
+    { id: 10, name: 'Passport Wallet', image: '/images/wallet10.png', color: 'Brown', date: '2024-07-12', description: 'Brown leather passport holder with spacious design. Perfect for international travel with organized storage.' },
+    { id: 11, name: 'Zipper Wallet', image: '/images/wallet11.png', color: 'Black', date: '2024-08-05', description: 'Secure zipper wallet with full enclosure. Features multiple internal compartments for complete organization.' },
+    { id: 12, name: 'Zipper Wallet', image: '/images/wallet12.png', color: 'Brown', date: '2024-01-08', description: 'Brown leather zipper wallet with durable construction. Ensures complete security for all contents.' },
+    { id: 13, name: 'RFID Blocking Wallet', image: '/images/wallet13.png', color: 'Tan', date: '2024-09-14', description: 'Security-focused wallet with RFID blocking technology. Protects cards from electronic theft while maintaining style.' },
+    { id: 14, name: 'RFID Blocking Wallet', image: '/images/wallet14.png', color: 'Black', date: '2024-04-28', description: 'Sleek black RFID blocking wallet. Combines modern security features with classic leather design.' },
+    { id: 15, name: 'Travel Wallet', image: '/images/wallet15.png', color: 'Tan', date: '2024-10-20', description: 'Comprehensive travel wallet for frequent flyers. Features dedicated spaces for boarding passes and travel documents.' },
+    { id: 16, name: 'Travel Wallet', image: '/images/wallet16.png', color: 'Brown', date: '2024-05-07', description: 'Brown leather travel wallet with practical organization. Perfect for keeping all travel essentials in one place.' },
+    { id: 17, name: 'Front Pocket Wallet', image: '/images/wallet17.png', color: 'Burgundy', date: '2024-11-11', description: 'Slim burgundy wallet designed for front pocket carry. Reduces bulk while maintaining essential storage.' },
+    { id: 18, name: 'Front Pocket Wallet', image: '/images/wallet18.png', color: 'Black', date: '2024-06-17', description: 'Black front pocket wallet with minimalist design. Features quick access to frequently used cards.' },
+    { id: 19, name: 'Metal Money Clip', image: '/images/wallet19.png', color: 'Silver', date: '2024-12-01', description: 'Premium silver metal money clip. Combines elegant design with secure cash holding functionality.' },
+    { id: 20, name: 'Metal Money Clip', image: '/images/wallet20.png', color: 'Gold', date: '2024-07-25', description: 'Luxurious gold-toned money clip. Features durable construction and smooth operation for daily use.' }
   ];
+
+  const sortedProducts = [...products].sort((a, b) => {
+    switch (sortBy) {
+      case 'best-selling':
+        return a.id - b.id;
+      case 'alphabetically-az':
+        return a.name.localeCompare(b.name);
+      case 'alphabetically-za':
+        return b.name.localeCompare(a.name);
+      case 'date-old-new':
+        return new Date(a.date) - new Date(b.date);
+      case 'date-new-old':
+        return new Date(b.date) - new Date(a.date);
+      case 'featured':
+      default:
+        return 0;
+    }
+  });
 
   const handleCollectionClick = (path) => {
     navigate(path);
@@ -93,56 +107,80 @@ const scrollToTop = () => {
         </div>
       </section>
 
-      {/* Featured Products Section */}
-      <div className="wallets-container">
-        <div className="wallets-featured-header">
-          <h2 className="wallets-featured-title">FEATURED PRODUCTS</h2>
-          <div className="wallets-featured-underline"></div>
-        </div>
-
-        <div className="wallets-products-grid">
-          {products.map(product => (
-            <div key={product.id} className="wallets-product-card">
-              <div className="wallets-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="wallets-product-info">
-                <h3 className="wallets-product-name">{product.name}</h3>
-                <p className="wallets-product-color">{product.color}</p>
-                {!product.inStock && (
-                  <p className="wallets-out-of-stock">Out of Stock</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Leather Small bags Benefits Section */}
-      <section className="wal-benefits-section">
-        <div className="wal-benefits-content">
-          <div className="wal-benefits-image">
-            <div className="wal-benefits-image-placeholder">
-              <img src="/images/wallet about.jpg" alt="Premium Leather Shoes" className="wal-benefits-img" />
+      {/* Leather Small bags Benefits Section */}
+      <section className="wallets-benefits-section">
+        <div className="wallets-benefits-content">
+          <div className="wallets-benefits-image">
+            <div className="wallets-benefits-image-placeholder">
+              <img src="/images/wallet about.jpg" alt="Premium Leather Wallets" className="wallets-benefits-img" />
             </div>
           </div>
-          <div className="wal-benefits-text">
-            <h2 className="wal-benefits-title">Refined Essentials in Leather Wallets & Passport Holders</h2>
-            <p className="wal-benefits-description">
-              At Eliteinova, our leather wallets and passport holders are crafted to elevate everyday essentials through thoughtful design and superior craftsmanship. 
-              We partner with trusted manufacturers and use premium-grade leather chosen for its durability, smooth texture, and ability to age gracefully. 
-              Each piece undergoes careful quality checks to ensure precision, strength, and lasting quality.
-            </p>
-            <p className="wal-benefits-description">
+          <div className="wallets-benefits-text">
+            <h2 className="wallets-benefits-title">Refined Essentials in Leather Wallets & Passport Holders</h2>
+            <p className="wallets-benefits-description">
+              At Eliteinova Leather Products Export, our leather wallets and passport holders are crafted to elevate everyday essentials through thoughtful design and superior craftsmanship. 
               Designed for convenience and elegance, our leather wallets offer well-organized compartments for cards, cash, and documents, while our passport holders provide secure protection for travel essentials. 
               Slim profiles ensure easy carrying without added bulk, making them ideal for daily use and travel alike. 
               Over time, the natural leather develops a distinctive patina, transforming each wallet and passport holder into a unique expression of refined style, functionality, and enduring craftsmanship.
             </p>
-            <button className="wal-cta-button" onClick={scrollToTop}>
+            <button className="wallets-cta-button" onClick={scrollToTop}>
               Explore Our Collection
             </button>
           </div>
         </div>
       </section>
+
+      {/* Featured Products Header */}
+      <section className="wallets-featured-header">
+        <div className="wallets-section-header">
+          <h2 className="wallets-section-title">FEATURED PRODUCTS</h2>
+          <div className="wallets-title-underline"></div>
+        </div>
+      </section>
+
+      <div className="wallets-container">
+        <div className="wallets-filter-bar">
+          <div className="wallets-sort-section">
+            <span className="wallets-products-count">{sortedProducts.length} Products</span>
+            <div className="wallets-sort-dropdown">
+              <label>Sort By:</label>
+              <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <option value="featured">Featured</option>
+                <option value="best-selling">Best selling</option>
+                <option value="alphabetically-az">Alphabetically, A-Z</option>
+                <option value="alphabetically-za">Alphabetically, Z-A</option>
+                <option value="date-old-new">Date, old to new</option>
+                <option value="date-new-old">Date, new to old</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div className="wallets-products-grid">
+          {sortedProducts.map(product => (
+            <div key={product.id} className="wallets-product-card">
+              <div className="wallets-card-inner">
+                <div className="wallets-card-front">
+                  <div className="wallets-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="wallets-product-info">
+                    <h3 className="wallets-product-name">{product.name}</h3>
+                    <p className="wallets-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="wallets-card-back">
+                  <div className="wallets-back-content">
+                    <h3 className="wallets-back-title">{product.name}</h3>
+                    <div className="wallets-back-divider"></div>
+                    <p className="wallets-back-color">Color: {product.color}</p>
+                    <p className="wallets-back-description">{product.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <a href="https://wa.me/9876543210" className="wallets-whatsapp-btn" target="_blank" rel="noopener noreferrer">

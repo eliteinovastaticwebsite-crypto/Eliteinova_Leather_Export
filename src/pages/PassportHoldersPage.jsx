@@ -2,45 +2,34 @@ import React, { useState } from 'react';
 import './PassportHolders.css';
 
 const PassportHoldersPage = () => {
-  const [availabilityFilter, setAvailabilityFilter] = useState({
-    inStock: false,
-    outOfStock: false
-  });
   const [sortBy, setSortBy] = useState('featured');
 
   // 20 passport holder products
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', inStock: true, date: '2024-01-15' },
-    { id: 2, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass2.png', color: 'Green', inStock: false, date: '2024-02-20' },
-    { id: 3, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass3.png', color: 'Black', inStock: true, date: '2024-03-10' },
-    { id: 4, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass4.png', color: 'Tan', inStock: true, date: '2024-01-25' },
-    { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/pass5.png', color: 'Black', inStock: true, date: '2024-04-05' },
-    { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', inStock: false, date: '2024-02-14' },
-    { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/pass7.png', color: 'Tan', inStock: true, date: '2024-05-18' },
-    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/pass8.png', color: 'Brown', inStock: true, date: '2024-03-22' },
-    /*{ id: 9, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L8.png', color: 'Black', inStock: true, date: '2024-06-30' },
-    { id: 10, name: 'Urban Leather Laptop Bag', image: '/images/L9.png', color: 'Black', inStock: true, date: '2024-07-12' },
-    { id: 11, name: 'Urban Leather Laptop Bag', image: '/images/L10.png', color: 'Tan', inStock: false, date: '2024-08-05' },
-    { id: 12, name: 'Classic Leather Laptop Bag', image: '/images/L11.png', color: 'Dark Brown', inStock: true, date: '2024-01-08' },
-    { id: 13, name: 'Classic Leather Laptop Bag', image: '/images/L12.png', color: 'Brown', inStock: true, date: '2024-09-14' },
-    { id: 14, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L13.png', color: 'Brown', inStock: true, date: '2024-04-28' },
-    { id: 15, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L14.png', color: 'Black', inStock: false, date: '2024-10-20' },
-    { id: 16, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-05-07' },
-    { id: 17, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Brown', inStock: true, date: '2024-11-11' },
-    { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', inStock: true, date: '2024-06-17' },
-    { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', inStock: true, date: '2024-12-01' },
-    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', inStock: true, date: '2024-07-25' }*/
+    { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather passport holder with secure closure and multiple card slots. Features classic design with durable construction.' },
+    { id: 2, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass2.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather passport holder with sophisticated texture. Perfect for travel with organized document storage.' },
+    { id: 3, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass3.png', color: 'Black', date: '2024-03-10', description: 'Sleek black leather passport holder with compact design. Features extra card slots and secure closure for travel documents.' },
+    { id: 4, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather passport holder with rich color. Combines style with practical functionality for travelers.' },
+    { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/pass5.png', color: 'Black', date: '2024-04-05', description: 'Premium black leather passport holder with minimalist design. Perfect for frequent travelers with RFID protection.' },
+    { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown leather passport holder with premium finish. Features precise stitching and elegant finishing touches.' },
+    { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/pass7.png', color: 'Tan', date: '2024-05-18', description: 'Classic tan leather passport holder with secure closure. Provides organized storage for travel documents and cards.' },
+    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/pass8.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired brown leather passport holder with classic appeal. Features traditional craftsmanship for modern travelers.' },
+    // Additional products can be uncommented as needed
+    /*{ id: 9, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L8.png', color: 'Black', date: '2024-06-30', description: 'Description here' },
+    { id: 10, name: 'Urban Leather Laptop Bag', image: '/images/L9.png', color: 'Black', date: '2024-07-12', description: 'Description here' },
+    { id: 11, name: 'Urban Leather Laptop Bag', image: '/images/L10.png', color: 'Tan', date: '2024-08-05', description: 'Description here' },
+    { id: 12, name: 'Classic Leather Laptop Bag', image: '/images/L11.png', color: 'Dark Brown', date: '2024-01-08', description: 'Description here' },
+    { id: 13, name: 'Classic Leather Laptop Bag', image: '/images/L12.png', color: 'Brown', date: '2024-09-14', description: 'Description here' },
+    { id: 14, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L13.png', color: 'Brown', date: '2024-04-28', description: 'Description here' },
+    { id: 15, name: 'Topper Stylish Leather Travel Laptop Bag', image: '/images/L14.png', color: 'Black', date: '2024-10-20', description: 'Description here' },
+    { id: 16, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Black', date: '2024-05-07', description: 'Description here' },
+    { id: 17, name: 'Leather Shoulder Laptop Bag', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-11-11', description: 'Description here' },
+    { id: 18, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Black', date: '2024-06-17', description: 'Description here' },
+    { id: 19, name: 'Urban Leather Tote', image: '/api/placeholder/300/300', color: 'Dark Brown', date: '2024-12-01', description: 'Description here' },
+    { id: 20, name: 'Premium Leather Travel Laptop Bag', image: '/api/placeholder/300/300', color: 'Tan', date: '2024-07-25', description: 'Description here' }*/
   ];
 
-  const filteredProducts = products.filter(product => {
-    if (!availabilityFilter.inStock && !availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock && availabilityFilter.outOfStock) return true;
-    if (availabilityFilter.inStock) return product.inStock;
-    if (availabilityFilter.outOfStock) return !product.inStock;
-    return true;
-  });
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'best-selling':
         return a.id - b.id;
@@ -58,65 +47,28 @@ const PassportHoldersPage = () => {
     }
   });
 
-  const handleAvailabilityChange = (type) => {
-    setAvailabilityFilter(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
-
-  const resetFilters = () => {
-    setAvailabilityFilter({ inStock: false, outOfStock: false });
-  };
-
-  const selectedCount = Object.values(availabilityFilter).filter(Boolean).length;
-
   return (
     <div className="passportholders-page">
       <div className="passportholders-breadcrumb">
         <a href="/">Home</a> / <span>Passport Holders</span>
       </div>
 
-     <div className="hero-section">
-    <img src="/images/passport_hero.png" alt="Elegant Laptop Bags" className="hero-image" />
-    </div>
+      <div className="passportholders-hero-section">
+        <img src="/images/passport_hero.png" alt="Elegant Passport Holders" className="passportholders-hero-image" />
+      </div>
 
+      {/* Featured Products Header */}
+      <section className="passportholders-featured-header">
+        <div className="passportholders-section-header">
+          <h2 className="passportholders-section-title">FEATURED PRODUCTS</h2>
+          <div className="passportholders-title-underline"></div>
+        </div>
+      </section>
 
       <div className="passportholders-container">
         <div className="passportholders-filter-bar">
-          <div className="passportholders-filter-section">
-            <span className="passportholders-filter-label">Filter:</span>
-            <div className="passportholders-filter-dropdown">
-              <button className="passportholders-filter-btn">
-                Availability {selectedCount > 0 && `(${selectedCount})`} ▼
-              </button>
-              <div className="passportholders-dropdown-content">
-                <div className="passportholders-dropdown-header">
-                  <span>{selectedCount} selected</span>
-                  <button onClick={resetFilters} className="passportholders-reset-btn">Reset</button>
-                </div>
-                <label className="passportholders-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.inStock}
-                    onChange={() => handleAvailabilityChange('inStock')}
-                  />
-                  <span>In stock ({products.filter(p => p.inStock).length})</span>
-                </label>
-                <label className="passportholders-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={availabilityFilter.outOfStock}
-                    onChange={() => handleAvailabilityChange('outOfStock')}
-                  />
-                  <span>Out of stock ({products.filter(p => !p.inStock).length})</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
           <div className="passportholders-sort-section">
-            <span className="passportholders-products-count">{filteredProducts.length} Products</span>
+            <span className="passportholders-products-count">{sortedProducts.length} Products</span>
             <div className="passportholders-sort-dropdown">
               <label>Sort By:</label>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -134,13 +86,24 @@ const PassportHoldersPage = () => {
         <div className="passportholders-products-grid">
           {sortedProducts.map(product => (
             <div key={product.id} className="passportholders-product-card">
-              <div className="passportholders-product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="passportholders-product-info">
-                <h3 className="passportholders-product-name">{product.name}</h3>
-                <p className="passportholders-product-color">{product.color}</p>
-                {!product.inStock && <p className="passportholders-out-of-stock">Out of Stock</p>}
+              <div className="passportholders-card-inner">
+                <div className="passportholders-card-front">
+                  <div className="passportholders-product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="passportholders-product-info">
+                    <h3 className="passportholders-product-name">{product.name}</h3>
+                    <p className="passportholders-product-color">{product.color}</p>
+                  </div>
+                </div>
+                <div className="passportholders-card-back">
+                  <div className="passportholders-back-content">
+                    <h3 className="passportholders-back-title">{product.name}</h3>
+                    <div className="passportholders-back-divider"></div>
+                    <p className="passportholders-back-color">Color: {product.color}</p>
+                    <p className="passportholders-back-description">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
