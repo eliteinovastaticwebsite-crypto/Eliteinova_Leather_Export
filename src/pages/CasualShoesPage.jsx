@@ -6,16 +6,16 @@ const CasualShoesPage = () => {
 
   // Casual shoes products with descriptions
   const products = [
-    { id: 1, name: 'Oxford Leather Shoes', image: '/images/formal1.png', color: 'Black', date: '2024-01-15', description: 'Classic black Oxford shoes with polished finish. Perfect for business meetings and formal events with superior comfort.' },
-    { id: 2, name: 'Oxford Leather Shoes', image: '/images/formal2.png', color: 'Brown', date: '2024-02-20', description: 'Elegant brown Oxford shoes crafted from premium leather. Features classic brogue detailing and comfortable fit.' },
-    { id: 3, name: 'Derby Dress Shoes', image: '/images/formal3.png', color: 'Black', date: '2024-03-10', description: 'Sophisticated black Derby shoes with open lacing system. Combines style with exceptional comfort for all-day wear.' },
-    { id: 4, name: 'Derby Dress Shoes', image: '/images/formal4.png', color: 'Dark Brown', date: '2024-01-25', description: 'Dark brown Derby shoes with refined appearance. Durable construction with excellent arch support and quality leather.' },
-    { id: 5, name: 'Brogue Wingtip Shoes', image: '/images/formal5.png', color: 'Tan', date: '2024-04-05', description: 'Classic brogue wingtip shoes in elegant tan. Features intricate perforations and premium leather construction.' },
-    { id: 6, name: 'Brogue Wingtip Shoes', image: '/images/formal6.png', color: 'Black', date: '2024-02-14', description: 'Timeless black brogue wingtips with detailed craftsmanship. Perfect for adding sophistication to any formal outfit.' },
-    { id: 7, name: 'Monk Strap Shoes', image: '/images/formal7.png', color: 'Brown', date: '2024-05-18', description: 'Distinguished brown monk strap shoes with buckle closure. Combines traditional design with modern comfort features.' },
-    { id: 8, name: 'Monk Strap Shoes', image: '/images/formal8.png', color: 'Black', date: '2024-03-22', description: 'Elegant black monk strap shoes in premium leather. Features double buckle closure for secure fit and refined style.' },
-    { id: 9, name: 'Cap-Toe Oxford', image: '/images/formal9.png', color: 'Black', date: '2024-06-30', description: 'Classic cap-toe Oxford in polished black leather. Features clean lines and impeccable craftsmanship for formal occasions.' },
-    { id: 10, name: 'Cap-Toe Oxford', image: '/images/formal10.png', color: 'Burgundy', date: '2024-07-12', description: 'Sophisticated burgundy cap-toe Oxford shoes. Premium leather with distinctive color for those seeking unique elegance.' },
+    { id: 1, name: 'Oxford Leather Shoes', image: '/images/casual3.png', color: 'Black', date: '2024-01-15', description: 'Classic black Oxford shoes with polished finish. Perfect for business meetings and formal events with superior comfort.' },
+    { id: 2, name: 'Oxford Leather Shoes', image: '/images/casual4.png', color: 'Brown', date: '2024-02-20', description: 'Elegant brown Oxford shoes crafted from premium leather. Features classic brogue detailing and comfortable fit.' },
+    { id: 3, name: 'Derby Dress Shoes', image: '/images/casual5.png', color: 'Black', date: '2024-03-10', description: 'Sophisticated black Derby shoes with open lacing system. Combines style with exceptional comfort for all-day wear.' },
+    { id: 4, name: 'Derby Dress Shoes', image: '/images/casual6.png', color: 'Dark Brown', date: '2024-01-25', description: 'Dark brown Derby shoes with refined appearance. Durable construction with excellent arch support and quality leather.' },
+    { id: 5, name: 'Brogue Wingtip Shoes', image: '/images/casual7.png', color: 'Tan', date: '2024-04-05', description: 'Classic brogue wingtip shoes in elegant tan. Features intricate perforations and premium leather construction.' },
+    { id: 6, name: 'Brogue Wingtip Shoes', image: '/images/casual8.png', color: 'Black', date: '2024-02-14', description: 'Timeless black brogue wingtips with detailed craftsmanship. Perfect for adding sophistication to any formal outfit.' },
+    { id: 7, name: 'Monk Strap Shoes', image: '/images/casual9.png', color: 'Brown', date: '2024-05-18', description: 'Distinguished brown monk strap shoes with buckle closure. Combines traditional design with modern comfort features.' },
+    { id: 8, name: 'Monk Strap Shoes', image: '/images/casual10.png', color: 'Black', date: '2024-03-22', description: 'Elegant black monk strap shoes in premium leather. Features double buckle closure for secure fit and refined style.' },
+    { id: 9, name: 'Cap-Toe Oxford', image: '/images/casual11.png', color: 'Black', date: '2024-06-30', description: 'Classic cap-toe Oxford in polished black leather. Features clean lines and impeccable craftsmanship for formal occasions.' },
+    /*{ id: 10, name: 'Cap-Toe Oxford', image: '/images/casual4.png', color: 'Burgundy', date: '2024-07-12', description: 'Sophisticated burgundy cap-toe Oxford shoes. Premium leather with distinctive color for those seeking unique elegance.' },
     { id: 11, name: 'Chelsea Formal Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-08-05', description: 'Sleek black Chelsea boots with elastic side panels. Perfect blend of formal style and contemporary convenience.' },
     { id: 12, name: 'Chelsea Formal Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-01-08', description: 'Brown Chelsea boots with premium leather finish. Versatile design suitable for business and formal settings.' },
     { id: 13, name: 'Loafers Formal', image: '/api/placeholder/300/300', color: 'Black', date: '2024-09-14', description: 'Elegant black leather loafers with slip-on design. Features comfortable fit and sophisticated appearance for formal wear.' },
@@ -26,7 +26,7 @@ const CasualShoesPage = () => {
     { id: 18, name: 'Patent Leather Shoes', image: '/api/placeholder/300/300', color: 'Burgundy', date: '2024-06-17', description: 'Striking burgundy patent leather shoes with high shine. Makes a bold statement at formal events.' },
     { id: 19, name: 'Double Monk Strap', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-12-01', description: 'Distinguished double monk strap shoes in brown. Features dual buckles for superior fit and elegant appearance.' },
     { id: 20, name: 'Double Monk Strap', image: '/api/placeholder/300/300', color: 'Black', date: '2024-07-25', description: 'Sophisticated black double monk strap shoes. Perfect combination of formal style and unique buckle design.' }
-  ];
+  */];
 
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
@@ -53,7 +53,7 @@ const CasualShoesPage = () => {
       </div>
 
       <div className="casualshoes-hero-section">
-        <img src="/images/formalshoes_hero.png" alt="Elegant Casual Shoes" className="casualshoes-hero-image" />
+        <img src="/images/casual_shoes.png" alt="Elegant Casual Shoes" className="casualshoes-hero-image" />
       </div>
 
       {/* Featured Products Header - Added this section */}

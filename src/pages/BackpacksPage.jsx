@@ -8,23 +8,23 @@ const BackpacksPage = () => {
 
   // Backpack products with descriptions
   const products = [
-    { id: 1, name: 'Leather Laptop Backpack', image: '/images/backpack1.png', color: 'Black', date: '2024-01-15', description: 'Premium laptop backpack with multiple compartments for organized storage. Made with durable leather and padded laptop sleeve.' },
-    { id: 2, name: 'Leather Laptop Backpack', image: '/images/backpack2.png', color: 'Brown', date: '2024-02-20', description: 'Classic brown leather backpack with vintage appeal. Features leather accents and comfortable carrying.' },
-    { id: 3, name: 'Waterproof Backpack', image: '/images/backpack3.png', color: 'Gray', date: '2024-03-10', description: 'Completely waterproof backpack perfect for travel and outdoor adventures. Sealed zippers and water-resistant materials.' },
-    { id: 4, name: 'Waterproof Backpack', image: '/images/backpack4.png', color: 'Navy', date: '2024-01-25', description: 'Navy blue waterproof backpack with spacious main compartment and side pockets for water bottles.' },
-    { id: 5, name: 'Minimalist Backpack', image: '/images/backpack5.png', color: 'Tan', date: '2024-04-05', description: 'Clean and minimalist design for everyday use. Lightweight and perfect for urban commuting.' },
-    { id: 6, name: 'Minimalist Backpack', image: '/images/backpack6.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown minimalist backpack with premium leather details and magnetic closures.' },
-    { id: 7, name: 'Travel Backpack', image: '/images/backpack7.png', color: 'Black', date: '2024-05-18', description: 'Large capacity travel backpack with multiple compartments for organized packing.' },
-    { id: 8, name: 'Travel Backpack', image: '/images/backpack8.png', color: 'Brown', date: '2024-03-22', description: 'Premium leather travel backpack with expandable sections for extra storage.' },
-    { id: 9, name: 'Canvas Backpack', image: '/images/backpack9.png', color: 'Tan', date: '2024-06-30', description: 'Durable canvas backpack with leather trims, perfect for casual use and everyday wear.' },
-    { id: 10, name: 'Canvas Backpack', image: '/images/backpack10.png', color: 'Brown', date: '2024-07-12', description: 'Classic canvas backpack with adjustable straps and multiple pockets for organization.' },
-    { id: 11, name: 'Hiking Backpack', image: '/images/backpack11.png', color: 'Black', date: '2024-08-05', description: 'Professional hiking backpack with hydration system compatibility and trekking pole attachments.' },
-    { id: 12, name: 'Hiking Backpack', image: '/images/backpack12.png', color: 'Brown', date: '2024-01-08', description: 'Durable hiking backpack with multiple gear loops and reinforced stitching for outdoor adventures.' },
+    { id: 1, name: 'Leather Laptop Backpack', image: '/images/bp1.png', color: 'Black', date: '2024-01-15', description: 'Premium laptop backpack with multiple compartments for organized storage. Made with durable leather and padded laptop sleeve.' },
+    { id: 2, name: 'Leather Laptop Backpack', image: '/images/bp2.png', color: 'Brown', date: '2024-02-20', description: 'Classic brown leather backpack with vintage appeal. Features leather accents and comfortable carrying.' },
+    { id: 3, name: 'Waterproof Backpack', image: '/images/bp3.png', color: 'Gray', date: '2024-03-10', description: 'Completely waterproof backpack perfect for travel and outdoor adventures. Sealed zippers and water-resistant materials.' },
+    { id: 4, name: 'Waterproof Backpack', image: '/images/bp4.png', color: 'Navy', date: '2024-01-25', description: 'Navy blue waterproof backpack with spacious main compartment and side pockets for water bottles.' },
+    { id: 5, name: 'Minimalist Backpack', image: '/images/bp5.png', color: 'Tan', date: '2024-04-05', description: 'Clean and minimalist design for everyday use. Lightweight and perfect for urban commuting.' },
+    { id: 6, name: 'Minimalist Backpack', image: '/images/bp6.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown minimalist backpack with premium leather details and magnetic closures.' },
+    { id: 7, name: 'Travel Backpack', image: '/images/bp7.png', color: 'Black', date: '2024-05-18', description: 'Large capacity travel backpack with multiple compartments for organized packing.' },
+    { id: 8, name: 'Travel Backpack', image: '/images/bp8.png', color: 'Brown', date: '2024-03-22', description: 'Premium leather travel backpack with expandable sections for extra storage.' },
+    { id: 9, name: 'Canvas Backpack', image: '/images/bp9.png', color: 'Tan', date: '2024-06-30', description: 'Durable canvas backpack with leather trims, perfect for casual use and everyday wear.' },
+    { id: 10, name: 'Canvas Backpack', image: '/images/bp10.png', color: 'Brown', date: '2024-07-12', description: 'Classic canvas backpack with adjustable straps and multiple pockets for organization.' },
+    { id: 11, name: 'Hiking Backpack', image: '/images/bp11.png', color: 'Black', date: '2024-08-05', description: 'Professional hiking backpack with hydration system compatibility and trekking pole attachments.' },
+    /*{ id: 12, name: 'Hiking Backpack', image: '/images/backpack12.png', color: 'Brown', date: '2024-01-08', description: 'Durable hiking backpack with multiple gear loops and reinforced stitching for outdoor adventures.' },
     { id: 13, name: 'Leather Rucksack', image: '/images/backpack13.png', color: 'Tan', date: '2024-09-14', description: 'Traditional leather rucksack with drawstring closure and classic design.' },
     { id: 14, name: 'Leather Rucksack', image: '/images/backpack14.png', color: 'Black', date: '2024-04-28', description: 'Black leather rucksack with modern updates while maintaining classic rucksack design.' },
     { id: 15, name: 'Roll Top Backpack', image: '/images/backpack15.png', color: 'Gray', date: '2024-10-20', description: 'Urban roll top backpack with water-resistant materials and expandable storage.' },
     { id: 16, name: 'Roll Top Backpack', image: '/images/backpack16.png', color: 'Charcoal', date: '2024-05-07', description: 'Charcoal roll top backpack with magnetic closures and hidden security pocket.' },
-  ];
+ */ ];
 
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
@@ -55,8 +55,8 @@ const BackpacksPage = () => {
   const collections = [
     {
       name: "Men's Backpacks",
-      products: 14,
-      image: "/images/laptop_backpacks_collection.png",
+      products: 11,
+      image: "/images/bp5.png",
       path: "/backpacks/men-backpacks"
     },
     {

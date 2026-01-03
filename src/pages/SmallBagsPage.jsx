@@ -32,27 +32,27 @@ const scrollToTop = () => {
   ];
 
   const products = [
-    { id: 1, name: 'Leather Clutch', image: '/images/bag1.png', color: 'Black', date: '2024-01-15', description: 'Elegant leather clutch in classic black. Perfect for evening events with compact storage for essentials.' },
-    { id: 2, name: 'Leather Clutch', image: '/images/bag2.png', color: 'Brown', date: '2024-02-20', description: 'Sophisticated brown leather clutch with premium finish. Features secure closure and refined styling.' },
-    { id: 3, name: 'Evening Clutch', image: '/images/bag3.png', color: 'Gold', date: '2024-03-10', description: 'Glittering gold evening clutch for special occasions. Combines elegance with compact functionality.' },
-    { id: 4, name: 'Evening Clutch', image: '/images/bag4.png', color: 'Silver', date: '2024-01-25', description: 'Silver metallic clutch with contemporary design. Perfect for adding sparkle to any formal outfit.' },
-    { id: 5, name: 'Crossbody Bag', image: '/images/bag5.png', color: 'Tan', date: '2024-04-05', description: 'Versatile tan crossbody bag with adjustable strap. Features multiple compartments for organized storage.' },
-    { id: 6, name: 'Crossbody Bag', image: '/images/bag6.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown crossbody bag in premium leather. Combines practicality with sophisticated style.' },
-    { id: 7, name: 'Mini Satchel', image: '/images/bag7.png', color: 'Black', date: '2024-05-18', description: 'Classic black mini satchel with structured design. Perfect for daily essentials with elegant appeal.' },
-    { id: 8, name: 'Mini Satchel', image: '/images/bag8.png', color: 'Brown', date: '2024-03-22', description: 'Brown leather mini satchel with timeless design. Features comfortable strap and secure closure.' },
-    { id: 9, name: 'Chain Bag', image: '/images/bag9.png', color: 'Tan', date: '2024-06-30', description: 'Elegant tan chain bag with metallic accents. Can be worn as shoulder bag or clutch.' },
-    { id: 10, name: 'Chain Bag', image: '/images/bag10.png', color: 'Brown', date: '2024-07-12', description: 'Brown chain bag with premium leather construction. Features detachable chain for versatile styling.' },
-    { id: 11, name: 'Shoulder Bag', image: '/images/bag11.png', color: 'Black', date: '2024-08-05', description: 'Classic black leather shoulder bag. Perfect combination of style and everyday functionality.' },
-    { id: 12, name: 'Shoulder Bag', image: '/images/bag12.png', color: 'Brown', date: '2024-01-08', description: 'Sophisticated brown shoulder bag with refined details. Features comfortable strap and spacious interior.' },
-    { id: 13, name: 'Wristlet', image: '/images/bag13.png', color: 'Tan', date: '2024-09-14', description: 'Compact tan wristlet with wrist strap. Ideal for carrying essentials during quick outings.' },
-    { id: 14, name: 'Wristlet', image: '/images/bag14.png', color: 'Black', date: '2024-04-28', description: 'Black leather wristlet with secure zipper. Perfect for cards, phone, and small essentials.' },
-    { id: 15, name: 'Top Handle Bag', image: '/images/bag15.png', color: 'Tan', date: '2024-10-20', description: 'Elegant tan top handle bag with structured silhouette. Features premium hardware and fine craftsmanship.' },
+    { id: 1, name: 'Leather Clutch', image: '/images/sling1.png', color: 'Black', date: '2024-01-15', description: 'Elegant leather clutch in classic black. Perfect for evening events with compact storage for essentials.' },
+    { id: 2, name: 'Leather Clutch', image: '/images/sling2.png', color: 'Brown', date: '2024-02-20', description: 'Sophisticated brown leather clutch with premium finish. Features secure closure and refined styling.' },
+    { id: 3, name: 'Evening Clutch', image: '/images/sling3.png', color: 'Gold', date: '2024-03-10', description: 'Glittering gold evening clutch for special occasions. Combines elegance with compact functionality.' },
+    { id: 4, name: 'Evening Clutch', image: '/images/sling4.png', color: 'Silver', date: '2024-01-25', description: 'Silver metallic clutch with contemporary design. Perfect for adding sparkle to any formal outfit.' },
+    { id: 5, name: 'Crossbody Bag', image: '/images/sling5.png', color: 'Tan', date: '2024-04-05', description: 'Versatile tan crossbody bag with adjustable strap. Features multiple compartments for organized storage.' },
+    { id: 6, name: 'Crossbody Bag', image: '/images/sling8.png', color: 'Dark Brown', date: '2024-02-14', description: 'Dark brown crossbody bag in premium leather. Combines practicality with sophisticated style.' },
+    { id: 7, name: 'Mini Satchel', image: '/images/sling9.png', color: 'Black', date: '2024-05-18', description: 'Classic black mini satchel with structured design. Perfect for daily essentials with elegant appeal.' },
+    { id: 8, name: 'Mini Satchel', image: '/images/sling10.png', color: 'Brown', date: '2024-03-22', description: 'Brown leather mini satchel with timeless design. Features comfortable strap and secure closure.' },
+    { id: 9, name: 'Chain Bag', image: '/images/sling11.png', color: 'Tan', date: '2024-06-30', description: 'Elegant tan chain bag with metallic accents. Can be worn as shoulder bag or clutch.' },
+    { id: 10, name: 'Chain Bag', image: '/images/sling12.png', color: 'Brown', date: '2024-07-12', description: 'Brown chain bag with premium leather construction. Features detachable chain for versatile styling.' },
+    { id: 11, name: 'Shoulder Bag', image: '/images/sling13.png', color: 'Black', date: '2024-08-05', description: 'Classic black leather shoulder bag. Perfect combination of style and everyday functionality.' },
+    { id: 12, name: 'Shoulder Bag', image: '/images/cross1.png', color: 'Brown', date: '2024-01-08', description: 'Sophisticated brown shoulder bag with refined details. Features comfortable strap and spacious interior.' },
+    { id: 13, name: 'Wristlet', image: '/images/cross2.png', color: 'Tan', date: '2024-09-14', description: 'Compact tan wristlet with wrist strap. Ideal for carrying essentials during quick outings.' },
+    { id: 14, name: 'Wristlet', image: '/images/cross3.png', color: 'Black', date: '2024-04-28', description: 'Black leather wristlet with secure zipper. Perfect for cards, phone, and small essentials.' },
+    /*{ id: 15, name: 'Top Handle Bag', image: '/images/bag15.png', color: 'Tan', date: '2024-10-20', description: 'Elegant tan top handle bag with structured silhouette. Features premium hardware and fine craftsmanship.' },
     { id: 16, name: 'Top Handle Bag', image: '/images/bag16.png', color: 'Brown', date: '2024-05-07', description: 'Brown leather top handle bag with sophisticated appeal. Perfect for both day and evening use.' },
     { id: 17, name: 'Bucket Bag', image: '/images/bag17.png', color: 'White', date: '2024-11-11', description: 'Chic white bucket bag with drawstring closure. Combines modern style with practical storage.' },
     { id: 18, name: 'Bucket Bag', image: '/images/bag18.png', color: 'Black', date: '2024-06-17', description: 'Classic black bucket bag in premium leather. Features adjustable strap and secure interior.' },
     { id: 19, name: 'Convertible Bag', image: '/images/bag19.png', color: 'Brown', date: '2024-12-01', description: 'Versatile brown convertible bag with multiple carrying options. Can be worn as crossbody or shoulder bag.' },
     { id: 20, name: 'Convertible Bag', image: '/images/bag20.png', color: 'Tan', date: '2024-07-25', description: 'Tan convertible bag with adjustable straps. Perfect for those who value adaptability and style.' }
-  ];
+  */];
 
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {

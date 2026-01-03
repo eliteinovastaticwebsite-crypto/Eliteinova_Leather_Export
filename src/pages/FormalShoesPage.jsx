@@ -16,17 +16,17 @@ const FormalShoesPage = () => {
     { id: 8, name: 'Monk Strap Shoes', image: '/images/formal8.png', color: 'Black', date: '2024-03-22', description: 'Elegant black monk strap shoes in premium leather. Features double buckle closure for secure fit and refined style.' },
     { id: 9, name: 'Cap-Toe Oxford', image: '/images/formal9.png', color: 'Black', date: '2024-06-30', description: 'Classic cap-toe Oxford in polished black leather. Features clean lines and impeccable craftsmanship for formal occasions.' },
     { id: 10, name: 'Cap-Toe Oxford', image: '/images/formal10.png', color: 'Burgundy', date: '2024-07-12', description: 'Sophisticated burgundy cap-toe Oxford shoes. Premium leather with distinctive color for those seeking unique elegance.' },
-    { id: 11, name: 'Chelsea Formal Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-08-05', description: 'Sleek black Chelsea boots with elastic side panels. Perfect blend of formal style and contemporary convenience.' },
-    { id: 12, name: 'Chelsea Formal Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-01-08', description: 'Brown Chelsea boots with premium leather finish. Versatile design suitable for business and formal settings.' },
-    { id: 13, name: 'Loafers Formal', image: '/api/placeholder/300/300', color: 'Black', date: '2024-09-14', description: 'Elegant black leather loafers with slip-on design. Features comfortable fit and sophisticated appearance for formal wear.' },
-    { id: 14, name: 'Loafers Formal', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-04-28', description: 'Classic brown loafers with premium leather construction. Perfect for business casual and formal occasions.' },
+    { id: 11, name: 'Chelsea Formal Boots', image: '/images/formal11.png', color: 'Black', date: '2024-08-05', description: 'Sleek black Chelsea boots with elastic side panels. Perfect blend of formal style and contemporary convenience.' },
+    { id: 12, name: 'Chelsea Formal Boots', image: '/images/formal12.png', color: 'Brown', date: '2024-01-08', description: 'Brown Chelsea boots with premium leather finish. Versatile design suitable for business and formal settings.' },
+    { id: 13, name: 'Loafers Formal', image: '/images/formal13.png', color: 'Black', date: '2024-09-14', description: 'Elegant black leather loafers with slip-on design. Features comfortable fit and sophisticated appearance for formal wear.' },
+    /*{ id: 14, name: 'Loafers Formal', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-04-28', description: 'Classic brown loafers with premium leather construction. Perfect for business casual and formal occasions.' },
     { id: 15, name: 'Wholecut Oxford', image: '/api/placeholder/300/300', color: 'Black', date: '2024-10-20', description: 'Luxurious wholecut Oxford in seamless black leather. Represents the pinnacle of formal shoe craftsmanship.' },
     { id: 16, name: 'Wholecut Oxford', image: '/api/placeholder/300/300', color: 'Dark Brown', date: '2024-05-07', description: 'Exquisite dark brown wholecut Oxford shoes. Single piece of leather construction for ultimate elegance.' },
     { id: 17, name: 'Patent Leather Shoes', image: '/api/placeholder/300/300', color: 'Black', date: '2024-11-11', description: 'Glossy patent leather shoes in classic black. Perfect for black-tie events and special formal occasions.' },
     { id: 18, name: 'Patent Leather Shoes', image: '/api/placeholder/300/300', color: 'Burgundy', date: '2024-06-17', description: 'Striking burgundy patent leather shoes with high shine. Makes a bold statement at formal events.' },
     { id: 19, name: 'Double Monk Strap', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-12-01', description: 'Distinguished double monk strap shoes in brown. Features dual buckles for superior fit and elegant appearance.' },
     { id: 20, name: 'Double Monk Strap', image: '/api/placeholder/300/300', color: 'Black', date: '2024-07-25', description: 'Sophisticated black double monk strap shoes. Perfect combination of formal style and unique buckle design.' }
-  ];
+  */];
 
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {

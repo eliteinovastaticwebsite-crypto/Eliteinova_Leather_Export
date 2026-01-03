@@ -330,10 +330,13 @@
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 700 !important;
   color: #92400e;
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-style: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
 }
 
 .title-underline {
@@ -458,11 +461,15 @@
 
 .about-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 700 !important;
   color: #92400e;
   margin-bottom: 1.5rem;
   line-height: 1.2;
   text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
 }
 
 .about-description {
@@ -574,10 +581,14 @@
 
 .feature-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 700 !important;
   color: #92400e;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
 }
 
 .feature-description {
@@ -607,9 +618,13 @@
 
 .newsletter-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 700 !important;
   color: white;
   margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
 }
 
 .newsletter-description {
@@ -702,6 +717,7 @@
   
   .section-title {
     font-size: 1.75rem;
+    letter-spacing: 1.5px;
   }
   
   .collections-grid {
@@ -740,6 +756,7 @@
   
   .about-title {
     font-size: 1.8rem;
+    letter-spacing: 1.5px;
   }
   
   .about-description {
@@ -775,6 +792,7 @@
   
   .feature-title {
     font-size: 1.8rem;
+    letter-spacing: 1.5px;
   }
   
   .feature-description {
@@ -795,6 +813,7 @@
   
   .newsletter-title {
     font-size: 1.8rem;
+    letter-spacing: 1.5px;
   }
   
   .newsletter-form {
@@ -855,6 +874,7 @@
   
   .feature-title {
     font-size: 1.6rem;
+    letter-spacing: 1px;
   }
   
   .feature-description {

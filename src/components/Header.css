@@ -78,7 +78,7 @@
 
 .logo-subtitle {
   font-family: 'Pacifico', cursive;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #92400e;
   line-height: 1;
   opacity: 0.8;
@@ -414,6 +414,10 @@
     font-size: 1.75rem;
   }
 
+  .logo-subtitle {
+    font-size: 1rem;
+  }
+
   .announcement-text {
     font-size: 0.8125rem;
     margin: 0 1.5rem;
@@ -487,6 +491,10 @@
     font-size: 1.25rem;
     flex: 1;
     min-width: 200px;
+  }
+
+  .logo-subtitle {
+    font-size: 0.95rem;
   }
 
   .location {
