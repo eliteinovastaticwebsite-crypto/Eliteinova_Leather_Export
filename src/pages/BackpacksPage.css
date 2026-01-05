@@ -1508,59 +1508,6 @@ body {
   transform: translateX(4px);
 }
 
-/* ============================================= */
-/* WHATSAPP BUTTON */
-/* ============================================= */
-
-.backpacks-whatsapp-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #25d366, #20ba5a, #1a9c4b);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  box-shadow: 
-    0 6px 25px rgba(37, 211, 102, 0.5),
-    0 3px 15px rgba(37, 211, 102, 0.3);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1000;
-  text-decoration: none;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  animation: whatsappFloat 3s ease-in-out infinite;
-}
-
-@keyframes whatsappFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.backpacks-whatsapp-btn svg {
-  width: 32px;
-  height: 32px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  transition: all 0.3s ease;
-}
-
-.backpacks-whatsapp-btn:hover {
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 
-    0 10px 40px rgba(37, 211, 102, 0.7),
-    0 6px 25px rgba(37, 211, 102, 0.4);
-  background: linear-gradient(135deg, #20ba5a, #1a9c4b, #15803d);
-}
-
-.backpacks-whatsapp-btn:hover svg {
-  transform: scale(1.1);
-}
 
 /* ============================================= */
 /* PREMIUM GLOW EFFECT FOR CARDS */
@@ -1820,18 +1767,6 @@ body {
   .backpacks-benefits-content {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  
-  .backpacks-whatsapp-btn {
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  .backpacks-whatsapp-btn svg {
-    width: 28px;
-    height: 28px;
   }
   
   /* FIX FOR CARD BACK SIDE ON MOBILE - PREVENT TEXT CUTTING */

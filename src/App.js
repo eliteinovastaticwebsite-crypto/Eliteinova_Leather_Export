@@ -22,7 +22,7 @@ import SmallCrossBodyBagsPage from './pages/SmallCrossBodyBags';
 import ShoesPage from './pages/ShoesPage';
 import AboutPage from './pages/AboutPage';
 import ContactUs from './pages/ContactUs';
-import ContactForm from './components/ContactForm';
+/*import ContactForm from './components/ContactForm';*/
 // Import the 4 new pages
 import SmallBagsPage from './pages/SmallBagsPage';
 import TravelPage from './pages/TravelPage';
@@ -74,7 +74,7 @@ function App() {
 
         </Routes>
         <ScrollToTop />
-        <ContactForm />
+       {/* <ContactForm />*/}
       </div>
     </Router>
   );

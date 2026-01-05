@@ -23,7 +23,7 @@ const Header = () => {
     {
       name: 'SHOES',
       dropdown: [
-        { name: 'Boots', path: '/shoes/boots' },
+       /* { name: 'Boots', path: '/shoes/boots' },*/
         { name: 'Formal Shoes', path: '/shoes/formal' },
         { name: 'Casual Shoes', path: '/shoes/casual' },
       ],
@@ -52,7 +52,7 @@ const Header = () => {
       name: 'BACKPACKS',
       dropdown: [
         { name: 'Men\'s Backpacks', path: '/backpacks/men-backpacks' },
-        { name: 'Women\'s Backpacks', path: '/backpacks/women-backpacks' }
+       /* { name: 'Women\'s Backpacks', path: '/backpacks/women-backpacks' } */
       ],
       path: '/backpacks'
     },
@@ -69,7 +69,7 @@ const Header = () => {
       ],
       path: '/wallet' 
     },
-    { name: 'BELT', dropdown: null, path: '/belt' },
+   /* { name: 'BELT', dropdown: null, path: '/belt' },*/
     { name: 'ABOUT US', dropdown: null, path: '/about' },
     { name: 'CONTACT', dropdown: null, path: '/contact' }
   ];
