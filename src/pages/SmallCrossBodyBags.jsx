@@ -6,9 +6,9 @@ const SmallCrossBodyBagsPage = () => {
 
   // Small cross body bag products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross1.png', color: 'Brown', date: '2024-01-15', description: 'Compact Rexo Crunch small cross body bag in premium brown leather. Features adjustable strap and multiple compartments for organized carry.' },
-    { id: 2, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross2.png', color: 'Green', date: '2024-02-20', description: 'Eco-friendly green Rexo Crunch small cross body bag with sustainable leather. Perfect for daily essentials with secure closures.' },
-    { id: 3, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/cross3.png', color: 'Black', date: '2024-03-10', description: 'Classic black Rexo Crunch small cross body bag with modern design. Durable leather construction with comfortable shoulder strap.' },
+    { id: 1, name: 'Mini Saddle Crossbody Bag', image: '/images/cross1.png', color: 'Mustard Tan', date: '2024-01-15', description: 'Curved saddle-style leather crossbody bag with a clean minimalist finish.' },
+    { id: 2, name: 'Mini Leather Crossbody Bag', image: '/images/cross2.png', color: 'Light Tan', date: '2024-02-20', description: 'Small leather crossbody bag designed for essentials and casual wear.' },
+    { id: 3, name: 'Leather Wristlet Clutch', image: '/images/cross3.png', color: 'Dark Olive Green', date: '2024-03-10', description: 'Soft leather wristlet clutch ideal for evening use or compact carry.' },
     /* Uncomment and add descriptions for remaining products */
     /* { id: 4, name: 'Rexo Crunch Leather Small Cross Body Bag', image: '/images/C3.png', color: 'Tan', date: '2024-01-25', description: 'Versatile tan Rexo Crunch small cross body bag with casual appeal.' },
     { id: 5, name: 'The Philos Leather Small Cross Body Bag', image: '/images/C4.png', color: 'Black', date: '2024-04-05', description: 'Sophisticated Philos small cross body bag in sleek black leather.' },

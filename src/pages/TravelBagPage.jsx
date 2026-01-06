@@ -6,13 +6,13 @@ const TravelBagsPage = () => {
 
   // Travel bag products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Travel Bag', image: '/images/travel1.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather travel bag with spacious interior. Features durable handles and comfortable shoulder strap for versatile travel.' },
-    { id: 2, name: 'Rexo Crunch Leather Travel Bag', image: '/images/travel2.png', color: 'Green', date: '2024-02-20', description: 'Eco-friendly green leather travel bag. Durable construction with multiple compartments for organized travel essentials.' },
-    { id: 3, name: 'Rexo Crunch Leather Travel Bag', image: '/images/travel3.png', color: 'Black', date: '2024-03-10', description: 'Classic black leather travel bag with professional design. Features reinforced stitching and secure closures.' },
-    { id: 4, name: 'Rexo Crunch Leather Travel Bag', image: '/images/travel4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather travel bag. Lightweight design with ample storage space for extended journeys.' },
-    { id: 5, name: 'The Philos Leather Travel Bag', image: '/images/travel5.png', color: 'Black', date: '2024-04-05', description: 'Luxurious Philos leather travel bag. Features intelligent organization and premium hardware for frequent travelers.' },
-    { id: 6, name: 'The Philos Leather Travel Bag', image: '/images/travel6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown Philos leather travel bag. Durable construction with comfortable handles and adjustable strap.' },
-    { id: 7, name: 'The Philos Leather Travel Bag', image: '/images/travel7.png', color: 'Tan', date: '2024-05-18', description: 'Beautiful tan Philos leather travel bag. Ergonomic design with spacious interior and organized compartments.' },
+    { id: 1, name: 'Leather Travel Bag', image: '/images/travel1.png', color: 'Tan Brown', date: '2024-01-15', description: 'Compact structured leather travel satchel ideal for short trips and daily carry.' },
+    { id: 2, name: 'Leather Travel Bag', image: '/images/travel2.png', color: 'Cognac Brown', date: '2024-02-20', description: 'Classic hand-carried leather travel bag with front zipper pockets for easy access.' },
+    { id: 3, name: 'Leather Overnight Travel Bag', image: '/images/travel3.png', color: 'Dark Brown', date: '2024-03-10', description: 'Spacious overnight leather bag designed for comfortable short-duration travel.' },
+    { id: 4, name: 'Leather Overnight Travel Bag', image: '/images/travel4.png', color: 'Olive Brown', date: '2024-01-25', description: 'Soft-grain leather travel bag with rounded edges and premium finishing.' },
+    { id: 5, name: 'Leather Weekender Bag', image: '/images/travel5.png', color: 'Dark Brown', date: '2024-04-05', description: 'Weekend-ready leather bag offering generous space with reinforced handles.' },
+    { id: 6, name: 'Leather Weekender Bag', image: '/images/travel6.png', color: 'Tan', date: '2024-02-14', description: 'Lightweight leather weekender crafted for effortless short getaways.' },
+    { id: 7, name: 'Leather Travel Tote', image: '/images/travel7.png', color: 'Olive Brown', date: '2024-05-18', description: 'Open-top leather travel tote suitable for carry-on and everyday travel needs.' },
     /* Uncomment and add descriptions for remaining products */
     /* { id: 8, name: 'Vintage Leather Travel Bag', image: '/images/L7.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired travel bag with classic design and modern functionality.' },
     { id: 9, name: 'Vintage Leather Travel Bag', image: '/images/L8.png', color: 'Black', date: '2024-06-30', description: 'Classic black vintage travel bag with premium leather construction.' },

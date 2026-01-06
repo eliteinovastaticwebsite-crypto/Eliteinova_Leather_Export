@@ -10,18 +10,18 @@ const BriefcasesPage = () => {
 
   // Briefcase products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Handbag', image: '/images/brief1.png', color: 'Brown', date: '2024-01-15', description: 'Premium crunch leather briefcase with sophisticated texture. Features multiple compartments and secure closures for professional use.' },
-    { id: 2, name: 'Rexo Crunch Leather Handbag', image: '/images/brief2.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather briefcase with durable construction. Perfect for business professionals with organized interior design.' },
-    { id: 3, name: 'Rexo Crunch Leather Handbag', image: '/images/brief3.png', color: 'Black', date: '2024-03-10', description: 'Classic black leather briefcase with timeless professional appeal. Structured design with premium hardware for daily use.' },
-    { id: 4, name: 'Rexo Crunch Leather Handbag', image: '/images/brief4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather briefcase with rich color. Features organized pockets and comfortable carrying handles.' },
-    { id: 5, name: 'The Philos Leather Handbag', image: '/images/brief5.png', color: 'Black', date: '2024-04-05', description: 'Luxurious leather briefcase with modern professional design. Spacious interior with multiple organizational pockets for documents.' },
-    { id: 6, name: 'The Philos Leather Handbag', image: '/images/brief6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown leather briefcase with elegant finish. Versatile style suitable for both office and business travel.' },
-    { id: 7, name: 'The Philos Leather Handbag', image: '/images/brief7.png', color: 'Tan', date: '2024-05-18', description: 'Beautiful tan leather briefcase with premium quality. Comfortable to carry with adjustable straps and secure locks.' },
-    { id: 8, name: 'Vintage Leather Travel Handbag', image: '/images/brief8.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired briefcase with practical functionality. Large capacity perfect for business travel with durable leather.' },
-    { id: 9, name: 'Vintage Leather Travel Handbag', image: '/images/brief9.png', color: 'Black', date: '2024-06-30', description: 'Classic travel briefcase in sleek black. Features reinforced handles and spacious compartments for documents and laptop.' },
-    { id: 10, name: 'Urban Leather Handbag', image: '/images/brief10.png', color: 'Black', date: '2024-07-12', description: 'Modern urban briefcase with practical features. Perfect for city professionals with secure zippers and stylish appearance.' },
-    { id: 11, name: 'Urban Leather Handbag', image: '/images/brief11.png', color: 'Tan', date: '2024-08-05', description: 'Contemporary tan leather briefcase with urban edge. Combines professional functionality with fashion-forward design.' },
-    { id: 12, name: 'Classic Leather Handbag', image: '/images/brief12.png', color: 'Dark Brown', date: '2024-01-08', description: 'Timeless dark brown leather briefcase with refined elegance. Features traditional craftsmanship with modern convenience.' }
+    { id: 1, name: 'Hard Leather Executive Briefcase', image: '/images/brief1.png', color: 'Dark Olive Brown', date: '2024-01-15', description: 'Slim hard-case leather briefcase designed for secure document and laptop storage.' },
+    { id: 2, name: 'Hard Leather Executive Briefcase', image: '/images/brief2.png', color: 'Chestnut Brown', date: '2024-02-20', description: 'Structured leather briefcase with reinforced corners for professional business use.' },
+    { id: 3, name: 'Hard Leather Executive Briefcase', image: '/images/brief3.png', color: 'Cognac Brown', date: '2024-03-10', description: 'Premium cognac leather briefcase offering a refined executive appearance.' },
+    { id: 4, name: 'Hard Leather Executive Briefcase', image: '/images/brief4.png', color: 'Olive Tan', date: '2024-01-25', description: 'Classic hard leather briefcase combining durability with timeless style.' },
+    { id: 5, name: 'Box Leather Briefcase', image: '/images/brief5.png', color: 'Tan', date: '2024-04-05', description: 'Compact box-style leather briefcase ideal for documents and valuables.' },
+    { id: 6, name: 'Box Leather Briefcase', image: '/images/brief6.png', color: 'Medium Brown', date: '2024-02-14', description: 'Structured leather box briefcase with secure lock closure for daily office use.' },
+    { id: 7, name: 'Box Leather Briefcase', image: '/images/brief7.png', color: 'Olive Green', date: '2024-05-18', description: 'Vintage-finish leather briefcase offering a unique professional look.' },
+    { id: 8, name: 'Compact Leather Briefcase', image: '/images/brief8.png', color: 'Dark Olive', date: '2024-03-22', description: 'Small-format leather briefcase designed for minimal and essential carry.' },
+    { id: 9, name: 'Vintage Hard Leather Briefcase', image: '/images/brief9.png', color: 'Olive Brown', date: '2024-06-30', description: 'Vintage-inspired hard leather briefcase built for classic business styling.' },
+    { id: 10, name: 'Urban Hard Leather Briefcase', image: '/images/brief10.png', color: 'Chestnut Brown', date: '2024-07-12', description: 'Modern leather briefcase blending urban design with executive functionality.' },
+    { id: 11, name: 'Urban Hard Leather Briefcase', image: '/images/brief11.png', color: 'Tan Brown', date: '2024-08-05', description: 'Clean-profile leather briefcase suitable for contemporary professionals.' },
+    { id: 12, name: 'Classic Hard Leather Briefcase', image: '/images/brief12.png', color: 'Dark Olive Brown', date: '2024-01-08', description: 'Traditional hard leather briefcase offering durability and formal elegance.' }
   ];
 
   const sortedProducts = [...products].sort((a, b) => {

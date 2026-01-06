@@ -66,7 +66,7 @@ const WomenHandbagsPage = () => {
           <div className="handbags-benefits-text">
             <h2 className="handbags-benefits-title">Elegance in Leather Handbags</h2>
             <p className="handbags-benefits-description">
-              At Eliteinova Leather Products Export, we are chosen for our commitment to quality, reliability, and trusted manufacturing partnerships. 
+              At Eliteinova Leather Products Export, we are chosen for our commitment to quality, reliability, and trusted manufacturers. 
               Our leather handbags combine timeless elegance with practical functionality. Each piece is designed to complement 
               your style while providing ample storage and organization. The natural leather develops a unique patina over time, 
               making each handbag truly one-of-a-kind. From classic totes to sophisticated clutches, our collection offers 

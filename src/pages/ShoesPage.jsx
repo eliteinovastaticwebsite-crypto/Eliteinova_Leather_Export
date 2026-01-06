@@ -129,7 +129,7 @@ const ShoesPage = () => {
           <div className="shoes-benefits-text">
             <h2 className="shoes-benefits-title">The Art of Leather Footwear</h2>
             <p className="shoes-benefits-description">
-              At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturing partnerships. 
+              At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturers. 
               Leather shoes offer unmatched breathability, allowing your feet to stay cool and comfortable throughout the day. 
               The natural material molds to your foot shape over time, providing a personalized fit that synthetic materials 
               simply cannot replicate. This focus allows us to deliver refined, export-quality leather goods that meet 

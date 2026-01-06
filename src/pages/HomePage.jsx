@@ -179,7 +179,7 @@ const HomePage = () => {
           <div className="about-text">
             <h2 className="about-title">Large Quantity Orders Only</h2>
             <p className="about-description">
-              Eliteinova is a leather export company collaborating with experienced manufacturing partners to supply high-quality leather goods worldwide. 
+              Eliteinova is a leather export company experienced manufacturers to supply high-quality leather goods worldwide. 
             </p>
             <button className="cta-button" onClick={ordernow}>Order Now</button>
           </div>
@@ -234,8 +234,8 @@ const HomePage = () => {
           <div className="about-text">
             <h2 className="about-title">Premium Leather Craftsmanship</h2>
             <p className="about-description">
-              Eliteinova is a leather export company collaborating with experienced manufacturing partners to supply high-quality leather goods worldwide. 
-              We work closely with our partners to ensure superior materials, skilled craftsmanship, and consistent production standards. 
+              Eliteinova is a leather export company experienced manufacturers to supply high-quality leather goods worldwide. 
+              We work to ensure superior materials, skilled craftsmanship, and consistent production standards. 
               Every product undergoes strict quality checks to meet international export requirements. Our strong partnerships enable reliable supply, timely delivery, and scalable production. 
               Eliteinova is committed to delivering excellence and long-term value to global clients.
 
@@ -261,7 +261,7 @@ const HomePage = () => {
           <div className="feature-text">
             <h2 className="feature-title">Timeless Quality & Design</h2>
             <p className="feature-description">
-              At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturing partnerships. We use premium-grade leather known for its durability, rich texture, and ability to age beautifully over time. 
+              At Eliteinova, we are chosen for our commitment to quality, reliability, and trusted manufacturers. We use premium-grade leather known for its durability, rich texture, and ability to age beautifully over time. 
               Our strict quality checks ensure strength, comfort, and long-lasting performance in every product.
               This focus allows us to deliver refined, export-quality leather goods that meet international standards.
 

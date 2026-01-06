@@ -75,7 +75,7 @@ const ContactUs = () => {
           <h2 className="section-title">Partner With Us</h2>
           <p className="intro-text">
             Eliteinova Leather Products Export is your trusted partner for premium leather goods wholesale. 
-            We collaborate with experienced manufacturing partners worldwide to deliver high-quality leather 
+            We are experienced manufacturers worldwide to deliver high-quality leather 
             products including shoes, handbags, wallets, belts, and travel accessories. Whether you're 
             looking to place a bulk order or establish a long-term partnership, our team is ready to assist you.
           </p>
@@ -88,7 +88,7 @@ const ContactUs = () => {
               <Phone className="icon" />
             </div>
             <h3 className="info-title">Phone</h3>
-            <p className="info-text">+91 9876543210</p>
+            <p className="info-text">+91 7397260093</p>
           </div>
 
           <div className="info-card">
