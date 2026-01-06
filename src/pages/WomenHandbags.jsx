@@ -6,21 +6,21 @@ const WomenHandbagsPage = () => {
 
   // Handbag products with descriptions
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Handbag', image: '/images/red_handbag.png', color: 'Brown', date: '2024-01-15', description: 'Premium crunch leather with sophisticated texture. Features multiple compartments and adjustable strap for versatile styling.' },
-    { id: 2, name: 'Rexo Crunch Leather Handbag', image: '/images/H1.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather with durable construction. Perfect for everyday use with spacious interior design.' },
-    { id: 3, name: 'Rexo Crunch Leather Handbag', image: '/images/H2.png', color: 'Black', date: '2024-03-10', description: 'Classic black leather handbag with timeless appeal. Structured design with premium hardware finishing.' },
-    { id: 4, name: 'Rexo Crunch Leather Handbag', image: '/images/H3.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather with rich color. Features organized pockets and comfortable handles.' },
-    { id: 5, name: 'The Philos Leather Handbag', image: '/images/H4.png', color: 'Black', date: '2024-04-05', description: 'Luxurious leather with modern design. Spacious interior with multiple organizational pockets for daily essentials.' },
-    { id: 6, name: 'The Philos Leather Handbag', image: '/images/H5.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown leather with elegant finish. Versatile style suitable for both casual and formal occasions.' },
-    { id: 7, name: 'The Philos Leather Handbag', image: '/images/H6.png', color: 'Tan', date: '2024-05-18', description: 'Beautiful tan leather with premium quality. Comfortable to carry with adjustable straps and secure closures.' },
-    { id: 8, name: 'Vintage Leather Travel Handbag', image: '/images/H7.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired design with practical functionality. Large capacity perfect for travel with durable leather construction.' },
-    { id: 9, name: 'Vintage Leather Travel Handbag', image: '/images/H8.png', color: 'Black', date: '2024-06-30', description: 'Classic travel companion in sleek black. Features reinforced handles and spacious compartments for all your needs.' },
-    { id: 10, name: 'Urban Leather Handbag', image: '/images/H9.png', color: 'Black', date: '2024-07-12', description: 'Modern urban design with practical features. Perfect for city life with secure zippers and stylish appearance.' },
-    { id: 11, name: 'Urban Leather Handbag', image: '/images/H10.png', color: 'Tan', date: '2024-08-05', description: 'Contemporary tan leather with urban edge. Combines functionality with fashion-forward design elements.' },
-    { id: 12, name: 'Classic Leather Handbag', image: '/images/H11.png', color: 'Dark Brown', date: '2024-01-08', description: 'Timeless dark brown leather with refined elegance. Features traditional craftsmanship with modern comfort.' },
-    { id: 13, name: 'Classic Leather Handbag', image: '/images/H12.png', color: 'Brown', date: '2024-09-14', description: 'Sophisticated brown leather with classic appeal. Durable construction with attention to detail throughout.' },
-    { id: 14, name: 'Topper Stylish Leather Travel Handbag', image: '/images/H13.png', color: 'Brown', date: '2024-04-28', description: 'Stylish travel bag with premium leather. Extra storage space with organizational compartments for travelers.' },
-    { id: 15, name: 'Topper Stylish Leather Travel Handbag', image: '/images/H14.png', color: 'Black', date: '2024-10-20', description: 'Sleek black travel handbag with elegant design. Combines style and practicality for the modern traveler.' },
+    { id: 1, name: 'Structured Leather Tote Handbag', image: '/images/red_handbag.png', color: 'Red', date: '2024-01-15', description: 'Bold structured leather tote designed for elegant everyday and office use.' },
+    { id: 2, name: 'Croc-Embossed Leather Tote Handbag', image: '/images/H1.png', color: 'Dark Brown', date: '2024-02-20', description: 'Croc-textured leather tote offering a premium and sophisticated look.' },
+    { id: 3, name: 'Croc-Embossed Leather Tote Handbag', image: '/images/H2.png', color: 'Olive Green', date: '2024-03-10', description: 'Elegant olive croc-embossed tote perfect for modern professional styling.' },
+    { id: 4, name: 'Croc-Embossed Leather Tote Handbag', image: '/images/H3.png', color: 'Navy Blue', date: '2024-01-25', description: 'Stylish navy leather tote combining texture with contemporary appeal.' },
+    { id: 5, name: 'Leather Drawstring Handbag', image: '/images/H4.png', color: 'Black', date: '2024-04-05', description: 'Soft leather drawstring handbag with a compact and artistic silhouette.' },
+    { id: 6, name: 'Leather Drawstring Handbag', image: '/images/H5.png', color: 'Brown', date: '2024-02-14', description: 'Rich Brown drawstring handbag offering a blend of elegance and charm.' },
+    { id: 7, name: 'Leather Drawstring Handbag', image: '/images/H6.png', color: 'Teal Green', date: '2024-05-18', description: 'Unique teal leather drawstring bag ideal for statement casual styling.' },
+    { id: 8, name: 'Soft Leather Shoulder Handbag', image: '/images/H7.png', color: 'Brown', date: '2024-03-22', description: 'Relaxed leather shoulder handbag crafted for everyday comfort and space.' },
+    { id: 9, name: 'Vintage Leather Travel Handbag', image: '/images/H8.png', color: 'Dark Brown', date: '2024-06-30', description: 'Vintage-finish leather handbag designed for travel and daily utility.' },
+    { id: 10, name: 'Urban Leather Tote Handbag', image: '/images/H9.png', color: 'Deep Maroon', date: '2024-07-12', description: 'Contemporary urban tote with structured design and premium leather finish.' },
+    { id: 11, name: 'Urban Leather Tote Handbag', image: '/images/H10.png', color: 'Tan', date: '2024-08-05', description: 'Spacious tan leather tote ideal for office, travel, and daily use.' },
+    { id: 12, name: 'Classic Leather Tote Handbag', image: '/images/H11.png', color: 'Forest Green', date: '2024-01-08', description: 'Classic leather tote featuring a timeless shape and rich green tone.' },
+    { id: 13, name: 'Classic Leather Tote Handbag', image: '/images/H12.png', color: 'Tan', date: '2024-09-14', description: 'Elegant classic leather tote designed for versatile everyday use.' },
+    { id: 14, name: 'Leather Travel Handbag', image: '/images/H13.png', color: 'Cognac Brown', date: '2024-04-28', description: 'Stylish travel handbag crafted with premium leather and functional design.' },
+    { id: 15, name: 'Leather Travel Handbag', image: '/images/H14.png', color: 'Wine Red', date: '2024-10-20', description: 'Rich wine-colored travel handbag blending luxury with practicality.' },
   ];
 
   const sortedProducts = [...products].sort((a, b) => {

@@ -18,16 +18,16 @@ const ContactForm = ({ onClose }) => {
 
   const [submitted, setSubmitted] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
-  const totalSteps = 4; // Personal Info, Location, Products, Message
+  const totalSteps = 4;
 
-  // Expanded Location data
   const locationData = {
     India: {
-      
+      "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"],
+      "Karnataka": ["Bangalore", "Mysore", "Mangalore"],
+      "Maharashtra": ["Mumbai", "Pune", "Nagpur"]
     }
   };
 
-  // Updated product categories to match your screenshots
   const productCategories = [
     'Shoes',
     'Casual Shoes',
@@ -116,14 +116,13 @@ const ContactForm = ({ onClose }) => {
 
   const renderStepContent = () => {
     switch (currentStep) {
-      case 0: // Personal Information
+      case 0:
         return (
           <div className="form-section">
             <h3 className="form-section-title">Personal Information</h3>
             <p className="form-section-description">Tell us about yourself</p>
             
             <div className="contact-form">
-              {/* Full Name - Single Line */}
               <div className="form-group">
                 <label htmlFor="name" className="form-label">Full Name *</label>
                 <input
@@ -138,7 +137,6 @@ const ContactForm = ({ onClose }) => {
                 />
               </div>
 
-              {/* Phone Number - Single Line */}
               <div className="form-group">
                 <label htmlFor="phone" className="form-label">Phone Number</label>
                 <input
@@ -152,7 +150,6 @@ const ContactForm = ({ onClose }) => {
                 />
               </div>
 
-              {/* Company Name - Single Line */}
               <div className="form-group">
                 <label htmlFor="company" className="form-label">Company Name</label>
                 <input
@@ -166,7 +163,6 @@ const ContactForm = ({ onClose }) => {
                 />
               </div>
 
-              {/* Email Address - Single Line */}
               <div className="form-group">
                 <label htmlFor="email" className="form-label">Email Address *</label>
                 <input
@@ -184,14 +180,13 @@ const ContactForm = ({ onClose }) => {
           </div>
         );
 
-      case 1: // Location Details
+      case 1:
         return (
           <div className="form-section">
             <h3 className="form-section-title">Location Details</h3>
             <p className="form-section-description">Where are you located?</p>
             
             <div className="contact-form">
-              {/* Country - Single Line */}
               <div className="form-group">
                 <label htmlFor="country" className="form-label">Country</label>
                 <select
@@ -210,7 +205,6 @@ const ContactForm = ({ onClose }) => {
                 </select>
               </div>
 
-              {/* Pincode - Single Line */}
               <div className="form-group">
                 <label htmlFor="pincode" className="form-label">Pincode / ZIP Code</label>
                 <input
@@ -224,7 +218,6 @@ const ContactForm = ({ onClose }) => {
                 />
               </div>
 
-              {/* State - Single Line */}
               <div className="form-group">
                 <label htmlFor="state" className="form-label">State / Province</label>
                 <select
@@ -244,7 +237,6 @@ const ContactForm = ({ onClose }) => {
                 </select>
               </div>
 
-              {/* District - Single Line */}
               <div className="form-group">
                 <label htmlFor="district" className="form-label">District / Region</label>
                 <select
@@ -267,32 +259,34 @@ const ContactForm = ({ onClose }) => {
           </div>
         );
 
-      case 2: // Product Interest
+      case 2:
         return (
           <div className="form-section">
             <h3 className="form-section-title">Product Selection</h3>
             <p className="form-section-description">Select products you're interested in</p>
             
-            <div className="product-select-container">
-              <div className="product-checkbox-list">
-                {productCategories.map((product) => (
-                  <label
-                    key={product}
-                    className="product-checkbox-label"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={formData.productInterest.includes(product)}
-                      onChange={() => handleProductToggle(product)}
-                      className="product-checkbox"
-                    />
-                    <span className="product-checkbox-text">{product}</span>
-                  </label>
-                ))}
+            <div className="product-selection-wrapper">
+              <div className="product-select-container">
+                <div className="product-checkbox-list">
+                  {productCategories.map((product) => (
+                    <label
+                      key={product}
+                      className="product-checkbox-label"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.productInterest.includes(product)}
+                        onChange={() => handleProductToggle(product)}
+                        className="product-checkbox"
+                      />
+                      <span className="product-checkbox-text">{product}</span>
+                    </label>
+                  ))}
+                </div>
               </div>
 
               {formData.productInterest.length > 0 && (
-                <div className="selected-products-container">
+                <div className="selected-products-section">
                   <p className="selected-products-label">Selected Products:</p>
                   <div className="selected-products-tags">
                     {formData.productInterest.map((product) => (
@@ -302,6 +296,7 @@ const ContactForm = ({ onClose }) => {
                           type="button"
                           onClick={() => removeProduct(product)}
                           className="product-tag-remove"
+                          aria-label={`Remove ${product}`}
                         >
                           <X size={14} />
                         </button>
@@ -314,63 +309,62 @@ const ContactForm = ({ onClose }) => {
           </div>
         );
 
-      case 3: // Message & Review
+      case 3:
         return (
           <div className="form-section">
             <h3 className="form-section-title">Message & Review</h3>
             <p className="form-section-description">Share your requirements and review your submission</p>
             
-            <div className="contact-form">
-              {/* Message - Single Line */}
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">Message *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="6"
-                  className="form-input form-textarea"
-                  placeholder="Tell us about your requirements, order quantity, and environment."
-                />
+            <div className="message-review-container">
+              <div className="message-section">
+                <div className="form-group">
+                  <label htmlFor="message" className="form-label">Message *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="5"
+                    className="form-input form-textarea"
+                    placeholder="Tell us about your requirements, order quantity, and environment."
+                  />
+                  {!formData.message && (
+                    <span className="field-hint">Please fill in this field.</span>
+                  )}
+                </div>
               </div>
-            </div>
 
-            {/* Review Section */}
-            <div className="review-section">
-              <h4 className="review-title">Review Your Information</h4>
-              <div className="review-info">
-                {/* Name - Single Line */}
-                <div className="review-item">
-                  <span className="review-label">Name:</span>
-                  <span className="review-value">{formData.name || 'Not provided'}</span>
-                </div>
-                
-                {/* Email - Single Line */}
-                <div className="review-item">
-                  <span className="review-label">Email:</span>
-                  <span className="review-value">{formData.email || 'Not provided'}</span>
-                </div>
-                
-                {/* Location - Single Line */}
-                <div className="review-item">
-                  <span className="review-label">Location:</span>
-                  <span className="review-value">
-                    {[formData.country, formData.state, formData.district]
-                      .filter(Boolean)
-                      .join(', ') || 'Not provided'}
-                  </span>
-                </div>
-                
-                {/* Products Selected - Single Line */}
-                <div className="review-item">
-                  <span className="review-label">Products Selected:</span>
-                  <span className="review-value">
-                    {formData.productInterest.length > 0 
-                      ? formData.productInterest.join(', ')
-                      : 'None selected'}
-                  </span>
+              <div className="review-section">
+                <h4 className="review-title">Review Your Information</h4>
+                <div className="review-info">
+                  <div className="review-item">
+                    <span className="review-label">Name:</span>
+                    <span className="review-value">{formData.name || 'Not provided'}</span>
+                  </div>
+                  
+                  <div className="review-item">
+                    <span className="review-label">Email:</span>
+                    <span className="review-value">{formData.email || 'Not provided'}</span>
+                  </div>
+                  
+                  <div className="review-item">
+                    <span className="review-label">Location:</span>
+                    <span className="review-value">
+                      {[formData.country, formData.state, formData.district]
+                        .filter(Boolean)
+                        .join(', ') || 'Not provided'}
+                    </span>
+                  </div>
+                  
+                  <div className="review-item">
+                    <span className="review-label">Products:</span>
+                    <span className="review-value">
+                      {formData.productInterest.length > 0 
+                        ? formData.productInterest.join(', ')
+                        : 'None selected'}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -387,24 +381,26 @@ const ContactForm = ({ onClose }) => {
       <div className="contact-form-content">
         {/* Left Column - Contact Info */}
         <div className="contact-info-column">
-          <h2 className="contact-title">Get In Touch</h2>
-          <p className="contact-description">
-            Fill out the form below and our team will get back to you within 24 hours.
-          </p>
-          
-          {/* Step Indicator */}
-          <div className="step-indicator">
-            <div className="step-indicator-title">Form Progress</div>
-            {['Personal Info', 'Location', 'Products', 'Message'].map((step, index) => (
-              <div 
-                key={index} 
-                className={`step-indicator-item ${index === currentStep ? 'active' : ''} ${index < currentStep ? 'completed' : ''}`}
-                onClick={() => setCurrentStep(index)}
-              >
-                <div className="step-number">{index + 1}</div>
-                <div className="step-text">{step}</div>
-              </div>
-            ))}
+          <div className="contact-info-inner">
+            <h2 className="contact-title">Get In Touch</h2>
+            <p className="contact-description">
+              Fill out the form below and our team will get back to you within 24 hours.
+            </p>
+            
+            {/* Step Indicator */}
+            <div className="step-indicator">
+              <div className="step-indicator-title">Form Progress</div>
+              {['Personal Info', 'Location', 'Products', 'Message'].map((step, index) => (
+                <div 
+                  key={index} 
+                  className={`step-indicator-item ${index === currentStep ? 'active' : ''} ${index < currentStep ? 'completed' : ''}`}
+                  onClick={() => setCurrentStep(index)}
+                >
+                  <div className="step-number">{index + 1}</div>
+                  <div className="step-text">{step}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -433,7 +429,7 @@ const ContactForm = ({ onClose }) => {
                 {renderStepContent()}
               </div>
 
-              {/* Navigation Buttons - Stacked vertically on mobile */}
+              {/* Navigation Buttons */}
               <div className="form-navigation">
                 {currentStep > 0 && (
                   <button
@@ -442,9 +438,11 @@ const ContactForm = ({ onClose }) => {
                     className="nav-button prev"
                   >
                     <ChevronLeft size={18} />
-                    Previous
+                    <span>Previous</span>
                   </button>
                 )}
+                
+                <div className="nav-spacer"></div>
                 
                 {currentStep < totalSteps - 1 ? (
                   <button
@@ -452,7 +450,7 @@ const ContactForm = ({ onClose }) => {
                     onClick={nextStep}
                     className="nav-button next"
                   >
-                    Next
+                    <span>Next</span>
                     <ChevronRight size={18} />
                   </button>
                 ) : (
@@ -463,7 +461,7 @@ const ContactForm = ({ onClose }) => {
                     disabled={!formData.name || !formData.email || !formData.message}
                   >
                     <Send size={18} />
-                    Submit Form
+                    <span>Submit Form</span>
                   </button>
                 )}
               </div>

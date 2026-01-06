@@ -7,12 +7,12 @@ const ScrollToTop = () => {
   const location = useLocation();
 
   // WhatsApp configuration
-  const whatsappNumber = '1234567890'; // Replace with your number
+  const whatsappNumber = '7397260093'; // Replace with your number
   const whatsappMessage = 'Hello! I have a question.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Phone configuration
-  const phoneNumber = 'tel:+1234567890'; // Replace with your number
+  const phoneNumber = 'tel:7397260093'; // Replace with your number
 
   // Order Now configuration
   const orderNowUrl = '/order'; // Replace with your order page URL or external link

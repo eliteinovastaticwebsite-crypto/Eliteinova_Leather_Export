@@ -76,7 +76,7 @@ const Header = () => {
 
   const announcements = [
     '✨ Eliteinova Leather Products Export',
-    '📞 Contact Us : 9876543210',
+    '📞 Contact Us : 7397260093',
     '📍 Vadapalani,Chennai,India'
   ];
 
@@ -180,6 +180,7 @@ const Header = () => {
                 aria-label="Order Now"
               >
                 Order Now
+                7397260093
               </button>
 
               {/* Hamburger Menu (MOBILE ONLY) */}

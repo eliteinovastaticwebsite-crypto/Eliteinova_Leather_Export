@@ -8,8 +8,8 @@ const BackpacksPage = () => {
 
   // Backpack products with descriptions
   const products = [
-    { id: 1, name: 'Aurelius Leather Laptop Backpack', image: '/images/bp1.png', color: 'Black', date: '2024-01-15', description: 'A sleek, modern leather backpack designed for professionals who value elegance and functionality.' },
-    { id: 2, name: 'Montclair Leather Laptop Backpack', image: '/images/bp2.png', color: 'Brown', date: '2024-02-20', description: 'Refined brown leather craftsmanship offering timeless style and everyday work essentials.' },
+    { id: 1, name: 'Aurelius Leather Backpack', image: '/images/bp1.png', color: 'Black', date: '2024-01-15', description: 'A sleek, modern leather backpack designed for professionals who value elegance and functionality.' },
+    { id: 2, name: 'Montclair Leather Backpack', image: '/images/bp2.png', color: 'Brown', date: '2024-02-20', description: 'Refined brown leather craftsmanship offering timeless style and everyday work essentials.' },
     { id: 3, name: 'Ridgeway Leather Backpack', image: '/images/bp3.png', color: 'Dark Brown', date: '2024-03-10', description: 'A bold, structured leather backpack built for durability with a classic masculine appeal.' },
     { id: 4, name: 'Harborcrest Leather Backpack', image: '/images/bp4.png', color: 'Olive Brown', date: '2024-01-25', description: 'Earth-toned leather styling with a contemporary silhouette for effortless daily carry.' },
     { id: 5, name: 'Sienna Minimal Leather Backpack', image: '/images/bp5.png', color: 'Tan', date: '2024-04-05', description: 'Minimalist tan leather design that blends sophistication with lightweight everyday comfort.' },
