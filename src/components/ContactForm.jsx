@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Send, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import './ContactForm.css';
+import emailjs from 'emailjs-com';
+
 
 const ContactForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -17,6 +19,7 @@ const ContactForm = ({ onClose }) => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const totalSteps = 4;
 
@@ -131,6 +134,7 @@ const ContactForm = ({ onClose }) => {
       'Northern Territory': ['Darwin', 'Alice Springs', 'Palmerston', 'Katherine'],
       'Australian Capital Territory': ['Canberra']
     }
+   
   };
 
   const productCategories = [
@@ -183,17 +187,68 @@ const ContactForm = ({ onClose }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        if (onClose) onClose();
-      }, 3000);
-    }
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.message) {
+    alert('Please fill in all required fields');
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  const templateParams = {
+    to_email: 'eliteinovatechpvtltd@gmail.com',
+    from_name: formData.name,
+    from_email: formData.email,
+    phone: formData.phone || 'Not provided',
+    company: formData.company || 'Not provided',
+    location: `${formData.country || ''}${formData.state ? `, ${formData.state}` : ''}${formData.district ? `, ${formData.district}` : ''}${formData.pincode ? ` (${formData.pincode})` : ''}`,
+    products: formData.productInterest.length
+      ? formData.productInterest.join(', ')
+      : 'None selected',
+    message: formData.message,
+    reply_to: formData.email,
+    subject: `New Wholesale Inquiry from ${formData.name}`
   };
+
+  try {
+    emailjs.send(
+  'service_x7abcd1',
+  'template_k9xyz22',
+  templateParams,
+  'RkT9FJXabc123'
+);
+
+    setSubmitted(true);
+
+    setTimeout(() => {
+      setSubmitted(false);
+      if (onClose) onClose();
+    }, 3000);
+
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      country: '',
+      state: '',
+      district: '',
+      pincode: '',
+      productInterest: [],
+      message: ''
+    });
+
+    setCurrentStep(0);
+  } catch (error) {
+    console.error(error);
+    alert('Failed to send message. Please try again later.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const getStates = () => {
     return formData.country && locationData[formData.country] 
@@ -560,14 +615,15 @@ const ContactForm = ({ onClose }) => {
                   </button>
                 ) : (
                   <button
-                    type="submit"
-                    onClick={handleSubmit}
-                    className="nav-button submit"
-                    disabled={!formData.name || !formData.email || !formData.message}
-                  >
-                    <Send size={18} />
-                    <span>Submit Form</span>
-                  </button>
+  type="submit"
+  onClick={handleSubmit}
+  className="nav-button submit"
+  disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
+>
+  <Send size={18} />
+  <span>{isSubmitting ? 'Sending...' : 'Submit Form'}</span>
+</button>
+
                 )}
               </div>
             </>
