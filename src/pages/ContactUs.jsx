@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { /*Mail*/Phone, MapPin, Clock, Send } from 'lucide-react';
 import './ContactUs.css';
 
 const ContactUs = () => {
@@ -58,15 +58,19 @@ const ContactUs = () => {
     <div className="contact-page">
       {/* Banner Section */}
       <div className="contact-banner">
-        <div className="banner-overlay"></div>
-        <div className="banner-image"></div>
-        <div className="banner-content">
-          <h1 className="banner-title">Contact Us</h1>
-          <p className="banner-subtitle">
-            Let's discuss your wholesale leather product requirements
-          </p>
-        </div>
-      </div>
+  <div className="banner-overlay"></div>
+  <img 
+    src="/images/contact2.png" 
+    alt="Leather Craftsmanship"
+    className="banner-image"
+  />
+  <div className="banner-content">
+    <h1 className="banner-title">Contact Us</h1>
+    <p className="banner-subtitle">
+      Let's discuss your wholesale leather product requirements
+    </p>
+  </div>
+</div>
 
       {/* Content Section */}
       <div className="contact-content">
@@ -91,13 +95,13 @@ const ContactUs = () => {
             <p className="info-text">+91 7397260093</p>
           </div>
 
-          <div className="info-card">
+          {/*<div className="info-card">
             <div className="info-icon">
               <Mail className="icon" />
             </div>
             <h3 className="info-title">Email</h3>
             <p className="info-text">info@eliteinova.com</p>
-          </div>
+          </div>*/}
 
           <div className="info-card">
             <div className="info-icon">

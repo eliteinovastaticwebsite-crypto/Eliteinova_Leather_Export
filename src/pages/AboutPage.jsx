@@ -5,15 +5,19 @@ const About = () => {
   return (
     <div className="about-page">
 
-      {/* HERO SECTION */}
       <section className="about-hero">
-        <div className="about-hero-overlay">
-          <h1 className="about-hero-title">Crafting Excellence in Leather</h1>
-          <p className="about-hero-subtitle">
-            Premium Leather Export | Trusted Manufacturing | Global Standards
-          </p>
-        </div>
-      </section>
+  <img
+    src="/images/contact.png"
+    alt="Premium Leather Craftsmanship"
+    className="about-hero-img"
+  />
+  <div className="about-hero-overlay">
+    <h1 className="about-hero-title">Crafting Excellence in Leather</h1>
+    <p className="about-hero-subtitle">
+      Premium Leather Export | Trusted Manufacturing | Global Standards
+    </p>
+  </div>
+</section>
 
       {/* ABOUT CONTENT */}
       <section className="about-main">

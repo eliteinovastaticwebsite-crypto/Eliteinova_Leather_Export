@@ -13,13 +13,13 @@ const scrollToTop = () => {
   const collections = [
     {
       name: "Sling Bags",
-      products: 12,
+      products: 11,
       image: "/images/slingbagcollection.png",
       path: "/smallbags/sling-bags"
     },
     {
       name: "Small Crossbody Bags",
-      products: 15,
+      products: 3,
       image: "/images/crossbagbanner.png",
       path: "/smallbags/small-crossbody-bags"
     },

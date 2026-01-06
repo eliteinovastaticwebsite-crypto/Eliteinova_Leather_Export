@@ -13,19 +13,19 @@ const TravelPage = () => {
   const collections = [
     {
       name: "Trolley Bags",
-      products: 8,
+      products: 15,
       image: "/images/collection_trolley.png",
       path: "/travelbags/trolley-bags"
     },
     {
       name: "Duffle Bags",
-      products: 12,
+      products: 16,
       image: "/images/collection_duffle.png",
       path: "/travelbags/duffle-bags"
     },
     {
       name: "Leather Travel Bags",
-      products: 10,
+      products: 7,
       image: "/images/collection_travel.png",
       path: "/travelbags/leather-travel-bags"
     }

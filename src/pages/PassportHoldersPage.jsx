@@ -6,14 +6,14 @@ const PassportHoldersPage = () => {
 
   // 20 passport holder products
   const products = [
-    { id: 1, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather passport holder with secure closure and multiple card slots. Features classic design with durable construction.' },
-    { id: 2, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass2.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather passport holder with sophisticated texture. Perfect for travel with organized document storage.' },
-    { id: 3, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass3.png', color: 'Black', date: '2024-03-10', description: 'Sleek black leather passport holder with compact design. Features extra card slots and secure closure for travel documents.' },
-    { id: 4, name: 'Rexo Crunch Leather Laptop Bag', image: '/images/pass4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather passport holder with rich color. Combines style with practical functionality for travelers.' },
-    { id: 5, name: 'The Philos Leather Laptop Bag', image: '/images/pass5.png', color: 'Black', date: '2024-04-05', description: 'Premium black leather passport holder with minimalist design. Perfect for frequent travelers with RFID protection.' },
-    { id: 6, name: 'The Philos Leather Laptop Bag', image: '/images/pass6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown leather passport holder with premium finish. Features precise stitching and elegant finishing touches.' },
-    { id: 7, name: 'The Philos Leather Laptop Bag', image: '/images/pass7.png', color: 'Tan', date: '2024-05-18', description: 'Classic tan leather passport holder with secure closure. Provides organized storage for travel documents and cards.' },
-    { id: 8, name: 'Vintage Leather Travel Laptop Bag', image: '/images/pass8.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired brown leather passport holder with classic appeal. Features traditional craftsmanship for modern travelers.' },
+    { id: 1, name: 'Leather Passport Holder', image: '/images/pass1.png', color: 'Tan', date: '2024-06-30', description: 'Elegant passport holder with snap button closure for secure travel essentials.' },
+    { id: 2, name: 'Classic Leather Passport Wallet', image: '/images/pass2.png', color: 'Brown', date: '2024-07-12', description: 'Clean and structured passport wallet designed for international travel convenience.' },
+    { id: 3, name: 'RFID Protected Passport Holder', image: '/images/pass3.png', color: 'Black', date: '2024-08-05', description: 'RFID-blocking leather passport holder ensuring data safety while traveling.' },
+    { id: 4, name: 'RFID Protected Passport Holder', image: '/images/pass4.png', color: 'Olive Green', date: '2024-01-08', description: 'Secure travel wallet with RFID protection and a refined matte leather finish.' },
+    { id: 5, name: 'Travel Organizer Passport Wallet', image: '/images/pass5.png', color: 'Tan', date: '2024-09-14', description: 'Multi-slot passport wallet for organizing documents, cards, and boarding passes.' },
+    { id: 6, name: 'Travel Organizer Passport Wallet', image: '/images/pass6.png', color: 'Brown', date: '2024-04-28', description: 'Functional leather travel wallet designed for effortless document access.' },
+    { id: 7, name: 'Minimal Passport Sleeve', image: '/images/pass7.png', color: 'Tan Brown', date: '2024-10-20', description: 'Slim leather passport sleeve for lightweight and minimalist travelers.' },
+    { id: 8, name: 'Zip-Around Passport Travel Wallet', image: '/images/pass8.png', color: 'Brown', date: '2024-05-07', description: 'Full-zip travel wallet offering secure storage for passport, cash, and cards.' },
     // Additional products can be uncommented as needed
     /*{ id: 9, name: 'Vintage Leather Travel Laptop Bag', image: '/images/L8.png', color: 'Black', date: '2024-06-30', description: 'Description here' },
     { id: 10, name: 'Urban Leather Laptop Bag', image: '/images/L9.png', color: 'Black', date: '2024-07-12', description: 'Description here' },

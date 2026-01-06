@@ -70,13 +70,13 @@ const ShoesPage = () => {
     },*/
     {
       name: "Formal Shoes",
-      products: 18,
+      products: 10,
       image: "/images/formal1_collection.png",
       path: "/shoes/formal"
     },
     {
       name: "Casual Shoes",
-      products: 11,
+      products: 9,
       image: "/images/casual2.png",
       path: "/shoes/casual"
     }

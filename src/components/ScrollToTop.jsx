@@ -7,15 +7,12 @@ const ScrollToTop = () => {
   const location = useLocation();
 
   // WhatsApp configuration
-  const whatsappNumber = '7397260093'; // Replace with your number
-  const whatsappMessage = 'Hello! I have a question.';
+  const whatsappNumber = '+917397260093';
+  const whatsappMessage = 'Hello! I have a question about Eliteinova products.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Phone configuration
-  const phoneNumber = 'tel:7397260093'; // Replace with your number
-
-  // Order Now configuration
-  const orderNowUrl = '/order'; // Replace with your order page URL or external link
+  const phoneNumber = 'tel:+917397260093';
 
   // Scroll to top on route change
   useEffect(() => {
@@ -49,22 +46,59 @@ const ScrollToTop = () => {
     window.location.href = phoneNumber;
   };
 
-  // Open Order Now
-  const openOrderNow = () => {
-    // If it's an internal route
-    if (orderNowUrl.startsWith('/')) {
-      window.location.href = orderNowUrl;
-    } else {
-      // If it's an external URL
-      window.open(orderNowUrl, '_blank', 'noopener,noreferrer');
+  // Open Contact Form - Works like Header's Order Now button
+  const openContactForm = () => {
+    // Dispatch a custom event to open contact form (same as header button)
+    const openContactFormEvent = new CustomEvent('openContactForm', {
+      detail: { 
+        source: 'floatingOrderNowButton',
+        timestamp: new Date().toISOString()
+      }
+    });
+    window.dispatchEvent(openContactFormEvent);
+    
+    // Also try to find and trigger the header's order now button
+    const headerOrderButton = document.querySelector('.order-now-button');
+    if (headerOrderButton) {
+      headerOrderButton.click();
+    }
+    
+    // Try to find and show the contact form modal
+    const contactFormModal = document.querySelector('.contact-form-modal');
+    const contactFormOverlay = document.querySelector('.contact-form-overlay');
+    
+    if (contactFormModal && contactFormOverlay) {
+      contactFormModal.style.display = 'block';
+      contactFormOverlay.style.display = 'block';
     }
   };
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
     
+    // Listen for the contact form close event
+    const handleCloseContactForm = () => {
+      const contactFormModal = document.querySelector('.contact-form-modal');
+      const contactFormOverlay = document.querySelector('.contact-form-overlay');
+      
+      if (contactFormModal && contactFormOverlay) {
+        contactFormModal.style.display = 'none';
+        contactFormOverlay.style.display = 'none';
+      }
+    };
+    
+    // Add event listener for close button
+    const closeButtons = document.querySelectorAll('.close-contact-form');
+    closeButtons.forEach(button => {
+      button.addEventListener('click', handleCloseContactForm);
+    });
+    
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
+      // Clean up event listeners
+      closeButtons.forEach(button => {
+        button.removeEventListener('click', handleCloseContactForm);
+      });
     };
   }, []);
 
@@ -77,6 +111,7 @@ const ScrollToTop = () => {
           onClick={openPhone}
           className="action-button phone-button"
           aria-label="Call us"
+          title="Call Us: 7397260093"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -94,6 +129,7 @@ const ScrollToTop = () => {
           onClick={openWhatsApp}
           className="action-button whatsapp-button"
           aria-label="Contact via WhatsApp"
+          title="Chat on WhatsApp"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,11 +142,12 @@ const ScrollToTop = () => {
           </svg>
         </button>
 
-        {/* Order Now Button */}
+        {/* Order Now Button - Opens Contact Form */}
         <button
-          onClick={openOrderNow}
+          onClick={openContactForm}
           className="action-button order-button"
           aria-label="Order Now"
+          title="Order Now / Get Quote"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +168,7 @@ const ScrollToTop = () => {
             onClick={scrollToTop}
             className="action-button scroll-button"
             aria-label="Scroll to top"
+            title="Scroll to Top"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

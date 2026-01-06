@@ -6,14 +6,14 @@ const MensWalletsPage = () => {
 
   // Men's wallet products with descriptions
   const products = [
-    { id: 1, name: 'Classic Bifold Wallet', image: '/images/wal1.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather bifold wallet with multiple card slots and cash compartment. Features classic design with durable construction.' },
-    { id: 2, name: 'Classic Bifold Wallet', image: '/images/wal2.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather bifold wallet with sophisticated texture. Perfect for everyday use with organized storage.' },
-    { id: 3, name: 'Slim Trifold Wallet', image: '/images/wal3.png', color: 'Black', date: '2024-03-10', description: 'Slim black trifold wallet with compact design. Features extra card slots and secure closure for maximum organization.' },
-    { id: 4, name: 'Slim Trifold Wallet', image: '/images/wal4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather trifold wallet with rich color. Combines style with practical functionality.' },
-    { id: 5, name: 'Minimalist Card Holder', image: '/images/wal5.png', color: 'Black', date: '2024-04-05', description: 'Sleek black minimalist card holder for essential cards only. Perfect for front pocket carry with RFID protection.' },
-    { id: 6, name: 'Minimalist Card Holder', image: '/images/wal6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown minimalist card holder with premium leather. Features precise stitching and elegant finishing.' },
-    { id: 7, name: 'Money Clip Wallet', image: '/images/wal7.png', color: 'Tan', date: '2024-05-18', description: 'Combination wallet with integrated money clip in tan leather. Provides secure cash storage with quick access design.' },
-    { id: 8, name: 'Vintage Leather Wallet', image: '/images/wal8.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired brown leather wallet with classic appeal. Features traditional craftsmanship with modern convenience.' }
+    { id: 1, name: 'Bifold Leather Wallet', image: '/images/wal1.png', color: 'Tan', date: '2024-01-15', description: 'A timeless bifold wallet crafted from smooth leather with ample card and cash compartments.' },
+    { id: 2, name: 'Bifold Leather Wallet', image: '/images/wal2.png', color: 'Dark Brown', date: '2024-02-20', description: 'Premium croc-textured leather wallet offering a bold, sophisticated look with everyday functionality.' },
+    { id: 3, name: 'Bifold Leather Wallet', image: '/images/wal3.png', color: 'Tan', date: '2024-03-10', description: 'Compact trifold design providing organized storage without adding bulk.' },
+    { id: 4, name: 'Bifold Leather Wallet', image: '/images/wal4.png', color: 'Black', date: '2024-01-25', description: 'Durable leather trifold wallet designed for maximum storage and secure folding.' },
+    { id: 5, name: 'Bifold Leather Wallet', image: '/images/wal5.png', color: 'Black', date: '2024-04-05', description: 'Sleek wallet with an integrated money clip for a clean, modern carry.' },
+    { id: 6, name: 'Bifold Leather Wallet', image: '/images/wal6.png', color: 'Mustard Brown', date: '2024-02-14', description: 'Soft suede leather wallet combining style and convenience with a strong money clip.' },
+    { id: 7, name: 'Bifold Leather Wallet', image: '/images/wal7.png', color: 'Black', date: '2024-05-18', description: 'Secure zip-around wallet ideal for safely carrying cash, cards, and coins.' },
+    { id: 8, name: 'Bifold Leather Wallet', image: '/images/wal8.png', color: 'Brown', date: '2024-03-22', description: 'Stylish zip wallet offering full protection and organized internal sections.' }
   ];
 
   const sortedProducts = [...products].sort((a, b) => {

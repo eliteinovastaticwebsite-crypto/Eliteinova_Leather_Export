@@ -13,13 +13,13 @@ const WalletsPage = () => {
   const collections = [
     {
       name: "Men's Wallet",
-      products: 20,
+      products: 8,
       image: "/images/wallet.png",
       path: "/wallet/menswallet"
     },
     {
       name: "PassPort Holders",
-      products: 15,
+      products: 8,
       image: "/images/passportbanner.png",
       path: "/wallet/passportholder"
     }
@@ -33,16 +33,16 @@ const WalletsPage = () => {
     { id: 4, name: 'Bifold Leather Wallet', image: '/images/wal4.png', color: 'Black', date: '2024-01-25', description: 'Durable leather trifold wallet designed for maximum storage and secure folding.' },
     { id: 5, name: 'Bifold Leather Wallet', image: '/images/wal5.png', color: 'Black', date: '2024-04-05', description: 'Sleek wallet with an integrated money clip for a clean, modern carry.' },
     { id: 6, name: 'Bifold Leather Wallet', image: '/images/wal6.png', color: 'Mustard Brown', date: '2024-02-14', description: 'Soft suede leather wallet combining style and convenience with a strong money clip.' },
-    { id: 7, name: 'Bifold Leather Wallet', image: '/images/wal7.png', color: 'Black', date: '2024-05-18', description: 'Combination wallet with integrated money clip. Provides secure cash storage with quick access design.' },
-    { id: 8, name: 'Bifold Leather Wallet', image: '/images/wal8.png', color: 'Brown', date: '2024-03-22', description: 'Brown leather wallet with sturdy money clip. Combines traditional wallet features with modern convenience.' },
-    { id: 9, name: 'Leather Passport Holder', image: '/images/pass1.png', color: 'Tan', date: '2024-06-30', description: 'Comprehensive passport wallet for travelers. Features multiple compartments for documents, tickets, and cards.' },
-    { id: 10, name: 'Classic Leather Passport Wallet', image: '/images/pass2.png', color: 'Brown', date: '2024-07-12', description: 'Brown leather passport holder with spacious design. Perfect for international travel with organized storage.' },
-    { id: 11, name: 'RFID Protected Passport Holder', image: '/images/pass3.png', color: 'Black', date: '2024-08-05', description: 'Secure zipper wallet with full enclosure. Features multiple internal compartments for complete organization.' },
-    { id: 12, name: 'RFID Protected Passport Holder', image: '/images/pass4.png', color: 'Olive Green', date: '2024-01-08', description: 'Brown leather zipper wallet with durable construction. Ensures complete security for all contents.' },
-    { id: 13, name: 'Travel Organizer Passport Wallet', image: '/images/pass5.png', color: 'Tan', date: '2024-09-14', description: 'Security-focused wallet with RFID blocking technology. Protects cards from electronic theft while maintaining style.' },
-    { id: 14, name: 'Travel Organizer Passport Wallet', image: '/images/pass6.png', color: 'Brown', date: '2024-04-28', description: 'Sleek black RFID blocking wallet. Combines modern security features with classic leather design.' },
-    { id: 15, name: 'Minimal Passport Sleeve', image: '/images/pass7.png', color: 'Tan Brown', date: '2024-10-20', description: 'Comprehensive travel wallet for frequent flyers. Features dedicated spaces for boarding passes and travel documents.' },
-    { id: 16, name: 'Zip-Around Passport Travel Wallet', image: '/images/pass8.png', color: 'Brown', date: '2024-05-07', description: 'Brown leather travel wallet with practical organization. Perfect for keeping all travel essentials in one place.' },
+    { id: 7, name: 'Bifold Leather Wallet', image: '/images/wal7.png', color: 'Black', date: '2024-05-18', description: 'Secure zip-around wallet ideal for safely carrying cash, cards, and coins.' },
+    { id: 8, name: 'Bifold Leather Wallet', image: '/images/wal8.png', color: 'Brown', date: '2024-03-22', description: 'Stylish zip wallet offering full protection and organized internal sections.' },
+    { id: 9, name: 'Leather Passport Holder', image: '/images/pass1.png', color: 'Tan', date: '2024-06-30', description: 'Elegant passport holder with snap button closure for secure travel essentials.' },
+    { id: 10, name: 'Classic Leather Passport Wallet', image: '/images/pass2.png', color: 'Brown', date: '2024-07-12', description: 'Clean and structured passport wallet designed for international travel convenience.' },
+    { id: 11, name: 'RFID Protected Passport Holder', image: '/images/pass3.png', color: 'Black', date: '2024-08-05', description: 'RFID-blocking leather passport holder ensuring data safety while traveling.' },
+    { id: 12, name: 'RFID Protected Passport Holder', image: '/images/pass4.png', color: 'Olive Green', date: '2024-01-08', description: 'Secure travel wallet with RFID protection and a refined matte leather finish.' },
+    { id: 13, name: 'Travel Organizer Passport Wallet', image: '/images/pass5.png', color: 'Tan', date: '2024-09-14', description: 'Multi-slot passport wallet for organizing documents, cards, and boarding passes.' },
+    { id: 14, name: 'Travel Organizer Passport Wallet', image: '/images/pass6.png', color: 'Brown', date: '2024-04-28', description: 'Functional leather travel wallet designed for effortless document access.' },
+    { id: 15, name: 'Minimal Passport Sleeve', image: '/images/pass7.png', color: 'Tan Brown', date: '2024-10-20', description: 'Slim leather passport sleeve for lightweight and minimalist travelers.' },
+    { id: 16, name: 'Zip-Around Passport Travel Wallet', image: '/images/pass8.png', color: 'Brown', date: '2024-05-07', description: 'Full-zip travel wallet offering secure storage for passport, cash, and cards.' },
     /*{ id: 17, name: 'Front Pocket Wallet', image: '/images/wallet17.png', color: 'Burgundy', date: '2024-11-11', description: 'Slim burgundy wallet designed for front pocket carry. Reduces bulk while maintaining essential storage.' },
     { id: 18, name: 'Front Pocket Wallet', image: '/images/wallet18.png', color: 'Black', date: '2024-06-17', description: 'Black front pocket wallet with minimalist design. Features quick access to frequently used cards.' },
     { id: 19, name: 'Metal Money Clip', image: '/images/wallet19.png', color: 'Silver', date: '2024-12-01', description: 'Premium silver metal money clip. Combines elegant design with secure cash holding functionality.' },
