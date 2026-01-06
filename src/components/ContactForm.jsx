@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Send, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import './ContactForm.css';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 
 const ContactForm = ({ onClose }) => {
@@ -213,12 +213,13 @@ const ContactForm = ({ onClose }) => {
   };
 
   try {
-    emailjs.send(
+    await emailjs.send(
   'service_x7abcd1',
   'template_k9xyz22',
   templateParams,
   'RkT9FJXabc123'
 );
+
 
     setSubmitted(true);
 
