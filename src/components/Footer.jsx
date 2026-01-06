@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Phone, /*Mail*/ MapPin, Clock, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
   const mainCategories = [
     { name: 'Shoes', path: '/shoes' },
-    /*{ name: 'Casual Shoes', path: '/shoes/casual' },*/
     { name: 'Handbags', path: '/women-handbags' },
     { name: 'Laptop Bags', path: '/laptopbags' },
     { name: 'Travel Bags', path: '/travelbags' },
@@ -18,13 +17,19 @@ const Footer = () => {
   const companyLinks = [
     { name: 'About Us', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
-    { name: 'Privacy Policy', path: '/privacy-policy' },
+    /*{ name: 'Privacy Policy', path: '/privacy-policy' },
     { name: 'Terms & Conditions', path: '/terms' },
-    { name: 'Shipping & Returns', path: '/shipping' },
+    { name: 'Shipping & Returns', path: '/shipping' },*/
   ];
 
   return (
     <footer className="footer">
+      {/* Corner Decorations */}
+      <div className="corner-decoration"></div>
+      <div className="corner-decoration"></div>
+      <div className="corner-decoration"></div>
+      <div className="corner-decoration"></div>
+
       <div className="footer-content">
         {/* Logo & Company Info */}
         <div className="footer-section footer-logo-section">
@@ -36,12 +41,12 @@ const Footer = () => {
             />
             <div className="footer-logo-text">
               <h2>Eliteinova Leather Products</h2>
-              <span className="tagline">Premium Leather Since 2010</span>
+              <span className="tagline">Premium Leather </span>
             </div>
           </Link>
           
           <p className="company-description">
-            Crafting premium leather goods with precision and elegance. 
+            Crafting premium leather products with precision and elegance. 
             Traditional craftsmanship meets modern design.
           </p>
           
@@ -89,14 +94,14 @@ const Footer = () => {
               </div>
             </li>
             
-            <li>
+            {/*<li>
               <Mail className="contact-icon" />
               <div className="contact-details">
                 <div className="contact-value">
                   <a href="mailto:info@eliteinova.com">info@eliteinova.com</a>
                 </div>
               </div>
-            </li>
+            </li>*/}
             
             <li>
               <MapPin className="contact-icon" />

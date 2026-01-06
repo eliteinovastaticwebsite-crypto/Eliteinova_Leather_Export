@@ -74,6 +74,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
 }
 
 .step-indicator-title {
@@ -86,6 +87,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
 }
 
 .step-indicator-title::before {
@@ -105,6 +107,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(212, 181, 116, 0.1);
   cursor: pointer;
+  width: 100%;
 }
 
 .step-indicator-item:hover {
@@ -152,6 +155,7 @@
   color: #f5e6d3;
   font-weight: 500;
   flex: 1;
+  width: 100%;
 }
 
 .step-indicator-item.active .step-text {
@@ -167,6 +171,7 @@
   background: linear-gradient(135deg, #fefbf8 0%, #fbf7f2 100%);
   position: relative;
   min-height: 600px;
+  width: 100%;
 }
 
 /* Form Section Slider */
@@ -176,6 +181,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
 .form-section {
@@ -195,6 +201,7 @@
   margin-bottom: 25px;
   padding-bottom: 20px;
   border-bottom: 2px solid #f0e6db;
+  width: 100%;
 }
 
 .progress-step {
@@ -230,6 +237,7 @@
   padding-top: 20px;
   border-top: 2px solid #f0e6db;
   gap: 15px;
+  width: 100%;
 }
 
 .nav-spacer {
@@ -326,6 +334,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  width: 100%;
 }
 
 .form-label::before {
@@ -334,6 +343,7 @@
   font-size: 11px;
 }
 
+/* FULL WIDTH FORM INPUTS */
 .form-input,
 .form-textarea,
 select.form-input {
@@ -347,6 +357,7 @@ select.form-input {
   width: 100%;
   box-sizing: border-box;
   font-family: inherit;
+  display: block;
 }
 
 .form-input:focus,
@@ -356,6 +367,7 @@ select.form-input:focus {
   border-color: #d4a574;
   background: #fffdfa;
   box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15);
+  width: 100%;
 }
 
 .form-input::placeholder,
@@ -376,6 +388,7 @@ select.form-input:disabled {
   resize: vertical;
   min-height: 100px;
   line-height: 1.6;
+  width: 100%;
 }
 
 .field-hint {
@@ -383,6 +396,7 @@ select.form-input:disabled {
   color: #dc3545;
   margin-top: 5px;
   font-style: italic;
+  width: 100%;
 }
 
 /* Product Selection Wrapper - Page 3 */
@@ -446,6 +460,7 @@ select.form-input:disabled {
   font-weight: 500;
   flex: 1;
   text-align: left;
+  width: 100%;
 }
 
 /* Selected Products Section */
@@ -468,6 +483,7 @@ select.form-input:disabled {
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
 }
 
 .selected-products-label::before {
@@ -481,6 +497,7 @@ select.form-input:disabled {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
 }
 
 .product-tag {
@@ -557,6 +574,7 @@ select.form-input:disabled {
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
 }
 
 .review-title::before {
@@ -568,6 +586,7 @@ select.form-input:disabled {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
 }
 
 .review-item {
@@ -576,6 +595,7 @@ select.form-input:disabled {
   padding: 10px 0;
   border-bottom: 1px dashed #f0e6db;
   gap: 15px;
+  width: 100%;
 }
 
 .review-item:last-child {
@@ -597,6 +617,7 @@ select.form-input:disabled {
   word-break: break-word;
   font-weight: 500;
   text-align: left;
+  width: 100%;
 }
 
 /* Success Message */
@@ -611,6 +632,7 @@ select.form-input:disabled {
   font-weight: 600;
   font-size: 16px;
   box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+  width: 100%;
 }
 
 @keyframes slideIn {
@@ -635,6 +657,7 @@ select.form-input:disabled {
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.3px;
   position: relative;
+  width: 100%;
 }
 
 .form-section-title::after {
@@ -654,6 +677,7 @@ select.form-input:disabled {
   font-style: italic;
   padding-left: 8px;
   border-left: 3px solid #f0e6db;
+  width: 100%;
 }
 
 /* ========================================
@@ -665,12 +689,14 @@ select.form-input:disabled {
   .contact-form-wrapper {
     height: auto;
     max-height: none;
+    width: 100%;
   }
 
   .contact-form-content {
     flex-direction: column;
     min-height: auto;
     height: auto;
+    width: 100%;
   }
 
   .contact-info-column {
@@ -678,6 +704,7 @@ select.form-input:disabled {
     padding: 30px 25px;
     max-height: none;
     min-height: auto;
+    width: 100%;
   }
 
   .contact-form-column {
@@ -685,16 +712,19 @@ select.form-input:disabled {
     max-height: none;
     overflow-y: visible;
     min-height: 450px;
+    width: 100%;
   }
   
   .step-indicator {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    width: 100%;
   }
   
   .step-indicator-item {
     margin-bottom: 0;
+    width: 100%;
   }
   
   .contact-title {
@@ -703,6 +733,7 @@ select.form-input:disabled {
   
   .form-section-slider {
     min-height: 380px;
+    width: 100%;
   }
 }
 
@@ -713,16 +744,19 @@ select.form-input:disabled {
     height: auto;
     max-height: 90vh;
     overflow-y: auto;
+    width: 100%;
   }
   
   .contact-form-content {
     height: auto;
+    width: 100%;
   }
   
   .contact-info-column {
     padding: 25px 20px;
     position: relative;
     min-height: auto;
+    width: 100%;
   }
   
   .contact-form-column {
@@ -730,6 +764,7 @@ select.form-input:disabled {
     overflow-y: visible;
     max-height: none;
     min-height: 400px;
+    width: 100%;
   }
   
   .contact-title {
@@ -738,14 +773,17 @@ select.form-input:disabled {
   
   .contact-description {
     font-size: 14px;
+    width: 100%;
   }
   
   .form-section-title {
     font-size: 22px;
+    width: 100%;
   }
   
   .form-section-description {
     font-size: 13px;
+    width: 100%;
   }
 
   .nav-button {
@@ -755,20 +793,24 @@ select.form-input:disabled {
   
   .form-section-slider {
     min-height: 350px;
+    width: 100%;
   }
   
   .review-item {
     flex-direction: column;
     gap: 4px;
     align-items: flex-start;
+    width: 100%;
   }
   
   .review-label {
     min-width: auto;
+    width: 100%;
   }
   
   .step-indicator {
     grid-template-columns: 1fr;
+    width: 100%;
   }
   
   .step-indicator-item {
@@ -779,6 +821,7 @@ select.form-input:disabled {
     gap: 8px;
     margin-bottom: 20px;
     padding-bottom: 15px;
+    width: 100%;
   }
   
   .progress-step {
@@ -788,10 +831,25 @@ select.form-input:disabled {
   
   .product-checkbox-list {
     gap: 8px;
+    width: 100%;
   }
   
   .product-checkbox-label {
     padding: 12px 16px;
+    width: 100%;
+  }
+  
+  /* Ensure full width form inputs on mobile */
+  .form-input,
+  .form-textarea,
+  select.form-input {
+    width: 100%;
+  }
+  
+  .product-select-container,
+  .selected-products-section,
+  .review-section {
+    width: 100%;
   }
 }
 
@@ -801,15 +859,18 @@ select.form-input:disabled {
     border-radius: 10px;
     max-height: 95vh;
     overflow-y: auto;
+    width: 100%;
   }
   
   .contact-info-column {
     padding: 20px 15px;
+    width: 100%;
   }
   
   .contact-form-column {
     padding: 20px 15px;
     min-height: 380px;
+    width: 100%;
   }
   
   .contact-title {
@@ -819,16 +880,19 @@ select.form-input:disabled {
   .contact-description {
     font-size: 13px;
     margin-bottom: 20px;
+    width: 100%;
   }
   
   .form-section-title {
     font-size: 20px;
+    width: 100%;
   }
   
   .form-navigation {
     flex-direction: column;
     gap: 12px;
     margin-top: 25px;
+    width: 100%;
   }
   
   .nav-spacer {
@@ -844,18 +908,22 @@ select.form-input:disabled {
   .product-select-container,
   .selected-products-section {
     padding: 15px;
+    width: 100%;
   }
   
   .product-checkbox-label {
     padding: 12px 14px;
+    width: 100%;
   }
   
   .form-section-slider {
     min-height: 320px;
+    width: 100%;
   }
   
   .step-indicator-item {
     padding: 10px 14px;
+    width: 100%;
   }
   
   .step-number {
@@ -866,6 +934,7 @@ select.form-input:disabled {
   
   .step-text {
     font-size: 13px;
+    width: 100%;
   }
   
   .form-input,
@@ -873,32 +942,50 @@ select.form-input:disabled {
   select.form-input {
     padding: 11px 14px;
     font-size: 14px;
+    width: 100%;
   }
   
   .form-label {
     font-size: 13px;
+    width: 100%;
   }
   
   .review-section {
     padding: 15px;
+    width: 100%;
   }
   
   .review-title {
     font-size: 16px;
+    width: 100%;
   }
   
   .review-label,
   .review-value {
     font-size: 13px;
+    width: 100%;
   }
   
   .product-checkbox-text {
     font-size: 13px;
+    width: 100%;
   }
   
   .message-review-container,
   .product-selection-wrapper {
     gap: 15px;
+    width: 100%;
+  }
+  
+  /* Ensure full width on small mobile */
+  .form-input,
+  .form-textarea,
+  select.form-input {
+    width: 100%;
+  }
+  
+  .product-checkbox-label {
+    width: 100%;
   }
 }
 
@@ -906,15 +993,18 @@ select.form-input:disabled {
 @media (max-width: 360px) {
   .contact-form-wrapper {
     max-height: 95vh;
+    width: 100%;
   }
   
   .contact-info-column {
     padding: 15px 12px;
+    width: 100%;
   }
   
   .contact-form-column {
     padding: 15px 12px;
     min-height: 350px;
+    width: 100%;
   }
   
   .contact-title {
@@ -923,11 +1013,13 @@ select.form-input:disabled {
   
   .form-section-title {
     font-size: 18px;
+    width: 100%;
   }
   
   .nav-button {
     padding: 11px 16px;
     font-size: 13px;
+    width: 100%;
   }
   
   .nav-button span {
@@ -936,10 +1028,12 @@ select.form-input:disabled {
   
   .product-checkbox-label {
     padding: 10px 12px;
+    width: 100%;
   }
   
   .product-checkbox-text {
     font-size: 12px;
+    width: 100%;
   }
   
   .form-input,
@@ -947,6 +1041,14 @@ select.form-input:disabled {
   select.form-input {
     padding: 10px 12px;
     font-size: 13px;
+    width: 100%;
+  }
+  
+  /* Ensure full width on extra small devices */
+  .form-input,
+  .form-textarea,
+  select.form-input {
+    width: 100%;
   }
 }
 
@@ -983,6 +1085,7 @@ select.form-input:disabled {
 .contact-form-overlay .contact-form-wrapper {
   max-height: 90vh;
   overflow-y: auto;
+  width: 100%;
 }
 
 .close-contact-form {
@@ -1024,11 +1127,13 @@ select.form-input:disabled {
     height: auto;
     border-radius: 12px;
     margin: 0 auto;
+    width: 100%;
   }
   
   .contact-form-overlay .contact-form-wrapper {
     max-height: none;
     overflow-y: visible;
+    width: 100%;
   }
   
   .close-contact-form {
@@ -1089,6 +1194,7 @@ select.form-input:disabled {
 select.form-input:focus-visible {
   outline: 3px solid #d4a574;
   outline-offset: 2px;
+  width: 100%;
 }
 
 .product-checkbox:focus-visible {
@@ -1104,6 +1210,7 @@ select.form-input:focus-visible {
 /* Animation for form sections */
 .form-section {
   animation: fadeIn 0.4s ease-out;
+  width: 100%;
 }
 
 @keyframes fadeIn {
@@ -1120,27 +1227,32 @@ select.form-input:focus-visible {
   .contact-form-content {
     flex-direction: row;
     min-height: auto;
+    width: 100%;
   }
   
   .contact-info-column {
     flex: 0 0 40%;
     min-height: auto;
+    width: 100%;
   }
   
   .contact-form-column {
     max-height: 90vh;
     overflow-y: auto;
     min-height: auto;
+    width: 100%;
   }
   
   .step-indicator {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    width: 100%;
   }
   
   .step-indicator-item {
     padding: 8px 12px;
+    width: 100%;
   }
   
   .step-number {
@@ -1151,6 +1263,7 @@ select.form-input:focus-visible {
   
   .step-text {
     font-size: 12px;
+    width: 100%;
   }
   
   .contact-title {
@@ -1161,10 +1274,19 @@ select.form-input:focus-visible {
   .contact-description {
     font-size: 13px;
     margin-bottom: 20px;
+    width: 100%;
   }
   
   .form-section-slider {
     min-height: auto;
+    width: 100%;
+  }
+  
+  /* Ensure full width in landscape */
+  .form-input,
+  .form-textarea,
+  select.form-input {
+    width: 100%;
   }
 }
 
@@ -1172,15 +1294,25 @@ select.form-input:focus-visible {
 @media (min-width: 1025px) {
   .contact-form-wrapper {
     max-height: 80vh;
+    width: 100%;
   }
   
   .contact-form-modal {
     max-height: 80vh;
+    width: 100%;
   }
   
   .contact-form-column {
     max-height: 80vh;
     overflow-y: auto;
+    width: 100%;
+  }
+  
+  /* Ensure full width on desktop */
+  .form-input,
+  .form-textarea,
+  select.form-input {
+    width: 100%;
   }
 }
 
@@ -1196,9 +1328,17 @@ select.form-input:focus-visible {
     border: 1px solid #000;
     box-shadow: none;
     max-height: none;
+    width: 100%;
   }
   
   .close-contact-form {
     display: none;
+  }
+  
+  /* Ensure full width when printing */
+  .form-input,
+  .form-textarea,
+  select.form-input {
+    width: 100%;
   }
 }
