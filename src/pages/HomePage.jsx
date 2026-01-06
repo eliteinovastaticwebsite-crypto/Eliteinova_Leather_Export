@@ -271,18 +271,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="newsletter-section">
-        <div className="newsletter-content">
-          <h2 className="newsletter-title">Stay Updated</h2>
-          <p className="newsletter-description">Subscribe to get special offers, free giveaways, and updates</p>
-          <div className="newsletter-form">
-            <input type="email" placeholder="Enter your email" className="newsletter-input" />
-            <button className="newsletter-button">Subscribe</button>
-          </div>
-        </div>
-      </section>
-
       {/* WhatsApp Button 
       <a href="https://wa.me/9876543210" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 32 32" width="28" height="28">

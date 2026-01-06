@@ -29,14 +29,6 @@ const Footer = () => {
     { name: 'Return Policy', path: '/returns' },
   ];
 
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    // Handle newsletter subscription
-    alert(`Thank you for subscribing with: ${email}`);
-    e.target.reset();
-  };
-
   return (
     <footer className="footer">
     <div className="footer-content">
@@ -139,26 +131,6 @@ const Footer = () => {
               </div>
             </li>
           </ul>
-
-          {/* Newsletter Section (now below contact info) */}
-          <div className="newsletter-section">
-            <h4>Subscribe to Newsletter</h4>
-            <p className="newsletter-description">
-              Get updates on new products and exclusive offers.
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email address"
-                required
-                className="newsletter-input"
-              />
-              <button type="submit" className="newsletter-button">
-                Subscribe
-              </button>
-            </form>
-          </div>
         </div>
       </div>
 
