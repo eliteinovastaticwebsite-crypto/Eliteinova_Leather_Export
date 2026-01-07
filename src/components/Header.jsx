@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import './Header.css';
@@ -9,14 +9,30 @@ const Header = () => {
   const [scrollText, setScrollText] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
+  const scrollRef = useRef(null);
   const navigate = useNavigate();
 
   // External website URL
   const companyWebsite = "https://www.eliteinovatechpvtltd.com/";
 
+  const announcements = [
+    '✨ Eliteinova Leather Products Export',
+    '📞 Contact Us : 7397260093',
+    '📍 Vadapalani,Chennai,India'
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setScrollText((prev) => prev - 1);
+      setScrollText((prev) => {
+        // Reset position when scrolled past first set of announcements
+        if (scrollRef.current) {
+          const singleSetWidth = scrollRef.current.scrollWidth / 3;
+          if (Math.abs(prev) >= singleSetWidth) {
+            return 0;
+          }
+        }
+        return prev - 1;
+      });
     }, 30);
     return () => clearInterval(interval);
   }, []);
@@ -28,6 +44,7 @@ const Header = () => {
       dropdown: [
         { name: 'Formal Shoes', path: '/shoes/formal' },
         { name: 'Casual Shoes', path: '/shoes/casual' },
+        {name: 'Other Shoes', path: '/shoes/boots'}
       ],
       path: '/shoes'
     },
@@ -54,6 +71,7 @@ const Header = () => {
       name: 'BACKPACKS',
       dropdown: [
         { name: 'Men\'s Backpacks', path: '/backpacks/men-backpacks' },
+        { name: 'Women\'s Backpacks', path: '/backpacks/women-backpacks' }
       ],
       path: '/backpacks'
     },
@@ -73,12 +91,6 @@ const Header = () => {
     { name: 'BELT', dropdown: null, path: '/belt' },
     { name: 'ABOUT US', dropdown: null, path: '/about' },
     { name: 'CONTACT', dropdown: null, path: '/contact' }
-  ];
-
-  const announcements = [
-    '✨ Eliteinova Leather Products Export',
-    '📞 Contact Us : 7397260093',
-    '📍 Vadapalani,Chennai,India'
   ];
 
   const handleDropdownClick = (e, item) => {
@@ -137,7 +149,11 @@ const Header = () => {
       <header className="header">
         {/* Announcement Bar */}
         <div className="announcement-bar">
-          <div className="announcement-scroll" style={{ transform: `translateX(${scrollText}px)` }}>
+          <div 
+            ref={scrollRef}
+            className="announcement-scroll" 
+            style={{ transform: `translateX(${scrollText}px)` }}
+          >
             {[...announcements, ...announcements, ...announcements].map((text, idx) => (
               <span key={idx} className="announcement-text">
                 {text}
@@ -346,3 +362,4 @@ const Header = () => {
 };
 
 export default Header;
+

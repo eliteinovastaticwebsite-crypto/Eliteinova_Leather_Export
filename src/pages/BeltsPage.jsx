@@ -10,14 +10,14 @@ const BeltsPage = () => {
 
   // Belt products with descriptions
   const products = [
-    { id: 1, name: 'Classic Leather Belt', image: '/images/belt1.png', color: 'Brown', date: '2024-01-15', description: 'Premium crunch leather with sophisticated texture. Features classic design with durable construction for everyday wear.' },
-    { id: 2, name: 'Classic Leather Belt', image: '/images/belt2.png', color: 'Green', date: '2024-02-20', description: 'Elegant green leather with premium finish. Perfect for both casual and formal occasions with adjustable sizing.' },
-    { id: 3, name: 'Classic Leather Belt', image: '/images/belt3.png', color: 'Black', date: '2024-03-10', description: 'Sleek black leather belt with timeless appeal. Features sturdy buckle and precise stitching for long-lasting quality.' },
-    { id: 4, name: 'Classic Leather Belt', image: '/images/belt4.png', color: 'Tan', date: '2024-01-25', description: 'Sophisticated tan leather with rich color. Combines style with practical functionality for versatile styling.' },
-    { id: 5, name: 'Formal Dress Belt', image: '/images/belt5.png', color: 'Black', date: '2024-04-05', description: 'Luxurious black leather with minimalist design. Perfect for formal occasions with elegant buckle finishing.' },
-    { id: 6, name: 'Formal Dress Belt', image: '/images/belt6.png', color: 'Brown', date: '2024-02-14', description: 'Rich brown leather with refined elegance. Features premium hardware and comfortable wear throughout the day.' },
-    { id: 7, name: 'Formal Dress Belt', image: '/images/belt7.png', color: 'Tan', date: '2024-05-18', description: 'Beautiful tan leather with premium quality. Versatile style suitable for office wear and special occasions.' },
-    { id: 8, name: 'Casual Leather Belt', image: '/images/belt8.png', color: 'Brown', date: '2024-03-22', description: 'Vintage-inspired design with practical functionality. Durable construction perfect for everyday casual wear.' },
+    { id: 1, name: 'Heritage Classic Leather Belt', image: '/images/belt1.png', color: 'Dark Brown', date: '2024-01-15', description: 'Premium full-grain leather belt with a rich finish, ideal for both formal and smart-casual wear.' },
+    { id: 2, name: 'Executive Classic Leather Belt', image: '/images/belt2.png', color: 'Brown', date: '2024-02-20', description: 'Sleek leather belt with a modern buckle design, adding a subtle statement to everyday outfits.' },
+    { id: 3, name: 'Vintage Classic Leather Belt', image: '/images/belt3.png', color: 'Black', date: '2024-03-10', description: 'Timeless black leather belt crafted for durability and everyday professional use.' },
+    { id: 4, name: 'Artisan Classic Leather Belt', image: '/images/belt4.png', color: 'Tan', date: '2024-01-25', description: 'Smooth tan leather belt with traditional stitching, perfect for refined casual styling.' },
+    { id: 5, name: 'Formal Pro Dress Belt', image: '/images/belt5.png', color: 'Deep Brown', date: '2024-04-05', description: 'Structured leather belt with a clean profile, designed to complement formal trousers and suits.' },
+    { id: 6, name: 'Urban Formal Dress Belt', image: '/images/belt6.png', color: 'Black', date: '2024-02-14', description: 'Minimalist black leather belt with a polished buckle for sharp office and formal looks.' },
+    { id: 7, name: 'Signature Formal Leather Belt', image: '/images/belt7.png', color: 'Light Tan', date: '2024-05-18', description: 'Elegant tan leather belt that pairs effortlessly with formal and semi-formal attire.' },
+    { id: 8, name: 'Casual Everyday Leather Belt', image: '/images/belt8.png', color: 'Brown', date: '2024-03-22', description: 'Soft leather casual belt with a relaxed finish, ideal for daily wear and denim styling.' },
     /*{ id: 9, name: 'Casual Leather Belt', image: '/images/L8.png', color: 'Black', date: '2024-06-30', description: 'Classic casual companion in sleek black. Features reinforced stitching and comfortable wear for daily use.' },
     { id: 10, name: 'Reversible Leather Belt', image: '/images/L9.png', color: 'Black', date: '2024-07-12', description: 'Modern reversible design with practical features. Two colors in one belt for versatile styling options.' },
     { id: 11, name: 'Reversible Leather Belt', image: '/images/L10.png', color: 'Tan', date: '2024-08-05', description: 'Contemporary tan leather with reversible functionality. Combines fashion with practical design elements.' },
@@ -57,7 +57,7 @@ const BeltsPage = () => {
       </div>
 
       <div className="belts-hero-section">
-        <img src="/images/beltbanner.png" alt="Premium Leather Belts" className="belts-hero-image" />
+        <img src="/images/Beltbanner.png" alt="Premium Leather Belts" className="belts-hero-image" />
       </div>
 
       {/* Leather Belts Benefits Section */}

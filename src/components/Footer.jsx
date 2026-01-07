@@ -12,6 +12,7 @@ const Footer = () => {
     { name: 'Backpacks', path: '/backpacks' },
     { name: 'Briefcases', path: '/brief-cases' },
     { name: 'Wallets', path: '/wallet' },
+    {name: 'Belts', path: '/belt'}
   ];
 
   const companyLinks = [

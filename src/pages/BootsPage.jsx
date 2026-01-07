@@ -6,18 +6,18 @@ const BootsPage = () => {
 
   // Boots products with descriptions
   const products = [
-    { id: 1, name: 'Classic Leather Boots', image: '/images/boot1.png', color: 'Brown', date: '2024-01-15', description: 'Premium leather boots with durable construction. Features comfortable cushioning and anti-slip sole for all-day wear.' },
-    { id: 2, name: 'Classic Leather Boots', image: '/images/boot2.png', color: 'Black', date: '2024-02-20', description: 'Sophisticated black leather boots with timeless design. Perfect for both formal occasions and casual outings.' },
-    { id: 3, name: 'Vintage Ankle Boots', image: '/images/boot3.png', color: 'Tan', date: '2024-03-10', description: 'Vintage-inspired ankle boots with classic appeal. Crafted from premium leather with comfortable fit.' },
-    { id: 4, name: 'Vintage Ankle Boots', image: '/images/boot4.png', color: 'Dark Brown', date: '2024-01-25', description: 'Dark brown ankle boots with vintage charm. Features quality construction and stylish design.' },
-    { id: 5, name: 'Chelsea Leather Boots', image: '/images/boot5.png', color: 'Black', date: '2024-04-05', description: 'Classic Chelsea boots in sleek black leather. Features elastic side panels for easy wear and superior comfort.' },
-    { id: 6, name: 'Chelsea Leather Boots', image: '/images/boot6.png', color: 'Brown', date: '2024-02-14', description: 'Brown Chelsea boots with premium leather finish. Versatile design suitable for various occasions.' },
-    { id: 7, name: 'Combat Boots', image: '/images/boot7.png', color: 'Black', date: '2024-05-18', description: 'Rugged combat boots with military-inspired design. Durable leather construction with reinforced stitching.' },
-    { id: 8, name: 'Combat Boots', image: '/images/boot8.png', color: 'Brown', date: '2024-03-22', description: 'Brown combat boots with sturdy construction. Features lace-up design and superior ankle support.' },
-    { id: 9, name: 'Desert Boots', image: '/images/boot9.png', color: 'Tan', date: '2024-06-30', description: 'Comfortable desert boots in tan suede. Lightweight design perfect for casual wear and warm weather.' },
-    { id: 10, name: 'Desert Boots', image: '/images/boot10.png', color: 'Brown', date: '2024-07-12', description: 'Classic brown desert boots with timeless style. Features soft leather and comfortable crepe sole.' },
-    { id: 11, name: 'Chukka Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-08-05', description: 'Elegant chukka boots in rich brown leather. Minimalist design with superior comfort and durability.' },
-    { id: 12, name: 'Chukka Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-01-08', description: 'Sleek black chukka boots with refined appearance. Perfect for smart-casual occasions with premium leather.' },
+    { id: 1, name: 'Leather Desert Chukka Boots', image: '/images/os1.png', color: 'Dark Brown', date: '2024-01-15', description: 'Ankle-height suede leather boots with a crepe sole, ideal for smart-casual wear.' },
+    { id: 2, name: 'Leather Casual Sneakers', image: '/images/os2.png', color: 'Navy Blue', date: '2024-02-20', description: 'Low-top leather sneakers with contrast laces, designed for everyday comfort and style.' },
+    { id: 3, name: 'Leather Monk Strap Shoes', image: '/images/os3.png', color: 'Blue', date: '2024-03-10', description: 'Single monk strap leather shoes offering a refined alternative to lace-ups.' },
+    /*{ id: 4, name: 'Vintage Ankle Boots', image: '/images/os4.png', color: 'Dark Brown', date: '2024-01-25', description: 'Dark brown ankle boots with vintage charm. Features quality construction and stylish design.' },*/
+    { id: 5, name: 'Leather Oxford Shoes', image: '/images/os5.png', color: 'Black', date: '2024-04-05', description: 'Classic closed-lacing leather shoes perfect for formal and office wear.' },
+    { id: 6, name: 'Leather Casual Sneakers', image: '/images/os7.png', color: 'Black', date: '2024-02-14', description: 'Cushioned leather sneakers with a minimalist profile for daily casual use.' },
+    { id: 7, name: 'Leather Derby Shoes', image: '/images/os8.png', color: 'Tan Brown', date: '2024-05-18', description: 'Open-lace leather shoes with a rounded toe, suitable for formal and semi-formal outfits.' },
+    { id: 8, name: 'Textured Leather Formal Shoes', image: '/images/os9.png', color: 'Grey', date: '2024-03-22', description: 'Patterned leather lace-up shoes crafted for statement formal styling.' },
+    { id: 9, name: 'Leather Casual Sneakers', image: '/images/os10.png', color: 'Navy Blue', date: '2024-06-30', description: 'Sport-inspired leather sneakers combining comfort with a clean casual look.' },
+    { id: 10, name: 'Leather Desert Boots', image: '/images/os11.png', color: 'Chocolate Brown', date: '2024-07-12', description: 'Lace-up suede leather boots with a relaxed silhouette for casual wear.' },
+    { id: 11, name: 'Leather Chukka Boots', image: '/images/os12.png', color: 'Medium Brown', date: '2024-08-05', description: 'Polished ankle-length leather boots with a sleek profile for smart occasions.' },
+    /*{ id: 12, name: 'Chukka Boots', image: '/images/os10.png', color: 'Black', date: '2024-01-08', description: 'Sleek black chukka boots with refined appearance. Perfect for smart-casual occasions with premium leather.' },
     { id: 13, name: 'Work Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-09-14', description: 'Heavy-duty work boots built for durability. Features steel toe protection and slip-resistant sole.' },
     { id: 14, name: 'Work Boots', image: '/api/placeholder/300/300', color: 'Tan', date: '2024-04-28', description: 'Tan work boots with rugged construction. Designed for comfort during long work hours with safety features.' },
     { id: 15, name: 'Hiking Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-10-20', description: 'Professional hiking boots with waterproof protection. Features excellent ankle support and grip for trails.' },
@@ -26,7 +26,7 @@ const BootsPage = () => {
     { id: 18, name: 'Dress Boots', image: '/api/placeholder/300/300', color: 'Dark Brown', date: '2024-06-17', description: 'Dark brown dress boots with refined appearance. Features premium leather and classic styling.' },
     { id: 19, name: 'Winter Boots', image: '/api/placeholder/300/300', color: 'Brown', date: '2024-12-01', description: 'Insulated winter boots for cold weather. Features waterproof leather and warm fleece lining.' },
     { id: 20, name: 'Winter Boots', image: '/api/placeholder/300/300', color: 'Black', date: '2024-07-25', description: 'Black winter boots with superior insulation. Designed for harsh weather with thermal protection.' }
-  ];
+  */];
 
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
@@ -53,7 +53,7 @@ const BootsPage = () => {
       </div>
 
       <div className="boots-hero-section">
-        <img src="/images/boots_hero.png" alt="Premium Leather Boots" className="boots-hero-image" />
+        <img src="/images/shoesbanner.png" alt="Premium Leather Boots" className="boots-hero-image" />
       </div>
 
       {/* Featured Products Header - Added this section */}

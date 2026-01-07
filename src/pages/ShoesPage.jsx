@@ -62,16 +62,16 @@ const ShoesPage = () => {
   };
 
   const collections = [
-   /* {
-      name: "Boots",
+    {
+      name: "Other Shoes",
       products: 15,
       image: "/images/boots1.png",
       path: "/shoes/boots"
-    },*/
+    },
     {
       name: "Formal Shoes",
       products: 10,
-      image: "/images/formal1_collection.png",
+      image: "/images/formal8.png",
       path: "/shoes/formal"
     },
     {

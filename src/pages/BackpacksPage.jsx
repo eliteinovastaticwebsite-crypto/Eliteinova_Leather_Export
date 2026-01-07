@@ -59,12 +59,12 @@ const BackpacksPage = () => {
       image: "/images/bp5.png",
       path: "/backpacks/men-backpacks"
     },
-    /*{
+    {
       name: "Women's Backpacks",
       products: 16,
-      image: "/images/hiking_collection.png",
+      image: "/images/wbp2.png",
       path: "/backpacks/women-backpacks"
-    },*/
+    },
   ];
 
   return (
