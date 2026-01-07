@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Send, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import './ContactForm.css';
-import emailjs from '@emailjs/browser';
-
 
 const ContactForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -188,68 +186,40 @@ const ContactForm = ({ onClose }) => {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!formData.name || !formData.email || !formData.message) {
-    alert('Please fill in all required fields');
-    return;
-  }
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Please fill in all required fields');
+      return;
+    }
 
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  const templateParams = {
-    to_email: 'eliteinovatechpvtltd@gmail.com',
-    from_name: formData.name,
-    from_email: formData.email,
-    phone: formData.phone || 'Not provided',
-    company: formData.company || 'Not provided',
-    location: `${formData.country || ''}${formData.state ? `, ${formData.state}` : ''}${formData.district ? `, ${formData.district}` : ''}${formData.pincode ? ` (${formData.pincode})` : ''}`,
-    products: formData.productInterest.length
-      ? formData.productInterest.join(', ')
-      : 'None selected',
-    message: formData.message,
-    reply_to: formData.email,
-    subject: `New Wholesale Inquiry from ${formData.name}`
-  };
-
-  try {
-    await emailjs.send(
-  'service_x7abcd1',
-  'template_k9xyz22',
-  templateParams,
-  'RkT9FJXabc123'
-);
-
-
-    setSubmitted(true);
-
+    // Simulate API call
     setTimeout(() => {
-      setSubmitted(false);
+      console.log('Form data:', formData);
+
+      setSubmitted(true);
+
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        country: '',
+        state: '',
+        district: '',
+        pincode: '',
+        productInterest: [],
+        message: ''
+      });
+
+      setCurrentStep(0);
+      setIsSubmitting(false);
+
       if (onClose) onClose();
-    }, 3000);
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      country: '',
-      state: '',
-      district: '',
-      pincode: '',
-      productInterest: [],
-      message: ''
-    });
-
-    setCurrentStep(0);
-  } catch (error) {
-    console.error(error);
-    alert('Failed to send message. Please try again later.');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
+    }, 1500);
+  };
 
   const getStates = () => {
     return formData.country && locationData[formData.country] 
@@ -616,15 +586,14 @@ const ContactForm = ({ onClose }) => {
                   </button>
                 ) : (
                   <button
-  type="submit"
-  onClick={handleSubmit}
-  className="nav-button submit"
-  disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
->
-  <Send size={18} />
-  <span>{isSubmitting ? 'Sending...' : 'Submit Form'}</span>
-</button>
-
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="nav-button submit"
+                    disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
+                  >
+                    <Send size={18} />
+                    <span>{isSubmitting ? 'Sending...' : 'Submit Form'}</span>
+                  </button>
                 )}
               </div>
             </>
