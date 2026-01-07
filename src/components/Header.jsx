@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import './Header.css';
-import ContactForm from './ContactForm'; // Import your ContactForm component
+import ContactForm from './ContactForm';
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrollText, setScrollText] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showContactForm, setShowContactForm] = useState(false); // State for contact form
+  const [showContactForm, setShowContactForm] = useState(false);
   const navigate = useNavigate();
+
+  // External website URL
+  const companyWebsite = "https://www.eliteinovatechpvtltd.com/";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,7 +26,6 @@ const Header = () => {
     {
       name: 'SHOES',
       dropdown: [
-       /* { name: 'Boots', path: '/shoes/boots' },*/
         { name: 'Formal Shoes', path: '/shoes/formal' },
         { name: 'Casual Shoes', path: '/shoes/casual' },
       ],
@@ -52,7 +54,6 @@ const Header = () => {
       name: 'BACKPACKS',
       dropdown: [
         { name: 'Men\'s Backpacks', path: '/backpacks/men-backpacks' },
-       /* { name: 'Women\'s Backpacks', path: '/backpacks/women-backpacks' } */
       ],
       path: '/backpacks'
     },
@@ -69,7 +70,7 @@ const Header = () => {
       ],
       path: '/wallet' 
     },
-   /* { name: 'BELT', dropdown: null, path: '/belt' },*/
+    { name: 'BELT', dropdown: null, path: '/belt' },
     { name: 'ABOUT US', dropdown: null, path: '/about' },
     { name: 'CONTACT', dropdown: null, path: '/contact' }
   ];
@@ -82,8 +83,6 @@ const Header = () => {
 
   const handleDropdownClick = (e, item) => {
     e.preventDefault();
-    
-    // Navigate to the path
     if (item && item.path) {
       navigate(item.path);
       setActiveDropdown(null);
@@ -99,7 +98,6 @@ const Header = () => {
     }
   };
 
-  // Handle mobile main link click (navigate to category page)
   const handleMobileMainLinkClick = (item) => {
     if (item.path) {
       navigate(item.path);
@@ -108,7 +106,6 @@ const Header = () => {
     }
   };
 
-  // Handle mobile dropdown toggle (just toggle, don't navigate)
   const handleMobileDropdownToggle = (idx, e) => {
     e.stopPropagation();
     setActiveDropdown(activeDropdown === idx ? null : idx);
@@ -118,14 +115,19 @@ const Header = () => {
     navigate('/');
   };
 
-  // Updated handleOrderNowClick function - shows contact form as modal
-  const handleOrderNowClick = () => {
-    setShowContactForm(true); // Show the contact form
-    setMobileMenuOpen(false); // Close mobile menu if open
-    setActiveDropdown(null); // Close any open dropdowns
+  // Handle company website click
+  const handleCompanyWebsiteClick = (e) => {
+    e.preventDefault();
+    // Open in new tab
+    window.open(companyWebsite, '_blank', 'noopener,noreferrer');
   };
 
-  // Function to close contact form
+  const handleOrderNowClick = () => {
+    setShowContactForm(true);
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
   const handleCloseContactForm = () => {
     setShowContactForm(false);
   };
@@ -160,8 +162,29 @@ const Header = () => {
                 </h1>
 
                 <div className="logo-sub-row">
-                  <h3 className="logo-subtitle">
+                  {/* Make the subtitle a clickable link */}
+                  <h3 
+                    className="logo-subtitle company-website-link"
+                    onClick={handleCompanyWebsiteClick}
+                    title="Visit our company website"
+                  >
                     Eliteinova Tech Pvt Ltd
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      className="external-link-icon"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
                   </h3>
 
                   <div className="logo-country">
@@ -247,16 +270,14 @@ const Header = () => {
               ))}
             </ul>
 
-            {/* UPDATED Mobile Menu */}
+            {/* Mobile Menu */}
             {mobileMenuOpen && (
               <div className="mobile-menu">
                 {menuItems.map((item, idx) => (
                   <div key={idx} className="mobile-menu-item">
-                    {/* If item has dropdown, use split button layout */}
                     {item.dropdown ? (
                       <div className="mobile-menu-item-container">
                         <div className="mobile-menu-header">
-                          {/* Main category link - navigates to category page */}
                           <button
                             className="mobile-menu-main-link"
                             onClick={() => handleMobileMainLinkClick(item)}
@@ -264,7 +285,6 @@ const Header = () => {
                             {item.name}
                           </button>
                           
-                          {/* Separate dropdown toggle button */}
                           <button
                             className="mobile-dropdown-toggle"
                             onClick={(e) => handleMobileDropdownToggle(idx, e)}
@@ -276,7 +296,6 @@ const Header = () => {
                           </button>
                         </div>
                         
-                        {/* Dropdown submenu */}
                         {activeDropdown === idx && (
                           <div className="mobile-dropdown">
                             {item.dropdown.map((subItem, subIdx) => (
@@ -292,7 +311,6 @@ const Header = () => {
                         )}
                       </div>
                     ) : (
-                      /* If no dropdown, simple link */
                       <button
                         className="mobile-menu-link"
                         onClick={() => handleMenuClick(item)}

@@ -946,3 +946,92 @@
     font-size: 24px;
   }
 }
+/* Add these styles to Header.css */
+
+/* Company website link styling */
+.company-website-link {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.company-website-link:hover {
+  color: #ea580c !important;
+  text-decoration: underline;
+}
+
+.external-link-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-left: 2px;
+}
+
+.company-website-link:hover .external-link-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Tooltip for the link */
+.company-website-link::after {
+  content: 'Visit our company website';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 100;
+  margin-bottom: 8px;
+}
+
+.company-website-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .company-website-link::after {
+    display: none; /* Hide tooltip on mobile */
+  }
+  
+  .company-website-link {
+    gap: 3px;
+  }
+  
+  .external-link-icon {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .company-website-link:hover .external-link-icon {
+    opacity: 0.7; /* Make it visible on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .company-website-link {
+    gap: 2px;
+  }
+  
+  .external-link-icon {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Ensure proper cursor on hover */
+.logo-subtitle.company-website-link:hover {
+  cursor: pointer !important;
+}
