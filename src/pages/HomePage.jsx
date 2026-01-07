@@ -80,13 +80,12 @@ const HomePage = () => {
       color: "#8b4513",
       path: "/wallet"
     },
-    /* {
+    {
       name: "Belt",
-      products: 85,
       image: "/images/collection_belt.png",
       color: "#8b4513",
       path: "/belt"
-    } */
+    }
   ];
 
   useEffect(() => {
