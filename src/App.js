@@ -28,6 +28,7 @@ import SmallBagsPage from './pages/SmallBagsPage';
 import TravelPage from './pages/TravelPage';
 import BackpacksPage from './pages/BackpacksPage';
 import WalletsPage from './pages/WalletsPage';
+import PrivacyTerms from './pages/PrivacyTerms';
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
             <Route path="belt" element={<BeltsPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactUs />} />
+            <Route path="privacypolicy" element={<PrivacyTerms />} />
           </Routes>
         </main>
         <Footer /> {/* Add Footer here */}

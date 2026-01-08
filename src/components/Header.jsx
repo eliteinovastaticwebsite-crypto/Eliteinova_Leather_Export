@@ -90,7 +90,9 @@ const Header = () => {
     },
     { name: 'BELT', dropdown: null, path: '/belt' },
     { name: 'ABOUT US', dropdown: null, path: '/about' },
-    { name: 'CONTACT', dropdown: null, path: '/contact' }
+    { name: 'CONTACT', dropdown: null, path: '/contact' },
+    { name: 'PRIVACY POLICY', dropdown: null, path: '/privacypolicy' }
+
   ];
 
   const handleDropdownClick = (e, item) => {

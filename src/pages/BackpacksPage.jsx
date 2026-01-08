@@ -74,7 +74,7 @@ const BackpacksPage = () => {
       </div>
 
       <div className="backpacks-hero-section">
-        <img src="/images/smallbanner.png" alt="Premium Backpacks" className="backpacks-hero-image" />
+        <img src="/images/bpbanner.png" alt="Premium Backpacks" className="backpacks-hero-image" />
       </div>
 
       {/* Collections Section */}

@@ -60,7 +60,7 @@ const ContactUs = () => {
       <div className="contact-banner">
   <div className="banner-overlay"></div>
   <img 
-    src="/images/contact2.png" 
+    src="/images/contact3.png" 
     alt="Leather Craftsmanship"
     className="banner-image"
   />

@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* Header Container */
-/* Header Container */
 .header {
   width: 100%;
   background-color: white;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  position: sticky;  /* Add this line */
-  top: 0;            /* Add this line */
-  z-index: 100;      /* Add this line - ensures header stays above other content */
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 /* Announcement Bar */
@@ -84,6 +83,7 @@
   opacity: 0.8;
   font-weight: 400;
 }
+
 .logo-title,
 .logo-subtitle {
   display: block;
@@ -92,7 +92,7 @@
 .logo-sub-row {
   display: flex;
   align-items: center;
-  gap: 8px;            /* space between subtitle & flag */
+  gap: 8px;
   margin-top: 4px;
 }
 
@@ -200,19 +200,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.15rem;
+  gap: 0.1rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .menu-item {
   position: relative;
+  flex-shrink: 1;
 }
 
 .menu-button {
-  padding: 0.75rem 0.6rem;
-  font-size: 0.8125rem;
+  padding: 0.75rem 0.4rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: #78350f;
   background: transparent;
@@ -220,11 +222,14 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.15rem;
   border-radius: 0.5rem 0.5rem 0 0;
   transition: all 0.2s;
   white-space: nowrap;
   text-decoration: none;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu-button:hover {
@@ -247,7 +252,7 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   border-radius: 0 0 0.5rem 0.5rem;
   border: 1px solid #fde68a;
-  min-width: 220px;
+  min-width: 200px;
   z-index: 50;
   overflow: hidden;
 }
@@ -276,6 +281,47 @@
   color: #ea580c;
 }
 
+/* Specific menu item widths to prevent text cutoff */
+.menu-item:nth-child(1) .menu-button { /* HOME */
+  min-width: 60px;
+}
+.menu-item:nth-child(2) .menu-button { /* SHOES */
+  min-width: 60px;
+}
+.menu-item:nth-child(3) .menu-button { /* WOMEN HANDBAGS */
+  min-width: 130px;
+}
+.menu-item:nth-child(4) .menu-button { /* SMALL BAGS */
+  min-width: 100px;
+}
+.menu-item:nth-child(5) .menu-button { /* LAPTOP BAGS */
+  min-width: 110px;
+}
+.menu-item:nth-child(6) .menu-button { /* TRAVEL BAGS */
+  min-width: 100px;
+}
+.menu-item:nth-child(7) .menu-button { /* BACKPACKS */
+  min-width: 100px;
+}
+.menu-item:nth-child(8) .menu-button { /* BRIEFCASE */
+  min-width: 95px;
+}
+.menu-item:nth-child(9) .menu-button { /* WALLET */
+  min-width: 70px;
+}
+.menu-item:nth-child(10) .menu-button { /* BELT */
+  min-width: 55px;
+}
+.menu-item:nth-child(11) .menu-button { /* ABOUT US */
+  min-width: 85px;
+}
+.menu-item:nth-child(12) .menu-button { /* CONTACT */
+  min-width: 80px;
+}
+.menu-item:nth-child(13) .menu-button { /* PRIVACY POLICY */
+  min-width: 110px;
+}
+
 /* Mobile Menu */
 .mobile-menu {
   display: none;
@@ -292,7 +338,7 @@
   border-bottom: none;
 }
 
-/* FIXED: Container for menu items with dropdowns */
+/* Container for menu items with dropdowns */
 .mobile-menu-item-container {
   display: flex;
   flex-direction: column;
@@ -300,7 +346,7 @@
   outline: none;
 }
 
-/* FIXED: Wrapper for main link + dropdown toggle */
+/* Wrapper for main link + dropdown toggle */
 .mobile-menu-header {
   display: flex;
   align-items: center;
@@ -312,7 +358,7 @@
   outline: none;
 }
 
-/* FIXED: Main menu link (clickable for navigation) */
+/* Main menu link (clickable for navigation) */
 .mobile-menu-main-link {
   flex: 1;
   padding: 0.75rem 1rem;
@@ -327,7 +373,7 @@
   border: none;
 }
 
-/* FIXED: Dropdown toggle button (separate from link) */
+/* Dropdown toggle button (separate from link) */
 .mobile-dropdown-toggle {
   padding: 0.75rem 1rem;
   background: transparent;
@@ -341,7 +387,7 @@
   min-width: 44px;
 }
 
-/* FIXED: Mobile menu button as link for direct navigation */
+/* Mobile menu button as link for direct navigation */
 .mobile-menu-button {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -359,7 +405,7 @@
   text-decoration: none;
 }
 
-/* ADDED: Mobile menu link for direct page navigation */
+/* Mobile menu link for direct page navigation */
 .mobile-menu-link {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -386,7 +432,7 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* ADDED: Active state for mobile navigation */
+/* Active state for mobile navigation */
 .mobile-menu-button:active,
 .mobile-menu-link:active,
 .mobile-menu-main-link:active {
@@ -425,14 +471,14 @@
   color: #ea580c;
 }
 
-/* ADDED: Active/pressed state for better mobile feedback */
+/* Active/pressed state for better mobile feedback */
 .mobile-dropdown-item:active {
   background-color: rgba(255, 237, 213, 0.5);
   color: #ea580c;
 }
 
 /* ========================================
-   RESPONSIVE DESIGN - MOBILE FIRST
+   RESPONSIVE DESIGN
    ======================================== */
 
 /* Tablet devices (768px - 1024px) */
@@ -451,8 +497,8 @@
   }
 
   .menu-button {
-    font-size: 0.75rem;
-    padding: 0.65rem 0.5rem;
+    font-size: 0.72rem;
+    padding: 0.65rem 0.35rem;
   }
 
   .company-logo {
@@ -462,6 +508,20 @@
   .order-now-button {
     padding: 0.5rem 1.25rem;
     font-size: 0.875rem;
+  }
+
+  /* Adjust specific item widths for tablet */
+  .menu-item:nth-child(3) .menu-button { /* WOMEN HANDBAGS */
+    min-width: 120px;
+  }
+  .menu-item:nth-child(5) .menu-button { /* LAPTOP BAGS */
+    min-width: 100px;
+  }
+  .menu-item:nth-child(6) .menu-button { /* TRAVEL BAGS */
+    min-width: 90px;
+  }
+  .menu-item:nth-child(13) .menu-button { /* PRIVACY POLICY */
+    min-width: 100px;
   }
 }
 
@@ -515,7 +575,7 @@
     flex-wrap: nowrap;
     flex: 1 1 auto;
     min-width: 0;
-    max-width: calc(100% - 140px); /* Reserve space for buttons */
+    max-width: calc(100% - 140px);
   }
 
   .company-logo {
@@ -782,6 +842,66 @@
   }
 }
 
+/* Medium Desktop adjustments (1280px - 1440px) */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .nav-container {
+    padding: 0 0.5rem;
+  }
+  
+  .menu-button {
+    font-size: 0.8rem;
+    padding: 0.75rem 0.45rem;
+  }
+  
+  .desktop-menu {
+    gap: 0.08rem;
+  }
+}
+
+/* Large Desktop optimization (1440px+) */
+@media (min-width: 1440px) {
+  .nav-container {
+    max-width: 1400px;
+  }
+  
+  .menu-button {
+    font-size: 0.82rem;
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .desktop-menu {
+    gap: 0.15rem;
+  }
+}
+
+/* Text truncation fix for very long items */
+@media (max-width: 1366px) {
+  .menu-button {
+    font-size: 0.76rem;
+  }
+  
+  .menu-button.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Fallback for extremely tight spaces */
+@media (max-width: 1200px) {
+  .desktop-menu {
+    justify-content: space-between;
+  }
+  
+  .menu-button {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    min-width: auto !important;
+    padding: 0.75rem 0.3rem;
+  }
+}
+
 /* Smooth scrolling for mobile menu */
 .mobile-menu::-webkit-scrollbar {
   width: 6px;
@@ -800,7 +920,7 @@
   background: #f59e0b;
 }
 
-/* ADDED: Tap highlight removal for better mobile UX */
+/* Tap highlight removal for better mobile UX */
 .mobile-menu-button,
 .mobile-menu-link,
 .mobile-menu-main-link,
@@ -812,7 +932,7 @@
   user-select: none;
 }
 
-/* ADDED: Ensure clickable area is large enough on mobile */
+/* Ensure clickable area is large enough on mobile */
 @media (hover: none) and (pointer: coarse) {
   .mobile-menu-button,
   .mobile-menu-link,
@@ -833,7 +953,6 @@
     min-height: 44px;
   }
 }
-/* Header.css - Add these styles */
 
 /* Hide hamburger menu on desktop/tablet */
 @media (min-width: 768px) {
@@ -931,7 +1050,7 @@
   background-color: #f5f5f5;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for contact form */
 @media (max-width: 768px) {
   .contact-form-modal {
     padding: 20px;
@@ -946,7 +1065,6 @@
     font-size: 24px;
   }
 }
-/* Add these styles to Header.css */
 
 /* Company website link styling */
 .company-website-link {
@@ -1000,10 +1118,10 @@
   visibility: visible;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for company website link */
 @media (max-width: 767px) {
   .company-website-link::after {
-    display: none; /* Hide tooltip on mobile */
+    display: none;
   }
   
   .company-website-link {
@@ -1016,7 +1134,7 @@
   }
   
   .company-website-link:hover .external-link-icon {
-    opacity: 0.7; /* Make it visible on mobile */
+    opacity: 0.7;
   }
 }
 

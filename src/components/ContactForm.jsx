@@ -22,619 +22,62 @@ const ContactForm = ({ onClose }) => {
   const totalSteps = 4;
 
   const locationData = {
-  'India': {
-    'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Tirupati', 'Nellore'],
-    'Arunachal Pradesh': ['Itanagar', 'Naharlagun', 'Pasighat', 'Tawang'],
-    'Assam': ['Guwahati', 'Silchar', 'Dibrugarh', 'Jorhat', 'Nagaon'],
-    'Bihar': ['Patna', 'Gaya', 'Bhagalpur', 'Muzaffarpur', 'Darbhanga'],
-    'Chhattisgarh': ['Raipur', 'Bhilai', 'Bilaspur', 'Korba', 'Durg'],
-    'Goa': ['Panaji', 'Margao', 'Vasco da Gama', 'Mapusa'],
-    'Gujarat': ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar'],
-    'Haryana': ['Faridabad', 'Gurgaon', 'Panipat', 'Ambala', 'Karnal'],
-    'Himachal Pradesh': ['Shimla', 'Dharamshala', 'Solan', 'Mandi', 'Kullu'],
-    'Jharkhand': ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh'],
-    'Karnataka': ['Bangalore', 'Mysore', 'Mangalore', 'Hubli', 'Belgaum'],
-    'Kerala': ['Thiruvananthapuram', 'Kochi', 'Kozhikode', 'Thrissur', 'Kollam'],
-    'Madhya Pradesh': ['Bhopal', 'Indore', 'Gwalior', 'Jabalpur', 'Ujjain'],
-    'Maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Nashik', 'Aurangabad'],
-    'Manipur': ['Imphal', 'Thoubal', 'Bishnupur', 'Churachandpur'],
-    'Meghalaya': ['Shillong', 'Tura', 'Jowai', 'Nongstoin'],
-    'Mizoram': ['Aizawl', 'Lunglei', 'Champhai', 'Serchhip'],
-    'Nagaland': ['Kohima', 'Dimapur', 'Mokokchung', 'Wokha'],
-    'Odisha': ['Bhubaneswar', 'Cuttack', 'Rourkela', 'Puri', 'Berhampur'],
-    'Punjab': ['Ludhiana', 'Amritsar', 'Jalandhar', 'Patiala', 'Bathinda'],
-    'Rajasthan': ['Jaipur', 'Jodhpur', 'Udaipur', 'Kota', 'Ajmer'],
-    'Sikkim': ['Gangtok', 'Namchi', 'Gyalshing', 'Mangan'],
-    'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem'],
-    'Telangana': ['Hyderabad', 'Warangal', 'Nizamabad', 'Karimnagar', 'Khammam'],
-    'Tripura': ['Agartala', 'Udaipur', 'Dharmanagar', 'Kailashahar'],
-    'Uttar Pradesh': ['Lucknow', 'Kanpur', 'Agra', 'Varanasi', 'Meerut'],
-    'Uttarakhand': ['Dehradun', 'Haridwar', 'Roorkee', 'Nainital', 'Mussoorie'],
-    'West Bengal': ['Kolkata', 'Howrah', 'Durgapur', 'Siliguri', 'Asansol'],
-    'Delhi': ['New Delhi', 'Dwarka', 'Rohini', 'Karol Bagh']
-  },
-  'United States': {
-    'Alabama': ['Birmingham', 'Montgomery', 'Mobile', 'Huntsville', 'Tuscaloosa'],
-    'Alaska': ['Anchorage', 'Fairbanks', 'Juneau', 'Sitka', 'Ketchikan'],
-    'Arizona': ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Scottsdale'],
-    'Arkansas': ['Little Rock', 'Fort Smith', 'Fayetteville', 'Springdale', 'Jonesboro'],
-    'California': ['Los Angeles', 'San Francisco', 'San Diego', 'Sacramento', 'San Jose'],
-    'Colorado': ['Denver', 'Colorado Springs', 'Aurora', 'Fort Collins', 'Lakewood'],
-    'Connecticut': ['Bridgeport', 'New Haven', 'Hartford', 'Stamford', 'Waterbury'],
-    'Delaware': ['Wilmington', 'Dover', 'Newark', 'Middletown', 'Smyrna'],
-    'Florida': ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
-    'Georgia': ['Atlanta', 'Augusta', 'Columbus', 'Savannah', 'Athens'],
-    'Hawaii': ['Honolulu', 'Pearl City', 'Hilo', 'Kailua', 'Waipahu'],
-    'Idaho': ['Boise', 'Meridian', 'Nampa', 'Idaho Falls', 'Pocatello'],
-    'Illinois': ['Chicago', 'Aurora', 'Naperville', 'Joliet', 'Rockford'],
-    'Indiana': ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Carmel'],
-    'Iowa': ['Des Moines', 'Cedar Rapids', 'Davenport', 'Sioux City', 'Iowa City'],
-    'Kansas': ['Wichita', 'Overland Park', 'Kansas City', 'Topeka', 'Olathe'],
-    'Kentucky': ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
-    'Louisiana': ['New Orleans', 'Baton Rouge', 'Shreveport', 'Lafayette', 'Lake Charles'],
-    'Maine': ['Portland', 'Lewiston', 'Bangor', 'South Portland', 'Auburn'],
-    'Maryland': ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
-    'Massachusetts': ['Boston', 'Worcester', 'Springfield', 'Cambridge', 'Lowell'],
-    'Michigan': ['Detroit', 'Grand Rapids', 'Warren', 'Sterling Heights', 'Ann Arbor'],
-    'Minnesota': ['Minneapolis', 'Saint Paul', 'Rochester', 'Duluth', 'Bloomington'],
-    'Mississippi': ['Jackson', 'Gulfport', 'Southaven', 'Hattiesburg', 'Biloxi'],
-    'Missouri': ['Kansas City', 'Saint Louis', 'Springfield', 'Columbia', 'Independence'],
-    'Montana': ['Billings', 'Missoula', 'Great Falls', 'Bozeman', 'Helena'],
-    'Nebraska': ['Omaha', 'Lincoln', 'Bellevue', 'Grand Island', 'Kearney'],
-    'Nevada': ['Las Vegas', 'Henderson', 'Reno', 'North Las Vegas', 'Sparks'],
-    'New Hampshire': ['Manchester', 'Nashua', 'Concord', 'Derry', 'Dover'],
-    'New Jersey': ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Edison'],
-    'New Mexico': ['Albuquerque', 'Las Cruces', 'Rio Rancho', 'Santa Fe', 'Roswell'],
-    'New York': ['New York City', 'Buffalo', 'Rochester', 'Yonkers', 'Syracuse'],
-    'North Carolina': ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
-    'North Dakota': ['Fargo', 'Bismarck', 'Grand Forks', 'Minot', 'West Fargo'],
-    'Ohio': ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
-    'Oklahoma': ['Oklahoma City', 'Tulsa', 'Norman', 'Broken Arrow', 'Lawton'],
-    'Oregon': ['Portland', 'Eugene', 'Salem', 'Gresham', 'Hillsboro'],
-    'Pennsylvania': ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Reading'],
-    'Rhode Island': ['Providence', 'Warwick', 'Cranston', 'Pawtucket', 'East Providence'],
-    'South Carolina': ['Charleston', 'Columbia', 'North Charleston', 'Mount Pleasant', 'Rock Hill'],
-    'South Dakota': ['Sioux Falls', 'Rapid City', 'Aberdeen', 'Brookings', 'Watertown'],
-    'Tennessee': ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Clarksville'],
-    'Texas': ['Houston', 'Dallas', 'Austin', 'San Antonio', 'Fort Worth'],
-    'Utah': ['Salt Lake City', 'West Valley City', 'Provo', 'West Jordan', 'Orem'],
-    'Vermont': ['Burlington', 'South Burlington', 'Rutland', 'Barre', 'Montpelier'],
-    'Virginia': ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Richmond', 'Newport News'],
-    'Washington': ['Seattle', 'Spokane', 'Tacoma', 'Vancouver', 'Bellevue'],
-    'West Virginia': ['Charleston', 'Huntington', 'Morgantown', 'Parkersburg', 'Wheeling'],
-    'Wisconsin': ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
-    'Wyoming': ['Cheyenne', 'Casper', 'Laramie', 'Gillette', 'Rock Springs']
-  },
-  'United Kingdom': {
-    'England': ['London', 'Manchester', 'Birmingham', 'Liverpool', 'Leeds'],
-    'Scotland': ['Edinburgh', 'Glasgow', 'Aberdeen', 'Dundee', 'Inverness'],
-    'Wales': ['Cardiff', 'Swansea', 'Newport', 'Wrexham', 'Barry'],
-    'Northern Ireland': ['Belfast', 'Derry', 'Lisburn', 'Newry', 'Armagh']
-  },
-  'Canada': {
-    'Alberta': ['Calgary', 'Edmonton', 'Red Deer', 'Lethbridge', 'Fort McMurray'],
-    'British Columbia': ['Vancouver', 'Victoria', 'Kelowna', 'Abbotsford', 'Nanaimo'],
-    'Manitoba': ['Winnipeg', 'Brandon', 'Steinbach', 'Thompson', 'Portage la Prairie'],
-    'New Brunswick': ['Moncton', 'Saint John', 'Fredericton', 'Dieppe', 'Miramichi'],
-    'Newfoundland and Labrador': ['St. Johns', 'Mount Pearl', 'Corner Brook', 'Conception Bay South'],
-    'Nova Scotia': ['Halifax', 'Sydney', 'Dartmouth', 'Truro', 'New Glasgow'],
-    'Ontario': ['Toronto', 'Ottawa', 'Mississauga', 'Hamilton', 'London'],
-    'Prince Edward Island': ['Charlottetown', 'Summerside', 'Stratford', 'Cornwall'],
-    'Quebec': ['Montreal', 'Quebec City', 'Laval', 'Gatineau', 'Longueuil'],
-    'Saskatchewan': ['Saskatoon', 'Regina', 'Prince Albert', 'Moose Jaw', 'Swift Current']
-  },
-  'Australia': {
-    'New South Wales': ['Sydney', 'Newcastle', 'Wollongong', 'Central Coast', 'Maitland'],
-    'Victoria': ['Melbourne', 'Geelong', 'Ballarat', 'Bendigo', 'Shepparton'],
-    'Queensland': ['Brisbane', 'Gold Coast', 'Townsville', 'Cairns', 'Toowoomba'],
-    'Western Australia': ['Perth', 'Mandurah', 'Bunbury', 'Albany', 'Kalgoorlie'],
-    'South Australia': ['Adelaide', 'Mount Gambier', 'Whyalla', 'Murray Bridge'],
-    'Tasmania': ['Hobart', 'Launceston', 'Devonport', 'Burnie'],
-    'Northern Territory': ['Darwin', 'Alice Springs', 'Palmerston', 'Katherine'],
-    'Australian Capital Territory': ['Canberra']
-  },
-  'China': {
-    'Guangdong': ['Guangzhou', 'Shenzhen', 'Dongguan', 'Foshan', 'Zhuhai'],
-    'Shandong': ['Jinan', 'Qingdao', 'Yantai', 'Weifang', 'Zibo'],
-    'Henan': ['Zhengzhou', 'Luoyang', 'Kaifeng', 'Anyang', 'Xinxiang'],
-    'Sichuan': ['Chengdu', 'Mianyang', 'Deyang', 'Nanchong', 'Yibin'],
-    'Jiangsu': ['Nanjing', 'Suzhou', 'Wuxi', 'Changzhou', 'Xuzhou'],
-    'Hebei': ['Shijiazhuang', 'Tangshan', 'Baoding', 'Handan', 'Qinhuangdao'],
-    'Hunan': ['Changsha', 'Zhuzhou', 'Xiangtan', 'Hengyang', 'Yueyang'],
-    'Anhui': ['Hefei', 'Wuhu', 'Bengbu', 'Huainan', 'Maanshan'],
-    'Hubei': ['Wuhan', 'Yichang', '襄阳', 'Jingzhou', 'Huangshi'],
-    'Zhejiang': ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Shaoxing'],
-    'Beijing': ['Beijing'],
-    'Shanghai': ['Shanghai'],
-    'Tianjin': ['Tianjin'],
-    'Chongqing': ['Chongqing']
-  },
-  'Brazil': {
-    'São Paulo': ['São Paulo', 'Campinas', 'Santos', 'Sorocaba', 'Ribeirão Preto'],
-    'Rio de Janeiro': ['Rio de Janeiro', 'Niterói', 'Duque de Caxias', 'Nova Iguaçu'],
-    'Minas Gerais': ['Belo Horizonte', 'Uberlândia', 'Contagem', 'Juiz de Fora'],
-    'Bahia': ['Salvador', 'Feira de Santana', 'Vitória da Conquista', 'Camaçari'],
-    'Paraná': ['Curitiba', 'Londrina', 'Maringá', 'Ponta Grossa', 'Cascavel'],
-    'Rio Grande do Sul': ['Porto Alegre', 'Caxias do Sul', 'Pelotas', 'Canoas'],
-    'Pernambuco': ['Recife', 'Jaboatão dos Guararapes', 'Olinda', 'Caruaru'],
-    'Ceará': ['Fortaleza', 'Caucaia', 'Juazeiro do Norte', 'Maracanaú'],
-    'Pará': ['Belém', 'Ananindeua', 'Santarém', 'Marabá'],
-    'Santa Catarina': ['Florianópolis', 'Joinville', 'Blumenau', 'São José']
-  },
-  'Germany': {
-    'Bavaria': ['Munich', 'Nuremberg', 'Augsburg', 'Regensburg', 'Ingolstadt'],
-    'North Rhine-Westphalia': ['Cologne', 'Dortmund', 'Essen', 'Düsseldorf', 'Duisburg'],
-    'Baden-Württemberg': ['Stuttgart', 'Mannheim', 'Karlsruhe', 'Freiburg', 'Heidelberg'],
-    'Lower Saxony': ['Hanover', 'Brunswick', 'Oldenburg', 'Osnabrück', 'Wolfsburg'],
-    'Hesse': ['Frankfurt', 'Wiesbaden', 'Kassel', 'Darmstadt', 'Offenbach'],
-    'Saxony': ['Leipzig', 'Dresden', 'Chemnitz', 'Zwickau'],
-    'Rhineland-Palatinate': ['Mainz', 'Ludwigshafen', 'Koblenz', 'Trier'],
-    'Berlin': ['Berlin'],
-    'Hamburg': ['Hamburg'],
-    'Schleswig-Holstein': ['Kiel', 'Lübeck', 'Flensburg', 'Neumünster']
-  },
-  'France': {
-    'Île-de-France': ['Paris', 'Boulogne-Billancourt', 'Saint-Denis', 'Argenteuil'],
-    'Auvergne-Rhône-Alpes': ['Lyon', 'Grenoble', 'Saint-Étienne', 'Villeurbanne'],
-    'Provence-Alpes-Côte d\'Azur': ['Marseille', 'Nice', 'Toulon', 'Aix-en-Provence'],
-    'Nouvelle-Aquitaine': ['Bordeaux', 'Limoges', 'Poitiers', 'Pau', 'La Rochelle'],
-    'Occitanie': ['Toulouse', 'Montpellier', 'Nîmes', 'Perpignan'],
-    'Hauts-de-France': ['Lille', 'Amiens', 'Roubaix', 'Tourcoing'],
-    'Normandy': ['Rouen', 'Le Havre', 'Caen', 'Cherbourg'],
-    'Brittany': ['Rennes', 'Brest', 'Quimper', 'Lorient'],
-    'Grand Est': ['Strasbourg', 'Reims', 'Metz', 'Mulhouse'],
-    'Pays de la Loire': ['Nantes', 'Angers', 'Le Mans', 'Saint-Nazaire']
-  },
-  'Japan': {
-    'Tokyo': ['Tokyo', 'Hachioji', 'Machida', 'Fuchu'],
-    'Osaka': ['Osaka', 'Sakai', 'Higashiosaka', 'Toyonaka'],
-    'Kanagawa': ['Yokohama', 'Kawasaki', 'Sagamihara', 'Fujisawa'],
-    'Aichi': ['Nagoya', 'Toyota', 'Okazaki', 'Ichinomiya'],
-    'Hokkaido': ['Sapporo', 'Asahikawa', 'Hakodate', 'Kushiro'],
-    'Fukuoka': ['Fukuoka', 'Kitakyushu', 'Kurume', 'Iizuka'],
-    'Hyogo': ['Kobe', 'Himeji', 'Nishinomiya', 'Amagasaki'],
-    'Saitama': ['Saitama', 'Kawaguchi', 'Kawagoe', 'Tokorozawa'],
-    'Chiba': ['Chiba', 'Funabashi', 'Matsudo', 'Ichikawa'],
-    'Kyoto': ['Kyoto', 'Uji', 'Kameoka']
-  },
-  'Mexico': {
-    'Mexico City': ['Mexico City'],
-    'Jalisco': ['Guadalajara', 'Zapopan', 'Tlaquepaque', 'Tonalá'],
-    'Nuevo León': ['Monterrey', 'San Nicolás de los Garza', 'Guadalupe', 'Apodaca'],
-    'Puebla': ['Puebla', 'Tehuacán', 'San Martín Texmelucan'],
-    'Guanajuato': ['León', 'Irapuato', 'Celaya', 'Salamanca'],
-    'Chihuahua': ['Juárez', 'Chihuahua', 'Delicias', 'Cuauhtémoc'],
-    'Veracruz': ['Veracruz', 'Xalapa', 'Coatzacoalcos', 'Córdoba'],
-    'Baja California': ['Tijuana', 'Mexicali', 'Ensenada', 'Rosarito'],
-    'Tamaulipas': ['Reynosa', 'Matamoros', 'Nuevo Laredo', 'Tampico'],
-    'Sinaloa': ['Culiacán', 'Mazatlán', 'Los Mochis', 'Guasave']
-  },
-  'Italy': {
-    'Lazio': ['Rome', 'Latina', 'Guidonia Montecelio', 'Fiumicino'],
-    'Lombardy': ['Milan', 'Brescia', 'Monza', 'Bergamo', 'Como'],
-    'Campania': ['Naples', 'Salerno', 'Giugliano in Campania', 'Torre del Greco'],
-    'Sicily': ['Palermo', 'Catania', 'Messina', 'Syracuse'],
-    'Veneto': ['Venice', 'Verona', 'Padua', 'Vicenza'],
-    'Piedmont': ['Turin', 'Novara', 'Alessandria', 'Asti'],
-    'Emilia-Romagna': ['Bologna', 'Modena', 'Parma', 'Reggio Emilia'],
-    'Apulia': ['Bari', 'Taranto', 'Foggia', 'Lecce'],
-    'Tuscany': ['Florence', 'Prato', 'Livorno', 'Arezzo'],
-    'Liguria': ['Genoa', 'La Spezia', 'Savona', 'Sanremo']
-  },
-  'Spain': {
-    'Madrid': ['Madrid', 'Móstoles', 'Alcalá de Henares', 'Fuenlabrada'],
-    'Catalonia': ['Barcelona', 'L\'Hospitalet de Llobregat', 'Badalona', 'Terrassa'],
-    'Andalusia': ['Seville', 'Málaga', 'Córdoba', 'Granada', 'Almería'],
-    'Valencia': ['Valencia', 'Alicante', 'Elche', 'Castellón de la Plana'],
-    'Basque Country': ['Bilbao', 'Vitoria-Gasteiz', 'Donostia-San Sebastián'],
-    'Galicia': ['Vigo', 'A Coruña', 'Ourense', 'Lugo'],
-    'Castile and León': ['Valladolid', 'Burgos', 'Salamanca', 'León'],
-    'Canary Islands': ['Las Palmas', 'Santa Cruz de Tenerife'],
-    'Aragon': ['Zaragoza', 'Huesca', 'Teruel'],
-    'Murcia': ['Murcia', 'Cartagena', 'Lorca']
-  },
-  'South Korea': {
-    'Seoul': ['Seoul'],
-    'Busan': ['Busan'],
-    'Gyeonggi': ['Suwon', 'Goyang', 'Yongin', 'Seongnam'],
-    'Incheon': ['Incheon'],
-    'Daegu': ['Daegu'],
-    'Daejeon': ['Daejeon'],
-    'Gwangju': ['Gwangju'],
-    'Ulsan': ['Ulsan'],
-    'Gangwon': ['Chuncheon', 'Wonju', 'Gangneung'],
-    'North Gyeongsang': ['Pohang', 'Gumi', 'Gyeongju']
-  },
-  'Russia': {
-    'Moscow': ['Moscow'],
-    'Saint Petersburg': ['Saint Petersburg'],
-    'Moscow Oblast': ['Balashikha', 'Khimki', 'Podolsk', 'Mytishchi'],
-    'Sverdlovsk Oblast': ['Yekaterinburg', 'Nizhny Tagil', 'Kamensk-Uralsky'],
-    'Krasnodar Krai': ['Krasnodar', 'Sochi', 'Novorossiysk', 'Armavir'],
-    'Tatarstan': ['Kazan', 'Naberezhnye Chelny', 'Nizhnekamsk'],
-    'Chelyabinsk Oblast': ['Chelyabinsk', 'Magnitogorsk', 'Zlatoust'],
-    'Novosibirsk Oblast': ['Novosibirsk', 'Berdsk', 'Iskitim'],
-    'Samara Oblast': ['Samara', 'Tolyatti', 'Syzran'],
-    'Rostov Oblast': ['Rostov-on-Don', 'Taganrog', 'Shakhty']
-  },
-  'Argentina': {
-    'Buenos Aires': ['Buenos Aires', 'La Plata', 'Mar del Plata', 'Bahía Blanca'],
-    'Córdoba': ['Córdoba', 'Villa María', 'Río Cuarto'],
-    'Santa Fe': ['Rosario', 'Santa Fe', 'Rafaela'],
-    'Mendoza': ['Mendoza', 'San Rafael', 'Godoy Cruz'],
-    'Tucumán': ['San Miguel de Tucumán', 'Yerba Buena'],
-    'Salta': ['Salta', 'San Ramón de la Nueva Orán'],
-    'Entre Ríos': ['Paraná', 'Concordia', 'Gualeguaychú'],
-    'Chaco': ['Resistencia', 'Presidencia Roque Sáenz Peña'],
-    'Misiones': ['Posadas', 'Oberá', 'Eldorado'],
-    'Neuquén': ['Neuquén', 'San Martín de los Andes', 'Cutral-Có']
-  },
-  'Nigeria': {
-    'Lagos': ['Lagos', 'Ikeja', 'Epe'],
-    'Kano': ['Kano'],
-    'Kaduna': ['Kaduna', 'Zaria'],
-    'Rivers': ['Port Harcourt', 'Obio-Akpor'],
-    'Oyo': ['Ibadan', 'Ogbomoso', 'Oyo'],
-    'Abuja': ['Abuja'],
-    'Anambra': ['Onitsha', 'Nnewi', 'Awka'],
-    'Enugu': ['Enugu', 'Nsukka'],
-    'Ogun': ['Abeokuta', 'Ijebu Ode', 'Sagamu'],
-    'Delta': ['Warri', 'Asaba', 'Sapele']
-  },
-  'Egypt': {
-    'Cairo': ['Cairo', 'Giza', 'Shubra El-Kheima'],
-    'Alexandria': ['Alexandria', 'Borg El Arab'],
-    'Giza': ['Giza', '6th of October City'],
-    'Qalyubia': ['Shubra El Kheima', 'Banha', 'Qalyub'],
-    'Sharqia': ['Zagazig', '10th of Ramadan City', 'Bilbeis'],
-    'Dakahlia': ['Mansoura', 'Mit Ghamr', 'Talkha'],
-    'Beheira': ['Damanhur', 'Kafr el-Dawwar'],
-    'Asyut': ['Asyut', 'Abnub'],
-    'Monufia': ['Shibin El Kom', 'Menouf'],
-    'Gharbia': ['Tanta', 'El Mahalla El Kubra']
-  },
-  'South Africa': {
-    'Gauteng': ['Johannesburg', 'Pretoria', 'Soweto', 'Benoni'],
-    'KwaZulu-Natal': ['Durban', 'Pietermaritzburg', 'Newcastle'],
-    'Western Cape': ['Cape Town', 'Stellenbosch', 'George'],
-    'Eastern Cape': ['Port Elizabeth', 'East London', 'Mthatha'],
-    'Limpopo': ['Polokwane', 'Tzaneen', 'Musina'],
-    'Mpumalanga': ['Nelspruit', 'Witbank', 'Middelburg'],
-    'North West': ['Rustenburg', 'Mahikeng', 'Potchefstroom'],
-    'Free State': ['Bloemfontein', 'Welkom', 'Bethlehem'],
-    'Northern Cape': ['Kimberley', 'Upington', 'Kuruman']
-  },
-  'Indonesia': {
-    'Java': ['Jakarta', 'Surabaya', 'Bandung', 'Semarang', 'Yogyakarta'],
-    'Sumatra': ['Medan', 'Palembang', 'Pekanbaru', 'Padang'],
-    'Kalimantan': ['Banjarmasin', 'Pontianak', 'Balikpapan', 'Samarinda'],
-    'Sulawesi': ['Makassar', 'Manado', 'Palu', 'Kendari'],
-    'Bali': ['Denpasar', 'Singaraja'],
-    'West Java': ['Bandung', 'Bekasi', 'Depok', 'Bogor'],
-    'East Java': ['Surabaya', 'Malang', 'Kediri', 'Madiun'],
-    'Central Java': ['Semarang', 'Solo', 'Pekalongan'],
-    'North Sumatra': ['Medan', 'Binjai', 'Pematangsiantar', 'Tebing Tinggi']
-  },
-  'Pakistan': {
-    'Punjab': ['Lahore', 'Faisalabad', 'Rawalpindi', 'Multan', 'Gujranwala'],
-    'Sindh': ['Karachi', 'Hyderabad', 'Sukkur', 'Larkana'],
-    'Khyber Pakhtunkhwa': ['Peshawar', 'Mardan', 'Mingora', 'Abbottabad'],
-    'Balochistan': ['Quetta', 'Gwadar', 'Turbat', 'Khuzdar'],
-    'Islamabad': ['Islamabad']
-  },
-  'Bangladesh': {
-    'Dhaka': ['Dhaka', 'Gazipur', 'Narayanganj', 'Tongi'],
-    'Chittagong': ['Chittagong', 'Cox\'s Bazar', 'Comilla'],
-    'Rajshahi': ['Rajshahi', 'Bogra', 'Pabna'],
-    'Khulna': ['Khulna', 'Jessore', 'Satkhira'],
-    'Sylhet': ['Sylhet', 'Moulvibazar', 'Habiganj'],
-    'Barisal': ['Barisal', 'Patuakhali', 'Bhola'],
-    'Rangpur': ['Rangpur', 'Dinajpur', 'Kurigram'],
-    'Mymensingh': ['Mymensingh', 'Jamalpur', 'Netrokona']
-  },
-  'Turkey': {
-    'Istanbul': ['Istanbul'],
-    'Ankara': ['Ankara'],
-    'Izmir': ['Izmir', 'Manisa', 'Aydin'],
-    'Antalya': ['Antalya', 'Alanya', 'Manavgat'],
-    'Bursa': ['Bursa', 'Gemlik', 'Inegol'],
-    'Adana': ['Adana', 'Ceyhan', 'Kozan'],
-    'Gaziantep': ['Gaziantep', 'Nurdagi', 'Islahiye'],
-    'Konya': ['Konya', 'Eregli', 'Aksehir'],
-    'Kocaeli': ['Izmit', 'Gebze', 'Derince'],
-    'Mersin': ['Mersin', 'Tarsus', 'Silifke']
-  },
-  'Iran': {
-    'Tehran': ['Tehran', 'Rey', 'Shemiranat'],
-    'Khorasan Razavi': ['Mashhad', 'Neyshabur', 'Sabzevar'],
-    'Isfahan': ['Isfahan', 'Kashan', 'Najafabad'],
-    'Fars': ['Shiraz', 'Marvdasht', 'Jahrom'],
-    'Khuzestan': ['Ahvaz', 'Khorramshahr', 'Abadan'],
-    'Mazandaran': ['Sari', 'Babol', 'Amol'],
-    'East Azerbaijan': ['Tabriz', 'Maragheh', 'Marand'],
-    'Kerman': ['Kerman', 'Rafsanjan', 'Sirjan'],
-    'Gilan': ['Rasht', 'Bandar-e Anzali', 'Lahijan']
-  },
-  'Saudi Arabia': {
-    'Riyadh': ['Riyadh', 'Al Kharj', 'Ad Diriyah'],
-    'Makkah': ['Jeddah', 'Mecca', 'Ta\'if', 'Rabigh'],
-    'Eastern Province': ['Dammam', 'Khobar', 'Dhahran', 'Jubail'],
-    'Madinah': ['Medina', 'Yanbu', 'Badr'],
-    'Asir': ['Abha', 'Khamis Mushait', 'Bisha'],
-    'Qassim': ['Buraydah', 'Unayzah', 'Ar Rass'],
-    'Tabuk': ['Tabuk', 'Duba', 'Taymaa'],
-    'Ha\'il': ['Ha\'il', 'Baqaa'],
-    'Jizan': ['Jizan', 'Sabya', 'Abu Arish']
-  },
-  'Thailand': {
-    'Bangkok': ['Bangkok'],
-    'Chiang Mai': ['Chiang Mai', 'Lamphun', 'Lampang'],
-    'Nakhon Ratchasima': ['Nakhon Ratchasima', 'Pak Chong'],
-    'Chon Buri': ['Pattaya', 'Chon Buri', 'Si Racha'],
-    'Songkhla': ['Hat Yai', 'Songkhla'],
-    'Khon Kaen': ['Khon Kaen', 'Mueang'],
-    'Nonthaburi': ['Nonthaburi', 'Pak Kret'],
-    'Udon Thani': ['Udon Thani', 'Ban Dung'],
-    'Rayong': ['Rayong', 'Map Ta Phut'],
-    'Phuket': ['Phuket', 'Kathu', 'Thalang']
-  },
-  'Philippines': {
-    'Metro Manila': ['Manila', 'Quezon City', 'Caloocan', 'Makati', 'Pasig'],
-    'Cebu': ['Cebu City', 'Mandaue', 'Lapu-Lapu', 'Toledo'],
-    'Davao': ['Davao City', 'Tagum', 'Panabo', 'Digos'],
-    'Cavite': ['Bacoor', 'Dasmariñas', 'Imus', 'Cavite City'],
-    'Bulacan': ['Malolos', 'Meycauayan', 'San Jose del Monte'],
-    'Laguna': ['Calamba', 'Santa Rosa', 'Biñan', 'San Pedro'],
-    'Rizal': ['Antipolo', 'Cainta', 'Taytay', 'Rodriguez'],
-    'Pampanga': ['San Fernando', 'Angeles', 'Mabalacat'],
-    'Iloilo': ['Iloilo City', 'Passi', 'Oton'],
-    'Batangas': ['Batangas City', 'Lipa', 'Tanauan']
-  },
-  'Vietnam': {
-    'Hanoi': ['Hanoi'],
-    'Ho Chi Minh City': ['Ho Chi Minh City'],
-    'Da Nang': ['Da Nang', 'Hoi An'],
-    'Hai Phong': ['Hai Phong'],
-    'Can Tho': ['Can Tho'],
-    'Binh Duong': ['Thu Dau Mot', 'Di An'],
-    'Dong Nai': ['Bien Hoa', 'Long Khanh'],
-    'Khanh Hoa': ['Nha Trang', 'Cam Ranh'],
-    'Thanh Hoa': ['Thanh Hoa'],
-    'Thua Thien Hue': ['Hue']
-  },
-  'Malaysia': {
-    'Selangor': ['Shah Alam', 'Petaling Jaya', 'Subang Jaya', 'Klang'],
-    'Johor': ['Johor Bahru', 'Muar', 'Batu Pahat', 'Kluang'],
-    'Kuala Lumpur': ['Kuala Lumpur'],
-    'Penang': ['George Town', 'Butterworth', 'Bukit Mertajam'],
-    'Perak': ['Ipoh', 'Taiping', 'Teluk Intan'],
-    'Sabah': ['Kota Kinabalu', 'Sandakan', 'Tawau'],
-    'Sarawak': ['Kuching', 'Miri', 'Sibu'],
-    'Pahang': ['Kuantan', 'Temerloh', 'Bentong'],
-    'Kedah': ['Alor Setar', 'Sungai Petani', 'Kulim'],
-    'Negeri Sembilan': ['Seremban', 'Port Dickson', 'Nilai']
-  },
-  'Singapore': {
-    'Singapore': ['Singapore']
-  },
-  'New Zealand': {
-    'Auckland': ['Auckland', 'Manukau', 'North Shore', 'Waitakere'],
-    'Wellington': ['Wellington', 'Lower Hutt', 'Upper Hutt', 'Porirua'],
-    'Canterbury': ['Christchurch', 'Timaru', 'Ashburton'],
-    'Waikato': ['Hamilton', 'Tauranga', 'Rotorua'],
-    'Otago': ['Dunedin', 'Queenstown', 'Oamaru'],
-    'Bay of Plenty': ['Tauranga', 'Rotorua'],
-    'Manawatu-Wanganui': ['Palmerston North', 'Whanganui'],
-    'Hawke\'s Bay': ['Napier', 'Hastings'],
-    'Northland': ['Whangarei', 'Kerikeri'],
-    'Taranaki': ['New Plymouth']
-  },
-  'Poland': {
-    'Masovian': ['Warsaw', 'Radom', 'Płock'],
-    'Lesser Poland': ['Kraków', 'Tarnów', 'Nowy Sącz'],
-    'Silesian': ['Katowice', 'Częstochowa', 'Sosnowiec', 'Gliwice'],
-    'Greater Poland': ['Poznań', 'Kalisz', 'Piła'],
-    'Lower Silesian': ['Wrocław', 'Wałbrzych', 'Legnica'],
-    'Pomeranian': ['Gdańsk', 'Gdynia', 'Sopot'],
-    'Łódź': ['Łódź', 'Piotrków Trybunalski'],
-    'West Pomeranian': ['Szczecin', 'Koszalin', 'Stargard'],
-    'Lublin': ['Lublin', 'Chełm', 'Zamość'],
-    'Kuyavian-Pomeranian': ['Bydgoszcz', 'Toruń', 'Włocławek']
-  },
-  'Netherlands': {
-    'North Holland': ['Amsterdam', 'Haarlem', 'Zaanstad', 'Alkmaar'],
-    'South Holland': ['Rotterdam', 'The Hague', 'Leiden', 'Dordrecht'],
-    'North Brabant': ['Eindhoven', '\'s-Hertogenbosch', 'Tilburg', 'Breda'],
-    'Utrecht': ['Utrecht', 'Amersfoort', 'Nieuwegein'],
-    'Gelderland': ['Arnhem', 'Nijmegen', 'Apeldoorn', 'Ede'],
-    'Limburg': ['Maastricht', 'Venlo', 'Heerlen'],
-    'Overijssel': ['Enschede', 'Zwolle', 'Almelo'],
-    'Groningen': ['Groningen'],
-    'Flevoland': ['Almere', 'Lelystad'],
-    'Friesland': ['Leeuwarden', 'Heerenveen']
-  },
-  'Belgium': {
-    'Flemish Brabant': ['Leuven', 'Vilvoorde', 'Halle'],
-    'Antwerp': ['Antwerp', 'Mechelen', 'Turnhout'],
-    'East Flanders': ['Ghent', 'Aalst', 'Sint-Niklaas'],
-    'West Flanders': ['Bruges', 'Kortrijk', 'Ostend'],
-    'Liège': ['Liège', 'Seraing', 'Verviers'],
-    'Hainaut': ['Charleroi', 'Mons', 'La Louvière'],
-    'Brussels': ['Brussels'],
-    'Walloon Brabant': ['Wavre', 'Ottignies-Louvain-la-Neuve'],
-    'Namur': ['Namur'],
-    'Limburg': ['Hasselt', 'Genk']
-  },
-  'Sweden': {
-    'Stockholm': ['Stockholm', 'Solna', 'Sundbyberg'],
-    'Västra Götaland': ['Gothenburg', 'Borås', 'Mölndal'],
-    'Skåne': ['Malmö', 'Helsingborg', 'Lund'],
-    'Uppsala': ['Uppsala', 'Enköping'],
-    'Östergötland': ['Linköping', 'Norrköping'],
-    'Gävleborg': ['Gävle', 'Sandviken'],
-    'Jönköping': ['Jönköping', 'Värnamo'],
-    'Halland': ['Halmstad', 'Varberg'],
-    'Västmanland': ['Västerås', 'Köping'],
-    'Örebro': ['Örebro', 'Kumla']
-  },
-  'Norway': {
-    'Oslo': ['Oslo'],
-    'Viken': ['Drammen', 'Fredrikstad', 'Sarpsborg'],
-    'Vestland': ['Bergen', 'Haugesund'],
-    'Rogaland': ['Stavanger', 'Sandnes'],
-    'Trøndelag': ['Trondheim', 'Steinkjer'],
-    'Innlandet': ['Lillehammer', 'Hamar'],
-    'Vestfold og Telemark': ['Tønsberg', 'Sandefjord', 'Skien'],
-    'Agder': ['Kristiansand', 'Arendal'],
-    'Nordland': ['Bodø', 'Narvik'],
-    'Troms og Finnmark': ['Tromsø', 'Alta']
-  },
-  'Denmark': {
-    'Capital Region': ['Copenhagen', 'Frederiksberg', 'Gentofte'],
-    'Central Denmark': ['Aarhus', 'Randers', 'Horsens'],
-    'Southern Denmark': ['Odense', 'Esbjerg', 'Kolding'],
-    'Zealand': ['Roskilde', 'Køge', 'Holbæk'],
-    'North Denmark': ['Aalborg', 'Hjørring', 'Frederikshavn']
-  },
-  'Finland': {
-    'Uusimaa': ['Helsinki', 'Espoo', 'Vantaa'],
-    'Pirkanmaa': ['Tampere', 'Nokia'],
-    'Southwest Finland': ['Turku', 'Salo'],
-    'North Ostrobothnia': ['Oulu', 'Raahe'],
-    'Central Finland': ['Jyväskylä'],
-    'Päijänne Tavastia': ['Lahti'],
-    'Kymenlaakso': ['Kouvola', 'Kotka'],
-    'Lapland': ['Rovaniemi', 'Kemi'],
-    'Kanta-Häme': ['Hämeenlinna'],
-    'Satakunta': ['Pori', 'Rauma']
-  },
-  'Greece': {
-    'Attica': ['Athens', 'Piraeus', 'Peristeri'],
-    'Central Macedonia': ['Thessaloniki', 'Serres', 'Katerini'],
-    'Crete': ['Heraklion', 'Chania', 'Rethymno'],
-    'Western Greece': ['Patras', 'Agrinio'],
-    'Thessaly': ['Larissa', 'Volos'],
-    'Peloponnese': ['Kalamata', 'Tripoli'],
-    'Epirus': ['Ioannina', 'Preveza'],
-    'Central Greece': ['Lamia', 'Chalkida'],
-    'South Aegean': ['Rhodes', 'Kos'],
-    'Eastern Macedonia and Thrace': ['Kavala', 'Xanthi']
-  },
-  'Portugal': {
-    'Lisbon': ['Lisbon', 'Amadora', 'Loures'],
-    'Porto': ['Porto', 'Vila Nova de Gaia', 'Matosinhos'],
-    'Setúbal': ['Setúbal', 'Almada', 'Barreiro'],
-    'Faro': ['Faro', 'Portimão', 'Olhão'],
-    'Braga': ['Braga', 'Guimarães'],
-    'Aveiro': ['Aveiro', 'Ílhavo'],
-    'Coimbra': ['Coimbra', 'Figueira da Foz'],
-    'Leiria': ['Leiria', 'Marinha Grande'],
-    'Viseu': ['Viseu'],
-    'Azores': ['Ponta Delgada', 'Angra do Heroísmo']
-  },
-  'Chile': {
-    'Santiago Metropolitan': ['Santiago', 'Puente Alto', 'Maipú'],
-    'Valparaíso': ['Valparaíso', 'Viña del Mar', 'Quilpué'],
-    'Biobío': ['Concepción', 'Talcahuano', 'Los Ángeles'],
-    'Araucanía': ['Temuco', 'Villarrica'],
-    'Maule': ['Talca', 'Curicó'],
-    'O\'Higgins': ['Rancagua', 'San Fernando'],
-    'Los Lagos': ['Puerto Montt', 'Osorno'],
-    'Antofagasta': ['Antofagasta', 'Calama'],
-    'Coquimbo': ['La Serena', 'Coquimbo'],
-    'Tarapacá': ['Iquique', 'Alto Hospicio']
-  },
-  'Colombia': {
-    'Bogotá': ['Bogotá'],
-    'Antioquia': ['Medellín', 'Bello', 'Itagüí'],
-    'Valle del Cauca': ['Cali', 'Palmira', 'Buenaventura'],
-    'Atlántico': ['Barranquilla', 'Soledad', 'Malambo'],
-    'Santander': ['Bucaramanga', 'Floridablanca', 'Girón'],
-    'Bolívar': ['Cartagena', 'Magangué'],
-    'Cundinamarca': ['Soacha', 'Facatativá', 'Chía'],
-    'Norte de Santander': ['Cúcuta', 'Ocaña'],
-    'Tolima': ['Ibagué', 'Espinal'],
-    'Risaralda': ['Pereira', 'Dosquebradas']
-  },
-  'Peru': {
-    'Lima': ['Lima', 'Callao'],
-    'Arequipa': ['Arequipa'],
-    'La Libertad': ['Trujillo', 'Chimbote'],
-    'Piura': ['Piura', 'Sullana'],
-    'Lambayeque': ['Chiclayo'],
-    'Cusco': ['Cusco'],
-    'Junín': ['Huancayo'],
-    'Loreto': ['Iquitos'],
-    'Puno': ['Juliaca', 'Puno'],
-    'Cajamarca': ['Cajamarca']
-  },
-  'Kenya': {
-    'Nairobi': ['Nairobi'],
-    'Mombasa': ['Mombasa'],
-    'Nakuru': ['Nakuru'],
-    'Kiambu': ['Thika', 'Kikuyu'],
-    'Machakos': ['Machakos'],
-    'Kisumu': ['Kisumu'],
-    'Uasin Gishu': ['Eldoret'],
-    'Nyeri': ['Nyeri'],
-    'Meru': ['Meru'],
-    'Kajiado': ['Kajiado']
-  },
-  'Ghana': {
-    'Greater Accra': ['Accra', 'Tema'],
-    'Ashanti': ['Kumasi', 'Obuasi'],
-    'Western': ['Sekondi-Takoradi'],
-    'Eastern': ['Koforidua'],
-    'Northern': ['Tamale'],
-    'Central': ['Cape Coast'],
-    'Volta': ['Ho'],
-    'Brong-Ahafo': ['Sunyani'],
-    'Upper East': ['Bolgatanga'],
-    'Upper West': ['Wa']
-  },
-  'Morocco': {
-    'Casablanca-Settat': ['Casablanca', 'Mohammedia', 'Settat'],
-    'Rabat-Salé-Kénitra': ['Rabat', 'Salé', 'Kénitra'],
-    'Fès-Meknès': ['Fès', 'Meknès'],
-    'Marrakesh-Safi': ['Marrakesh', 'Safi'],
-    'Tangier-Tétouan-Al Hoceïma': ['Tangier', 'Tétouan'],
-    'Souss-Massa': ['Agadir', 'Inezgane'],
-    'Oriental': ['Oujda', 'Nador'],
-    'Béni Mellal-Khénifra': ['Béni Mellal', 'Khouribga'],
-    'Drâa-Tafilalet': ['Errachidia'],
-    'Laâyoune-Sakia El Hamra': ['Laâyoune']
-  },
-  'Algeria': {
-    'Algiers': ['Algiers'],
-    'Oran': ['Oran', 'Arzew'],
-    'Constantine': ['Constantine'],
-    'Annaba': ['Annaba'],
-    'Blida': ['Blida'],
-    'Batna': ['Batna'],
-    'Sétif': ['Sétif'],
-    'Sidi Bel Abbès': ['Sidi Bel Abbès'],
-    'Biskra': ['Biskra'],
-    'Tébessa': ['Tébessa']
-  },
-  'Ethiopia': {
-    'Addis Ababa': ['Addis Ababa'],
-    'Oromia': ['Adama', 'Jimma', 'Bishoftu'],
-    'Amhara': ['Bahir Dar', 'Gondar', 'Dessie'],
-    'Tigray': ['Mekelle', 'Adigrat'],
-    'Southern Nations': ['Hawassa', 'Arba Minch'],
-    'Somali': ['Jijiga'],
-    'Dire Dawa': ['Dire Dawa'],
-    'Harari': ['Harar'],
-    'Afar': ['Semera'],
-    'Benishangul-Gumuz': ['Asosa']
-  }
-   
+  'India': ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi'],
+  'United States': ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'],
+  'United Kingdom': ['England', 'Scotland', 'Wales', 'Northern Ireland'],
+  'Canada': ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan'],
+  'Australia': ['New South Wales', 'Victoria', 'Queensland', 'Western Australia', 'South Australia', 'Tasmania', 'Northern Territory', 'Australian Capital Territory'],
+  'China': ['Guangdong', 'Shandong', 'Henan', 'Sichuan', 'Jiangsu', 'Hebei', 'Hunan', 'Anhui', 'Hubei', 'Zhejiang', 'Beijing', 'Shanghai', 'Tianjin', 'Chongqing'],
+  'Brazil': ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Bahia', 'Paraná', 'Rio Grande do Sul', 'Pernambuco', 'Ceará', 'Pará', 'Santa Catarina'],
+  'Germany': ['Bavaria', 'North Rhine-Westphalia', 'Baden-Württemberg', 'Lower Saxony', 'Hesse', 'Saxony', 'Rhineland-Palatinate', 'Berlin', 'Hamburg', 'Schleswig-Holstein'],
+  'France': ['Île-de-France', 'Auvergne-Rhône-Alpes', 'Provence-Alpes-Côte d\'Azur', 'Nouvelle-Aquitaine', 'Occitanie', 'Hauts-de-France', 'Normandy', 'Brittany', 'Grand Est', 'Pays de la Loire'],
+  'Japan': ['Tokyo', 'Osaka', 'Kanagawa', 'Aichi', 'Hokkaido', 'Fukuoka', 'Hyogo', 'Saitama', 'Chiba', 'Kyoto'],
+  'Mexico': ['Mexico City', 'Jalisco', 'Nuevo León', 'Puebla', 'Guanajuato', 'Chihuahua', 'Veracruz', 'Baja California', 'Tamaulipas', 'Sinaloa'],
+  'Italy': ['Lazio', 'Lombardy', 'Campania', 'Sicily', 'Veneto', 'Piedmont', 'Emilia-Romagna', 'Apulia', 'Tuscany', 'Liguria'],
+  'Spain': ['Madrid', 'Catalonia', 'Andalusia', 'Valencia', 'Basque Country', 'Galicia', 'Castile and León', 'Canary Islands', 'Aragon', 'Murcia'],
+  'South Korea': ['Seoul', 'Busan', 'Gyeonggi', 'Incheon', 'Daegu', 'Daejeon', 'Gwangju', 'Ulsan', 'Gangwon', 'North Gyeongsang'],
+  'Russia': ['Moscow', 'Saint Petersburg', 'Moscow Oblast', 'Sverdlovsk Oblast', 'Krasnodar Krai', 'Tatarstan', 'Chelyabinsk Oblast', 'Novosibirsk Oblast', 'Samara Oblast', 'Rostov Oblast'],
+  'Argentina': ['Buenos Aires', 'Córdoba', 'Santa Fe', 'Mendoza', 'Tucumán', 'Salta', 'Entre Ríos', 'Chaco', 'Misiones', 'Neuquén'],
+  'Nigeria': ['Lagos', 'Kano', 'Kaduna', 'Rivers', 'Oyo', 'Abuja', 'Anambra', 'Enugu', 'Ogun', 'Delta'],
+  'Egypt': ['Cairo', 'Alexandria', 'Giza', 'Qalyubia', 'Sharqia', 'Dakahlia', 'Beheira', 'Asyut', 'Monufia', 'Gharbia'],
+  'South Africa': ['Gauteng', 'KwaZulu-Natal', 'Western Cape', 'Eastern Cape', 'Limpopo', 'Mpumalanga', 'North West', 'Free State', 'Northern Cape'],
+  'Indonesia': ['Java', 'Sumatra', 'Kalimantan', 'Sulawesi', 'Bali', 'West Java', 'East Java', 'Central Java', 'North Sumatra'],
+  'Pakistan': ['Punjab', 'Sindh', 'Khyber Pakhtunkhwa', 'Balochistan', 'Islamabad'],
+  'Bangladesh': ['Dhaka', 'Chittagong', 'Rajshahi', 'Khulna', 'Sylhet', 'Barisal', 'Rangpur', 'Mymensingh'],
+  'Turkey': ['Istanbul', 'Ankara', 'Izmir', 'Antalya', 'Bursa', 'Adana', 'Gaziantep', 'Konya', 'Kocaeli', 'Mersin'],
+  'Iran': ['Tehran', 'Khorasan Razavi', 'Isfahan', 'Fars', 'Khuzestan', 'Mazandaran', 'East Azerbaijan', 'Kerman', 'Gilan'],
+  'Saudi Arabia': ['Riyadh', 'Makkah', 'Eastern Province', 'Madinah', 'Asir', 'Qassim', 'Tabuk', 'Ha\'il', 'Jizan'],
+  'Thailand': ['Bangkok', 'Chiang Mai', 'Nakhon Ratchasima', 'Chon Buri', 'Songkhla', 'Khon Kaen', 'Nonthaburi', 'Udon Thani', 'Rayong', 'Phuket'],
+  'Philippines': ['Metro Manila', 'Cebu', 'Davao', 'Cavite', 'Bulacan', 'Laguna', 'Rizal', 'Pampanga', 'Iloilo', 'Batangas'],
+  'Vietnam': ['Hanoi', 'Ho Chi Minh City', 'Da Nang', 'Hai Phong', 'Can Tho', 'Binh Duong', 'Dong Nai', 'Khanh Hoa', 'Thanh Hoa', 'Thua Thien Hue'],
+  'Malaysia': ['Selangor', 'Johor', 'Kuala Lumpur', 'Penang', 'Perak', 'Sabah', 'Sarawak', 'Pahang', 'Kedah', 'Negeri Sembilan'],
+  'Singapore': ['Singapore'],
+  'New Zealand': ['Auckland', 'Wellington', 'Canterbury', 'Waikato', 'Otago', 'Bay of Plenty', 'Manawatu-Wanganui', 'Hawke\'s Bay', 'Northland', 'Taranaki'],
+  'Poland': ['Masovian', 'Lesser Poland', 'Silesian', 'Greater Poland', 'Lower Silesian', 'Pomeranian', 'Łódź', 'West Pomeranian', 'Lublin', 'Kuyavian-Pomeranian'],
+  'Netherlands': ['North Holland', 'South Holland', 'North Brabant', 'Utrecht', 'Gelderland', 'Limburg', 'Overijssel', 'Groningen', 'Flevoland', 'Friesland'],
+  'Belgium': ['Flemish Brabant', 'Antwerp', 'East Flanders', 'West Flanders', 'Liège', 'Hainaut', 'Brussels', 'Walloon Brabant', 'Namur', 'Limburg'],
+  'Sweden': ['Stockholm', 'Västra Götaland', 'Skåne', 'Uppsala', 'Östergötland', 'Gävleborg', 'Jönköping', 'Halland', 'Västmanland', 'Örebro'],
+  'Norway': ['Oslo', 'Viken', 'Vestland', 'Rogaland', 'Trøndelag', 'Innlandet', 'Vestfold og Telemark', 'Agder', 'Nordland', 'Troms og Finnmark'],
+  'Denmark': ['Capital Region', 'Central Denmark', 'Southern Denmark', 'Zealand', 'North Denmark'],
+  'Finland': ['Uusimaa', 'Pirkanmaa', 'Southwest Finland', 'North Ostrobothnia', 'Central Finland', 'Päijänne Tavastia', 'Kymenlaakso', 'Lapland', 'Kanta-Häme', 'Satakunta'],
+  'Greece': ['Attica', 'Central Macedonia', 'Crete', 'Western Greece', 'Thessaly', 'Peloponnese', 'Epirus', 'Central Greece', 'South Aegean', 'Eastern Macedonia and Thrace'],
+  'Portugal': ['Lisbon', 'Porto', 'Setúbal', 'Faro', 'Braga', 'Aveiro', 'Coimbra', 'Leiria', 'Viseu', 'Azores'],
+  'Chile': ['Santiago Metropolitan', 'Valparaíso', 'Biobío', 'Araucanía', 'Maule', 'O\'Higgins', 'Los Lagos', 'Antofagasta', 'Coquimbo', 'Tarapacá'],
+  'Colombia': ['Bogotá', 'Antioquia', 'Valle del Cauca', 'Atlántico', 'Santander', 'Bolívar', 'Cundinamarca', 'Norte de Santander', 'Tolima', 'Risaralda'],
+  'Peru': ['Lima', 'Arequipa', 'La Libertad', 'Piura', 'Lambayeque', 'Cusco', 'Junín', 'Loreto', 'Puno', 'Cajamarca'],
+  'Kenya': ['Nairobi', 'Mombasa', 'Nakuru', 'Kiambu', 'Machakos', 'Kisumu', 'Uasin Gishu', 'Nyeri', 'Meru', 'Kajiado'],
+  'Ghana': ['Greater Accra', 'Ashanti', 'Western', 'Eastern', 'Northern', 'Central', 'Volta', 'Brong-Ahafo', 'Upper East', 'Upper West'],
+  'Morocco': ['Casablanca-Settat', 'Rabat-Salé-Kénitra', 'Fès-Meknès', 'Marrakesh-Safi', 'Tangier-Tétouan-Al Hoceïma', 'Souss-Massa', 'Oriental', 'Béni Mellal-Khénifra', 'Drâa-Tafilalet', 'Laâyoune-Sakia El Hamra'],
+  'Algeria': ['Algiers', 'Oran', 'Constantine', 'Annaba', 'Blida', 'Batna', 'Sétif', 'Sidi Bel Abbès', 'Biskra', 'Tébessa'],
+  'Ethiopia': ['Addis Ababa', 'Oromia', 'Amhara', 'Tigray', 'Southern Nations', 'Somali', 'Dire Dawa', 'Harari', 'Afar', 'Benishangul-Gumuz']
   };
 
   const productCategories = [
     'Shoes',
     'Casual Shoes',
     'Boots',
+
+    
     'Formal Shoes',
     'Women Handbags',
     'Sling Bags',
@@ -656,9 +99,6 @@ const ContactForm = ({ onClose }) => {
       
       if (name === 'country') {
         newData.state = '';
-        newData.district = '';
-      } else if (name === 'state') {
-        newData.district = '';
       }
       
       return newData;
@@ -691,7 +131,6 @@ const ContactForm = ({ onClose }) => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
     setTimeout(() => {
       console.log('Form data:', formData);
 
@@ -719,13 +158,7 @@ const ContactForm = ({ onClose }) => {
 
   const getStates = () => {
     return formData.country && locationData[formData.country] 
-      ? Object.keys(locationData[formData.country]) 
-      : [];
-  };
-
-  const getDistricts = () => {
-    return formData.country && formData.state && locationData[formData.country]?.[formData.state]
-      ? locationData[formData.country][formData.state]
+      ? locationData[formData.country] 
       : [];
   };
 
@@ -833,19 +266,6 @@ const ContactForm = ({ onClose }) => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="pincode" className="form-label">Pincode / ZIP Code</label>
-                <input
-                  type="text"
-                  id="pincode"
-                  name="pincode"
-                  value={formData.pincode}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Enter pincode"
-                />
-              </div>
-
-              <div className="form-group">
                 <label htmlFor="state" className="form-label">State / Province</label>
                 <select
                   id="state"
@@ -866,21 +286,27 @@ const ContactForm = ({ onClose }) => {
 
               <div className="form-group">
                 <label htmlFor="district" className="form-label">District / Region</label>
-                <select
+                <input
+                  type="text"
                   id="district"
                   name="district"
                   value={formData.district}
                   onChange={handleChange}
-                  disabled={!formData.state}
                   className="form-input"
-                >
-                  <option value="">Select District</option>
-                  {getDistricts().map((district) => (
-                    <option key={district} value={district}>
-                      {district}
-                    </option>
-                  ))}
-                </select>
+                  placeholder="Enter district"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="pincode" className="form-label">Pincode / ZIP Code</label>
+                <input
+                  type="text"
+                  id="pincode"
+                  name="pincode"
+                  value={formData.pincode}
+                  onChange={handleChange}
+                  className="form-input"
+                  placeholder="Enter pincode"
+                />
               </div>
             </div>
           </div>
